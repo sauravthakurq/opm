@@ -1,30 +1,18 @@
 <div align="center">
-  <img src="assets/Echo-new.png" alt="OPM Logo" width="140"/>
+  <img src="assets/appiconorg.png" alt="OPM Logo" width="140"/>
 
   <h1>OPM</h1>
 
-  <p><strong>A modern Android music app with ad-free streaming, synced lyrics, offline playback, and an intuitive user experience.
-</strong></p>
+  <p><strong>A modern open-source Android music player with ad-free streaming, synced lyrics, beautiful UI, offline playback, and a premium listening experience.</strong></p>
 
-  [![GitHub Release](https://img.shields.io/github/v/release/sauravthakurq/OPM?style=for-the-badge&color=6f42c1)](https://github.com/sauravthakurq/OPM/releases)
-  [![GitHub Stars](https://img.shields.io/github/stars/sauravthakurq/OPM?style=for-the-badge&color=e3b341)](https://github.com/sauravthakurq/OPM/stargazers)
-  [![License](https://img.shields.io/github/license/sauravthakurq/OPM?style=for-the-badge&color=28a745)](LICENSE)
-  [![X](https://img.shields.io/badge/X-Follow-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/sauravthakurq)
-  [![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://x.com/sauravthakurq)
-
-  
-  <a href="https://trendshift.io/repositories/20485" target="_blank">
-    <img src="https://trendshift.io/api/badge/repositories/20485" alt="OPMApp%2FEcho-Music | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>
-  </a>
+  [![GitHub Release](https://img.shields.io/github/v/release/sauravthakurq/opm?style=for-the-badge&color=6f42c1)](https://github.com/sauravthakurq/opm/releases)
+  [![GitHub Stars](https://img.shields.io/github/stars/sauravthakurq/opm?style=for-the-badge&color=e3b341)](https://github.com/sauravthakurq/opm/stargazers)
+  [![License](https://img.shields.io/github/license/sauravthakurq/opm?style=for-the-badge&color=28a745)](LICENSE)
 
   <br>
 
-  <a href="https://github.com/sauravthakurq/OPM/releases">
-    <img src="assets/download.png" alt="Download" width="180"/>
-  </a>
-  &nbsp;
-  <a href="https://github.com/sauravthakurq/OPM">
-    <img src="assets/obtainium.png" alt="Get it on Obtainium" width="180"/>
+  <a href="https://github.com/sauravthakurq/opm/releases/latest/download/opm.apk">
+    <img src="https://img.shields.io/badge/Download-APK-4CAF50?style=for-the-badge&logo=android&logoColor=white" alt="Download APK"/>
   </a>
 </div>
 
@@ -32,30 +20,32 @@
 
 ## Overview
 
-OPM delivers a seamless, premium listening experience by leveraging YouTube Music's vast library — without the ads. It adds powerful extras including offline downloads, real-time synchronized lyrics, and environment-aware music recognition.
+OPM is a premium, open-source Android music player designed for users who want complete control over their music experience. Built with a focus on privacy, aesthetics, and performance, OPM delivers high-quality streaming, immersive real-time lyrics, and total personalization—all without advertisements or hidden fees.
 
 ---
 
 ## Table of Contents
 
-- [Overview](#overview)
+- [Why OPM?](#why-opm)
 - [Screenshots](#screenshots)
 - [Features](#features)
-  - [What's New](#whats-new)
-  - [Streaming & Playback](#streaming--playback)
-  - [Discovery & OPM Find](#discovery--echo-find)
+  - [Music](#music)
   - [Lyrics](#lyrics)
-  - [Integrations](#integrations)
-  - [Smart Playback](#smart-playback)
-  - [Customization](#customization)
-- [Installation & Setup](#installation--setup)
-  - [Android Installation](#android-installation)
-  - [Building from Source](#building-from-source)
-- [Community & Support](#community--support)
-- [Support the Project](#support-the-project)
-  - [Cryptocurrency](#cryptocurrency)
-- [Special Thanks](#special-thanks)
-- [Star History](#star-history)
+  - [Personalization](#personalization)
+  - [Performance](#performance)
+  - [Open Source](#open-source)
+- [Download](#download)
+- [Installation](#installation)
+- [Privacy](#privacy)
+- [Contributing](#contributing)
+- [License](#license)
+- [Developer](#developer)
+
+---
+
+## Why OPM?
+
+OPM was created to provide a pristine, uninterrupted listening environment. Whether you are caching tracks for offline commutes, admiring perfectly synced word-by-word lyrics, or customizing your player's glow, OPM offers a flagship-tier experience built entirely on absolute trust and transparency.
 
 ---
 
@@ -66,29 +56,29 @@ OPM delivers a seamless, premium listening experience by leveraging YouTube Musi
     <tr>
       <td align="center" style="padding: 10px; border: none;">
         <strong>Home Screen</strong><br><br>
-        <img src="Screenshots/sc_1.png" alt="Home Screen" width="200" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
+        <img src="IMAGE 2026-06-27 23/46/27.jpg" alt="Home Screen" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
       </td>
       <td align="center" style="padding: 10px; border: none;">
         <strong>Music Player</strong><br><br>
-        <img src="Screenshots/sc_2.png" alt="Music Player" width="200" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
+        <img src="IMAGE 2026-06-27 21/14/59.jpg" alt="Music Player" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
       </td>
       <td align="center" style="padding: 10px; border: none;">
         <strong>Synchronized Lyrics</strong><br><br>
-        <img src="Screenshots/sc_3.png" alt="Synchronized Lyrics" width="200" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
+        <img src="Screenshots/sc_3.png" alt="Synchronized Lyrics" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
       </td>
     </tr>
     <tr>
       <td align="center" style="padding: 10px; border: none;">
         <strong>Search & Explore</strong><br><br>
-        <img src="Screenshots/sc_4.png" alt="Search & Explore" width="200" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
+        <img src="Screenshots/sc_4.png" alt="Search & Explore" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
       </td>
       <td align="center" style="padding: 10px; border: none;">
         <strong>Music Library</strong><br><br>
-        <img src="Screenshots/sc_5.png" alt="Music Library" width="200" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
+        <img src="Screenshots/sc_5.png" alt="Music Library" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
       </td>
       <td align="center" style="padding: 10px; border: none;">
-        <strong>OPM Find (Recognition)</strong><br><br>
-        <img src="Screenshots/sc_6.png" alt="OPM Find" width="200" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
+        <strong>OPM Find</strong><br><br>
+        <img src="Screenshots/sc_6.png" alt="OPM Find" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
       </td>
     </tr>
   </table>
@@ -98,156 +88,103 @@ OPM delivers a seamless, premium listening experience by leveraging YouTube Musi
 
 ## Features
 
-### What's New
-- **Redesigned UI** — Cleaner, faster, and more intuitive interface from the ground up.
-- **Import from Spotify** — Bring your playlists and tracks over with ease.
-- **Listen Together** — Sync music in real time, similar to Spotify Jam.
-- **Podcast Support** — Listen to podcasts alongside your music library.
-- **Local Media Support** — Play music files stored directly on your device.
-- **Dynamic Island Support** — Enhanced playback notifications on supported Android devices.
-
-### Streaming & Playback
-- **Ad-Free** — Stream without any interruptions.
-- **Seamless Playback** — Switch effortlessly between audio-only and video modes.
-- **Background Playback** — Listen while using other apps or with the screen off.
-- **Offline Mode** — Download tracks, albums, and playlists via a dedicated download manager.
-- **Crossfade** — Smooth transitions between tracks.
-- **Canvas Animations** — Visual animations while playing music.
-
-### Discovery & OPM Find
-- **OPM Find** — Identify songs playing around you using advanced audio recognition.
-- **OPM Brain** — An intelligent, on-device engine that analyzes your listening momentum and auto-injects perfectly aligned tracks into your queue. Read more in the [OPM Brain Documentation](OPM_BRAIN_DOCS.md).
-- **Smart Recommendations** — Personalized suggestions based on your listening history.
-- **Comprehensive Browsing** — Explore Charts, Podcasts, Moods, and Genres.
+### Music
+- **Ad-Free Streaming:** Listen to millions of tracks without a single interruption.
+- **Background Playback:** Keep the music going with the screen off or while using other apps.
+- **Offline Downloads:** Cache your favorite albums and playlists for zero-buffering offline playback.
+- **Audio & Video Playback:** Seamlessly switch between audio-only streams and music videos.
+- **Queue Management:** Intelligent queues, crossfade transitions, and easy playlist curation.
 
 ### Lyrics
-- **Multiple Lyric Animations** — Choose from various lyric display styles.
-- **Word-by-Word Lyrics** — Precise per-word synchronization.
-- **Lyrics+** — New lyrics provider for improved accuracy and coverage.
-- **AI Translation** — Built-in Google Translate integration for lyrics in any language.
+- **Synced Lyrics:** Real-time lyric tracking so you never miss a beat.
+- **Word-by-Word Lyrics:** Immersive, karaoke-style word highlighting.
+- **Multiple Providers:** Reliable lyrics sourced automatically from various high-quality providers.
 
-### Integrations
-- **Music Sharing via Odesli** — Share songs as Song.link for cross-platform listening.
-- **Set as Ringtone** — Directly set any song as your device ringtone.
+### Personalization
+- **Themes:** Gorgeous Dark and Light modes designed for AMOLED and IPS displays.
+- **Material Design:** A highly polished UI respecting modern Android design language.
+- **Dynamic Colors:** Interface elements adapt to match the album artwork of your currently playing song.
+- **UI Customization:** Adjust player backgrounds, density scales, and layouts to fit your aesthetic.
 
-### Smart Playback
-- **Pause on Mute** — Auto-pause when your device is muted.
-- **Resume on Bluetooth** — Playback resumes when headphones or earbuds reconnect.
+### Performance
+- **Jetpack Compose:** Built with a fully modern UI toolkit for exceptional responsiveness.
+- **Smooth Animations:** Fluid transitions, fluid navigation, and micro-interactions throughout the app.
+- **Optimized Performance:** Lightweight architecture ensuring minimal battery drain and lightning-fast loading.
 
-### Customization
-- **UI Density Scale** — Adjust interface spacing to your preference.
-- **High Refresh Rate Support** — Smoother UI and animations on supported displays.
-- **Hide Player Thumbnail** — Keep the player minimal without album art.
-- **Crop Album Art** — Adjust album art display to fit your style.
-- **Hide Video Songs** — Filter out video content from your feed.
-- **Hide YouTube Shorts** — Keep Shorts out of your music browsing.
+### Open Source
+- **GPL-3.0:** Truly free and open software.
+- **Community Driven:** Evolving continuously based on user feedback and community pull requests.
+- **Transparent Development:** No hidden analytics, telemetry, or shady background processes.
 
 ---
 
-## Installation & Setup
+## Download
 
-### Android Installation
+Get the latest version of OPM directly from our official release channels.
 
-Download the latest pre-compiled APK from the [Releases Page](https://github.com/sauravthakurq/OPM/releases/latest).
+- **[Latest Release](https://github.com/sauravthakurq/opm/releases/latest)**
+- **[APK Download](https://github.com/sauravthakurq/opm/releases/latest/download/opm.apk)**
+- **[All GitHub Releases](https://github.com/sauravthakurq/opm/releases)**
+
+---
+
+## Installation
+
+### Download APK
+1. Download the latest `opm.apk` from the [Releases Page](https://github.com/sauravthakurq/opm/releases/latest).
+2. Tap on the downloaded file to install.
+3. If prompted, allow installations from unknown sources in your Android settings.
 
 ### Building from Source
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/sauravthakurq/OPM.git
-   cd Echo-Music
-   ```
+To compile the app yourself, follow these standard steps:
 
-2. **Configure Android SDK**
-   Create a `local.properties` file:
-   ```bash
-   echo "sdk.dir=/path/to/your/android/sdk" > local.properties
-   ```
-   *(For detailed paths on Windows/macOS/Linux, refer to [SETUP.md](SETUP.md))*
+```bash
+# Clone the repository
+git clone https://github.com/sauravthakurq/opm.git
 
-3. **Firebase Configuration (Optional)**
-   Firebase is required for analytics and crash reporting. See the instructions in [SETUP.md](SETUP.md#3-configure-firebase-optional) for adding your `google-services.json`.
+# Enter the project directory
+cd opm
 
-4. **Build the Application**
-   OPM has two build variants: **FOSS** (without Google Play Services / Cast) and **GMS** (with Cast support).
-   
-   To build the FOSS Universal Debug variant:
-   ```bash
-   ./gradlew assembleUniversalFossDebug
-   ```
-   To build the GMS Universal Debug variant:
-   ```bash
-   ./gradlew assembleUniversalGmsDebug
-   ```
-   *(For optimized ARM64 builds, release builds, or other options, refer to [SETUP.md](SETUP.md))*
+# Build the debug variant
+./gradlew assembleUniversalGmsDebug
+```
 
 ---
 
-## Community & Support
+## Privacy
 
-Join the community for updates, discussions, and help.
-
-<div align="center">
-  <a href="https://x.com/sauravthakurq">
-    <img src="assets/discord.png" alt="Discord Logo" width="140"/>
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://t.me/OPMApp">
-    <img src="assets/github.png" alt="GitHub Logo" width="130"/>
-  </a>
-</div>
+Your data is yours. OPM is built on absolute privacy and trust:
+- **No Tracking:** Zero analytics trackers, zero telemetry, and zero user profiling.
+- **No Ads:** Completely ad-free experience, forever.
+- **Open Source:** Every line of code is public and auditable by anyone.
+- **Privacy First:** We only connect directly to music APIs—no middleman servers.
 
 ---
 
-## Support the Project
+## License
 
-If OPM has been useful to you, consider supporting its development.
-
-<div align="center">
-  <a href="https://github.com/sauravthakurq">
-    <img src="assets/bmac.png" alt="Buy Me A Coffee Logo" width="140"/>
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://intradeus.github.io/http-protocol-redirector/?r=upi://pay?pa=sauravthakur6310@okaxis&pn=Saurav%20Thakur&am=&tn=Thank%20You">
-    <img src="assets/upi.svg" alt="UPI Logo" width="100"/>
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/sauravthakurq">
-    <img src="assets/patreon3.png" alt="Patreon Logo" width="100"/>
-  </a>
-</div>
-
-### Cryptocurrency
-
-| Network | Address |
-| :--- | :--- |
-| Bitcoin | `bc1qcvyr7eekha8uytmffcvgzf4h7xy7shqzke35fy` |
-| Ethereum | `0x51bc91022E2dCef9974D5db2A0e22d57B360e700` |
-| Solana | `9wjca3EQnEiqzqgy7N5iqS1JGXJiknMQv6zHgL96t94S` |
+This project is proudly licensed under the [GPL-3.0 License](LICENSE). This guarantees that OPM remains free, open-source software, and any derivative works must also be open and free.
 
 ---
 
-## Special Thanks
+## Contributing
 
-OPM stands on the shoulders of several excellent open-source projects. Sincere thanks to:
-
-| Project | Description |
-| :--- | :--- |
-| [Metrolist](https://github.com/MetrolistGroup/Metrolist) & [Vivi Music](https://github.com/vivizzz007/vivi-music) | Foundational inspiration and architecture reference |
-| [ArchiveTune](https://github.com/koiverse/ArchiveTune) | Material You UI inspiration |
-| [Better Lyrics](https://better-lyrics.boidu.dev/) | Lyrics enhancement and synchronization |
-| [SimpMusic](https://github.com/maxrave-dev/SimpMusic) | Lyrics implementation reference |
-| [Music Recognizer](https://github.com/aleksey-saenko/MusicRecognizer) | Audio recognition (OPM Find) |
-| [Flow](https://github.com/a-edev/Flow) | AI queue generation engine (OPM Brain) |
+We welcome developers, designers, and music lovers to help make OPM even better. Feel free to open issues, submit pull requests, or translate the app. Dive into our source code and join the movement!
 
 ---
 
-## Star History
+## Developer
 
-[![Star History Chart](https://api.star-history.com/svg?repos=OPMApp/Echo-Music&type=timeline&legend=top-left)](https://www.star-history.com/#OPMApp/Echo-Music&type=timeline&legend=top-left)
+**Saurav Thakur**
+- **GitHub:** [sauravthakurq](https://github.com/sauravthakurq)
+- **LinkedIn:** [Saurav Thakur](https://linkedin.com/in/sauravthakurq)
+- **Email:** [sauravthakur6310@gmail.com](mailto:sauravthakur6310@gmail.com)
 
 ---
 
 <div align="center">
-  Licensed under <a href="LICENSE">GPL-3.0</a>
+  <p>Built with ❤️ for music lovers.</p>
+  <p>Designed & Developed by <strong>Saurav Thakur</strong></p>
+  <p>Licensed under GPL-3.0</p>
 </div>
