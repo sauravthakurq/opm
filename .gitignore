@@ -205,6 +205,8 @@ build_and_sign_apk.sh
 
 # Keystore directory
 keystore/
+app/keystore/
+persistent-debug.keystore
 
 # Firebase implementation summaries (may contain sensitive info)
 *IMPLEMENTATION_SUMMARY.md

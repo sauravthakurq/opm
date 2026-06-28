@@ -109,23 +109,18 @@ android {
     }
 
     signingConfigs {
-        create("persistentDebug") {
-            storeFile = file("persistent-debug.keystore")
-            storePassword = "android"
-            keyAlias = "androiddebugkey"
-            keyPassword = "android"
-        }
         create("release") {
-            storeFile = file("keystore/release.keystore")
-            storePassword = System.getenv("STORE_PASSWORD")
-            keyAlias = System.getenv("KEY_ALIAS")
-            keyPassword = System.getenv("KEY_PASSWORD")
-        }
-        getByName("debug") {
-            keyAlias = "androiddebugkey"
-            keyPassword = "android"
-            storePassword = "android"
-            storeFile = file("${System.getProperty("user.home")}/.android/debug.keystore")
+            val keystoreFile = file("keystore/release.keystore")
+            val sPassword = System.getenv("STORE_PASSWORD")
+            val kAlias = System.getenv("KEY_ALIAS")
+            val kPassword = System.getenv("KEY_PASSWORD")
+            
+            if (keystoreFile.exists() && !sPassword.isNullOrBlank() && !kAlias.isNullOrBlank() && !kPassword.isNullOrBlank()) {
+                storeFile = keystoreFile
+                storePassword = sPassword
+                keyAlias = kAlias
+                keyPassword = kPassword
+            }
         }
     }
 
@@ -135,7 +130,14 @@ android {
             isShrinkResources = true
             isCrunchPngs = false
             isDebuggable = false
-            signingConfig = signingConfigs.getByName("release")
+            
+            val keystoreFile = file("keystore/release.keystore")
+            if (keystoreFile.exists() && !System.getenv("STORE_PASSWORD").isNullOrBlank()) {
+                signingConfig = signingConfigs.getByName("release")
+            } else {
+                signingConfig = null
+            }
+            
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -145,7 +147,7 @@ android {
         debug {
             applicationIdSuffix = ".debug"
             isDebuggable = true
-            signingConfig = signingConfigs.getByName("debug")
+            // Removed manual debug signingConfig assignment so AGP uses its default debug keystore
             buildConfigField("String", "ARCHITECTURE", "\"debug\"")
         }
     }
