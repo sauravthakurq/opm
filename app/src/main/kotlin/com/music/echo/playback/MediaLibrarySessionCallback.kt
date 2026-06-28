@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.playback
+package sauravthakur.opm.playback
 
 import android.content.ContentResolver
 import android.content.Context
@@ -31,20 +31,20 @@ import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.filterExplicit
 import com.music.innertube.models.filterVideoSongs
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.HideExplicitKey
-import iad1tya.echo.music.constants.HideVideoSongsKey
-import iad1tya.echo.music.constants.MediaSessionConstants
-import iad1tya.echo.music.constants.SongSortType
-import iad1tya.echo.music.db.MusicDatabase
-import iad1tya.echo.music.db.entities.PlaylistEntity
-import iad1tya.echo.music.db.entities.Song
-import iad1tya.echo.music.extensions.toMediaItem
-import iad1tya.echo.music.extensions.toggleRepeatMode
-import iad1tya.echo.music.models.toMediaMetadata
-import iad1tya.echo.music.utils.dataStore
-import iad1tya.echo.music.utils.get
-import iad1tya.echo.music.utils.reportException
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.HideExplicitKey
+import sauravthakur.opm.constants.HideVideoSongsKey
+import sauravthakur.opm.constants.MediaSessionConstants
+import sauravthakur.opm.constants.SongSortType
+import sauravthakur.opm.db.MusicDatabase
+import sauravthakur.opm.db.entities.PlaylistEntity
+import sauravthakur.opm.db.entities.Song
+import sauravthakur.opm.extensions.toMediaItem
+import sauravthakur.opm.extensions.toggleRepeatMode
+import sauravthakur.opm.models.toMediaMetadata
+import sauravthakur.opm.utils.dataStore
+import sauravthakur.opm.utils.get
+import sauravthakur.opm.utils.reportException
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -798,7 +798,7 @@ constructor(
         singleItemStyle = MediaConstants.EXTRAS_VALUE_CONTENT_STYLE_CATEGORY_LIST_ITEM,
     )
 
-    private fun iad1tya.echo.music.db.entities.Playlist.toBrowsableMediaItem() = browsableMediaItem(
+    private fun sauravthakur.opm.db.entities.Playlist.toBrowsableMediaItem() = browsableMediaItem(
         "${MusicService.PLAYLIST}/$id",
         playlist.name,
         context.resources.getQuantityString(

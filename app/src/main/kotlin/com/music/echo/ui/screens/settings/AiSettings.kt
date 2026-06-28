@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.settings
+package sauravthakur.opm.ui.screens.settings
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -32,22 +32,22 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.AiProviderKey
-import iad1tya.echo.music.constants.DeeplApiKey
-import iad1tya.echo.music.constants.DeeplFormalityKey
-import iad1tya.echo.music.constants.LanguageCodeToName
-import iad1tya.echo.music.constants.OpenRouterApiKey
-import iad1tya.echo.music.constants.OpenRouterBaseUrlKey
-import iad1tya.echo.music.constants.OpenRouterModelKey
-import iad1tya.echo.music.constants.TranslateLanguageKey
-import iad1tya.echo.music.constants.TranslateModeKey
-import iad1tya.echo.music.ui.component.EnumDialog
-import iad1tya.echo.music.ui.component.Material3SettingsGroup
-import iad1tya.echo.music.ui.component.Material3SettingsItem
-import iad1tya.echo.music.ui.component.TextFieldDialog
-import iad1tya.echo.music.utils.rememberPreference
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.AiProviderKey
+import sauravthakur.opm.constants.DeeplApiKey
+import sauravthakur.opm.constants.DeeplFormalityKey
+import sauravthakur.opm.constants.LanguageCodeToName
+import sauravthakur.opm.constants.OpenRouterApiKey
+import sauravthakur.opm.constants.OpenRouterBaseUrlKey
+import sauravthakur.opm.constants.OpenRouterModelKey
+import sauravthakur.opm.constants.TranslateLanguageKey
+import sauravthakur.opm.constants.TranslateModeKey
+import sauravthakur.opm.ui.component.EnumDialog
+import sauravthakur.opm.ui.component.Material3SettingsGroup
+import sauravthakur.opm.ui.component.Material3SettingsItem
+import sauravthakur.opm.ui.component.TextFieldDialog
+import sauravthakur.opm.utils.rememberPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

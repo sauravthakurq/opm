@@ -1,18 +1,18 @@
 
 
-package iad1tya.echo.music.viewmodels
+package sauravthakur.opm.viewmodels
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import iad1tya.echo.music.db.MusicDatabase
-import iad1tya.echo.music.db.entities.LyricsEntity
-import iad1tya.echo.music.db.entities.Song
-import iad1tya.echo.music.lyrics.LyricsHelper
-import iad1tya.echo.music.lyrics.LyricsResult
-import iad1tya.echo.music.models.MediaMetadata
-import iad1tya.echo.music.utils.NetworkConnectivityObserver
+import sauravthakur.opm.db.MusicDatabase
+import sauravthakur.opm.db.entities.LyricsEntity
+import sauravthakur.opm.db.entities.Song
+import sauravthakur.opm.lyrics.LyricsHelper
+import sauravthakur.opm.lyrics.LyricsResult
+import sauravthakur.opm.models.MediaMetadata
+import sauravthakur.opm.utils.NetworkConnectivityObserver
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

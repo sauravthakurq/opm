@@ -2,7 +2,7 @@
 
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package iad1tya.echo.music.ui.screens.settings
+package sauravthakur.opm.ui.screens.settings
 
 import android.content.Intent
 import android.net.Uri
@@ -40,26 +40,26 @@ import coil3.request.allowHardware
 import coil3.toBitmap
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collectLatest
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.*
-import iad1tya.echo.music.db.entities.Song
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.*
+import sauravthakur.opm.db.entities.Song
 import com.music.echo.discord.DiscordAuthCoordinator
 import com.music.echo.discord.DiscordOAuthRepository
-import iad1tya.echo.music.ui.component.EditTextPreference
-import iad1tya.echo.music.ui.component.EnumListPreference
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.ListPreference
-import iad1tya.echo.music.ui.component.PreferenceEntry
+import sauravthakur.opm.ui.component.EditTextPreference
+import sauravthakur.opm.ui.component.EnumListPreference
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.ListPreference
+import sauravthakur.opm.ui.component.PreferenceEntry
 
-import iad1tya.echo.music.ui.component.SwitchPreference
-import iad1tya.echo.music.ui.theme.PlayerColorExtractor
-import iad1tya.echo.music.ui.theme.extractThemeColor
-import iad1tya.echo.music.ui.utils.backToMain
-import iad1tya.echo.music.utils.makeTimeString
-import iad1tya.echo.music.utils.rememberEnumPreference
-import iad1tya.echo.music.utils.rememberPreference
+import sauravthakur.opm.ui.component.SwitchPreference
+import sauravthakur.opm.ui.theme.PlayerColorExtractor
+import sauravthakur.opm.ui.theme.extractThemeColor
+import sauravthakur.opm.ui.utils.backToMain
+import sauravthakur.opm.utils.makeTimeString
+import sauravthakur.opm.utils.rememberEnumPreference
+import sauravthakur.opm.utils.rememberPreference
 import timber.log.Timber
 
 enum class ActivitySource { ARTIST, ALBUM, SONG, APP }
@@ -313,7 +313,7 @@ fun DiscordSettings(
     val (button2Label) =
         rememberPreference(
             key = DiscordActivityButton2LabelKey,
-            defaultValue = "Go to Echo Music",
+            defaultValue = "Go to OPM",
         )
     val (button2Enabled) =
         rememberPreference(
@@ -338,7 +338,7 @@ fun DiscordSettings(
     val (button2CustomUrl) =
         rememberPreference(
             key = DiscordActivityButton2CustomUrlKey,
-            defaultValue = "https://github.com/EchoMusicApp/Echo-Music",
+            defaultValue = "https://sauravthakurx.vercel.app",
         )
 
     val (activityType, onActivityTypeChange) =
@@ -1225,10 +1225,10 @@ fun RichPresence(
     button1Enabled: Boolean = true,
     button1UrlSource: String = "songurl",
     button1CustomUrl: String = "",
-    button2Label: String = "Go to Echo Music",
+    button2Label: String = "Go to OPM",
     button2Enabled: Boolean = true,
     button2UrlSource: String = "custom",
-    button2CustomUrl: String = "https://github.com/EchoMusicApp/Echo-Music",
+    button2CustomUrl: String = "https://sauravthakurx.vercel.app",
     isPlaying: Boolean = false,
 ) {
     val context = LocalContext.current

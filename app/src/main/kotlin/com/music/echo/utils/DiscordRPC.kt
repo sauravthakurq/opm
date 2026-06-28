@@ -1,33 +1,33 @@
 
 
-package iad1tya.echo.music.utils
+package sauravthakur.opm.utils
 
 import android.content.Context
-import iad1tya.echo.music.BuildConfig
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.DiscordActivityButton1CustomUrlKey
-import iad1tya.echo.music.constants.DiscordActivityButton1EnabledKey
-import iad1tya.echo.music.constants.DiscordActivityButton1LabelKey
-import iad1tya.echo.music.constants.DiscordActivityButton1UrlSourceKey
-import iad1tya.echo.music.constants.DiscordActivityButton2CustomUrlKey
-import iad1tya.echo.music.constants.DiscordActivityButton2EnabledKey
-import iad1tya.echo.music.constants.DiscordActivityButton2LabelKey
-import iad1tya.echo.music.constants.DiscordActivityButton2UrlSourceKey
-import iad1tya.echo.music.constants.DiscordActivityDetailsKey
-import iad1tya.echo.music.constants.DiscordActivityNameKey
-import iad1tya.echo.music.constants.DiscordActivityPlatformKey
-import iad1tya.echo.music.constants.DiscordActivityStateKey
-import iad1tya.echo.music.constants.DiscordActivityTypeKey
-import iad1tya.echo.music.constants.DiscordLargeImageCustomUrlKey
-import iad1tya.echo.music.constants.DiscordLargeImageTypeKey
-import iad1tya.echo.music.constants.DiscordLargeTextCustomKey
-import iad1tya.echo.music.constants.DiscordLargeTextSourceKey
-import iad1tya.echo.music.constants.DiscordPresenceStatusKey
-import iad1tya.echo.music.constants.DiscordShowWhenPausedKey
-import iad1tya.echo.music.constants.DiscordSmallImageCustomUrlKey
-import iad1tya.echo.music.constants.DiscordSmallImageTypeKey
-import iad1tya.echo.music.constants.DiscordSmallImageTypeKey
-import iad1tya.echo.music.db.entities.Song
+import sauravthakur.opm.BuildConfig
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.DiscordActivityButton1CustomUrlKey
+import sauravthakur.opm.constants.DiscordActivityButton1EnabledKey
+import sauravthakur.opm.constants.DiscordActivityButton1LabelKey
+import sauravthakur.opm.constants.DiscordActivityButton1UrlSourceKey
+import sauravthakur.opm.constants.DiscordActivityButton2CustomUrlKey
+import sauravthakur.opm.constants.DiscordActivityButton2EnabledKey
+import sauravthakur.opm.constants.DiscordActivityButton2LabelKey
+import sauravthakur.opm.constants.DiscordActivityButton2UrlSourceKey
+import sauravthakur.opm.constants.DiscordActivityDetailsKey
+import sauravthakur.opm.constants.DiscordActivityNameKey
+import sauravthakur.opm.constants.DiscordActivityPlatformKey
+import sauravthakur.opm.constants.DiscordActivityStateKey
+import sauravthakur.opm.constants.DiscordActivityTypeKey
+import sauravthakur.opm.constants.DiscordLargeImageCustomUrlKey
+import sauravthakur.opm.constants.DiscordLargeImageTypeKey
+import sauravthakur.opm.constants.DiscordLargeTextCustomKey
+import sauravthakur.opm.constants.DiscordLargeTextSourceKey
+import sauravthakur.opm.constants.DiscordPresenceStatusKey
+import sauravthakur.opm.constants.DiscordShowWhenPausedKey
+import sauravthakur.opm.constants.DiscordSmallImageCustomUrlKey
+import sauravthakur.opm.constants.DiscordSmallImageTypeKey
+import sauravthakur.opm.constants.DiscordSmallImageTypeKey
+import sauravthakur.opm.db.entities.Song
 import com.music.echo.discord.DiscordActivityPlatform
 import com.music.echo.discord.DiscordActivityType
 import com.music.echo.discord.DiscordOnlineStatus
@@ -289,14 +289,14 @@ class DiscordRPC(
     private suspend fun resolveButtons(song: Song): List<DiscordPresenceButton> {
         val button1Label = context.dataStore[DiscordActivityButton1LabelKey] ?: "Listen on YouTube Music"
         val button1Enabled = context.dataStore[DiscordActivityButton1EnabledKey] ?: true
-        val button2Label = context.dataStore[DiscordActivityButton2LabelKey] ?: "Go to Echo Music"
+        val button2Label = context.dataStore[DiscordActivityButton2LabelKey] ?: "Go to OPM"
         val button2Enabled = context.dataStore[DiscordActivityButton2EnabledKey] ?: true
         val button1UrlSource = context.dataStore[DiscordActivityButton1UrlSourceKey] ?: "songurl"
         val button1CustomUrl = context.dataStore[DiscordActivityButton1CustomUrlKey] ?: ""
         val button2UrlSource = context.dataStore[DiscordActivityButton2UrlSourceKey] ?: "custom"
         val button2CustomUrl =
             context.dataStore[DiscordActivityButton2CustomUrlKey]
-                ?: "https://github.com/EchoMusicApp/Echo-Music"
+                ?: "https://github.com/OPMApp/OPM"
 
         return buildList {
             if (button1Enabled) {

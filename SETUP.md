@@ -1,6 +1,6 @@
 # Setup Instructions
 
-This document provides instructions for setting up the Echo Music project for development.
+This document provides instructions for setting up the OPM project for development.
 
 ## Prerequisites
 
@@ -14,7 +14,7 @@ This document provides instructions for setting up the Echo Music project for de
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/iad1tya/Echo-Music.git
+git clone https://github.com/sauravthakurq/OPM.git
 cd Echo-Music
 ```
 
@@ -96,7 +96,7 @@ Open the project in Android Studio or build from the command line.
 
 ### 6. Configure AI Translation (Optional)
 
-Echo Music supports AI-powered lyrics translation. You can configure this in **Settings -> AI Settings**.
+OPM supports AI-powered lyrics translation. You can configure this in **Settings -> AI Settings**.
 
 #### Option A: Using OpenRouter (Default)
 

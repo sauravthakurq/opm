@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.settings
+package sauravthakur.opm.ui.screens.settings
 
 import androidx.compose.foundation.layout.Column
 
@@ -29,28 +29,28 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.LyricsRomanizeAsMainKey
-import iad1tya.echo.music.constants.LyricsRomanizeBelarusianKey
-import iad1tya.echo.music.constants.LyricsRomanizeBulgarianKey
-import iad1tya.echo.music.constants.LyricsRomanizeChineseKey
-import iad1tya.echo.music.constants.LyricsRomanizeHindiKey
-import iad1tya.echo.music.constants.LyricsRomanizePunjabiKey
-import iad1tya.echo.music.constants.LyricsRomanizeCyrillicByLineKey
-import iad1tya.echo.music.constants.LyricsRomanizeJapaneseKey
-import iad1tya.echo.music.constants.LyricsRomanizeKoreanKey
-import iad1tya.echo.music.constants.LyricsRomanizeKyrgyzKey
-import iad1tya.echo.music.constants.LyricsRomanizeMacedonianKey
-import iad1tya.echo.music.constants.LyricsRomanizeRussianKey
-import iad1tya.echo.music.constants.LyricsRomanizeSerbianKey
-import iad1tya.echo.music.constants.LyricsRomanizeUkrainianKey
-import iad1tya.echo.music.ui.component.ActionPromptDialog
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.Material3SettingsGroup
-import iad1tya.echo.music.ui.component.Material3SettingsItem
-import iad1tya.echo.music.ui.utils.backToMain
-import iad1tya.echo.music.utils.rememberPreference
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.LyricsRomanizeAsMainKey
+import sauravthakur.opm.constants.LyricsRomanizeBelarusianKey
+import sauravthakur.opm.constants.LyricsRomanizeBulgarianKey
+import sauravthakur.opm.constants.LyricsRomanizeChineseKey
+import sauravthakur.opm.constants.LyricsRomanizeHindiKey
+import sauravthakur.opm.constants.LyricsRomanizePunjabiKey
+import sauravthakur.opm.constants.LyricsRomanizeCyrillicByLineKey
+import sauravthakur.opm.constants.LyricsRomanizeJapaneseKey
+import sauravthakur.opm.constants.LyricsRomanizeKoreanKey
+import sauravthakur.opm.constants.LyricsRomanizeKyrgyzKey
+import sauravthakur.opm.constants.LyricsRomanizeMacedonianKey
+import sauravthakur.opm.constants.LyricsRomanizeRussianKey
+import sauravthakur.opm.constants.LyricsRomanizeSerbianKey
+import sauravthakur.opm.constants.LyricsRomanizeUkrainianKey
+import sauravthakur.opm.ui.component.ActionPromptDialog
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.Material3SettingsGroup
+import sauravthakur.opm.ui.component.Material3SettingsItem
+import sauravthakur.opm.ui.utils.backToMain
+import sauravthakur.opm.utils.rememberPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

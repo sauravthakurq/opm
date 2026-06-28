@@ -1,4 +1,4 @@
-package iad1tya.echo.music.ui.component
+package sauravthakur.opm.ui.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -26,8 +26,8 @@ import androidx.compose.ui.unit.dp
 import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.YTItem
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.ThumbnailCornerRadius
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.ThumbnailCornerRadius
 
 @Composable
 fun SpeedDialGridItem(

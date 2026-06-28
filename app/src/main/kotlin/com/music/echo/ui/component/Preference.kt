@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.component
+package sauravthakur.opm.ui.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -39,7 +39,7 @@ import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import iad1tya.echo.music.R
+import sauravthakur.opm.R
 import kotlin.math.roundToInt
 
 @Composable

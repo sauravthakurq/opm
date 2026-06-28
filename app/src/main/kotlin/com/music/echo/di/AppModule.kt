@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.di
+package sauravthakur.opm.di
 
 import android.content.Context
 import androidx.media3.database.DatabaseProvider
@@ -9,13 +9,13 @@ import androidx.media3.datasource.cache.LeastRecentlyUsedCacheEvictor
 import androidx.media3.datasource.cache.NoOpCacheEvictor
 import androidx.media3.datasource.cache.SimpleCache
 import androidx.room.Room
-import iad1tya.echo.music.constants.MaxSongCacheSizeKey
-import iad1tya.echo.music.db.InternalDatabase
-import iad1tya.echo.music.db.MusicDatabase
-import iad1tya.echo.music.listentogether.ListenTogetherClient
-import iad1tya.echo.music.listentogether.ListenTogetherManager
-import iad1tya.echo.music.utils.dataStore
-import iad1tya.echo.music.utils.get
+import sauravthakur.opm.constants.MaxSongCacheSizeKey
+import sauravthakur.opm.db.InternalDatabase
+import sauravthakur.opm.db.MusicDatabase
+import sauravthakur.opm.listentogether.ListenTogetherClient
+import sauravthakur.opm.listentogether.ListenTogetherManager
+import sauravthakur.opm.utils.dataStore
+import sauravthakur.opm.utils.get
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -62,14 +62,14 @@ object AppModule {
     ): InternalDatabase = Room
         .databaseBuilder(context, InternalDatabase::class.java, InternalDatabase.DB_NAME)
         .addMigrations(
-            iad1tya.echo.music.db.MIGRATION_1_2,
-            iad1tya.echo.music.db.MIGRATION_21_24,
-            iad1tya.echo.music.db.MIGRATION_22_24,
-            iad1tya.echo.music.db.MIGRATION_24_25,
-            iad1tya.echo.music.db.MIGRATION_27_28,
-            iad1tya.echo.music.db.MIGRATION_36_37,
-            iad1tya.echo.music.db.MIGRATION_37_38,
-            iad1tya.echo.music.db.MIGRATION_38_39,
+            sauravthakur.opm.db.MIGRATION_1_2,
+            sauravthakur.opm.db.MIGRATION_21_24,
+            sauravthakur.opm.db.MIGRATION_22_24,
+            sauravthakur.opm.db.MIGRATION_24_25,
+            sauravthakur.opm.db.MIGRATION_27_28,
+            sauravthakur.opm.db.MIGRATION_36_37,
+            sauravthakur.opm.db.MIGRATION_37_38,
+            sauravthakur.opm.db.MIGRATION_38_39,
         )
 
         .setJournalMode(androidx.room.RoomDatabase.JournalMode.WRITE_AHEAD_LOGGING)

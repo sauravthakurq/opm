@@ -1,11 +1,11 @@
 
 
-package iad1tya.echo.music.viewmodels
+package sauravthakur.opm.viewmodels
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import iad1tya.echo.music.db.MusicDatabase
+import sauravthakur.opm.db.MusicDatabase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn

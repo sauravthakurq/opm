@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.echomusic.updater
+package sauravthakur.opm.echomusic.updater
 
 
 import android.content.Context
@@ -59,13 +59,13 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
 import androidx.work.workDataOf
-import iad1tya.echo.music.BuildConfig
-import iad1tya.echo.music.R
+import sauravthakur.opm.BuildConfig
+import sauravthakur.opm.R
 import coil3.compose.AsyncImage
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
-import iad1tya.echo.music.echomusic.updater.downloadmanager.UpdateDownloadWorker
-import iad1tya.echo.music.echomusic.updater.downloadmanager.DownloadNotificationManager
+import sauravthakur.opm.echomusic.updater.downloadmanager.UpdateDownloadWorker
+import sauravthakur.opm.echomusic.updater.downloadmanager.DownloadNotificationManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -77,17 +77,17 @@ import java.net.URL
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.regex.Pattern
-import iad1tya.echo.music.ui.component.ChangelogItem
-import iad1tya.echo.music.ui.component.leadingItemShape
-import iad1tya.echo.music.ui.component.middleItemShape
-import iad1tya.echo.music.ui.component.endItemShape
-import iad1tya.echo.music.ui.component.detachedItemShape
-import iad1tya.echo.music.ui.component.parseMarkdown
-import iad1tya.echo.music.ui.component.endItemShape
-import iad1tya.echo.music.ui.component.detachedItemShape
-import iad1tya.echo.music.ui.component.AnimatedActionButton
-import iad1tya.echo.music.ui.component.ExpressiveIconButton
-import iad1tya.echo.music.ui.component.ErrorSnackbar
+import sauravthakur.opm.ui.component.ChangelogItem
+import sauravthakur.opm.ui.component.leadingItemShape
+import sauravthakur.opm.ui.component.middleItemShape
+import sauravthakur.opm.ui.component.endItemShape
+import sauravthakur.opm.ui.component.detachedItemShape
+import sauravthakur.opm.ui.component.parseMarkdown
+import sauravthakur.opm.ui.component.endItemShape
+import sauravthakur.opm.ui.component.detachedItemShape
+import sauravthakur.opm.ui.component.AnimatedActionButton
+import sauravthakur.opm.ui.component.ExpressiveIconButton
+import sauravthakur.opm.ui.component.ErrorSnackbar
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -335,7 +335,7 @@ fun UpdateScreen(navController: NavHostController) {
                                                 ContextCompat.startActivity(context, installIntent, null)
                                             }
                                         } else {
-                                            val urlToDownload = currentStatus.apkUrl ?: "https://github.com/EchoMusicApp/Echo-Music/releases/download/${currentStatus.version}/echomusic.apk"
+                                            val urlToDownload = currentStatus.apkUrl ?: "https://github.com/OPMApp/OPM/releases/download/${currentStatus.version}/opm.apk"
                                             
                                             val constraints = Constraints.Builder()
                                                 .setRequiredNetworkType(NetworkType.CONNECTED)
@@ -662,7 +662,7 @@ suspend fun checkForUpdate(
 ) {
     withContext(Dispatchers.IO) {
         try {
-            val url = URL("https://api.github.com/repos/EchoMusicApp/Echo-Music/releases/latest")
+            val url = URL("https://api.github.com/repos/OPMApp/OPM/releases/latest")
             val json = url.openStream().bufferedReader().use { it.readText() }
             val targetRelease = JSONObject(json)
             
@@ -682,7 +682,7 @@ suspend fun checkForUpdate(
                 var imageUrl: String? = null
                 try {
                     val changelogUrl =
-                        URL("https://github.com/EchoMusicApp/Echo-Music/releases/download/$tagWithPrefix/changelog.json")
+                        URL("https://github.com/OPMApp/OPM/releases/download/$tagWithPrefix/changelog.json")
                     val changelogJson = changelogUrl.openStream().bufferedReader().use { it.readText() }
                     val changelogData = JSONObject(changelogJson)
 

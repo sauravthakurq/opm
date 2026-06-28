@@ -1,29 +1,29 @@
 <div align="center">
-  <img src="assets/Echo-new.png" alt="Echo Music Logo" width="140"/>
+  <img src="assets/Echo-new.png" alt="OPM Logo" width="140"/>
 
-  <h1>Echo Music</h1>
+  <h1>OPM</h1>
 
   <p><strong>A modern Android music app with ad-free streaming, synced lyrics, offline playback, and an intuitive user experience.
 </strong></p>
 
-  [![GitHub Release](https://img.shields.io/github/v/release/iad1tya/Echo-Music?style=for-the-badge&color=6f42c1)](https://github.com/iad1tya/Echo-Music/releases)
-  [![GitHub Stars](https://img.shields.io/github/stars/iad1tya/Echo-Music?style=for-the-badge&color=e3b341)](https://github.com/iad1tya/Echo-Music/stargazers)
-  [![License](https://img.shields.io/github/license/iad1tya/Echo-Music?style=for-the-badge&color=28a745)](LICENSE)
-  [![Telegram](https://img.shields.io/badge/Telegram-Join-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/EchoMusicApp)
-  [![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/EcfV3AxH5c)
+  [![GitHub Release](https://img.shields.io/github/v/release/sauravthakurq/OPM?style=for-the-badge&color=6f42c1)](https://github.com/sauravthakurq/OPM/releases)
+  [![GitHub Stars](https://img.shields.io/github/stars/sauravthakurq/OPM?style=for-the-badge&color=e3b341)](https://github.com/sauravthakurq/OPM/stargazers)
+  [![License](https://img.shields.io/github/license/sauravthakurq/OPM?style=for-the-badge&color=28a745)](LICENSE)
+  [![X](https://img.shields.io/badge/X-Follow-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/sauravthakurq)
+  [![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://x.com/sauravthakurq)
 
   
   <a href="https://trendshift.io/repositories/20485" target="_blank">
-    <img src="https://trendshift.io/api/badge/repositories/20485" alt="EchoMusicApp%2FEcho-Music | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>
+    <img src="https://trendshift.io/api/badge/repositories/20485" alt="OPMApp%2FEcho-Music | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>
   </a>
 
   <br>
 
-  <a href="https://echomusic.fun/download">
+  <a href="https://github.com/sauravthakurq/OPM/releases">
     <img src="assets/download.png" alt="Download" width="180"/>
   </a>
   &nbsp;
-  <a href="https://echomusic.fun/obtainium">
+  <a href="https://github.com/sauravthakurq/OPM">
     <img src="assets/obtainium.png" alt="Get it on Obtainium" width="180"/>
   </a>
 </div>
@@ -32,7 +32,7 @@
 
 ## Overview
 
-Echo Music delivers a seamless, premium listening experience by leveraging YouTube Music's vast library — without the ads. It adds powerful extras including offline downloads, real-time synchronized lyrics, and environment-aware music recognition.
+OPM delivers a seamless, premium listening experience by leveraging YouTube Music's vast library — without the ads. It adds powerful extras including offline downloads, real-time synchronized lyrics, and environment-aware music recognition.
 
 ---
 
@@ -43,7 +43,7 @@ Echo Music delivers a seamless, premium listening experience by leveraging YouTu
 - [Features](#features)
   - [What's New](#whats-new)
   - [Streaming & Playback](#streaming--playback)
-  - [Discovery & Echo Find](#discovery--echo-find)
+  - [Discovery & OPM Find](#discovery--echo-find)
   - [Lyrics](#lyrics)
   - [Integrations](#integrations)
   - [Smart Playback](#smart-playback)
@@ -87,8 +87,8 @@ Echo Music delivers a seamless, premium listening experience by leveraging YouTu
         <img src="Screenshots/sc_5.png" alt="Music Library" width="200" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
       </td>
       <td align="center" style="padding: 10px; border: none;">
-        <strong>Echo Find (Recognition)</strong><br><br>
-        <img src="Screenshots/sc_6.png" alt="Echo Find" width="200" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
+        <strong>OPM Find (Recognition)</strong><br><br>
+        <img src="Screenshots/sc_6.png" alt="OPM Find" width="200" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
       </td>
     </tr>
   </table>
@@ -114,9 +114,9 @@ Echo Music delivers a seamless, premium listening experience by leveraging YouTu
 - **Crossfade** — Smooth transitions between tracks.
 - **Canvas Animations** — Visual animations while playing music.
 
-### Discovery & Echo Find
-- **Echo Find** — Identify songs playing around you using advanced audio recognition.
-- **Echo Brain** — An intelligent, on-device engine that analyzes your listening momentum and auto-injects perfectly aligned tracks into your queue. Read more in the [Echo Brain Documentation](ECHO_BRAIN_DOCS.md).
+### Discovery & OPM Find
+- **OPM Find** — Identify songs playing around you using advanced audio recognition.
+- **OPM Brain** — An intelligent, on-device engine that analyzes your listening momentum and auto-injects perfectly aligned tracks into your queue. Read more in the [OPM Brain Documentation](OPM_BRAIN_DOCS.md).
 - **Smart Recommendations** — Personalized suggestions based on your listening history.
 - **Comprehensive Browsing** — Explore Charts, Podcasts, Moods, and Genres.
 
@@ -148,13 +148,13 @@ Echo Music delivers a seamless, premium listening experience by leveraging YouTu
 
 ### Android Installation
 
-Download the latest pre-compiled APK from the [Releases Page](https://github.com/iad1tya/Echo-Music/releases/latest).
+Download the latest pre-compiled APK from the [Releases Page](https://github.com/sauravthakurq/OPM/releases/latest).
 
 ### Building from Source
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/iad1tya/Echo-Music.git
+   git clone https://github.com/sauravthakurq/OPM.git
    cd Echo-Music
    ```
 
@@ -169,7 +169,7 @@ Download the latest pre-compiled APK from the [Releases Page](https://github.com
    Firebase is required for analytics and crash reporting. See the instructions in [SETUP.md](SETUP.md#3-configure-firebase-optional) for adding your `google-services.json`.
 
 4. **Build the Application**
-   Echo Music has two build variants: **FOSS** (without Google Play Services / Cast) and **GMS** (with Cast support).
+   OPM has two build variants: **FOSS** (without Google Play Services / Cast) and **GMS** (with Cast support).
    
    To build the FOSS Universal Debug variant:
    ```bash
@@ -188,12 +188,12 @@ Download the latest pre-compiled APK from the [Releases Page](https://github.com
 Join the community for updates, discussions, and help.
 
 <div align="center">
-  <a href="https://discord.gg/EcfV3AxH5c">
+  <a href="https://x.com/sauravthakurq">
     <img src="assets/discord.png" alt="Discord Logo" width="140"/>
   </a>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://t.me/EchoMusicApp">
-    <img src="assets/telegram.png" alt="Telegram Logo" width="130"/>
+  <a href="https://t.me/OPMApp">
+    <img src="assets/github.png" alt="GitHub Logo" width="130"/>
   </a>
 </div>
 
@@ -201,18 +201,18 @@ Join the community for updates, discussions, and help.
 
 ## Support the Project
 
-If Echo Music has been useful to you, consider supporting its development.
+If OPM has been useful to you, consider supporting its development.
 
 <div align="center">
-  <a href="https://buymeacoffee.com/iad1tya">
+  <a href="https://github.com/sauravthakurq">
     <img src="assets/bmac.png" alt="Buy Me A Coffee Logo" width="140"/>
   </a>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://intradeus.github.io/http-protocol-redirector/?r=upi://pay?pa=iad1tya@upi&pn=Aditya%20Yadav&am=&tn=Thank%20You">
+  <a href="https://intradeus.github.io/http-protocol-redirector/?r=upi://pay?pa=sauravthakur6310@okaxis&pn=Saurav%20Thakur&am=&tn=Thank%20You">
     <img src="assets/upi.svg" alt="UPI Logo" width="100"/>
   </a>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://www.patreon.com/cw/iad1tya">
+  <a href="https://github.com/sauravthakurq">
     <img src="assets/patreon3.png" alt="Patreon Logo" width="100"/>
   </a>
 </div>
@@ -229,7 +229,7 @@ If Echo Music has been useful to you, consider supporting its development.
 
 ## Special Thanks
 
-Echo Music stands on the shoulders of several excellent open-source projects. Sincere thanks to:
+OPM stands on the shoulders of several excellent open-source projects. Sincere thanks to:
 
 | Project | Description |
 | :--- | :--- |
@@ -237,14 +237,14 @@ Echo Music stands on the shoulders of several excellent open-source projects. Si
 | [ArchiveTune](https://github.com/koiverse/ArchiveTune) | Material You UI inspiration |
 | [Better Lyrics](https://better-lyrics.boidu.dev/) | Lyrics enhancement and synchronization |
 | [SimpMusic](https://github.com/maxrave-dev/SimpMusic) | Lyrics implementation reference |
-| [Music Recognizer](https://github.com/aleksey-saenko/MusicRecognizer) | Audio recognition (Echo Find) |
-| [Flow](https://github.com/a-edev/Flow) | AI queue generation engine (Echo Brain) |
+| [Music Recognizer](https://github.com/aleksey-saenko/MusicRecognizer) | Audio recognition (OPM Find) |
+| [Flow](https://github.com/a-edev/Flow) | AI queue generation engine (OPM Brain) |
 
 ---
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=EchoMusicApp/Echo-Music&type=timeline&legend=top-left)](https://www.star-history.com/#EchoMusicApp/Echo-Music&type=timeline&legend=top-left)
+[![Star History Chart](https://api.star-history.com/svg?repos=OPMApp/Echo-Music&type=timeline&legend=top-left)](https://www.star-history.com/#OPMApp/Echo-Music&type=timeline&legend=top-left)
 
 ---
 

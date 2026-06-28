@@ -1,9 +1,9 @@
-package iad1tya.echo.music.utils.cipher
+package sauravthakur.opm.utils.cipher
 
 import timber.log.Timber
 
 object FunctionNameExtractor {
-    private const val TAG = "echomusic_CipherFnExtract"
+    private const val TAG = "opm_CipherFnExtract"
 
     
     

@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.library
+package sauravthakur.opm.ui.screens.library
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -91,27 +91,27 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.CONTENT_TYPE_HEADER
-import iad1tya.echo.music.constants.CONTENT_TYPE_SONG
-import iad1tya.echo.music.constants.LocalSongsExcludedFoldersKey
-import iad1tya.echo.music.constants.LocalSongsMinDurationSecondsKey
-import iad1tya.echo.music.constants.LocalSongsSortDescendingKey
-import iad1tya.echo.music.constants.LocalSongsSortTypeKey
-import iad1tya.echo.music.extensions.toMediaItem
-import iad1tya.echo.music.extensions.togglePlayPause
-import iad1tya.echo.music.localmedia.LocalSongScanConfig
-import iad1tya.echo.music.localmedia.SupportedLocalAudio
-import iad1tya.echo.music.playback.queues.ListQueue
-import iad1tya.echo.music.ui.component.LocalMenuState
-import iad1tya.echo.music.ui.component.SongListItem
-import iad1tya.echo.music.ui.component.SortHeader
-import iad1tya.echo.music.ui.menu.SongMenu
-import iad1tya.echo.music.utils.rememberPreference
-import iad1tya.echo.music.viewmodels.LocalSongsScanState
-import iad1tya.echo.music.viewmodels.LocalSongsViewModel
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.CONTENT_TYPE_HEADER
+import sauravthakur.opm.constants.CONTENT_TYPE_SONG
+import sauravthakur.opm.constants.LocalSongsExcludedFoldersKey
+import sauravthakur.opm.constants.LocalSongsMinDurationSecondsKey
+import sauravthakur.opm.constants.LocalSongsSortDescendingKey
+import sauravthakur.opm.constants.LocalSongsSortTypeKey
+import sauravthakur.opm.extensions.toMediaItem
+import sauravthakur.opm.extensions.togglePlayPause
+import sauravthakur.opm.localmedia.LocalSongScanConfig
+import sauravthakur.opm.localmedia.SupportedLocalAudio
+import sauravthakur.opm.playback.queues.ListQueue
+import sauravthakur.opm.ui.component.LocalMenuState
+import sauravthakur.opm.ui.component.SongListItem
+import sauravthakur.opm.ui.component.SortHeader
+import sauravthakur.opm.ui.menu.SongMenu
+import sauravthakur.opm.utils.rememberPreference
+import sauravthakur.opm.viewmodels.LocalSongsScanState
+import sauravthakur.opm.viewmodels.LocalSongsViewModel
 import java.text.Collator
 import java.time.LocalDateTime
 import java.util.Locale

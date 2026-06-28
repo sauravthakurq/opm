@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package iad1tya.echo.music.listentogether.proto;
+package sauravthakur.opm.listentogether.proto;
 
-option java_package = "iad1tya.echo.music.listentogether.proto";
+option java_package = "sauravthakur.opm.listentogether.proto";
 option java_multiple_files = false;
 option java_outer_classname = "Listentogether";
 

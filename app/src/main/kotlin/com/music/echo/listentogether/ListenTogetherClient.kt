@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.listentogether
+package sauravthakur.opm.listentogether
 
 import android.util.Base64
 import android.Manifest
@@ -18,17 +18,17 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.getSystemService
 import androidx.datastore.preferences.core.edit
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.ListenTogetherAutoApprovalKey
-import iad1tya.echo.music.constants.ListenTogetherIsHostKey
-import iad1tya.echo.music.constants.ListenTogetherRoomCodeKey
-import iad1tya.echo.music.constants.ListenTogetherServerUrlKey
-import iad1tya.echo.music.constants.ListenTogetherSessionTimestampKey
-import iad1tya.echo.music.constants.ListenTogetherSessionTokenKey
-import iad1tya.echo.music.constants.ListenTogetherUserIdKey
-import iad1tya.echo.music.utils.NetworkConnectivityObserver
-import iad1tya.echo.music.utils.dataStore
-import iad1tya.echo.music.utils.get
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.ListenTogetherAutoApprovalKey
+import sauravthakur.opm.constants.ListenTogetherIsHostKey
+import sauravthakur.opm.constants.ListenTogetherRoomCodeKey
+import sauravthakur.opm.constants.ListenTogetherServerUrlKey
+import sauravthakur.opm.constants.ListenTogetherSessionTimestampKey
+import sauravthakur.opm.constants.ListenTogetherSessionTokenKey
+import sauravthakur.opm.constants.ListenTogetherUserIdKey
+import sauravthakur.opm.utils.NetworkConnectivityObserver
+import sauravthakur.opm.utils.dataStore
+import sauravthakur.opm.utils.get
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -146,10 +146,10 @@ class ListenTogetherClient @Inject constructor(
 
         
         private const val NOTIFICATION_CHANNEL_ID = "listen_together_channel"
-        const val ACTION_APPROVE_JOIN = "iad1tya.echo.music.LISTEN_TOGETHER_APPROVE_JOIN"
-        const val ACTION_REJECT_JOIN = "iad1tya.echo.music.LISTEN_TOGETHER_REJECT_JOIN"
-        const val ACTION_APPROVE_SUGGESTION = "iad1tya.echo.music.LISTEN_TOGETHER_APPROVE_SUGGESTION"
-        const val ACTION_REJECT_SUGGESTION = "iad1tya.echo.music.LISTEN_TOGETHER_REJECT_SUGGESTION"
+        const val ACTION_APPROVE_JOIN = "sauravthakur.opm.LISTEN_TOGETHER_APPROVE_JOIN"
+        const val ACTION_REJECT_JOIN = "sauravthakur.opm.LISTEN_TOGETHER_REJECT_JOIN"
+        const val ACTION_APPROVE_SUGGESTION = "sauravthakur.opm.LISTEN_TOGETHER_APPROVE_SUGGESTION"
+        const val ACTION_REJECT_SUGGESTION = "sauravthakur.opm.LISTEN_TOGETHER_REJECT_SUGGESTION"
         const val EXTRA_USER_ID = "extra_user_id"
         const val EXTRA_SUGGESTION_ID = "extra_suggestion_id"
         const val EXTRA_NOTIFICATION_ID = "extra_notification_id"
@@ -278,7 +278,7 @@ class ListenTogetherClient @Inject constructor(
     
     private fun loadBlockedUsernames() {
         try {
-            val blockedJson = context.dataStore.get(iad1tya.echo.music.constants.ListenTogetherBlockedUsersKey, "")
+            val blockedJson = context.dataStore.get(sauravthakur.opm.constants.ListenTogetherBlockedUsersKey, "")
             val blockedList = if (blockedJson.isNotEmpty()) {
                 json.decodeFromString<List<String>>(blockedJson)
             } else {
@@ -296,7 +296,7 @@ class ListenTogetherClient @Inject constructor(
         try {
             val blockedJson = json.encodeToString(_blockedUsernames.value.toList())
             context.dataStore.edit { preferences ->
-                preferences[iad1tya.echo.music.constants.ListenTogetherBlockedUsersKey] = blockedJson
+                preferences[sauravthakur.opm.constants.ListenTogetherBlockedUsersKey] = blockedJson
             }
         } catch (e: Exception) {
             log(LogLevel.ERROR, "Failed to save blocked usernames", e.message)
@@ -549,7 +549,7 @@ class ListenTogetherClient @Inject constructor(
             val powerManager = context.getSystemService<PowerManager>()
             wakeLock = powerManager?.newWakeLock(
                 PowerManager.PARTIAL_WAKE_LOCK,
-                "echomusic:ListenTogether"
+                "opm:ListenTogether"
             )
         }
         if (wakeLock?.isHeld == false) {
@@ -609,7 +609,7 @@ class ListenTogetherClient @Inject constructor(
         val content = context.getString(R.string.listen_together_join_request_notification, payload.username)
 
         val builder = NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
-            .setSmallIcon(R.drawable.share)
+            .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle(context.getString(R.string.listen_together))
             .setContentText(content)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
@@ -646,7 +646,7 @@ class ListenTogetherClient @Inject constructor(
         val content = context.getString(R.string.listen_together_suggestion_received, payload.fromUsername, payload.trackInfo.title)
 
         val builder = NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
-            .setSmallIcon(R.drawable.share)
+            .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle(context.getString(R.string.listen_together))
             .setContentText(content)
             .setPriority(NotificationCompat.PRIORITY_HIGH)

@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.component
+package sauravthakur.opm.ui.component
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween

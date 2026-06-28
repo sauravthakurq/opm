@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.localmedia
+package sauravthakur.opm.localmedia
 
 import android.content.ContentUris
 import android.content.Context
@@ -10,16 +10,16 @@ import android.provider.MediaStore
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import iad1tya.echo.music.R
-import iad1tya.echo.music.db.MusicDatabase
-import iad1tya.echo.music.db.entities.AlbumArtistMap
-import iad1tya.echo.music.db.entities.AlbumEntity
-import iad1tya.echo.music.db.entities.ArtistEntity
-import iad1tya.echo.music.db.entities.FormatEntity
-import iad1tya.echo.music.db.entities.Song
-import iad1tya.echo.music.db.entities.SongAlbumMap
-import iad1tya.echo.music.db.entities.SongArtistMap
-import iad1tya.echo.music.db.entities.SongEntity
+import sauravthakur.opm.R
+import sauravthakur.opm.db.MusicDatabase
+import sauravthakur.opm.db.entities.AlbumArtistMap
+import sauravthakur.opm.db.entities.AlbumEntity
+import sauravthakur.opm.db.entities.ArtistEntity
+import sauravthakur.opm.db.entities.FormatEntity
+import sauravthakur.opm.db.entities.Song
+import sauravthakur.opm.db.entities.SongAlbumMap
+import sauravthakur.opm.db.entities.SongArtistMap
+import sauravthakur.opm.db.entities.SongEntity
 import java.nio.charset.StandardCharsets
 import java.time.Instant
 import java.time.LocalDateTime

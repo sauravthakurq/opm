@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.menu
+package sauravthakur.opm.ui.menu
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -10,7 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
-import iad1tya.echo.music.utils.listItemShape
+import sauravthakur.opm.utils.listItemShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -41,23 +41,23 @@ import kotlinx.coroutines.withContext
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.music.innertube.YouTube
 import com.music.innertube.utils.parseCookieString
-import iad1tya.echo.music.LocalDatabase
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.AddToPlaylistSortDescendingKey
-import iad1tya.echo.music.constants.AddToPlaylistSortTypeKey
-import iad1tya.echo.music.constants.InnerTubeCookieKey
-import iad1tya.echo.music.constants.ListThumbnailSize
-import iad1tya.echo.music.constants.PlaylistSortType
-import iad1tya.echo.music.db.entities.Playlist
-import iad1tya.echo.music.ui.component.CreatePlaylistDialog
-import iad1tya.echo.music.ui.component.DefaultDialog
-import iad1tya.echo.music.ui.component.ListDialog
-import iad1tya.echo.music.ui.component.ListItem
-import iad1tya.echo.music.ui.component.PlaylistListItem
-import iad1tya.echo.music.ui.component.SortHeader
-import iad1tya.echo.music.utils.rememberEnumPreference
-import iad1tya.echo.music.utils.rememberPreference
-import iad1tya.echo.music.viewmodels.PlaylistsViewModel
+import sauravthakur.opm.LocalDatabase
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.AddToPlaylistSortDescendingKey
+import sauravthakur.opm.constants.AddToPlaylistSortTypeKey
+import sauravthakur.opm.constants.InnerTubeCookieKey
+import sauravthakur.opm.constants.ListThumbnailSize
+import sauravthakur.opm.constants.PlaylistSortType
+import sauravthakur.opm.db.entities.Playlist
+import sauravthakur.opm.ui.component.CreatePlaylistDialog
+import sauravthakur.opm.ui.component.DefaultDialog
+import sauravthakur.opm.ui.component.ListDialog
+import sauravthakur.opm.ui.component.ListItem
+import sauravthakur.opm.ui.component.PlaylistListItem
+import sauravthakur.opm.ui.component.SortHeader
+import sauravthakur.opm.utils.rememberEnumPreference
+import sauravthakur.opm.utils.rememberPreference
+import sauravthakur.opm.viewmodels.PlaylistsViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

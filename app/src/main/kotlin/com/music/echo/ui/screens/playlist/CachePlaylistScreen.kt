@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.playlist
+package sauravthakur.opm.ui.screens.playlist
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -77,33 +77,33 @@ import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.HideExplicitKey
-import iad1tya.echo.music.constants.SongSortDescendingKey
-import iad1tya.echo.music.constants.SongSortType
-import iad1tya.echo.music.constants.SongSortTypeKey
-import iad1tya.echo.music.db.entities.Song
-import iad1tya.echo.music.extensions.toMediaItem
-import iad1tya.echo.music.playback.ExoDownloadService
-import iad1tya.echo.music.playback.queues.ListQueue
-import iad1tya.echo.music.ui.component.DraggableScrollbar
-import iad1tya.echo.music.ui.component.EmptyPlaceholder
-import iad1tya.echo.music.ui.component.ExpandableText
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.LocalMenuState
-import iad1tya.echo.music.ui.component.SongListItem
-import iad1tya.echo.music.ui.component.SortHeader
-import iad1tya.echo.music.ui.menu.CachePlaylistMenu
-import iad1tya.echo.music.ui.menu.SelectionSongMenu
-import iad1tya.echo.music.ui.menu.SongMenu
-import iad1tya.echo.music.ui.utils.backToMain
-import iad1tya.echo.music.utils.listItemShape
-import iad1tya.echo.music.utils.makeTimeString
-import iad1tya.echo.music.utils.rememberEnumPreference
-import iad1tya.echo.music.utils.rememberPreference
-import iad1tya.echo.music.viewmodels.CachePlaylistViewModel
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.HideExplicitKey
+import sauravthakur.opm.constants.SongSortDescendingKey
+import sauravthakur.opm.constants.SongSortType
+import sauravthakur.opm.constants.SongSortTypeKey
+import sauravthakur.opm.db.entities.Song
+import sauravthakur.opm.extensions.toMediaItem
+import sauravthakur.opm.playback.ExoDownloadService
+import sauravthakur.opm.playback.queues.ListQueue
+import sauravthakur.opm.ui.component.DraggableScrollbar
+import sauravthakur.opm.ui.component.EmptyPlaceholder
+import sauravthakur.opm.ui.component.ExpandableText
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.LocalMenuState
+import sauravthakur.opm.ui.component.SongListItem
+import sauravthakur.opm.ui.component.SortHeader
+import sauravthakur.opm.ui.menu.CachePlaylistMenu
+import sauravthakur.opm.ui.menu.SelectionSongMenu
+import sauravthakur.opm.ui.menu.SongMenu
+import sauravthakur.opm.ui.utils.backToMain
+import sauravthakur.opm.utils.listItemShape
+import sauravthakur.opm.utils.makeTimeString
+import sauravthakur.opm.utils.rememberEnumPreference
+import sauravthakur.opm.utils.rememberPreference
+import sauravthakur.opm.viewmodels.CachePlaylistViewModel
 import java.time.LocalDateTime
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
@@ -458,7 +458,7 @@ fun CachePlaylistScreen(
 private fun CachePlaylistHeader(
     songs: List<Song>,
     context: android.content.Context,
-    menuState: iad1tya.echo.music.ui.component.MenuState,
+    menuState: sauravthakur.opm.ui.component.MenuState,
     modifier: Modifier = Modifier
 ) {
     val playerConnection = LocalPlayerConnection.current ?: return

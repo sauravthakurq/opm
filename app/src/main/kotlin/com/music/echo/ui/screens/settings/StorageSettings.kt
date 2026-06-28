@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.settings
+package sauravthakur.opm.ui.screens.settings
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.Column
@@ -41,20 +41,20 @@ import coil3.SingletonImageLoader
 import coil3.annotation.DelicateCoilApi
 import coil3.annotation.ExperimentalCoilApi
 import coil3.imageLoader
-import iad1tya.echo.music.LocalDatabase
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.MaxImageCacheSizeKey
-import iad1tya.echo.music.constants.MaxSongCacheSizeKey
-import iad1tya.echo.music.extensions.tryOrNull
-import iad1tya.echo.music.ui.component.ActionPromptDialog
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.Material3SettingsGroup
-import iad1tya.echo.music.ui.component.Material3SettingsItem
-import iad1tya.echo.music.ui.utils.backToMain
-import iad1tya.echo.music.ui.utils.formatFileSize
-import iad1tya.echo.music.utils.rememberPreference
+import sauravthakur.opm.LocalDatabase
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.MaxImageCacheSizeKey
+import sauravthakur.opm.constants.MaxSongCacheSizeKey
+import sauravthakur.opm.extensions.tryOrNull
+import sauravthakur.opm.ui.component.ActionPromptDialog
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.Material3SettingsGroup
+import sauravthakur.opm.ui.component.Material3SettingsItem
+import sauravthakur.opm.ui.utils.backToMain
+import sauravthakur.opm.ui.utils.formatFileSize
+import sauravthakur.opm.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
@@ -65,7 +65,7 @@ import kotlin.math.roundToInt
 import android.content.Intent
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import iad1tya.echo.music.constants.ExportDirectoryUriKey
+import sauravthakur.opm.constants.ExportDirectoryUriKey
 
 @OptIn(ExperimentalCoilApi::class, ExperimentalMaterial3Api::class, DelicateCoilApi::class)
 @Composable
@@ -194,7 +194,7 @@ highlightKey: String? = null) {
             onConfirm = {
                 androidx.media3.exoplayer.offline.DownloadService.sendRemoveAllDownloads(
                     context,
-                    iad1tya.echo.music.playback.ExoDownloadService::class.java,
+                    sauravthakur.opm.playback.ExoDownloadService::class.java,
                     false
                 )
                 clearDownloads = false

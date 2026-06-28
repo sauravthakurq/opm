@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package iad1tya.echo.music.ui.screens
+package sauravthakur.opm.ui.screens
 
 import android.webkit.CookieManager
 import android.webkit.WebResourceRequest
@@ -34,19 +34,19 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.R
-import iad1tya.echo.music.spotifyimport.SpotifyImportViewModel
-import iad1tya.echo.music.spotifyimport.SpotifyImportUiState
-import iad1tya.echo.music.spotifyimport.SpotifyImportSummaryUi
-import iad1tya.echo.music.spotifyimport.SpotifyImportSourceUi
-import iad1tya.echo.music.spotifyimport.SpotifyImportSourceType
-import iad1tya.echo.music.ui.component.DefaultDialog
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.Material3SettingsGroup
-import iad1tya.echo.music.ui.component.Material3SettingsItem
-import iad1tya.echo.music.ui.utils.backToMain
-import iad1tya.echo.music.spotify.SpotifyAuth
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.R
+import sauravthakur.opm.spotifyimport.SpotifyImportViewModel
+import sauravthakur.opm.spotifyimport.SpotifyImportUiState
+import sauravthakur.opm.spotifyimport.SpotifyImportSummaryUi
+import sauravthakur.opm.spotifyimport.SpotifyImportSourceUi
+import sauravthakur.opm.spotifyimport.SpotifyImportSourceType
+import sauravthakur.opm.ui.component.DefaultDialog
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.Material3SettingsGroup
+import sauravthakur.opm.ui.component.Material3SettingsItem
+import sauravthakur.opm.ui.utils.backToMain
+import sauravthakur.opm.spotify.SpotifyAuth
 import android.net.Uri
 
 @Composable

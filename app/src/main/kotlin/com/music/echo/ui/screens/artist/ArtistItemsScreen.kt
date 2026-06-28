@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.artist
+package sauravthakur.opm.ui.screens.artist
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
@@ -38,29 +38,29 @@ import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.GridItemSize
-import iad1tya.echo.music.constants.GridItemsSizeKey
-import iad1tya.echo.music.constants.GridThumbnailHeight
-import iad1tya.echo.music.models.toMediaMetadata
-import iad1tya.echo.music.playback.queues.YouTubeQueue
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.LocalMenuState
-import iad1tya.echo.music.ui.component.YouTubeGridItem
-import iad1tya.echo.music.ui.component.YouTubeListItem
-import iad1tya.echo.music.ui.component.shimmer.GridItemPlaceHolder
-import iad1tya.echo.music.ui.component.shimmer.ListItemPlaceHolder
-import iad1tya.echo.music.ui.component.shimmer.ShimmerHost
-import iad1tya.echo.music.ui.menu.YouTubeAlbumMenu
-import iad1tya.echo.music.ui.menu.YouTubeArtistMenu
-import iad1tya.echo.music.ui.menu.YouTubePlaylistMenu
-import iad1tya.echo.music.ui.menu.YouTubeSongMenu
-import iad1tya.echo.music.ui.utils.backToMain
-import iad1tya.echo.music.utils.listItemShape
-import iad1tya.echo.music.utils.rememberEnumPreference
-import iad1tya.echo.music.viewmodels.ArtistItemsViewModel
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.GridItemSize
+import sauravthakur.opm.constants.GridItemsSizeKey
+import sauravthakur.opm.constants.GridThumbnailHeight
+import sauravthakur.opm.models.toMediaMetadata
+import sauravthakur.opm.playback.queues.YouTubeQueue
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.LocalMenuState
+import sauravthakur.opm.ui.component.YouTubeGridItem
+import sauravthakur.opm.ui.component.YouTubeListItem
+import sauravthakur.opm.ui.component.shimmer.GridItemPlaceHolder
+import sauravthakur.opm.ui.component.shimmer.ListItemPlaceHolder
+import sauravthakur.opm.ui.component.shimmer.ShimmerHost
+import sauravthakur.opm.ui.menu.YouTubeAlbumMenu
+import sauravthakur.opm.ui.menu.YouTubeArtistMenu
+import sauravthakur.opm.ui.menu.YouTubePlaylistMenu
+import sauravthakur.opm.ui.menu.YouTubeSongMenu
+import sauravthakur.opm.ui.utils.backToMain
+import sauravthakur.opm.utils.listItemShape
+import sauravthakur.opm.utils.rememberEnumPreference
+import sauravthakur.opm.viewmodels.ArtistItemsViewModel
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable

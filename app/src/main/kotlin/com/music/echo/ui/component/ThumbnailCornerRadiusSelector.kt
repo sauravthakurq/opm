@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.component
+package sauravthakur.opm.ui.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -22,9 +22,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import kotlin.math.roundToInt
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.ThumbnailCornerRadiusKey
-import iad1tya.echo.music.utils.rememberPreference
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.ThumbnailCornerRadiusKey
+import sauravthakur.opm.utils.rememberPreference
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

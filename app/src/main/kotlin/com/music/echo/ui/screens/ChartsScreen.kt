@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens
+package sauravthakur.opm.ui.screens
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -59,25 +59,25 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.ListItemHeight
-import iad1tya.echo.music.models.toMediaMetadata
-import iad1tya.echo.music.playback.queues.YouTubeQueue
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.LocalMenuState
-import iad1tya.echo.music.ui.component.NavigationTitle
-import iad1tya.echo.music.ui.component.YouTubeGridItem
-import iad1tya.echo.music.ui.component.YouTubeListItem
-import iad1tya.echo.music.ui.component.shimmer.GridItemPlaceHolder
-import iad1tya.echo.music.ui.component.shimmer.ShimmerHost
-import iad1tya.echo.music.ui.component.shimmer.TextPlaceholder
-import iad1tya.echo.music.ui.menu.YouTubeSongMenu
-import iad1tya.echo.music.ui.utils.SnapLayoutInfoProvider
-import iad1tya.echo.music.ui.utils.backToMain
-import iad1tya.echo.music.utils.listItemShape
-import iad1tya.echo.music.viewmodels.ChartsViewModel
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.ListItemHeight
+import sauravthakur.opm.models.toMediaMetadata
+import sauravthakur.opm.playback.queues.YouTubeQueue
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.LocalMenuState
+import sauravthakur.opm.ui.component.NavigationTitle
+import sauravthakur.opm.ui.component.YouTubeGridItem
+import sauravthakur.opm.ui.component.YouTubeListItem
+import sauravthakur.opm.ui.component.shimmer.GridItemPlaceHolder
+import sauravthakur.opm.ui.component.shimmer.ShimmerHost
+import sauravthakur.opm.ui.component.shimmer.TextPlaceholder
+import sauravthakur.opm.ui.menu.YouTubeSongMenu
+import sauravthakur.opm.ui.utils.SnapLayoutInfoProvider
+import sauravthakur.opm.ui.utils.backToMain
+import sauravthakur.opm.utils.listItemShape
+import sauravthakur.opm.viewmodels.ChartsViewModel
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable

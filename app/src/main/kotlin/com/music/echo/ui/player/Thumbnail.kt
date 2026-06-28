@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.player
+package sauravthakur.opm.ui.player
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.LinearEasing
@@ -79,33 +79,33 @@ import coil3.SingletonImageLoader
 import coil3.compose.AsyncImage
 import coil3.request.CachePolicy
 import coil3.request.ImageRequest
-import iad1tya.echo.music.LocalListenTogetherManager
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.CropAlbumArtKey
-import iad1tya.echo.music.constants.HidePlayerThumbnailKey
-import iad1tya.echo.music.constants.PlayerBackgroundStyle
-import iad1tya.echo.music.constants.PlayerBackgroundStyleKey
-import iad1tya.echo.music.constants.PlayerHorizontalPadding
-import iad1tya.echo.music.constants.RotatingThumbnailKey
-import iad1tya.echo.music.constants.SeekExtraSeconds
-import iad1tya.echo.music.constants.SwipeThumbnailKey
-import iad1tya.echo.music.constants.ThumbnailCornerRadiusKey
-import iad1tya.echo.music.constants.ThumbnailCornerRadius
-import iad1tya.echo.music.listentogether.RoomRole
-import iad1tya.echo.music.ui.component.CastButton
-import iad1tya.echo.music.utils.rememberEnumPreference
-import iad1tya.echo.music.constants.CanvasThumbnailAnimationKey
-import iad1tya.echo.music.canvas.TidalCanvasProvider
-import iad1tya.echo.music.canvas.CanvasArtwork
-import iad1tya.echo.music.extensions.metadata
-import iad1tya.echo.music.ui.utils.resize
-import iad1tya.echo.music.utils.rememberPreference
+import sauravthakur.opm.LocalListenTogetherManager
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.CropAlbumArtKey
+import sauravthakur.opm.constants.HidePlayerThumbnailKey
+import sauravthakur.opm.constants.PlayerBackgroundStyle
+import sauravthakur.opm.constants.PlayerBackgroundStyleKey
+import sauravthakur.opm.constants.PlayerHorizontalPadding
+import sauravthakur.opm.constants.RotatingThumbnailKey
+import sauravthakur.opm.constants.SeekExtraSeconds
+import sauravthakur.opm.constants.SwipeThumbnailKey
+import sauravthakur.opm.constants.ThumbnailCornerRadiusKey
+import sauravthakur.opm.constants.ThumbnailCornerRadius
+import sauravthakur.opm.listentogether.RoomRole
+import sauravthakur.opm.ui.component.CastButton
+import sauravthakur.opm.utils.rememberEnumPreference
+import sauravthakur.opm.constants.CanvasThumbnailAnimationKey
+import sauravthakur.opm.canvas.TidalCanvasProvider
+import sauravthakur.opm.canvas.CanvasArtwork
+import sauravthakur.opm.extensions.metadata
+import sauravthakur.opm.ui.utils.resize
+import sauravthakur.opm.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.delay
-import iad1tya.echo.music.applecanvas.AppleMusicCanvasProvider
-import iad1tya.echo.music.echomusiccanvas.echomusicCanvasProvider
+import sauravthakur.opm.applecanvas.AppleMusicCanvasProvider
+import sauravthakur.opm.echomusiccanvas.echomusicCanvasProvider
 import java.util.Locale
 
 
@@ -278,7 +278,7 @@ fun Thumbnail(
     val cropAlbumArt by rememberPreference(CropAlbumArtKey, false)
     val playerBackground by rememberEnumPreference(
         key = PlayerBackgroundStyleKey,
-        defaultValue = PlayerBackgroundStyle.GRADIENT
+        defaultValue = PlayerBackgroundStyle.GLOW_ANIMATED
     )
     val thumbnailCornerRadius by rememberPreference(ThumbnailCornerRadiusKey, defaultValue = 3f)
     
@@ -572,7 +572,7 @@ private fun ThumbnailItem(
     textBackgroundColor: Color,
     layoutDirection: LayoutDirection,
     onSeek: (String, Boolean) -> Unit,
-    playerConnection: iad1tya.echo.music.playback.PlayerConnection,
+    playerConnection: sauravthakur.opm.playback.PlayerConnection,
     context: android.content.Context,
     isLandscape: Boolean = false,
     isListenTogetherGuest: Boolean = false,
@@ -856,7 +856,7 @@ private fun HiddenThumbnailPlaceholder(
         contentAlignment = Alignment.Center
     ) {
         Icon(
-            painter = painterResource(R.drawable.ic_launcher_nobg),
+            painter = painterResource(R.drawable.ic_notification),
             contentDescription = stringResource(R.string.hide_player_thumbnail),
             tint = textBackgroundColor.copy(alpha = 0.7f),
             modifier = Modifier.size(120.dp)
@@ -888,8 +888,8 @@ private fun ThumbnailImage(
                 .build(),
             contentDescription = null,
             contentScale = if (cropArtwork) ContentScale.Crop else ContentScale.Fit,
-            error = painterResource(R.drawable.ic_launcher_nobg),
-            fallback = painterResource(R.drawable.ic_launcher_nobg),
+            error = painterResource(R.drawable.ic_notification),
+            fallback = painterResource(R.drawable.ic_notification),
             onError = {
                 val url = currentUrl
                 if (url != null && url.contains("maxresdefault.jpg")) {

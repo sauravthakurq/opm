@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.settings
+package sauravthakur.opm.ui.screens.settings
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -35,21 +35,21 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.R
-import iad1tya.echo.music.db.entities.Song
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.Material3SettingsGroup
-import iad1tya.echo.music.ui.component.Material3SettingsItem
-import iad1tya.echo.music.ui.menu.AddToPlaylistDialogOnline
-import iad1tya.echo.music.ui.menu.CsvColumnMappingDialog
-import iad1tya.echo.music.ui.menu.CsvImportProgressDialog
-import iad1tya.echo.music.ui.menu.LoadingScreen
-import iad1tya.echo.music.ui.utils.backToMain
-import iad1tya.echo.music.viewmodels.BackupRestoreViewModel
-import iad1tya.echo.music.viewmodels.ConvertedSongLog
-import iad1tya.echo.music.viewmodels.CsvImportState
-import iad1tya.echo.music.utils.rememberPreference
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.R
+import sauravthakur.opm.db.entities.Song
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.Material3SettingsGroup
+import sauravthakur.opm.ui.component.Material3SettingsItem
+import sauravthakur.opm.ui.menu.AddToPlaylistDialogOnline
+import sauravthakur.opm.ui.menu.CsvColumnMappingDialog
+import sauravthakur.opm.ui.menu.CsvImportProgressDialog
+import sauravthakur.opm.ui.menu.LoadingScreen
+import sauravthakur.opm.ui.utils.backToMain
+import sauravthakur.opm.viewmodels.BackupRestoreViewModel
+import sauravthakur.opm.viewmodels.ConvertedSongLog
+import sauravthakur.opm.viewmodels.CsvImportState
+import sauravthakur.opm.utils.rememberPreference
 import android.app.backup.BackupManager
 import android.content.Intent
 import android.provider.Settings

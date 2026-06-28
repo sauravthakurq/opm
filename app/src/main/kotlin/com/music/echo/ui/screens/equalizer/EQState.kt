@@ -1,6 +1,6 @@
-package iad1tya.echo.music.ui.screens.equalizer
+package sauravthakur.opm.ui.screens.equalizer
 
-import iad1tya.echo.music.eq.data.SavedEQProfile
+import sauravthakur.opm.eq.data.SavedEQProfile
 
 
 data class EQState(

@@ -1,0 +1,295 @@
+:root {
+  --bg-color: #0d0e15;
+  --panel-bg: rgba(255, 255, 255, 0.05);
+  --panel-border: rgba(255, 255, 255, 0.1);
+  --text-primary: #ffffff;
+  --text-secondary: #a0a5b8;
+  --accent: #6f42c1;
+  --accent-hover: #8655dd;
+  --accent-glow: rgba(111, 66, 193, 0.5);
+  --danger: #ff4757;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background Effects */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+}
+
+.orb-1 {
+  width: 400px;
+  height: 400px;
+  background: rgba(111, 66, 193, 0.3);
+  top: -100px;
+  left: -100px;
+}
+
+.orb-2 {
+  width: 300px;
+  height: 300px;
+  background: rgba(46, 137, 255, 0.2);
+  bottom: -50px;
+  right: -100px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem;
+  z-index: 1;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.app-title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #fff, #a0a5b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Glass Panel */
+.glass-panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--panel-border);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.state-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Loading Spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255,255,255,0.1);
+  border-left-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Success State */
+.version-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.meta-info {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.badge {
+  background: rgba(255,255,255,0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.badge.highlight {
+  background: rgba(111, 66, 193, 0.2);
+  color: #c9b3ff;
+  border: 1px solid rgba(111, 66, 193, 0.4);
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  width: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px -10px var(--accent-glow);
+  margin-bottom: 2rem;
+}
+
+.download-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 25px -10px var(--accent-glow);
+}
+
+.fallback-btn {
+  background: rgba(255,255,255,0.1);
+  box-shadow: none;
+}
+.fallback-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Release Notes */
+.release-notes-container {
+  width: 100%;
+  text-align: left;
+  border-top: 1px solid var(--panel-border);
+  padding-top: 1.5rem;
+}
+
+.release-notes-container h3 {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.release-notes {
+  background: rgba(0,0,0,0.2);
+  padding: 1.2rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--panel-border) transparent;
+}
+
+.release-notes::-webkit-scrollbar {
+  width: 6px;
+}
+.release-notes::-webkit-scrollbar-thumb {
+  background-color: var(--panel-border);
+  border-radius: 10px;
+}
+
+.release-notes ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.release-notes p {
+  margin-bottom: 0.5rem;
+}
+.release-notes a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Error State */
+.error-icon {
+  color: var(--danger);
+  margin-bottom: 1rem;
+}
+
+.error-title {
+  margin-bottom: 0.5rem;
+}
+
+#error-state p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* Instructions */
+.instructions-section {
+  margin-top: 2.5rem;
+}
+
+.instructions-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.steps {
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.steps li {
+  margin-bottom: 0.5rem;
+}
+.steps strong {
+  color: var(--text-primary);
+}
+
+.github-link-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.text-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.text-link:hover {
+  color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .glass-panel {
+    padding: 1.5rem;
+  }
+  .app-title {
+    font-size: 2.5rem;
+  }
+}

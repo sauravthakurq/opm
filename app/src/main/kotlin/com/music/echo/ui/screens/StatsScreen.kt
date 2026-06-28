@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens
+package sauravthakur.opm.ui.screens
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
@@ -37,29 +37,29 @@ import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.music.innertube.models.WatchEndpoint
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.StatPeriod
-import iad1tya.echo.music.extensions.toMediaItem
-import iad1tya.echo.music.models.toMediaMetadata
-import iad1tya.echo.music.playback.queues.ListQueue
-import iad1tya.echo.music.playback.queues.YouTubeQueue
-import iad1tya.echo.music.ui.component.ChoiceChipsRow
-import iad1tya.echo.music.ui.component.HideOnScrollFAB
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.LocalAlbumsGrid
-import iad1tya.echo.music.ui.component.LocalArtistsGrid
-import iad1tya.echo.music.ui.component.LocalMenuState
-import iad1tya.echo.music.ui.component.LocalSongsGrid
-import iad1tya.echo.music.ui.component.NavigationTitle
-import iad1tya.echo.music.ui.menu.AlbumMenu
-import iad1tya.echo.music.ui.menu.ArtistMenu
-import iad1tya.echo.music.ui.menu.SongMenu
-import iad1tya.echo.music.ui.utils.backToMain
-import iad1tya.echo.music.utils.joinByBullet
-import iad1tya.echo.music.utils.makeTimeString
-import iad1tya.echo.music.viewmodels.StatsViewModel
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.StatPeriod
+import sauravthakur.opm.extensions.toMediaItem
+import sauravthakur.opm.models.toMediaMetadata
+import sauravthakur.opm.playback.queues.ListQueue
+import sauravthakur.opm.playback.queues.YouTubeQueue
+import sauravthakur.opm.ui.component.ChoiceChipsRow
+import sauravthakur.opm.ui.component.HideOnScrollFAB
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.LocalAlbumsGrid
+import sauravthakur.opm.ui.component.LocalArtistsGrid
+import sauravthakur.opm.ui.component.LocalMenuState
+import sauravthakur.opm.ui.component.LocalSongsGrid
+import sauravthakur.opm.ui.component.NavigationTitle
+import sauravthakur.opm.ui.menu.AlbumMenu
+import sauravthakur.opm.ui.menu.ArtistMenu
+import sauravthakur.opm.ui.menu.SongMenu
+import sauravthakur.opm.ui.utils.backToMain
+import sauravthakur.opm.utils.joinByBullet
+import sauravthakur.opm.utils.makeTimeString
+import sauravthakur.opm.viewmodels.StatsViewModel
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 

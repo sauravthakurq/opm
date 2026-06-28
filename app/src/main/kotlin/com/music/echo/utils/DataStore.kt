@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.utils
+package sauravthakur.opm.utils
 
 import android.content.Context
 import androidx.compose.runtime.Composable
@@ -13,7 +13,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
-import iad1tya.echo.music.extensions.toEnum
+import sauravthakur.opm.extensions.toEnum
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first

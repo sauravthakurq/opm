@@ -1,18 +1,18 @@
 
 
-package iad1tya.echo.music.viewmodels
+package sauravthakur.opm.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import iad1tya.echo.music.constants.HideVideoSongsKey
-import iad1tya.echo.music.db.MusicDatabase
-import iad1tya.echo.music.db.entities.Album
-import iad1tya.echo.music.db.entities.Artist
-import iad1tya.echo.music.db.entities.LocalItem
-import iad1tya.echo.music.db.entities.Playlist
-import iad1tya.echo.music.db.entities.Song
-import iad1tya.echo.music.utils.dataStore
+import sauravthakur.opm.constants.HideVideoSongsKey
+import sauravthakur.opm.db.MusicDatabase
+import sauravthakur.opm.db.entities.Album
+import sauravthakur.opm.db.entities.Artist
+import sauravthakur.opm.db.entities.LocalItem
+import sauravthakur.opm.db.entities.Playlist
+import sauravthakur.opm.db.entities.Song
+import sauravthakur.opm.utils.dataStore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.ExperimentalCoroutinesApi

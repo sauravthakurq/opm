@@ -1,12 +1,12 @@
 
 
-package iad1tya.echo.music.playback.queues
+package sauravthakur.opm.playback.queues
 
 import androidx.media3.common.MediaItem
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
-import iad1tya.echo.music.extensions.toMediaItem
-import iad1tya.echo.music.models.MediaMetadata
+import sauravthakur.opm.extensions.toMediaItem
+import sauravthakur.opm.models.MediaMetadata
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.withContext
 

@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.playback.audio
+package sauravthakur.opm.playback.audio
 
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor

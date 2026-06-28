@@ -1,12 +1,12 @@
 
 
-package iad1tya.echo.music.utils
+package sauravthakur.opm.utils
 
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import iad1tya.echo.music.BuildConfig
-import iad1tya.echo.music.ui.screens.CrashActivity
+import sauravthakur.opm.BuildConfig
+import sauravthakur.opm.ui.screens.CrashActivity
 import timber.log.Timber
 import java.io.PrintWriter
 import java.io.StringWriter
@@ -47,7 +47,7 @@ class CrashHandler private constructor(
         }.toString()
 
         return buildString {
-            appendLine("echomusic Crash Report")
+            appendLine("OPM Crash Report")
             appendLine("=".repeat(50))
             appendLine()
             appendLine("Manufacturer: ${Build.MANUFACTURER}")

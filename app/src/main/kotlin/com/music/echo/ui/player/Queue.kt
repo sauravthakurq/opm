@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.player
+package sauravthakur.opm.ui.player
 
 import android.annotation.SuppressLint
 import androidx.activity.compose.BackHandler
@@ -110,33 +110,33 @@ import androidx.media3.common.Player
 import androidx.media3.common.Timeline
 import androidx.media3.exoplayer.source.ShuffleOrder.DefaultShuffleOrder
 import androidx.navigation.NavController
-import iad1tya.echo.music.LocalListenTogetherManager
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.ListItemHeight
-import iad1tya.echo.music.constants.PlayerBackgroundStyle
-import iad1tya.echo.music.constants.QueueEditLockKey
-import iad1tya.echo.music.constants.ShowCommentButtonKey
-import iad1tya.echo.music.constants.UseNewPlayerDesignKey
-import iad1tya.echo.music.extensions.metadata
-import iad1tya.echo.music.extensions.move
-import iad1tya.echo.music.extensions.toggleRepeatMode
-import iad1tya.echo.music.listentogether.RoomRole
-import iad1tya.echo.music.models.MediaMetadata
-import iad1tya.echo.music.ui.component.ActionPromptDialog
-import iad1tya.echo.music.ui.component.BottomSheet
-import iad1tya.echo.music.ui.component.BottomSheetState
-import iad1tya.echo.music.ui.component.LocalBottomSheetPageState
-import iad1tya.echo.music.ui.component.LocalMenuState
-import iad1tya.echo.music.ui.component.MediaMetadataListItem
-import iad1tya.echo.music.ui.menu.PlayerMenu
-import iad1tya.echo.music.ui.menu.QueueMenu
-import iad1tya.echo.music.ui.menu.SelectionMediaMetadataMenu
-import iad1tya.echo.music.ui.screens.CommentSheet
-import iad1tya.echo.music.ui.utils.ShowMediaInfo
-import iad1tya.echo.music.utils.listItemShape
-import iad1tya.echo.music.utils.makeTimeString
-import iad1tya.echo.music.utils.rememberPreference
+import sauravthakur.opm.LocalListenTogetherManager
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.ListItemHeight
+import sauravthakur.opm.constants.PlayerBackgroundStyle
+import sauravthakur.opm.constants.QueueEditLockKey
+import sauravthakur.opm.constants.ShowCommentButtonKey
+import sauravthakur.opm.constants.UseNewPlayerDesignKey
+import sauravthakur.opm.extensions.metadata
+import sauravthakur.opm.extensions.move
+import sauravthakur.opm.extensions.toggleRepeatMode
+import sauravthakur.opm.listentogether.RoomRole
+import sauravthakur.opm.models.MediaMetadata
+import sauravthakur.opm.ui.component.ActionPromptDialog
+import sauravthakur.opm.ui.component.BottomSheet
+import sauravthakur.opm.ui.component.BottomSheetState
+import sauravthakur.opm.ui.component.LocalBottomSheetPageState
+import sauravthakur.opm.ui.component.LocalMenuState
+import sauravthakur.opm.ui.component.MediaMetadataListItem
+import sauravthakur.opm.ui.menu.PlayerMenu
+import sauravthakur.opm.ui.menu.QueueMenu
+import sauravthakur.opm.ui.menu.SelectionMediaMetadataMenu
+import sauravthakur.opm.ui.screens.CommentSheet
+import sauravthakur.opm.ui.utils.ShowMediaInfo
+import sauravthakur.opm.utils.listItemShape
+import sauravthakur.opm.utils.makeTimeString
+import sauravthakur.opm.utils.rememberPreference
 import androidx.compose.material.icons.Icons
 import androidx.compose.runtime.produceState
 import android.content.IntentFilter
@@ -148,8 +148,8 @@ import android.bluetooth.BluetoothDevice
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
-import iad1tya.echo.music.echomusic.isBluetoothHeadphoneConnected
-import iad1tya.echo.music.echomusic.AudioDeviceBottomSheet
+import sauravthakur.opm.echomusic.isBluetoothHeadphoneConnected
+import sauravthakur.opm.echomusic.AudioDeviceBottomSheet
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
@@ -228,7 +228,7 @@ fun Queue(
 
     
     val listenTogetherManager = LocalListenTogetherManager.current
-    val listenTogetherRoleState = listenTogetherManager?.role?.collectAsState(initial = iad1tya.echo.music.listentogether.RoomRole.NONE)
+    val listenTogetherRoleState = listenTogetherManager?.role?.collectAsState(initial = sauravthakur.opm.listentogether.RoomRole.NONE)
     val isListenTogetherGuest = listenTogetherRoleState?.value == RoomRole.GUEST
 
     val playerConnection = LocalPlayerConnection.current ?: return

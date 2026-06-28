@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.component
+package sauravthakur.opm.ui.component
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.animateContentSize
@@ -55,8 +55,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import iad1tya.echo.music.R
-import iad1tya.echo.music.ui.screens.OptionStats
+import sauravthakur.opm.R
+import sauravthakur.opm.ui.screens.OptionStats
 
 @Composable
 fun <E> ChipsRow(
@@ -64,7 +64,10 @@ fun <E> ChipsRow(
     currentValue: E,
     onValueUpdate: (E) -> Unit,
     modifier: Modifier = Modifier,
-    containerColor: Color = MaterialTheme.colorScheme.surfaceContainer,
+    containerColor: Color = Color.White.copy(alpha = 0.15f),
+    labelColor: Color = Color.White,
+    selectedContainerColor: Color = Color.White.copy(alpha = 0.3f),
+    selectedLabelColor: Color = Color.White
 ) {
     Row(
         modifier =
@@ -94,6 +97,11 @@ fun <E> ChipsRow(
                 selected = isSelected,
                 colors = FilterChipDefaults.filterChipColors(
                     containerColor = containerColor,
+                    labelColor = labelColor,
+                    selectedContainerColor = selectedContainerColor,
+                    selectedLabelColor = selectedLabelColor,
+                    iconColor = labelColor,
+                    selectedLeadingIconColor = selectedLabelColor
                 ),
                 onClick = { onValueUpdate(value) },
                 leadingIcon = if (isSelected) {

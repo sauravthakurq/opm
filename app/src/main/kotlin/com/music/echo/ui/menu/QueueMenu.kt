@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.menu
+package sauravthakur.opm.ui.menu
 
 import android.content.Intent
 import android.content.res.Configuration
@@ -55,31 +55,31 @@ import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
-import iad1tya.echo.music.LocalDatabase
-import iad1tya.echo.music.LocalDownloadUtil
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.LocalSyncUtils
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.ListItemHeight
-import iad1tya.echo.music.constants.ListThumbnailSize
-import iad1tya.echo.music.extensions.toMediaItem
-import iad1tya.echo.music.models.MediaMetadata
-import iad1tya.echo.music.models.toMediaMetadata
-import iad1tya.echo.music.playback.ExoDownloadService
-import iad1tya.echo.music.playback.queues.YouTubeQueue
-import iad1tya.echo.music.ui.component.BottomSheetState
-import iad1tya.echo.music.ui.component.ListDialog
-import iad1tya.echo.music.ui.component.Material3MenuGroup
-import iad1tya.echo.music.ui.component.Material3MenuItemData
-import iad1tya.echo.music.ui.component.MediaMetadataListItem
-import iad1tya.echo.music.ui.component.NewAction
-import iad1tya.echo.music.ui.component.NewActionGrid
-import iad1tya.echo.music.utils.listItemShape
+import sauravthakur.opm.LocalDatabase
+import sauravthakur.opm.LocalDownloadUtil
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.LocalSyncUtils
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.ListItemHeight
+import sauravthakur.opm.constants.ListThumbnailSize
+import sauravthakur.opm.extensions.toMediaItem
+import sauravthakur.opm.models.MediaMetadata
+import sauravthakur.opm.models.toMediaMetadata
+import sauravthakur.opm.playback.ExoDownloadService
+import sauravthakur.opm.playback.queues.YouTubeQueue
+import sauravthakur.opm.ui.component.BottomSheetState
+import sauravthakur.opm.ui.component.ListDialog
+import sauravthakur.opm.ui.component.Material3MenuGroup
+import sauravthakur.opm.ui.component.Material3MenuItemData
+import sauravthakur.opm.ui.component.MediaMetadataListItem
+import sauravthakur.opm.ui.component.NewAction
+import sauravthakur.opm.ui.component.NewActionGrid
+import sauravthakur.opm.utils.listItemShape
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
-import iad1tya.echo.music.engine.brain.FlowNeuroEngine
-import iad1tya.echo.music.models.QueueItemSource
+import sauravthakur.opm.engine.brain.FlowNeuroEngine
+import sauravthakur.opm.models.QueueItemSource
 
 @Composable
 fun QueueMenu(
@@ -142,8 +142,8 @@ fun QueueMenu(
     if (showWhyDialog) {
         androidx.compose.material3.AlertDialog(
             onDismissRequest = { showWhyDialog = false },
-            title = { androidx.compose.material3.Text(text = "Echo Brain Recommendation") },
-            text = { androidx.compose.material3.Text(text = "This song was dynamically added by Echo Brain based on your listening patterns, the current song's genre, and your library's vibes.") },
+            title = { androidx.compose.material3.Text(text = "OPM Brain Recommendation") },
+            text = { androidx.compose.material3.Text(text = "This song was dynamically added by OPM Brain based on your listening patterns, the current song's genre, and your library's vibes.") },
             confirmButton = {
                 androidx.compose.material3.TextButton(onClick = { showWhyDialog = false }) {
                     androidx.compose.material3.Text("Got it")
@@ -299,7 +299,7 @@ fun QueueMenu(
                                 type = "text/plain"
                                 putExtra(
                                     Intent.EXTRA_TEXT,
-                                    "https://share.echomusic.fun/watch?v=${mediaMetadata.id}"
+                                    "https://music.youtube.com/watch?v=${mediaMetadata.id}"
                                 )
                             }
                             context.startActivity(Intent.createChooser(intent, null))
@@ -316,7 +316,7 @@ fun QueueMenu(
                     items = listOf(
                         Material3MenuItemData(
                             title = { Text(text = "Not Interested") },
-                            description = { Text(text = "Improve Echo Brain's recommendations") },
+                            description = { Text(text = "Improve OPM Brain's recommendations") },
                             icon = {
                                 Icon(
                                     painter = painterResource(R.drawable.remove),

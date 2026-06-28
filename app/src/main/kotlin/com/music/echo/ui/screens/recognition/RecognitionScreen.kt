@@ -1,4 +1,4 @@
-package iad1tya.echo.music.ui.screens.recognition
+package sauravthakur.opm.ui.screens.recognition
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -77,27 +77,27 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import iad1tya.echo.music.LocalDatabase
-import iad1tya.echo.music.R
-import iad1tya.echo.music.db.entities.RecognitionHistory
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.utils.backToMain
+import sauravthakur.opm.LocalDatabase
+import sauravthakur.opm.R
+import sauravthakur.opm.db.entities.RecognitionHistory
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.utils.backToMain
 import com.music.shazamkit.models.RecognitionResult
 import com.music.shazamkit.models.RecognitionStatus
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.time.LocalDateTime
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.systemBars
-import iad1tya.echo.music.LocalPlayerConnection
+import sauravthakur.opm.LocalPlayerConnection
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
-import iad1tya.echo.music.models.toMediaMetadata
-import iad1tya.echo.music.playback.queues.YouTubeQueue
+import sauravthakur.opm.models.toMediaMetadata
+import sauravthakur.opm.playback.queues.YouTubeQueue
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -109,16 +109,16 @@ fun RecognitionScreen(
     val coroutineScope = rememberCoroutineScope()
     
     LaunchedEffect(Unit) {
-        iad1tya.echo.music.recognition.MusicRecognitionService.reset()
+        sauravthakur.opm.recognition.MusicRecognitionService.reset()
     }
     
     DisposableEffect(Unit) {
         onDispose {
-            iad1tya.echo.music.recognition.MusicRecognitionService.reset()
+            sauravthakur.opm.recognition.MusicRecognitionService.reset()
         }
     }
     
-    val recognitionStatus by iad1tya.echo.music.recognition.MusicRecognitionService.recognitionStatus.collectAsState()
+    val recognitionStatus by sauravthakur.opm.recognition.MusicRecognitionService.recognitionStatus.collectAsState()
     
     var hasPermission by remember {
         mutableStateOf(
@@ -133,7 +133,7 @@ fun RecognitionScreen(
         hasPermission = isGranted
         if (isGranted) {
             coroutineScope.launch {
-                iad1tya.echo.music.recognition.MusicRecognitionService.recognize(context)
+                sauravthakur.opm.recognition.MusicRecognitionService.recognize(context)
             }
         }
     }
@@ -141,7 +141,7 @@ fun RecognitionScreen(
     fun startRecognition() {
         if (hasPermission) {
             coroutineScope.launch {
-                iad1tya.echo.music.recognition.MusicRecognitionService.recognize(context)
+                sauravthakur.opm.recognition.MusicRecognitionService.recognize(context)
             }
         } else {
             permissionLauncher.launch(Manifest.permission.RECORD_AUDIO)
@@ -149,7 +149,7 @@ fun RecognitionScreen(
     }
     
     fun resetToReady() {
-        iad1tya.echo.music.recognition.MusicRecognitionService.reset()
+        sauravthakur.opm.recognition.MusicRecognitionService.reset()
     }
 
     fun saveToHistory(result: RecognitionResult) {
@@ -269,7 +269,7 @@ fun RecognitionScreen(
                                 }
                                 is RecognitionStatus.Listening -> {
                                     ListeningState(
-                                        onCancel = { iad1tya.echo.music.recognition.MusicRecognitionService.reset() }
+                                        onCancel = { sauravthakur.opm.recognition.MusicRecognitionService.reset() }
                                     )
                                 }
                                 is RecognitionStatus.Processing -> {

@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.player
+package sauravthakur.opm.ui.player
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -150,65 +150,65 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import iad1tya.echo.music.LocalDatabase
-import iad1tya.echo.music.LocalDownloadUtil
-import iad1tya.echo.music.LocalListenTogetherManager
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.AudioQuality
-import iad1tya.echo.music.constants.AudioQualityKey
-import iad1tya.echo.music.constants.CropAlbumArtKey
-import iad1tya.echo.music.constants.DarkModeKey
-import iad1tya.echo.music.constants.HidePlayerThumbnailKey
-import iad1tya.echo.music.constants.HideStatusBarOnFullscreenKey
-import iad1tya.echo.music.constants.EnableLyricsThumbnailPlayPauseKey
-import iad1tya.echo.music.constants.KeepScreenOn
-import iad1tya.echo.music.constants.PlayerBackgroundStyle
-import iad1tya.echo.music.constants.PlayerBackgroundStyleKey
-import iad1tya.echo.music.constants.PlayerButtonsStyle
-import iad1tya.echo.music.constants.PlayerButtonsStyleKey
-import iad1tya.echo.music.constants.PlayerHorizontalPadding
-import iad1tya.echo.music.constants.QueuePeekHeight
-import iad1tya.echo.music.constants.SliderStyle
-import iad1tya.echo.music.constants.SliderStyleKey
-import iad1tya.echo.music.constants.SquigglySliderKey
-import iad1tya.echo.music.constants.SwipeLyricsKey
-import iad1tya.echo.music.constants.ThumbnailCornerRadius
-import iad1tya.echo.music.constants.UseNewPlayerDesignKey
-import iad1tya.echo.music.db.entities.LyricsEntity
-import iad1tya.echo.music.extensions.SwipeGesture
-import iad1tya.echo.music.extensions.togglePlayPause
-import iad1tya.echo.music.extensions.toggleRepeatMode
-import iad1tya.echo.music.listentogether.RoomRole
-import iad1tya.echo.music.models.MediaMetadata
-import iad1tya.echo.music.playback.ExoDownloadService
-import iad1tya.echo.music.echomusic.getConnectedBluetoothDeviceName
-import iad1tya.echo.music.echomusic.isBuds
-import iad1tya.echo.music.echomusic.isSpeaker
-import iad1tya.echo.music.echomusic.AudioDeviceBottomSheet
-import iad1tya.echo.music.ui.component.BottomSheet
-import iad1tya.echo.music.ui.component.BottomSheetState
-import iad1tya.echo.music.ui.component.CastButton
-import iad1tya.echo.music.ui.component.LocalBottomSheetPageState
-import iad1tya.echo.music.ui.component.LocalMenuState
-import iad1tya.echo.music.ui.component.Lyrics
-import iad1tya.echo.music.ui.component.PlayerSliderTrack
-import iad1tya.echo.music.ui.component.ResizableIconButton
-import iad1tya.echo.music.ui.component.SquigglySlider
-import iad1tya.echo.music.ui.component.WavySlider
-import iad1tya.echo.music.ui.component.rememberBottomSheetState
-import iad1tya.echo.music.ui.menu.OldPlayerMenu
-import iad1tya.echo.music.ui.menu.PlayerMenu
-import iad1tya.echo.music.ui.component.VolumeSlider
-import iad1tya.echo.music.ui.screens.settings.DarkMode
-import iad1tya.echo.music.ui.theme.PlayerColorExtractor
-import iad1tya.echo.music.ui.theme.PlayerSliderColors
-import iad1tya.echo.music.ui.utils.ShowMediaInfo
-import iad1tya.echo.music.ui.utils.ShowOffsetDialog
-import iad1tya.echo.music.utils.makeTimeString
-import iad1tya.echo.music.utils.isLocalMediaId
-import iad1tya.echo.music.utils.rememberEnumPreference
-import iad1tya.echo.music.utils.rememberPreference
+import sauravthakur.opm.LocalDatabase
+import sauravthakur.opm.LocalDownloadUtil
+import sauravthakur.opm.LocalListenTogetherManager
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.AudioQuality
+import sauravthakur.opm.constants.AudioQualityKey
+import sauravthakur.opm.constants.CropAlbumArtKey
+import sauravthakur.opm.constants.DarkModeKey
+import sauravthakur.opm.constants.HidePlayerThumbnailKey
+import sauravthakur.opm.constants.HideStatusBarOnFullscreenKey
+import sauravthakur.opm.constants.EnableLyricsThumbnailPlayPauseKey
+import sauravthakur.opm.constants.KeepScreenOn
+import sauravthakur.opm.constants.PlayerBackgroundStyle
+import sauravthakur.opm.constants.PlayerBackgroundStyleKey
+import sauravthakur.opm.constants.PlayerButtonsStyle
+import sauravthakur.opm.constants.PlayerButtonsStyleKey
+import sauravthakur.opm.constants.PlayerHorizontalPadding
+import sauravthakur.opm.constants.QueuePeekHeight
+import sauravthakur.opm.constants.SliderStyle
+import sauravthakur.opm.constants.SliderStyleKey
+import sauravthakur.opm.constants.SquigglySliderKey
+import sauravthakur.opm.constants.SwipeLyricsKey
+import sauravthakur.opm.constants.ThumbnailCornerRadius
+import sauravthakur.opm.constants.UseNewPlayerDesignKey
+import sauravthakur.opm.db.entities.LyricsEntity
+import sauravthakur.opm.extensions.SwipeGesture
+import sauravthakur.opm.extensions.togglePlayPause
+import sauravthakur.opm.extensions.toggleRepeatMode
+import sauravthakur.opm.listentogether.RoomRole
+import sauravthakur.opm.models.MediaMetadata
+import sauravthakur.opm.playback.ExoDownloadService
+import sauravthakur.opm.echomusic.getConnectedBluetoothDeviceName
+import sauravthakur.opm.echomusic.isBuds
+import sauravthakur.opm.echomusic.isSpeaker
+import sauravthakur.opm.echomusic.AudioDeviceBottomSheet
+import sauravthakur.opm.ui.component.BottomSheet
+import sauravthakur.opm.ui.component.BottomSheetState
+import sauravthakur.opm.ui.component.CastButton
+import sauravthakur.opm.ui.component.LocalBottomSheetPageState
+import sauravthakur.opm.ui.component.LocalMenuState
+import sauravthakur.opm.ui.component.Lyrics
+import sauravthakur.opm.ui.component.PlayerSliderTrack
+import sauravthakur.opm.ui.component.ResizableIconButton
+import sauravthakur.opm.ui.component.SquigglySlider
+import sauravthakur.opm.ui.component.WavySlider
+import sauravthakur.opm.ui.component.rememberBottomSheetState
+import sauravthakur.opm.ui.menu.OldPlayerMenu
+import sauravthakur.opm.ui.menu.PlayerMenu
+import sauravthakur.opm.ui.component.VolumeSlider
+import sauravthakur.opm.ui.screens.settings.DarkMode
+import sauravthakur.opm.ui.theme.PlayerColorExtractor
+import sauravthakur.opm.ui.theme.PlayerSliderColors
+import sauravthakur.opm.ui.utils.ShowMediaInfo
+import sauravthakur.opm.ui.utils.ShowOffsetDialog
+import sauravthakur.opm.utils.makeTimeString
+import sauravthakur.opm.utils.isLocalMediaId
+import sauravthakur.opm.utils.rememberEnumPreference
+import sauravthakur.opm.utils.rememberPreference
 import dagger.hilt.android.EntryPointAccessors
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.firstOrNull
@@ -218,7 +218,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.math.max
 import kotlin.math.roundToInt
-import iad1tya.echo.music.ui.component.Icon as MIcon
+import sauravthakur.opm.ui.component.Icon as MIcon
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
 import androidx.media3.exoplayer.DefaultLoadControl
 import android.view.TextureView
@@ -233,15 +233,15 @@ import androidx.media3.ui.AspectRatioFrameLayout
 import androidx.media3.ui.PlayerView
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import iad1tya.echo.music.applecanvas.AppleMusicCanvasProvider
-import iad1tya.echo.music.canvas.CanvasArtwork
-import iad1tya.echo.music.canvas.TidalCanvasProvider
-import iad1tya.echo.music.constants.CanvasThumbnailAnimationKey
-import iad1tya.echo.music.extensions.metadata
-import iad1tya.echo.music.ui.player.CanvasArtworkPlaybackCache
-import iad1tya.echo.music.ui.player.normalizeCanvasArtistName
-import iad1tya.echo.music.ui.player.normalizeCanvasSongTitle
-import iad1tya.echo.music.echomusiccanvas.echomusicCanvasProvider
+import sauravthakur.opm.applecanvas.AppleMusicCanvasProvider
+import sauravthakur.opm.canvas.CanvasArtwork
+import sauravthakur.opm.canvas.TidalCanvasProvider
+import sauravthakur.opm.constants.CanvasThumbnailAnimationKey
+import sauravthakur.opm.extensions.metadata
+import sauravthakur.opm.ui.player.CanvasArtworkPlaybackCache
+import sauravthakur.opm.ui.player.normalizeCanvasArtistName
+import sauravthakur.opm.ui.player.normalizeCanvasSongTitle
+import sauravthakur.opm.echomusiccanvas.echomusicCanvasProvider
 import java.util.Locale
 import kotlin.math.cos
 import kotlin.math.sin
@@ -304,8 +304,8 @@ fun BottomSheetPlayer(
         UseNewPlayerDesignKey,
         defaultValue = true
     )
-    val showCodecOnPlayer by rememberPreference(iad1tya.echo.music.constants.ShowCodecOnPlayerKey, false)
-    val hidePlayerSlider by rememberPreference(iad1tya.echo.music.constants.HidePlayerSliderKey, false)
+    val showCodecOnPlayer by rememberPreference(sauravthakur.opm.constants.ShowCodecOnPlayerKey, false)
+    val hidePlayerSlider by rememberPreference(sauravthakur.opm.constants.HidePlayerSliderKey, true)
     val (hidePlayerThumbnail, onHidePlayerThumbnailChange) = rememberPreference(HidePlayerThumbnailKey, false)
     val cropAlbumArt by rememberPreference(CropAlbumArtKey, false)
     val mediaMetadata by playerConnection.mediaMetadata.collectAsState()
@@ -313,7 +313,7 @@ fun BottomSheetPlayer(
 
     val playerBackgroundPref by rememberEnumPreference(
         key = PlayerBackgroundStyleKey,
-        defaultValue = PlayerBackgroundStyle.GRADIENT
+        defaultValue = PlayerBackgroundStyle.GLOW_ANIMATED
     )
     val playerBackground = if (isLocalMedia) PlayerBackgroundStyle.DEFAULT else playerBackgroundPref
     val playerButtonsStyle by rememberEnumPreference(
@@ -1398,7 +1398,7 @@ fun BottomSheetPlayer(
                                     contentAlignment = Alignment.Center
                                 ) {
                                     Icon(
-                                        painter = painterResource(R.drawable.ic_launcher_nobg),
+                                        painter = painterResource(R.drawable.ic_notification),
                                         contentDescription = null,
                                         modifier = Modifier
                                             .size(32.dp),
@@ -1696,7 +1696,7 @@ fun BottomSheetPlayer(
                                 FilledIconButton(
                                     onClick = {
                                         menuState.show {
-                                            iad1tya.echo.music.ui.menu.LyricsMenu(
+                                            sauravthakur.opm.ui.menu.LyricsMenu(
                                                 lyricsProvider = { currentLyrics },
                                                 songProvider = { currentSong?.song },
                                                 mediaMetadataProvider = { mediaMetadata },
@@ -1814,7 +1814,7 @@ fun BottomSheetPlayer(
                                     .background(textButtonColor.copy(alpha = 0.2f))
                                     .clickable {
                                         menuState.show {
-                                            iad1tya.echo.music.ui.menu.LyricsMenu(
+                                            sauravthakur.opm.ui.menu.LyricsMenu(
                                                 lyricsProvider = { currentLyrics },
                                                 songProvider = { currentSong?.song },
                                                 mediaMetadataProvider = { mediaMetadata },
@@ -2772,7 +2772,7 @@ fun InlineLyricsView(
                     if (existing != null) return@launch
                     val entryPoint = EntryPointAccessors.fromApplication(
                         context.applicationContext,
-                        iad1tya.echo.music.di.LyricsHelperEntryPoint::class.java
+                        sauravthakur.opm.di.LyricsHelperEntryPoint::class.java
                     )
                     val lyricsHelper = entryPoint.lyricsHelper()
                     val fetchedLyricsWithProvider = lyricsHelper.getLyrics(mediaMetadata)

@@ -1,4 +1,4 @@
-package iad1tya.echo.music.recognition
+package sauravthakur.opm.recognition
 
 import android.util.Base64
 import java.io.ByteArrayOutputStream

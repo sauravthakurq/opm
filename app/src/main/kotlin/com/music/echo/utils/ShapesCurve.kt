@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.utils
+package sauravthakur.opm.utils
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ListItemColors

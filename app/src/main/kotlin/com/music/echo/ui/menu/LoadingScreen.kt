@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.menu
+package sauravthakur.opm.ui.menu
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
-import iad1tya.echo.music.R
+import sauravthakur.opm.R
 
 @Composable
 fun LoadingScreen(

@@ -1,8 +1,8 @@
 
 
-package iad1tya.echo.music.di
+package sauravthakur.opm.di
 
-import iad1tya.echo.music.lyrics.LyricsHelper
+import sauravthakur.opm.lyrics.LyricsHelper
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent

@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.viewmodels
+package sauravthakur.opm.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.SavedStateHandle
@@ -9,17 +9,17 @@ import androidx.lifecycle.viewModelScope
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
-import iad1tya.echo.music.constants.HideVideoSongsKey
-import iad1tya.echo.music.constants.PlaylistSongSortDescendingKey
-import iad1tya.echo.music.constants.PlaylistSongSortType
-import iad1tya.echo.music.constants.PlaylistSongSortTypeKey
-import iad1tya.echo.music.db.MusicDatabase
-import iad1tya.echo.music.db.entities.PlaylistSong
-import iad1tya.echo.music.extensions.reversed
-import iad1tya.echo.music.extensions.toEnum
-import iad1tya.echo.music.models.toMediaMetadata
-import iad1tya.echo.music.utils.SyncUtils
-import iad1tya.echo.music.utils.dataStore
+import sauravthakur.opm.constants.HideVideoSongsKey
+import sauravthakur.opm.constants.PlaylistSongSortDescendingKey
+import sauravthakur.opm.constants.PlaylistSongSortType
+import sauravthakur.opm.constants.PlaylistSongSortTypeKey
+import sauravthakur.opm.db.MusicDatabase
+import sauravthakur.opm.db.entities.PlaylistSong
+import sauravthakur.opm.extensions.reversed
+import sauravthakur.opm.extensions.toEnum
+import sauravthakur.opm.models.toMediaMetadata
+import sauravthakur.opm.utils.SyncUtils
+import sauravthakur.opm.utils.dataStore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers

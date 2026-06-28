@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.utils
+package sauravthakur.opm.utils
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
@@ -11,19 +11,19 @@ import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.utils.completed
 import com.music.innertube.utils.parseCookieString
-import iad1tya.echo.music.constants.InnerTubeCookieKey
-import iad1tya.echo.music.constants.LastFMUseSendLikes
-import iad1tya.echo.music.constants.LastFullSyncKey
-import iad1tya.echo.music.constants.SYNC_COOLDOWN
-import iad1tya.echo.music.db.MusicDatabase
-import iad1tya.echo.music.db.entities.ArtistEntity
-import iad1tya.echo.music.db.entities.PlaylistEntity
-import iad1tya.echo.music.db.entities.PlaylistSongMap
-import iad1tya.echo.music.db.entities.SongEntity
-import iad1tya.echo.music.extensions.collectLatest
-import iad1tya.echo.music.extensions.isInternetConnected
-import iad1tya.echo.music.extensions.isSyncEnabled
-import iad1tya.echo.music.models.toMediaMetadata
+import sauravthakur.opm.constants.InnerTubeCookieKey
+import sauravthakur.opm.constants.LastFMUseSendLikes
+import sauravthakur.opm.constants.LastFullSyncKey
+import sauravthakur.opm.constants.SYNC_COOLDOWN
+import sauravthakur.opm.db.MusicDatabase
+import sauravthakur.opm.db.entities.ArtistEntity
+import sauravthakur.opm.db.entities.PlaylistEntity
+import sauravthakur.opm.db.entities.PlaylistSongMap
+import sauravthakur.opm.db.entities.SongEntity
+import sauravthakur.opm.extensions.collectLatest
+import sauravthakur.opm.extensions.isInternetConnected
+import sauravthakur.opm.extensions.isSyncEnabled
+import sauravthakur.opm.models.toMediaMetadata
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineExceptionHandler

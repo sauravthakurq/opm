@@ -1,4 +1,4 @@
-package iad1tya.echo.music.artistvideo
+package sauravthakur.opm.artistvideo
 
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body

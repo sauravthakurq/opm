@@ -1,14 +1,15 @@
 
 
-package iad1tya.echo.music.ui.screens.settings
+package sauravthakur.opm.ui.screens.settings
 
-import iad1tya.echo.music.R
+import sauravthakur.opm.R
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.os.Build
 import android.provider.Settings
 import android.widget.Toast
 import android.net.Uri
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsetsSides
@@ -35,6 +36,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.width
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.graphics.Color
 
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
@@ -45,14 +47,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import androidx.navigation.NavController
-import iad1tya.echo.music.BuildConfig
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.Material3SettingsGroup
-import iad1tya.echo.music.ui.component.Material3SettingsItem
-import iad1tya.echo.music.ui.screens.Screens
-import iad1tya.echo.music.ui.utils.backToMain
-import iad1tya.echo.music.echomusic.updater.getUpdateAvailableState
+import sauravthakur.opm.BuildConfig
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.Material3SettingsGroup
+import sauravthakur.opm.ui.component.Material3SettingsItem
+import sauravthakur.opm.ui.screens.Screens
+import sauravthakur.opm.ui.utils.backToMain
+import sauravthakur.opm.echomusic.updater.getUpdateAvailableState
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -64,7 +66,7 @@ highlightKey: String? = null) {
     val uriHandler = LocalUriHandler.current
     val context = LocalContext.current
     val isAndroid12OrLater = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
-    val isUpdateAvailable = getUpdateAvailableState(context) && iad1tya.echo.music.echomusic.updater.getAutoUpdateCheckSetting(context)
+    val isUpdateAvailable = getUpdateAvailableState(context) && sauravthakur.opm.echomusic.updater.getAutoUpdateCheckSetting(context)
 
     var searchQuery by rememberSaveable { mutableStateOf("") }
     val searchLower = searchQuery.lowercase()
@@ -79,11 +81,13 @@ highlightKey: String? = null) {
     val storageText = stringResource(R.string.storage)
     val backupText = stringResource(R.string.backup_restore)
     val systemUpdateText = stringResource(R.string.system_update)
-    val aboutText = stringResource(R.string.about)
+    val aboutText = "About OPM"
+    val developerText = "About Developer"
 
     val scrollState = rememberScrollState()
     Column(
         Modifier
+            .background(Color.Black)
             .windowInsetsPadding(LocalPlayerAwareWindowInsets.current.only(WindowInsetsSides.Horizontal))
             .verticalScroll(scrollState)
             .padding(horizontal = 16.dp)
@@ -100,7 +104,7 @@ highlightKey: String? = null) {
             style = MaterialTheme.typography.displaySmall.copy(
                 fontWeight = FontWeight.SemiBold
             ),
-            color = MaterialTheme.colorScheme.onBackground,
+            color = Color.White,
             modifier = Modifier.padding(start = 8.dp, top = 24.dp, bottom = 16.dp)
         )
 
@@ -125,28 +129,33 @@ highlightKey: String? = null) {
                 }
             },
             shape = RoundedCornerShape(24.dp),
+            colors = OutlinedTextFieldDefaults.colors(
+                focusedContainerColor = Color.White.copy(alpha = 0.08f),
+                unfocusedContainerColor = Color.White.copy(alpha = 0.05f),
+                focusedBorderColor = Color.White.copy(alpha = 0.40f),
+                unfocusedBorderColor = Color.White.copy(alpha = 0.14f),
+                focusedTextColor = Color.White,
+                unfocusedTextColor = Color.White,
+                focusedPlaceholderColor = Color.White.copy(alpha = 0.50f),
+                unfocusedPlaceholderColor = Color.White.copy(alpha = 0.42f),
+                focusedLeadingIconColor = Color.White,
+                unfocusedLeadingIconColor = Color.White.copy(alpha = 0.72f),
+                focusedTrailingIconColor = Color.White,
+                unfocusedTrailingIconColor = Color.White.copy(alpha = 0.72f),
+            ),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 8.dp, end = 8.dp, bottom = 16.dp)
         )
 
         val itemsList = buildList {
-            if (accountText.lowercase().contains(searchLower)) {
+
+            if ("opm brain".contains(searchLower) || "echo brain".contains(searchLower)) {
                 add(
                     Material3SettingsItem(
-    isHighlighted = (highlightKey == accountText),
-                        icon = painterResource(R.drawable.account),
-                        title = { Text(accountText) },
-                        onClick = { navController.navigate("settings/account") }
-                    )
-                )
-            }
-            if ("echo brain".contains(searchLower)) {
-                add(
-                    Material3SettingsItem(
-    isHighlighted = (highlightKey == "Echo Brain (Beta)"),
+    isHighlighted = (highlightKey == "OPM Brain (Beta)"),
                         icon = rememberVectorPainter(Icons.Outlined.AutoAwesome),
-                        title = { Text("Echo Brain (Beta)") },
+                        title = { Text("OPM Brain (Beta)") },
                         onClick = { navController.navigate("settings/echo_brain") }
                     )
                 )
@@ -235,7 +244,7 @@ highlightKey: String? = null) {
                 add(
                     Material3SettingsItem(
     isHighlighted = (highlightKey == systemUpdateText),
-                        icon = painterResource(if (isUpdateAvailable) R.drawable.ic_launcher_nobg else R.drawable.update),
+                        icon = painterResource(if (isUpdateAvailable) R.drawable.ic_notification else R.drawable.update),
                         title = { Text(systemUpdateText) },
                         description = if (isUpdateAvailable) {
                             {
@@ -249,46 +258,19 @@ highlightKey: String? = null) {
                     )
                 )
             }
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                if ("supported links".contains(searchLower)) {
-                    add(
-                        Material3SettingsItem(
-                            isHighlighted = (highlightKey == "supported links"),
-                            icon = painterResource(R.drawable.link),
-                            title = { Text("Supported Links") },
-                            onClick = {
-                                try {
-                                    val intent = Intent(
-                                        Settings.ACTION_APP_OPEN_BY_DEFAULT_SETTINGS,
-                                        Uri.parse("package:${context.packageName}")
-                                    )
-                                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                                    context.startActivity(intent)
-                                } catch (e: Exception) {
-                                    when (e) {
-                                        is ActivityNotFoundException, is SecurityException -> {
-                                            Toast.makeText(context, "Cannot open settings", Toast.LENGTH_SHORT).show()
-                                        }
-                                        else -> {
-                                            Toast.makeText(context, "An error occurred", Toast.LENGTH_SHORT).show()
-                                        }
-                                    }
-                                }
-                            }
-                        )
-                    )
-                }
-            }
             if (aboutText.lowercase().contains(searchLower)) {
                 add(
                     Material3SettingsItem(
     isHighlighted = (highlightKey == aboutText),
-                        icon = painterResource(R.drawable.info),
+                        icon = painterResource(R.drawable.ic_notification),
+                        tintIcon = false,
                         title = { Text(aboutText) },
+                        description = { Text("Version, credits, and premium OPM identity") },
                         onClick = { navController.navigate("settings/about") }
                     )
                 )
             }
+
         }
 
         val finalItemsList = if (searchQuery.isNotEmpty()) {
@@ -322,7 +304,7 @@ highlightKey: String? = null) {
             Text(
                 text = "No settings found for \"$searchQuery\"",
                 style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                color = Color.White.copy(alpha = 0.64f),
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp)
             )
@@ -330,7 +312,7 @@ highlightKey: String? = null) {
             Material3SettingsGroup(scrollState = scrollState, items = finalItemsList)
         }
         
-        Spacer(modifier = Modifier.height(50.dp))
+            Spacer(modifier = Modifier.height(50.dp))
         Spacer(
             Modifier.windowInsetsPadding(
                 LocalPlayerAwareWindowInsets.current.only(WindowInsetsSides.Bottom)

@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.db.entities
+package sauravthakur.opm.db.entities
 
 import androidx.compose.runtime.Immutable
 import androidx.room.ColumnInfo
@@ -46,7 +46,7 @@ data class PlaylistEntity(
     val shareLink: String?
         get() {
             return if (browseId != null)
-                "https://share.echomusic.fun/playlist?list=$browseId"
+                "https://music.youtube.com/playlist?list=$browseId"
             else null
         }
 

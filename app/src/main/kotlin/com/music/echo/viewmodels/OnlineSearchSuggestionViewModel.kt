@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.viewmodels
+package sauravthakur.opm.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
@@ -11,12 +11,12 @@ import com.music.innertube.models.YTItem
 import com.music.innertube.models.filterExplicit
 import com.music.innertube.models.filterVideoSongs
 import com.music.innertube.utils.YouTubeUrlParser
-import iad1tya.echo.music.constants.HideExplicitKey
-import iad1tya.echo.music.constants.HideVideoSongsKey
-import iad1tya.echo.music.db.MusicDatabase
-import iad1tya.echo.music.db.entities.SearchHistory
-import iad1tya.echo.music.utils.dataStore
-import iad1tya.echo.music.utils.get
+import sauravthakur.opm.constants.HideExplicitKey
+import sauravthakur.opm.constants.HideVideoSongsKey
+import sauravthakur.opm.db.MusicDatabase
+import sauravthakur.opm.db.entities.SearchHistory
+import sauravthakur.opm.utils.dataStore
+import sauravthakur.opm.utils.get
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.ExperimentalCoroutinesApi

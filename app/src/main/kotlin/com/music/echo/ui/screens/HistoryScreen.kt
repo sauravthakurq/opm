@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens
+package sauravthakur.opm.ui.screens
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -57,32 +57,32 @@ import androidx.compose.ui.util.fastForEachReversed
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.music.innertube.utils.parseCookieString
-import iad1tya.echo.music.LocalDatabase
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.HistorySource
-import iad1tya.echo.music.constants.InnerTubeCookieKey
-import iad1tya.echo.music.extensions.metadata
-import iad1tya.echo.music.extensions.toMediaItem
-import iad1tya.echo.music.models.toMediaMetadata
-import iad1tya.echo.music.playback.queues.ListQueue
-import iad1tya.echo.music.playback.queues.YouTubeQueue
-import iad1tya.echo.music.ui.component.ChipsRow
-import iad1tya.echo.music.ui.component.HideOnScrollFAB
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.LocalMenuState
-import iad1tya.echo.music.ui.component.NavigationTitle
-import iad1tya.echo.music.ui.component.SongListItem
-import iad1tya.echo.music.ui.component.YouTubeListItem
-import iad1tya.echo.music.ui.menu.SelectionMediaMetadataMenu
-import iad1tya.echo.music.ui.menu.SongMenu
-import iad1tya.echo.music.ui.menu.YouTubeSongMenu
-import iad1tya.echo.music.ui.utils.backToMain
-import iad1tya.echo.music.utils.listItemShape
-import iad1tya.echo.music.utils.rememberPreference
-import iad1tya.echo.music.viewmodels.DateAgo
-import iad1tya.echo.music.viewmodels.HistoryViewModel
+import sauravthakur.opm.LocalDatabase
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.HistorySource
+import sauravthakur.opm.constants.InnerTubeCookieKey
+import sauravthakur.opm.extensions.metadata
+import sauravthakur.opm.extensions.toMediaItem
+import sauravthakur.opm.models.toMediaMetadata
+import sauravthakur.opm.playback.queues.ListQueue
+import sauravthakur.opm.playback.queues.YouTubeQueue
+import sauravthakur.opm.ui.component.ChipsRow
+import sauravthakur.opm.ui.component.HideOnScrollFAB
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.LocalMenuState
+import sauravthakur.opm.ui.component.NavigationTitle
+import sauravthakur.opm.ui.component.SongListItem
+import sauravthakur.opm.ui.component.YouTubeListItem
+import sauravthakur.opm.ui.menu.SelectionMediaMetadataMenu
+import sauravthakur.opm.ui.menu.SongMenu
+import sauravthakur.opm.ui.menu.YouTubeSongMenu
+import sauravthakur.opm.ui.utils.backToMain
+import sauravthakur.opm.utils.listItemShape
+import sauravthakur.opm.utils.rememberPreference
+import sauravthakur.opm.viewmodels.DateAgo
+import sauravthakur.opm.viewmodels.HistoryViewModel
 import java.time.format.DateTimeFormatter
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)

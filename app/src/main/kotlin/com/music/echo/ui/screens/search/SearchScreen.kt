@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.search
+package sauravthakur.opm.ui.screens.search
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -74,22 +74,22 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.navigation.NavController
 import com.music.innertube.models.WatchEndpoint
 import com.music.innertube.utils.YouTubeUrlParser
-import iad1tya.echo.music.LocalDatabase
-import iad1tya.echo.music.LocalIsPlayerExpanded
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.PauseSearchHistoryKey
-import iad1tya.echo.music.constants.SearchSource
-import iad1tya.echo.music.constants.SearchSourceKey
-import iad1tya.echo.music.db.entities.SearchHistory
-import iad1tya.echo.music.playback.queues.YouTubeQueue
-import iad1tya.echo.music.ui.component.NavigationTitle
-import iad1tya.echo.music.utils.rememberEnumPreference
-import iad1tya.echo.music.utils.rememberPreference
-import iad1tya.echo.music.viewmodels.MoodAndGenresViewModel
-import iad1tya.echo.music.viewmodels.ExploreViewModel
-import iad1tya.echo.music.ui.screens.search.suggestions.SuggestionsTabContent
+import sauravthakur.opm.LocalDatabase
+import sauravthakur.opm.LocalIsPlayerExpanded
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.PauseSearchHistoryKey
+import sauravthakur.opm.constants.SearchSource
+import sauravthakur.opm.constants.SearchSourceKey
+import sauravthakur.opm.db.entities.SearchHistory
+import sauravthakur.opm.playback.queues.YouTubeQueue
+import sauravthakur.opm.ui.component.NavigationTitle
+import sauravthakur.opm.utils.rememberEnumPreference
+import sauravthakur.opm.utils.rememberPreference
+import sauravthakur.opm.viewmodels.MoodAndGenresViewModel
+import sauravthakur.opm.viewmodels.ExploreViewModel
+import sauravthakur.opm.ui.screens.search.suggestions.SuggestionsTabContent
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.net.URLEncoder
@@ -107,12 +107,12 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
-import iad1tya.echo.music.ui.component.LocalMenuState
-import iad1tya.echo.music.ui.component.YouTubeGridItem
-import iad1tya.echo.music.ui.menu.YouTubeAlbumMenu
-import iad1tya.echo.music.constants.GridThumbnailHeight
-import iad1tya.echo.music.constants.GridItemsSizeKey
-import iad1tya.echo.music.constants.GridItemSize
+import sauravthakur.opm.ui.component.LocalMenuState
+import sauravthakur.opm.ui.component.YouTubeGridItem
+import sauravthakur.opm.ui.menu.YouTubeAlbumMenu
+import sauravthakur.opm.constants.GridThumbnailHeight
+import sauravthakur.opm.constants.GridItemsSizeKey
+import sauravthakur.opm.constants.GridItemSize
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -232,7 +232,7 @@ fun SearchScreen(
         topBar = {
             Column(
                 modifier = Modifier
-                    .background(if (pureBlack) Color.Black else MaterialTheme.colorScheme.surface)
+                    .background(Color.Black)
             ) {
                 SearchBar(
                     query = query.text,
@@ -252,7 +252,7 @@ fun SearchScreen(
                                 }
                             ),
                             style = TextStyle(
-                                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
+                                color = Color.White.copy(alpha = 0.56f),
                                 fontSize = 16.sp
                             )
                         )
@@ -269,7 +269,7 @@ fun SearchScreen(
                             Icon(
                                 painter = painterResource(if (searchActive) R.drawable.arrow_back else R.drawable.search),
                                 contentDescription = if (searchActive) stringResource(R.string.dismiss) else null,
-                                tint = MaterialTheme.colorScheme.onSurface
+                                tint = Color.White
                             )
                         }
                     },
@@ -280,7 +280,7 @@ fun SearchScreen(
                                     Icon(
                                         painter = painterResource(R.drawable.close),
                                         contentDescription = null,
-                                        tint = MaterialTheme.colorScheme.onSurface
+                                        tint = Color.White
                                     )
                                 }
                             }
@@ -298,13 +298,13 @@ fun SearchScreen(
                                         }
                                     ),
                                     contentDescription = null,
-                                    tint = MaterialTheme.colorScheme.onSurface
+                                    tint = Color.White
                                 )
                             }
                         }
                     },
                     colors = SearchBarDefaults.colors(
-                        containerColor = if (pureBlack) MaterialTheme.colorScheme.primary.copy(alpha = 0.15f) else MaterialTheme.colorScheme.surfaceVariant
+                        containerColor = Color.White.copy(alpha = if (searchActive) 0.12f else 0.08f)
                     ),
                     modifier = Modifier
                         .fillMaxWidth()
@@ -356,7 +356,7 @@ fun SearchScreen(
                                             .width(32.dp)
                                             .height(3.dp)
                                             .clip(RoundedCornerShape(topStart = 3.dp, topEnd = 3.dp))
-                                            .background(MaterialTheme.colorScheme.primary)
+                                            .background(Color.White)
                                     )
                                 }
                             }
@@ -364,22 +364,22 @@ fun SearchScreen(
                             Tab(
                                 selected = selectedTabIndex == 0,
                                 onClick = { selectedTabIndex = 0 },
-                                selectedContentColor = MaterialTheme.colorScheme.primary,
-                                unselectedContentColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                                selectedContentColor = Color.White,
+                                unselectedContentColor = Color.White.copy(alpha = 0.52f),
                                 text = { Text(stringResource(R.string.tab_explore)) }
                             )
                             Tab(
                                 selected = selectedTabIndex == 1,
                                 onClick = { selectedTabIndex = 1 },
-                                selectedContentColor = MaterialTheme.colorScheme.primary,
-                                unselectedContentColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                                selectedContentColor = Color.White,
+                                unselectedContentColor = Color.White.copy(alpha = 0.52f),
                                 text = { Text(stringResource(R.string.tab_Suggestions)) }
                             )
                             Tab(
                                 selected = selectedTabIndex == 2,
                                 onClick = { selectedTabIndex = 2 },
-                                selectedContentColor = MaterialTheme.colorScheme.primary,
-                                unselectedContentColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                                selectedContentColor = Color.White,
+                                unselectedContentColor = Color.White.copy(alpha = 0.52f),
                                 text = { Text(stringResource(R.string.tab_album)) }
                             )
                         }
@@ -387,7 +387,7 @@ fun SearchScreen(
                 }
             }
         },
-        containerColor = if (pureBlack) Color.Black else MaterialTheme.colorScheme.background
+        containerColor = Color.Black
     ) { paddingValues ->
         val bottomPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues().calculateBottomPadding()
         
@@ -479,8 +479,8 @@ fun ExploreTabContent(
                                 .weight(1f)
                                 .padding(6.dp)
                                 .height(64.dp)
-                                .clip(RoundedCornerShape(10.dp))
-                                .background(MaterialTheme.colorScheme.surfaceContainer)
+                                .clip(RoundedCornerShape(22.dp))
+                                .background(Color.White.copy(alpha = 0.08f))
                                 .clickable {
                                     navController.navigate(
                                         "youtube_browse/${item.endpoint.browseId}?params=${item.endpoint.params}"
@@ -491,6 +491,7 @@ fun ExploreTabContent(
                             Text(
                                 text = item.title,
                                 style = MaterialTheme.typography.labelLarge,
+                                color = Color.White,
                                 maxLines = 2,
                                 overflow = TextOverflow.Ellipsis
                             )

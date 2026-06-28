@@ -1,17 +1,17 @@
 
 
-package iad1tya.echo.music.viewmodels
+package sauravthakur.opm.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.music.innertube.YouTube
 import com.music.innertube.pages.HistoryPage
-import iad1tya.echo.music.constants.HideVideoSongsKey
-import iad1tya.echo.music.constants.HistorySource
-import iad1tya.echo.music.db.MusicDatabase
-import iad1tya.echo.music.utils.dataStore
-import iad1tya.echo.music.utils.reportException
+import sauravthakur.opm.constants.HideVideoSongsKey
+import sauravthakur.opm.constants.HistorySource
+import sauravthakur.opm.db.MusicDatabase
+import sauravthakur.opm.utils.dataStore
+import sauravthakur.opm.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers

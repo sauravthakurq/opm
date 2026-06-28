@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.menu
+package sauravthakur.opm.ui.menu
 
 import android.content.Context
 import android.content.res.Configuration
@@ -72,28 +72,28 @@ import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import com.music.innertube.YouTube
-import iad1tya.echo.music.LocalDatabase
-import iad1tya.echo.music.LocalDownloadUtil
-import iad1tya.echo.music.LocalListenTogetherManager
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.EnableExportAsMp3Key
-import iad1tya.echo.music.constants.ExportDirectoryUriKey
-import iad1tya.echo.music.constants.ExportedSongIdsKey
-import iad1tya.echo.music.constants.ExportingSongIdsKey
-import iad1tya.echo.music.constants.ListItemHeight
-import iad1tya.echo.music.listentogether.ConnectionState
-import iad1tya.echo.music.listentogether.ListenTogetherEvent
-import iad1tya.echo.music.models.MediaMetadata
-import iad1tya.echo.music.playback.ExoDownloadService
-import iad1tya.echo.music.ui.component.BottomSheetState
-import iad1tya.echo.music.ui.component.ListDialog
-import iad1tya.echo.music.ui.component.Material3MenuGroup
-import iad1tya.echo.music.ui.component.Material3MenuItemData
-import iad1tya.echo.music.ui.component.NewAction
-import iad1tya.echo.music.ui.component.NewActionGrid
-import iad1tya.echo.music.ui.component.VolumeSlider
-import iad1tya.echo.music.utils.rememberPreference
+import sauravthakur.opm.LocalDatabase
+import sauravthakur.opm.LocalDownloadUtil
+import sauravthakur.opm.LocalListenTogetherManager
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.EnableExportAsMp3Key
+import sauravthakur.opm.constants.ExportDirectoryUriKey
+import sauravthakur.opm.constants.ExportedSongIdsKey
+import sauravthakur.opm.constants.ExportingSongIdsKey
+import sauravthakur.opm.constants.ListItemHeight
+import sauravthakur.opm.listentogether.ConnectionState
+import sauravthakur.opm.listentogether.ListenTogetherEvent
+import sauravthakur.opm.models.MediaMetadata
+import sauravthakur.opm.playback.ExoDownloadService
+import sauravthakur.opm.ui.component.BottomSheetState
+import sauravthakur.opm.ui.component.ListDialog
+import sauravthakur.opm.ui.component.Material3MenuGroup
+import sauravthakur.opm.ui.component.Material3MenuItemData
+import sauravthakur.opm.ui.component.NewAction
+import sauravthakur.opm.ui.component.NewActionGrid
+import sauravthakur.opm.ui.component.VolumeSlider
+import sauravthakur.opm.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlin.math.log2
@@ -180,9 +180,9 @@ fun PlayerMenu(
     }
 
     val listenTogetherManager = LocalListenTogetherManager.current
-    val ringtoneViewModel = iad1tya.echo.music.LocalRingtoneViewModel.current
-    val listenTogetherRoleState = listenTogetherManager?.role?.collectAsState(initial = iad1tya.echo.music.listentogether.RoomRole.NONE)
-    val isListenTogetherGuest = listenTogetherRoleState?.value == iad1tya.echo.music.listentogether.RoomRole.GUEST
+    val ringtoneViewModel = sauravthakur.opm.LocalRingtoneViewModel.current
+    val listenTogetherRoleState = listenTogetherManager?.role?.collectAsState(initial = sauravthakur.opm.listentogether.RoomRole.NONE)
+    val isListenTogetherGuest = listenTogetherRoleState?.value == sauravthakur.opm.listentogether.RoomRole.GUEST
     val pendingSuggestions by listenTogetherManager?.pendingSuggestions?.collectAsState(initial = emptyList()) ?: remember { mutableStateOf(emptyList()) }
 
     AddToPlaylistDialog(
@@ -367,7 +367,7 @@ fun PlayerMenu(
                                 type = "text/plain"
                                 putExtra(
                                     android.content.Intent.EXTRA_TEXT,
-                                    "https://share.echomusic.fun/watch?v=${mediaMetadata.id}"
+                                    "https://music.youtube.com/watch?v=${mediaMetadata.id}"
                                 )
                             }
                             context.startActivity(android.content.Intent.createChooser(intent, null))
@@ -470,7 +470,7 @@ fun PlayerMenu(
                     add(
                         Material3MenuItemData(
                             customComposable = {
-                                iad1tya.echo.music.ui.component.CastButton(asMenuItem = true)
+                                sauravthakur.opm.ui.component.CastButton(asMenuItem = true)
                             }
                         )
                     )
@@ -622,7 +622,7 @@ fun PlayerMenu(
                                         onDismiss()
                                     } else {
                                         onDismiss()
-                                        iad1tya.echo.music.playback.AudioExportService.start(
+                                        sauravthakur.opm.playback.AudioExportService.start(
                                             context = context,
                                             songId = mediaMetadata.id,
                                             songTitle = mediaMetadata.title,
@@ -808,7 +808,7 @@ fun TempoPitchDialog(onDismiss: () -> Unit) {
         playerConnection.player.playbackParameters =
             PlaybackParameters(tempo, 2f.pow(transposeValue.toFloat() / 12))
     }
-    val listenTogetherManager = iad1tya.echo.music.LocalListenTogetherManager.current
+    val listenTogetherManager = sauravthakur.opm.LocalListenTogetherManager.current
     val isInRoom = listenTogetherManager?.isInRoom ?: false
 
     AlertDialog(
@@ -927,7 +927,7 @@ fun ListenTogetherDialog(
     if (!visible) return
     
     val context = LocalContext.current
-    val listenTogetherManager = iad1tya.echo.music.LocalListenTogetherManager.current
+    val listenTogetherManager = sauravthakur.opm.LocalListenTogetherManager.current
     
     
     if (listenTogetherManager == null) {
@@ -981,7 +981,7 @@ fun ListenTogetherDialog(
     val pendingSuggestions by listenTogetherManager.pendingSuggestions.collectAsState()
     
     
-    var savedUsername by rememberPreference(iad1tya.echo.music.constants.ListenTogetherUsernameKey, "")
+    var savedUsername by rememberPreference(sauravthakur.opm.constants.ListenTogetherUsernameKey, "")
     var roomCodeInput by rememberSaveable { mutableStateOf("") }
     var usernameInput by rememberSaveable { mutableStateOf(savedUsername) }
 
@@ -1410,7 +1410,7 @@ fun ListenTogetherDialog(
                             if (isHost) {
                                 Spacer(modifier = Modifier.height(12.dp))
                                 val inviteLink = remember(room.roomCode) {
-                                    "https://echomusic-listen-together.onrender.com/listen?code=${room.roomCode}"
+                                    "opm://listen?code=${room.roomCode}"
                                 }
                                 Row(
                                     verticalAlignment = Alignment.CenterVertically,

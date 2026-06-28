@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.extensions
+package sauravthakur.opm.extensions
 
 import android.net.Uri
 import android.os.Bundle
@@ -8,10 +8,10 @@ import androidx.core.net.toUri
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata.MEDIA_TYPE_MUSIC
 import com.music.innertube.models.SongItem
-import iad1tya.echo.music.db.entities.Song
-import iad1tya.echo.music.models.MediaMetadata
-import iad1tya.echo.music.models.toMediaMetadata
-import iad1tya.echo.music.ui.utils.resize
+import sauravthakur.opm.db.entities.Song
+import sauravthakur.opm.models.MediaMetadata
+import sauravthakur.opm.models.toMediaMetadata
+import sauravthakur.opm.ui.utils.resize
 import java.util.Locale
 
 val MediaItem.metadata: MediaMetadata?

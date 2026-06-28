@@ -1,4 +1,4 @@
-package iad1tya.echo.music.ui.screens.ambient
+package sauravthakur.opm.ui.screens.ambient
 
 import android.app.Activity
 import android.content.pm.ActivityInfo
@@ -36,9 +36,9 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.extensions.togglePlayPause
-import iad1tya.echo.music.ui.player.InlineLyricsView
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.extensions.togglePlayPause
+import sauravthakur.opm.ui.player.InlineLyricsView
 import kotlin.math.abs
 
 @Composable

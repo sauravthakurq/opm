@@ -1,18 +1,18 @@
-package iad1tya.echo.music.engine
+package sauravthakur.opm.engine
 
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
-import iad1tya.echo.music.data.EchoBrainRepository
-import iad1tya.echo.music.extensions.metadata
-import iad1tya.echo.music.extensions.toMediaItem
-import iad1tya.echo.music.models.MediaMetadata
-import iad1tya.echo.music.models.QueueItemSource
+import sauravthakur.opm.data.EchoBrainRepository
+import sauravthakur.opm.extensions.metadata
+import sauravthakur.opm.extensions.toMediaItem
+import sauravthakur.opm.models.MediaMetadata
+import sauravthakur.opm.models.QueueItemSource
 import com.music.innertube.models.WatchEndpoint
-import iad1tya.echo.music.db.DatabaseDao
-import iad1tya.echo.music.engine.brain.FlowNeuroEngine
-import iad1tya.echo.music.engine.brain.InteractionType
-import iad1tya.echo.music.models.toMediaMetadata
-import iad1tya.echo.music.playback.PlayerConnection
+import sauravthakur.opm.db.DatabaseDao
+import sauravthakur.opm.engine.brain.FlowNeuroEngine
+import sauravthakur.opm.engine.brain.InteractionType
+import sauravthakur.opm.models.toMediaMetadata
+import sauravthakur.opm.playback.PlayerConnection
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.async
@@ -65,7 +65,7 @@ class EchoBrainEngine @Inject constructor(
                     trackingJob?.cancel()
                     hasTriggeredAiQueue = false
                     
-                    // Remove Echo Brain items from the queue
+                    // Remove OPM Brain items from the queue
                     kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Main) {
                         val player = connection.player
                         val toRemove = mutableListOf<Int>()
@@ -228,7 +228,7 @@ class EchoBrainEngine @Inject constructor(
                         duration = it.duration,
                         album = it.album,
                         source = QueueItemSource.ECHO_BRAIN,
-                        suggestedBy = "Echo Brain",
+                        suggestedBy = "OPM Brain",
                         thumbnailUrl = it.thumbnailUrl
                     )
                     newMeta.toMediaItem()
@@ -274,7 +274,7 @@ class EchoBrainEngine @Inject constructor(
                             duration = it.duration,
                             album = it.album,
                             source = QueueItemSource.ECHO_BRAIN,
-                            suggestedBy = "Echo Brain",
+                            suggestedBy = "OPM Brain",
                             thumbnailUrl = it.thumbnailUrl
                         )
                     }

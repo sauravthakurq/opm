@@ -6,7 +6,7 @@ import android.content.Context
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import iad1tya.echo.music.db.entities.Song
+import sauravthakur.opm.db.entities.Song
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -92,7 +92,7 @@ object ListenBrainzManager {
                     artistNames,
                 )}\",\"track_name\":\"${escapeJson(
                     song.title,
-                )}\",${releasePart}\"additional_info\":{\"duration_ms\":$durationMs,\"position_ms\":$positionMs,\"submission_client\":\"Echo Music\"}}}"
+                )}\",${releasePart}\"additional_info\":{\"duration_ms\":$durationMs,\"position_ms\":$positionMs,\"submission_client\":\"OPM\"}}}"
                 val listensJson = "[$trackMetadata]"
                 val bodyJson = "{\"listen_type\":\"playing_now\",\"payload\":$listensJson}"
                 Timber.tag(logTag).d("submitPlayingNow JSON: %s", bodyJson)
@@ -160,7 +160,7 @@ object ListenBrainzManager {
                     artistNames,
                 )}\",\"track_name\":\"${escapeJson(
                     song.title,
-                )}\",${releasePart}\"additional_info\":{\"duration_ms\":$durationMs,\"start_ms\":$startMs,\"end_ms\":$endMs,\"submission_client\":\"Echo Music\"}}}"
+                )}\",${releasePart}\"additional_info\":{\"duration_ms\":$durationMs,\"start_ms\":$startMs,\"end_ms\":$endMs,\"submission_client\":\"OPM\"}}}"
                 val listensJson = "[$trackMetadataSingle]"
                 val bodyJson = "{\"listen_type\":\"single\",\"payload\":$listensJson}"
                 Timber.tag(logTag).d("submitFinished JSON: %s", bodyJson)

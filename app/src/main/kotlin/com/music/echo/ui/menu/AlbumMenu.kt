@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.menu
+package sauravthakur.opm.ui.menu
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -63,27 +63,27 @@ import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
-import iad1tya.echo.music.LocalDatabase
-import iad1tya.echo.music.LocalDownloadUtil
-import iad1tya.echo.music.LocalListenTogetherManager
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.ListItemHeight
-import iad1tya.echo.music.constants.ListThumbnailSize
-import iad1tya.echo.music.db.entities.Album
-import iad1tya.echo.music.db.entities.SpeedDialItem
-import iad1tya.echo.music.db.entities.Song
-import iad1tya.echo.music.extensions.toMediaItem
-import iad1tya.echo.music.playback.ExoDownloadService
-import iad1tya.echo.music.playback.queues.ListQueue
-import iad1tya.echo.music.ui.component.AlbumListItem
-import iad1tya.echo.music.ui.component.ListDialog
-import iad1tya.echo.music.ui.component.ListItem
-import iad1tya.echo.music.ui.component.Material3MenuGroup
-import iad1tya.echo.music.ui.component.Material3MenuItemData
-import iad1tya.echo.music.ui.component.NewAction
-import iad1tya.echo.music.ui.component.NewActionGrid
-import iad1tya.echo.music.ui.component.SongListItem
+import sauravthakur.opm.LocalDatabase
+import sauravthakur.opm.LocalDownloadUtil
+import sauravthakur.opm.LocalListenTogetherManager
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.ListItemHeight
+import sauravthakur.opm.constants.ListThumbnailSize
+import sauravthakur.opm.db.entities.Album
+import sauravthakur.opm.db.entities.SpeedDialItem
+import sauravthakur.opm.db.entities.Song
+import sauravthakur.opm.extensions.toMediaItem
+import sauravthakur.opm.playback.ExoDownloadService
+import sauravthakur.opm.playback.queues.ListQueue
+import sauravthakur.opm.ui.component.AlbumListItem
+import sauravthakur.opm.ui.component.ListDialog
+import sauravthakur.opm.ui.component.ListItem
+import sauravthakur.opm.ui.component.Material3MenuGroup
+import sauravthakur.opm.ui.component.Material3MenuItemData
+import sauravthakur.opm.ui.component.NewAction
+import sauravthakur.opm.ui.component.NewActionGrid
+import sauravthakur.opm.ui.component.SongListItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -366,7 +366,7 @@ fun AlbumMenu(
                             val intent = Intent().apply {
                                 action = Intent.ACTION_SEND
                                 type = "text/plain"
-                                putExtra(Intent.EXTRA_TEXT, "https://share.echomusic.fun/playlist?list=${album.album.playlistId}")
+                                putExtra(Intent.EXTRA_TEXT, "https://music.youtube.com/playlist?list=${album.album.playlistId}")
                             }
                             context.startActivity(Intent.createChooser(intent, null))
                         }

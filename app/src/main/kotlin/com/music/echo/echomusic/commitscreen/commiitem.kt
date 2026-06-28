@@ -1,4 +1,4 @@
-package iad1tya.echo.music.echomusic.commitscreen
+package sauravthakur.opm.echomusic.commitscreen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -26,7 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import iad1tya.echo.music.R
+import sauravthakur.opm.R
 
 @Composable
  fun CommitItem(

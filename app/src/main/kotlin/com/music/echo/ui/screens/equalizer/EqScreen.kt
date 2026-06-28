@@ -1,4 +1,4 @@
-package iad1tya.echo.music.ui.screens.equalizer
+package sauravthakur.opm.ui.screens.equalizer
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -49,9 +49,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.eq.data.SavedEQProfile
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.eq.data.SavedEQProfile
 import timber.log.Timber
 
 
@@ -237,7 +237,7 @@ private fun EqScreenContent(
                     IconButton(onClick = onNavigateToAxion) {
                         Icon(
                             painter = painterResource(R.drawable.tune),
-                            contentDescription = stringResource(R.string.echo_equalizer)
+                            contentDescription = stringResource(R.string.opm_equalizer)
                         )
                     }
                     IconButton(onClick = onImportCustomEQ) {

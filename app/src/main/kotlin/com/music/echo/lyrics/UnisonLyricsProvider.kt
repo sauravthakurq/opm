@@ -1,10 +1,10 @@
-package iad1tya.echo.music.lyrics
+package sauravthakur.opm.lyrics
 
 import android.content.Context
 import com.music.echo.unison.Unison
-import iad1tya.echo.music.constants.UnisonLyricsEnabledKey
-import iad1tya.echo.music.utils.dataStore
-import iad1tya.echo.music.utils.get
+import sauravthakur.opm.constants.UnisonLyricsEnabledKey
+import sauravthakur.opm.utils.dataStore
+import sauravthakur.opm.utils.get
 
 object UnisonLyricsProvider : LyricsProvider {
     override val name: String = "Unison"

@@ -1,4 +1,4 @@
-package iad1tya.echo.music.eq.data
+package sauravthakur.opm.eq.data
 
 import kotlinx.serialization.Serializable
 

@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.settings
+package sauravthakur.opm.ui.screens.settings
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -32,55 +32,53 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import iad1tya.echo.music.BuildConfig
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.AudioNormalizationKey
-import iad1tya.echo.music.constants.AudioOffload
-import iad1tya.echo.music.constants.AudioQuality
-import iad1tya.echo.music.constants.AudioQualityKey
-import iad1tya.echo.music.constants.AutoDownloadOnLikeKey
-import iad1tya.echo.music.constants.CrossfadeDurationKey
-import iad1tya.echo.music.constants.CrossfadeEnabledKey
-import iad1tya.echo.music.constants.CrossfadeGaplessKey
-import iad1tya.echo.music.constants.AutoLoadMoreKey
-import iad1tya.echo.music.constants.AutoSkipNextOnErrorKey
-import iad1tya.echo.music.constants.DisableLoadMoreWhenRepeatAllKey
-import iad1tya.echo.music.constants.EnableGoogleCastKey
-import iad1tya.echo.music.constants.HistoryDuration
-import iad1tya.echo.music.constants.KeepScreenOn
-import iad1tya.echo.music.constants.PauseOnMute
-import iad1tya.echo.music.constants.PersistentQueueKey
-import iad1tya.echo.music.constants.PersistentShuffleAcrossQueuesKey
-import iad1tya.echo.music.constants.PreventDuplicateTracksInQueueKey
-import iad1tya.echo.music.constants.RememberShuffleAndRepeatKey
-import iad1tya.echo.music.constants.ResumeOnBluetoothConnectKey
-import iad1tya.echo.music.constants.SeekExtraSeconds
-import iad1tya.echo.music.constants.ShufflePlaylistFirstKey
-import iad1tya.echo.music.constants.SimilarContent
-import iad1tya.echo.music.constants.ShowAudioFallbackToastKey
-import iad1tya.echo.music.constants.SkipSilenceInstantKey
-import iad1tya.echo.music.constants.SkipSilenceKey
-import iad1tya.echo.music.constants.StopMusicOnTaskClearKey
-import iad1tya.echo.music.constants.EnableExportAsMp3Key
+import sauravthakur.opm.BuildConfig
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.AudioNormalizationKey
+import sauravthakur.opm.constants.AudioOffload
+import sauravthakur.opm.constants.AudioQuality
+import sauravthakur.opm.constants.AudioQualityKey
+import sauravthakur.opm.constants.AutoDownloadOnLikeKey
+import sauravthakur.opm.constants.CrossfadeDurationKey
+import sauravthakur.opm.constants.CrossfadeEnabledKey
+import sauravthakur.opm.constants.CrossfadeGaplessKey
+import sauravthakur.opm.constants.AutoLoadMoreKey
+import sauravthakur.opm.constants.AutoSkipNextOnErrorKey
+import sauravthakur.opm.constants.DisableLoadMoreWhenRepeatAllKey
+import sauravthakur.opm.constants.EnableGoogleCastKey
+import sauravthakur.opm.constants.HistoryDuration
+import sauravthakur.opm.constants.KeepScreenOn
+import sauravthakur.opm.constants.PauseOnMute
+import sauravthakur.opm.constants.PersistentQueueKey
+import sauravthakur.opm.constants.PersistentShuffleAcrossQueuesKey
+import sauravthakur.opm.constants.PreventDuplicateTracksInQueueKey
+import sauravthakur.opm.constants.RememberShuffleAndRepeatKey
+import sauravthakur.opm.constants.ResumeOnBluetoothConnectKey
+import sauravthakur.opm.constants.SeekExtraSeconds
+import sauravthakur.opm.constants.ShufflePlaylistFirstKey
+import sauravthakur.opm.constants.SimilarContent
+import sauravthakur.opm.constants.ShowAudioFallbackToastKey
+import sauravthakur.opm.constants.SkipSilenceInstantKey
+import sauravthakur.opm.constants.SkipSilenceKey
+import sauravthakur.opm.constants.StopMusicOnTaskClearKey
+import sauravthakur.opm.constants.EnableExportAsMp3Key
 
-import iad1tya.echo.music.constants.PreloadNextSongEnabledKey
-import iad1tya.echo.music.constants.PreloadNextSongLimitKey
-import iad1tya.echo.music.constants.PreloadLyricsEnabledKey
+import sauravthakur.opm.constants.PreloadNextSongEnabledKey
+import sauravthakur.opm.constants.PreloadNextSongLimitKey
+import sauravthakur.opm.constants.PreloadLyricsEnabledKey
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import iad1tya.echo.music.ui.component.DefaultDialog
-import iad1tya.echo.music.ui.component.EnumDialog
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.Material3SettingsGroup
-import iad1tya.echo.music.ui.component.Material3SettingsItem
-import iad1tya.echo.music.ui.utils.backToMain
-import iad1tya.echo.music.utils.rememberEnumPreference
-import iad1tya.echo.music.utils.rememberPreference
+import sauravthakur.opm.ui.component.DefaultDialog
+import sauravthakur.opm.ui.component.EnumDialog
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.Material3SettingsGroup
+import sauravthakur.opm.ui.component.Material3SettingsItem
+import sauravthakur.opm.ui.utils.backToMain
+import sauravthakur.opm.utils.rememberEnumPreference
+import sauravthakur.opm.utils.rememberPreference
 import kotlin.math.roundToInt
-import android.content.Intent
-import android.net.Uri
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -231,8 +229,8 @@ highlightKey: String? = null) {
     }
 
     val (downloadQuality, onDownloadQualityChange) = rememberEnumPreference(
-        iad1tya.echo.music.constants.DownloadQualityKey,
-        defaultValue = iad1tya.echo.music.constants.DownloadQuality.YOUTUBE
+        sauravthakur.opm.constants.DownloadQualityKey,
+        defaultValue = sauravthakur.opm.constants.DownloadQuality.YOUTUBE
     )
 
     var showSaavnAudioWarning by remember { mutableStateOf(false) }
@@ -253,7 +251,7 @@ highlightKey: String? = null) {
             },
             title = stringResource(R.string.audio_quality),
             current = audioQuality,
-            values = AudioQuality.values().filter { iad1tya.echo.music.constants.LOSSLESS_ENABLED || it != AudioQuality.LOSSLESS },
+            values = AudioQuality.values().filter { sauravthakur.opm.constants.LOSSLESS_ENABLED || it != AudioQuality.LOSSLESS },
             valueText = {
                 when (it) {
                     AudioQuality.OPUS -> "Opus"
@@ -273,12 +271,12 @@ highlightKey: String? = null) {
             },
             title = stringResource(R.string.download_quality_title),
             current = downloadQuality,
-            values = iad1tya.echo.music.constants.DownloadQuality.values().filter { iad1tya.echo.music.constants.LOSSLESS_ENABLED || it != iad1tya.echo.music.constants.DownloadQuality.LOSSLESS },
+            values = sauravthakur.opm.constants.DownloadQuality.values().filter { sauravthakur.opm.constants.LOSSLESS_ENABLED || it != sauravthakur.opm.constants.DownloadQuality.LOSSLESS },
             valueText = {
                 when (it) {
-                    iad1tya.echo.music.constants.DownloadQuality.YOUTUBE -> "YouTube Music (AAC/Default)"
-                    iad1tya.echo.music.constants.DownloadQuality.SAAVN -> "Saavn (320kbps)"
-                    iad1tya.echo.music.constants.DownloadQuality.LOSSLESS -> "Qobuz (Lossless)"
+                    sauravthakur.opm.constants.DownloadQuality.YOUTUBE -> "YouTube Music (AAC/Default)"
+                    sauravthakur.opm.constants.DownloadQuality.SAAVN -> "Saavn (320kbps)"
+                    sauravthakur.opm.constants.DownloadQuality.LOSSLESS -> "Qobuz (Lossless)"
                 }
             }
         )
@@ -321,12 +319,6 @@ highlightKey: String? = null) {
                 onDismiss = { showSaavnAudioWarning = false },
                 title = { Text("Enable Saavn (320kbps)?") },
                 buttons = {
-                    TextButton(onClick = {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://echomusic.fun/donate"))
-                        context.startActivity(intent)
-                    }) {
-                        Text("Donate")
-                    }
                     TextButton(onClick = { showSaavnAudioWarning = false }) {
                         Text(stringResource(R.string.cancel))
                     }
@@ -338,7 +330,7 @@ highlightKey: String? = null) {
                     }
                 }
             ) {
-                Text("Saavn (320kbps) streams run through Echo Music's servers and cost real money to keep running. If you find it useful, please consider donating to help keep this alive.\n\nNote: If Saavn playback fails, the app automatically falls back to YouTube Music's Opus stream.")
+                Text("Saavn (320kbps) streams run through OPM's servers.\n\nNote: If Saavn playback fails, the app automatically falls back to YouTube Music's Opus stream.")
             }
         }
 
@@ -347,12 +339,6 @@ highlightKey: String? = null) {
                 onDismiss = { showLosslessAudioWarning = false },
                 title = { Text(stringResource(R.string.enable_lossless_audio)) },
                 buttons = {
-                    TextButton(onClick = {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://echomusic.fun/donate"))
-                        context.startActivity(intent)
-                    }) {
-                        Text("Donate")
-                    }
                     TextButton(onClick = { showLosslessAudioWarning = false }) {
                         Text(stringResource(R.string.cancel))
                     }
@@ -368,7 +354,7 @@ highlightKey: String? = null) {
                     }
                 }
             ) {
-                Text("Lossless (Qobuz) streams run through Echo Music's servers and cost real money to keep running. If you find it useful, please consider donating — it directly helps cover server costs.\n\n" + stringResource(R.string.lossless_audio_warning))
+                Text("Lossless (Qobuz) streams run through OPM's servers.\n\n" + stringResource(R.string.lossless_audio_warning))
             }
         }
 
@@ -431,9 +417,9 @@ highlightKey: String? = null) {
                     description = {
                         Text(
                             when (downloadQuality) {
-                                iad1tya.echo.music.constants.DownloadQuality.YOUTUBE -> "YouTube Music (AAC/Default)"
-                                iad1tya.echo.music.constants.DownloadQuality.SAAVN -> "Saavn (320kbps)"
-                                iad1tya.echo.music.constants.DownloadQuality.LOSSLESS -> "Qobuz (Lossless)"
+                                sauravthakur.opm.constants.DownloadQuality.YOUTUBE -> "YouTube Music (AAC/Default)"
+                                sauravthakur.opm.constants.DownloadQuality.SAAVN -> "Saavn (320kbps)"
+                                sauravthakur.opm.constants.DownloadQuality.LOSSLESS -> "Qobuz (Lossless)"
                             }
                         )
                     },
@@ -752,10 +738,10 @@ highlightKey: String? = null) {
                     onClick = { onSeekExtraSeconds(!seekExtraSeconds) }
                 ))
                 add(Material3SettingsItem(
-    isHighlighted = (highlightKey == stringResource(R.string.echo_equalizer)),
-                    icon = painterResource(R.drawable.echoequlizer),
-                    title = { Text(stringResource(R.string.echo_equalizer)) },
-                    description = { Text(stringResource(R.string.echo_equalizer_desc)) },
+    isHighlighted = (highlightKey == stringResource(R.string.opm_equalizer)),
+                    icon = painterResource(R.drawable.equalizer),
+                    title = { Text(stringResource(R.string.opm_equalizer)) },
+                    description = { Text(stringResource(R.string.opm_equalizer_desc)) },
                     onClick = { navController.navigate("settings/equalizer") }
                 ))
             }

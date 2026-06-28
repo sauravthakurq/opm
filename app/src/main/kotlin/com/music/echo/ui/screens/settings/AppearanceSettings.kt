@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.settings
+package sauravthakur.opm.ui.screens.settings
 
 import android.app.Activity
 import android.content.Context
@@ -56,77 +56,75 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.CanvasThumbnailAnimationKey
-import iad1tya.echo.music.constants.ChipSortTypeKey
-import iad1tya.echo.music.constants.CropAlbumArtKey
-import iad1tya.echo.music.constants.DefaultOpenTabKey
-import iad1tya.echo.music.constants.DensityScale
-import iad1tya.echo.music.constants.DensityScaleKey
-import iad1tya.echo.music.constants.DynamicThemeKey
-import iad1tya.echo.music.constants.EnableDynamicIconKey
-import iad1tya.echo.music.constants.EnableHighRefreshRateKey
-import iad1tya.echo.music.constants.EnableLyricsThumbnailPlayPauseKey
-import iad1tya.echo.music.constants.GridItemSize
-import iad1tya.echo.music.constants.GridItemsSizeKey
-import iad1tya.echo.music.constants.HidePlayerThumbnailKey
-import iad1tya.echo.music.constants.LibraryFilter
-import iad1tya.echo.music.constants.ListenTogetherInTopBarKey
-import iad1tya.echo.music.constants.LyricsAnimationStyle
-import iad1tya.echo.music.constants.LyricsAnimationStyleKey
-import iad1tya.echo.music.constants.LyricsStandardBlurKey
-import iad1tya.echo.music.constants.LyricsTextPositionKey
-import iad1tya.echo.music.constants.LyricsTextSizeKey
-import iad1tya.echo.music.constants.PlayerBackgroundStyle
-import iad1tya.echo.music.constants.PlayerBackgroundStyleKey
-import iad1tya.echo.music.constants.PlayerButtonsStyle
-import iad1tya.echo.music.constants.PlayerButtonsStyleKey
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.CanvasThumbnailAnimationKey
+import sauravthakur.opm.constants.ChipSortTypeKey
+import sauravthakur.opm.constants.CropAlbumArtKey
+import sauravthakur.opm.constants.DefaultOpenTabKey
+import sauravthakur.opm.constants.DensityScale
+import sauravthakur.opm.constants.DensityScaleKey
+import sauravthakur.opm.constants.DynamicThemeKey
+import sauravthakur.opm.constants.EnableHighRefreshRateKey
+import sauravthakur.opm.constants.EnableLyricsThumbnailPlayPauseKey
+import sauravthakur.opm.constants.GridItemSize
+import sauravthakur.opm.constants.GridItemsSizeKey
+import sauravthakur.opm.constants.HidePlayerThumbnailKey
+import sauravthakur.opm.constants.LibraryFilter
+import sauravthakur.opm.constants.ListenTogetherInTopBarKey
+import sauravthakur.opm.constants.LyricsAnimationStyle
+import sauravthakur.opm.constants.LyricsAnimationStyleKey
+import sauravthakur.opm.constants.LyricsStandardBlurKey
+import sauravthakur.opm.constants.LyricsTextPositionKey
+import sauravthakur.opm.constants.LyricsTextSizeKey
+import sauravthakur.opm.constants.PlayerBackgroundStyle
+import sauravthakur.opm.constants.PlayerBackgroundStyleKey
+import sauravthakur.opm.constants.PlayerButtonsStyle
+import sauravthakur.opm.constants.PlayerButtonsStyleKey
 
-import iad1tya.echo.music.constants.RotatingThumbnailKey
-import iad1tya.echo.music.constants.SelectedThemeColorKey
-import iad1tya.echo.music.constants.ShowCachedPlaylistKey
-import iad1tya.echo.music.constants.ShowExportedPlaylistKey
-import iad1tya.echo.music.constants.ShowDownloadedPlaylistKey
-import iad1tya.echo.music.constants.ShowLikedPlaylistKey
-import iad1tya.echo.music.constants.ShowTopPlaylistKey
-import iad1tya.echo.music.constants.ShowUploadedPlaylistKey
-import iad1tya.echo.music.constants.SliderStyle
-import iad1tya.echo.music.constants.SliderStyleKey
-import iad1tya.echo.music.constants.SquigglySliderKey
-import iad1tya.echo.music.constants.SwipeSensitivityKey
-import iad1tya.echo.music.constants.SwipeThumbnailKey
-import iad1tya.echo.music.constants.SwipeLyricsKey
-import iad1tya.echo.music.constants.SwipeToRemoveSongKey
-import iad1tya.echo.music.constants.SwipeToSongKey
-import iad1tya.echo.music.constants.ThumbnailCornerRadiusKey
+import sauravthakur.opm.constants.RotatingThumbnailKey
+import sauravthakur.opm.constants.SelectedThemeColorKey
+import sauravthakur.opm.constants.ShowCachedPlaylistKey
+import sauravthakur.opm.constants.ShowExportedPlaylistKey
+import sauravthakur.opm.constants.ShowDownloadedPlaylistKey
+import sauravthakur.opm.constants.ShowLikedPlaylistKey
+import sauravthakur.opm.constants.ShowTopPlaylistKey
+import sauravthakur.opm.constants.ShowUploadedPlaylistKey
+import sauravthakur.opm.constants.SliderStyle
+import sauravthakur.opm.constants.SliderStyleKey
+import sauravthakur.opm.constants.SquigglySliderKey
+import sauravthakur.opm.constants.SwipeSensitivityKey
+import sauravthakur.opm.constants.SwipeThumbnailKey
+import sauravthakur.opm.constants.SwipeLyricsKey
+import sauravthakur.opm.constants.SwipeToRemoveSongKey
+import sauravthakur.opm.constants.SwipeToSongKey
+import sauravthakur.opm.constants.ThumbnailCornerRadiusKey
 
-import iad1tya.echo.music.constants.UseNewPlayerDesignKey
-import iad1tya.echo.music.ui.component.ThumbnailCornerRadiusModal
-import iad1tya.echo.music.ui.component.DefaultDialog
-import iad1tya.echo.music.ui.component.EnumDialog
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.Material3SettingsGroup
-import iad1tya.echo.music.ui.component.Material3SettingsItem
-import iad1tya.echo.music.ui.component.PlayerSliderTrack
-import iad1tya.echo.music.ui.component.SquigglySlider
-import iad1tya.echo.music.ui.component.WavySlider
-import iad1tya.echo.music.ui.theme.DefaultThemeColor
-import iad1tya.echo.music.ui.theme.PlayerSliderColors
-import iad1tya.echo.music.ui.utils.backToMain
-import iad1tya.echo.music.utils.IconUtils
-import iad1tya.echo.music.utils.rememberEnumPreference
-import iad1tya.echo.music.utils.rememberPreference
+import sauravthakur.opm.constants.UseNewPlayerDesignKey
+import sauravthakur.opm.ui.component.ThumbnailCornerRadiusModal
+import sauravthakur.opm.ui.component.DefaultDialog
+import sauravthakur.opm.ui.component.EnumDialog
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.Material3SettingsGroup
+import sauravthakur.opm.ui.component.Material3SettingsItem
+import sauravthakur.opm.ui.component.PlayerSliderTrack
+import sauravthakur.opm.ui.component.SquigglySlider
+import sauravthakur.opm.ui.component.WavySlider
+import sauravthakur.opm.ui.theme.DefaultThemeColor
+import sauravthakur.opm.ui.theme.PlayerSliderColors
+import sauravthakur.opm.ui.utils.backToMain
+import sauravthakur.opm.utils.rememberEnumPreference
+import sauravthakur.opm.utils.rememberPreference
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
-import iad1tya.echo.music.constants.LyricsClickKey
-import iad1tya.echo.music.constants.AppleMusicLyricsBlurKey
-import iad1tya.echo.music.constants.LyricsGlowEffectKey
-import iad1tya.echo.music.constants.LyricsLineSpacingKey
-import iad1tya.echo.music.constants.LyricsScrollKey
-import iad1tya.echo.music.constants.HideStatusBarOnFullscreenKey
-import iad1tya.echo.music.constants.MiniPlayerBackgroundStyleKey
-import iad1tya.echo.music.constants.ShowCommentButtonKey
+import sauravthakur.opm.constants.LyricsClickKey
+import sauravthakur.opm.constants.AppleMusicLyricsBlurKey
+import sauravthakur.opm.constants.LyricsGlowEffectKey
+import sauravthakur.opm.constants.LyricsLineSpacingKey
+import sauravthakur.opm.constants.LyricsScrollKey
+import sauravthakur.opm.constants.HideStatusBarOnFullscreenKey
+import sauravthakur.opm.constants.MiniPlayerBackgroundStyleKey
+import sauravthakur.opm.constants.ShowCommentButtonKey
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -142,12 +140,8 @@ highlightKey: String? = null) {
         DynamicThemeKey,
         defaultValue = true
     )
-    val (enableLegacyIcon, onEnableLegacyIconChange) = rememberPreference(
-        iad1tya.echo.music.constants.EnableLegacyIconKey,
-        defaultValue = false
-    )
     val (enableHighRefreshRate, onEnableHighRefreshRateChange) = rememberPreference(
-        iad1tya.echo.music.constants.EnableHighRefreshRateKey,
+        sauravthakur.opm.constants.EnableHighRefreshRateKey,
         defaultValue = true
     )
     val (selectedThemeColorInt) = rememberPreference(
@@ -158,24 +152,6 @@ highlightKey: String? = null) {
     val isUsingCustomColor = selectedThemeColorInt != DefaultThemeColor.toArgb()
     val coroutineScope = rememberCoroutineScope()
 
-    fun handleIconChange(legacyEnabled: Boolean) {
-        onEnableLegacyIconChange(legacyEnabled)
-        IconUtils.setIcon(activity, false, legacyEnabled)
-        coroutineScope.launch {
-            val result = snackbarHostState.showSnackbar(
-                message = "Icon updated, restart to apply",
-                actionLabel = "Restart"
-            )
-            if (result == SnackbarResult.ActionPerformed) {
-                val packageManager = activity.packageManager
-                val intent = packageManager.getLaunchIntentForPackage(activity.packageName)
-                val componentName = intent?.component
-                val mainIntent = Intent.makeRestartActivityTask(componentName)
-                activity.startActivity(mainIntent)
-                Runtime.getRuntime().exit(0)
-            }
-        }
-    }
 
 
     val (useNewPlayerDesign, onUseNewPlayerDesignChange) = rememberPreference(
@@ -183,12 +159,12 @@ highlightKey: String? = null) {
         defaultValue = true
     )
     val (showCodecOnPlayer, onShowCodecOnPlayerChange) = rememberPreference(
-        iad1tya.echo.music.constants.ShowCodecOnPlayerKey,
+        sauravthakur.opm.constants.ShowCodecOnPlayerKey,
         defaultValue = false
     )
     val (hidePlayerSlider, onHidePlayerSliderChange) = rememberPreference(
-        iad1tya.echo.music.constants.HidePlayerSliderKey,
-        defaultValue = false
+        sauravthakur.opm.constants.HidePlayerSliderKey,
+        defaultValue = true
     )
     val (hidePlayerThumbnail, onHidePlayerThumbnailChange) = rememberPreference(
         HidePlayerThumbnailKey,
@@ -201,7 +177,7 @@ highlightKey: String? = null) {
     val (playerBackground, onPlayerBackgroundChange) =
         rememberEnumPreference(
             PlayerBackgroundStyleKey,
-            defaultValue = PlayerBackgroundStyle.GRADIENT,
+            defaultValue = PlayerBackgroundStyle.GLOW_ANIMATED,
         )
     val (miniPlayerBackground, onMiniPlayerBackgroundChange) =
         rememberEnumPreference(
@@ -228,7 +204,7 @@ highlightKey: String? = null) {
     )
     val (lyricsAnimationStyle, onLyricsAnimationStyleChange) = rememberEnumPreference(
         LyricsAnimationStyleKey,
-        defaultValue = LyricsAnimationStyle.echomusic_1
+        defaultValue = LyricsAnimationStyle.opm_1
     )
     val (lyricsTextSize, onLyricsTextSizeChange) = rememberPreference(LyricsTextSizeKey, defaultValue = 24f)
     val (lyricsLineSpacing, onLyricsLineSpacingChange) = rememberPreference(LyricsLineSpacingKey, defaultValue = 1.3f)
@@ -270,7 +246,7 @@ highlightKey: String? = null) {
 
     
     val context = activity as Context
-    val sharedPreferences = remember { context.getSharedPreferences("echomusic_settings", Context.MODE_PRIVATE) }
+    val sharedPreferences = remember { context.getSharedPreferences("opm_settings", Context.MODE_PRIVATE) }
     val prefDensityScale = remember(sharedPreferences) {
         sharedPreferences.getFloat("density_scale_factor", 1.0f)
     }
@@ -415,7 +391,7 @@ highlightKey: String? = null) {
                     LyricsAnimationStyle.KARAOKE -> stringResource(R.string.karaoke)
                     LyricsAnimationStyle.APPLE -> stringResource(R.string.apple_music_style)
                     LyricsAnimationStyle.APPLE_V2 -> stringResource(R.string.apple_music_style_letter)
-                    LyricsAnimationStyle.echomusic_1 -> stringResource(R.string.echomusic_1)
+                    LyricsAnimationStyle.opm_1 -> stringResource(R.string.OPM_1)
                     LyricsAnimationStyle.LYRICS_V2 -> stringResource(R.string.lyrics_v2_fluid)
                     LyricsAnimationStyle.METRO_LYRICS -> stringResource(R.string.lyrics_animation_metro)
                 }
@@ -998,40 +974,7 @@ highlightKey: String? = null) {
 
 
 
-                add(
-                    Material3SettingsItem(
-    isHighlighted = (highlightKey == stringResource(R.string.legacy_icon)),
-                        icon = painterResource(R.drawable.legacy_icon_raster),
-                        tintIcon = false,
-                        title = { Text(stringResource(R.string.legacy_icon)) },
-                        description = { Text(stringResource(R.string.legacy_icon_desc)) },
-                        trailingContent = {
-                            Switch(
-                                checked = enableLegacyIcon,
-                                onCheckedChange = { handleIconChange(it) },
-                                thumbContent = {
-                                    Icon(
-                                        painter = painterResource(
-                                            id = if (enableLegacyIcon) R.drawable.check else R.drawable.close
-                                        ),
-                                        contentDescription = null,
-                                        modifier = Modifier.size(SwitchDefaults.IconSize)
-                                    )
-                                }
-                            )
-                        },
-                        onClick = { handleIconChange(!enableLegacyIcon) }
-                    )
-                )
-                add(
-                    Material3SettingsItem(
-    isHighlighted = (highlightKey == stringResource(R.string.theme)),
-                        icon = painterResource(R.drawable.palette),
-                        title = { Text(stringResource(R.string.theme)) },
-                        description = { Text(stringResource(R.string.theme_desc)) },
-                        onClick = { navController.navigate("settings/appearance/theme") }
-                    )
-                )
+
                 add(
                     Material3SettingsItem(
     isHighlighted = (highlightKey == stringResource(R.string.enable_high_refresh_rate)),
@@ -1313,10 +1256,10 @@ highlightKey: String? = null) {
                     onClick = { onSwipeThumbnailChange(!swipeThumbnail) }
                 ),
                 Material3SettingsItem(
-    isHighlighted = (highlightKey == stringResource(R.string.echomusic_canvas)),
+    isHighlighted = (highlightKey == stringResource(R.string.OPM_canvas)),
                     icon = painterResource(R.drawable.palette),
-                    title = { Text(stringResource(R.string.echomusic_canvas)) },
-                    description = { Text(stringResource(R.string.echomusic_canvas_desc)) },
+                    title = { Text(stringResource(R.string.OPM_canvas)) },
+                    description = { Text(stringResource(R.string.OPM_canvas_desc)) },
                     trailingContent = {
                         Switch(
                             checked = canvasThumbnailAnimation,
@@ -1526,7 +1469,7 @@ highlightKey: String? = null) {
                                 LyricsAnimationStyle.GLOW -> stringResource(R.string.glow)
                                 LyricsAnimationStyle.SLIDE -> stringResource(R.string.slide)
                                 LyricsAnimationStyle.KARAOKE -> stringResource(R.string.karaoke)
-                                LyricsAnimationStyle.echomusic_1 -> stringResource(R.string.echomusic_1)
+                                LyricsAnimationStyle.opm_1 -> stringResource(R.string.OPM_1)
                                 LyricsAnimationStyle.APPLE -> stringResource(R.string.apple_music_style)
                                 LyricsAnimationStyle.APPLE_V2 -> stringResource(R.string.apple_music_style_letter)
                                 LyricsAnimationStyle.LYRICS_V2 -> stringResource(R.string.lyrics_v2_fluid)
@@ -1558,7 +1501,7 @@ highlightKey: String? = null) {
                     },
                     onClick = { onLyricsGlowEffectChange(!lyricsGlowEffect) }
                 ),
-                if (lyricsAnimationStyle == LyricsAnimationStyle.echomusic_1) {
+                if (lyricsAnimationStyle == LyricsAnimationStyle.opm_1) {
                     Material3SettingsItem(
     isHighlighted = (highlightKey == stringResource(R.string.apple_music_lyrics_blur)),
                         icon = painterResource(R.drawable.lyrics),

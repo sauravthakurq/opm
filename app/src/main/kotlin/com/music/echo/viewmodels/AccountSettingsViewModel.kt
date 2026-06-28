@@ -1,20 +1,20 @@
 
 
-package iad1tya.echo.music.viewmodels
+package sauravthakur.opm.viewmodels
 
 import android.content.Context
 import android.content.Intent
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import iad1tya.echo.music.App
-import iad1tya.echo.music.constants.AccountChannelHandleKey
-import iad1tya.echo.music.constants.AccountEmailKey
-import iad1tya.echo.music.constants.AccountNameKey
-import iad1tya.echo.music.constants.DataSyncIdKey
-import iad1tya.echo.music.constants.InnerTubeCookieKey
-import iad1tya.echo.music.constants.VisitorDataKey
-import iad1tya.echo.music.utils.SyncUtils
-import iad1tya.echo.music.utils.dataStore
+import sauravthakur.opm.App
+import sauravthakur.opm.constants.AccountChannelHandleKey
+import sauravthakur.opm.constants.AccountEmailKey
+import sauravthakur.opm.constants.AccountNameKey
+import sauravthakur.opm.constants.DataSyncIdKey
+import sauravthakur.opm.constants.InnerTubeCookieKey
+import sauravthakur.opm.constants.VisitorDataKey
+import sauravthakur.opm.utils.SyncUtils
+import sauravthakur.opm.utils.dataStore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

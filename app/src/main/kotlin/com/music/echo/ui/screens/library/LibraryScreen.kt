@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.library
+package sauravthakur.opm.ui.screens.library
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -11,11 +11,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.ChipSortTypeKey
-import iad1tya.echo.music.constants.LibraryFilter
-import iad1tya.echo.music.ui.component.ChipsRow
-import iad1tya.echo.music.utils.rememberEnumPreference
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.ChipSortTypeKey
+import sauravthakur.opm.constants.LibraryFilter
+import sauravthakur.opm.ui.component.ChipsRow
+import sauravthakur.opm.utils.rememberEnumPreference
 import androidx.activity.compose.BackHandler
 
 @Composable

@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.search.suggestions
+package sauravthakur.opm.ui.screens.search.suggestions
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -19,8 +19,8 @@ import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.WatchEndpoint
-import iad1tya.echo.music.playback.PlayerConnection
-import iad1tya.echo.music.playback.queues.YouTubeQueue
+import sauravthakur.opm.playback.PlayerConnection
+import sauravthakur.opm.playback.queues.YouTubeQueue
 import androidx.navigation.NavController
 
 @HiltViewModel

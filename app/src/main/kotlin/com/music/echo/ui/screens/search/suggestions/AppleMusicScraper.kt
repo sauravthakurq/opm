@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.search.suggestions
+package sauravthakur.opm.ui.screens.search.suggestions
 
 import android.util.Log
 import okhttp3.OkHttpClient

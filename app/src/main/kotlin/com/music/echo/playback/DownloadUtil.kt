@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.playback
+package sauravthakur.opm.playback
 
 import coil3.SingletonImageLoader
 import coil3.request.CachePolicy
@@ -19,22 +19,22 @@ import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadManager
 import androidx.media3.exoplayer.offline.DownloadNotificationHelper
 import com.music.innertube.YouTube
-import iad1tya.echo.music.constants.AudioQuality
-import iad1tya.echo.music.constants.AudioQualityKey
-import iad1tya.echo.music.constants.IpVersionKey
+import sauravthakur.opm.constants.AudioQuality
+import sauravthakur.opm.constants.AudioQualityKey
+import sauravthakur.opm.constants.IpVersionKey
 import com.music.innertube.models.IpVersion
 import okhttp3.Dns
 import java.net.InetAddress
 import java.net.Inet4Address
 import java.net.Inet6Address
-import iad1tya.echo.music.db.MusicDatabase
-import iad1tya.echo.music.db.entities.FormatEntity
-import iad1tya.echo.music.db.entities.SongEntity
-import iad1tya.echo.music.di.DownloadCache
-import iad1tya.echo.music.di.PlayerCache
-import iad1tya.echo.music.ui.utils.resize
-import iad1tya.echo.music.utils.YTPlayerUtils
-import iad1tya.echo.music.utils.enumPreference
+import sauravthakur.opm.db.MusicDatabase
+import sauravthakur.opm.db.entities.FormatEntity
+import sauravthakur.opm.db.entities.SongEntity
+import sauravthakur.opm.di.DownloadCache
+import sauravthakur.opm.di.PlayerCache
+import sauravthakur.opm.ui.utils.resize
+import sauravthakur.opm.utils.YTPlayerUtils
+import sauravthakur.opm.utils.enumPreference
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.DelicateCoroutinesApi
@@ -65,7 +65,7 @@ constructor(
     @PlayerCache val playerCache: SimpleCache,
 ) {
     private val connectivityManager = context.getSystemService<ConnectivityManager>()!!
-    private val downloadQuality by enumPreference(context, iad1tya.echo.music.constants.DownloadQualityKey, iad1tya.echo.music.constants.DownloadQuality.YOUTUBE)
+    private val downloadQuality by enumPreference(context, sauravthakur.opm.constants.DownloadQualityKey, sauravthakur.opm.constants.DownloadQuality.YOUTUBE)
     private val ipVersion by enumPreference(context, IpVersionKey, IpVersion.AUTO)
     private val songUrlCache = HashMap<String, Pair<String, Long>>()
 
@@ -108,8 +108,8 @@ constructor(
                 YTPlayerUtils.playerResponseForPlayback(
                     mediaId,
                     audioQuality = when (downloadQuality) {
-                        iad1tya.echo.music.constants.DownloadQuality.LOSSLESS -> AudioQuality.LOSSLESS
-                        iad1tya.echo.music.constants.DownloadQuality.SAAVN -> AudioQuality.SAAVN
+                        sauravthakur.opm.constants.DownloadQuality.LOSSLESS -> AudioQuality.LOSSLESS
+                        sauravthakur.opm.constants.DownloadQuality.SAAVN -> AudioQuality.SAAVN
                         else -> AudioQuality.OPUS
                     },
                     connectivityManager = connectivityManager,

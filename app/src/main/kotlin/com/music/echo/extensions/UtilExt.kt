@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.extensions
+package sauravthakur.opm.extensions
 
 fun <T> tryOrNull(block: () -> T): T? =
     try {

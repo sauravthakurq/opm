@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.constants
+package sauravthakur.opm.constants
 
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.floatPreferencesKey
@@ -20,8 +20,6 @@ val SpotifyAccountNameKey = stringPreferencesKey("spotify_account_name")
 val SpotifyAccountAvatarUrlKey = stringPreferencesKey("spotify_account_avatar_url")
 val SpotifyAccessTokenKey = stringPreferencesKey("spotify_access_token")
 val SpotifyAccessTokenExpiresAtKey = longPreferencesKey("spotify_access_token_expires_at")
-val EnableDynamicIconKey = booleanPreferencesKey("enableDynamicIcon")
-val EnableLegacyIconKey = booleanPreferencesKey("enableLegacyIcon")
 val EnableHighRefreshRateKey = booleanPreferencesKey("enableHighRefreshRate")
 val DynamicThemeKey = booleanPreferencesKey("dynamicTheme")
 val SelectedThemeColorKey = intPreferencesKey("selectedThemeColor")
@@ -488,7 +486,7 @@ enum class LyricsAnimationStyle {
     KARAOKE,
     APPLE,
     APPLE_V2,
-    echomusic_1,
+    opm_1,
     LYRICS_V2,
     METRO_LYRICS,
 }

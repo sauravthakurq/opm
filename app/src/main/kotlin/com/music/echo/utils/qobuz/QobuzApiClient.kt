@@ -1,4 +1,4 @@
-package iad1tya.echo.music.utils.qobuz
+package sauravthakur.opm.utils.qobuz
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -105,7 +105,7 @@ class QobuzApiClient {
     private val httpClient: OkHttpClient = OkHttpClient.Builder()
         .addInterceptor { chain ->
             val request = chain.request().newBuilder()
-                .header("User-Agent", "Echo-Music/1.0")
+                .header("User-Agent", "OPM/1.0")
                 .build()
             chain.proceed(request)
         }

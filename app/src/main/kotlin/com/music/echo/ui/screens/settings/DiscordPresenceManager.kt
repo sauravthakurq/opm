@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.settings
+package sauravthakur.opm.ui.screens.settings
 
 import android.content.Context
 import androidx.lifecycle.Lifecycle
@@ -19,10 +19,10 @@ import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeout
-import iad1tya.echo.music.db.entities.Song
+import sauravthakur.opm.db.entities.Song
 import com.music.echo.discord.DiscordOAuthRepository
-import iad1tya.echo.music.utils.DiscordImageResolver
-import iad1tya.echo.music.utils.DiscordRPC
+import sauravthakur.opm.utils.DiscordImageResolver
+import sauravthakur.opm.utils.DiscordRPC
 import timber.log.Timber
 import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicLong

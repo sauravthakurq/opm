@@ -1,4 +1,4 @@
-package iad1tya.echo.music.recognition
+package sauravthakur.opm.recognition
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -13,8 +13,8 @@ import android.os.IBinder
 import timber.log.Timber
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import iad1tya.echo.music.MainActivity
-import iad1tya.echo.music.R
+import sauravthakur.opm.MainActivity
+import sauravthakur.opm.R
 import com.music.shazamkit.models.RecognitionResult
 import com.music.shazamkit.models.RecognitionStatus
 import kotlinx.coroutines.CoroutineScope
@@ -236,7 +236,7 @@ class RecognitionForegroundService : Service() {
         actionTitle: String?,
     ) =
         NotificationCompat.Builder(this, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_widget_mic)
+            .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle(title)
             .setContentText(contentText)
             .setPriority(NotificationCompat.PRIORITY_LOW)
@@ -264,7 +264,7 @@ class RecognitionForegroundService : Service() {
             contentIntent = pendingIntent,
             largeIcon = null,
             actionIntent = pendingIntent,
-            actionTitle = getString(R.string.listen_on_echo_music),
+            actionTitle = getString(R.string.listen_on_opm),
         )
 
         serviceScope.launch {
@@ -286,7 +286,7 @@ class RecognitionForegroundService : Service() {
                     contentIntent = pendingIntent,
                     largeIcon = coverBitmap,
                     actionIntent = pendingIntent,
-                    actionTitle = getString(R.string.listen_on_echo_music),
+                    actionTitle = getString(R.string.listen_on_opm),
                 )
             }
             finishWithPersistentResult()

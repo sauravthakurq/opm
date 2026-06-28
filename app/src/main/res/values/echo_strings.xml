@@ -107,8 +107,8 @@
     <string name="thumbnail_corner_radius_desc">Change the corner radius of the album cover thumbnail</string>
     <string name="crop_album_art">Crop Album Art</string>
     <string name="crop_album_art_desc">Force a square aspect ratio by cropping video thumbnails</string>
-    <string name="echomusic_canvas">Canvas</string>
-    <string name="echomusic_canvas_desc">Show animated album covers when available</string>
+    <string name="OPM_canvas">Canvas</string>
+    <string name="OPM_canvas_desc">Show animated album covers when available</string>
     <string name="show_album_canvas">Show Album Canvas</string>
     <string name="show_album_canvas_desc">Display animated canvas in album</string>
     <string name="rotating_thumbnail">Rotating thumbnail</string>
@@ -217,8 +217,8 @@
     <string name="configure_app_language">Configure app languages</string>
     <string name="intent_app_language_not_found">Couldn\'t find app language settings, please configure them manually</string>
     <string name="open_supported_links">Open supported link by default</string>
-    <string name="configure_supported_links">Configure supported links</string>
-    <string name="intent_supported_links_not_found">Couldn\'t find supported links settings, please configure them manually</string>
+    <string name="configure_supported_links">Configure links</string>
+    <string name="intent_supported_links_not_found">Couldn\'t find link settings, please configure them manually</string>
     <string name="set_first_lyrics_provider">Preferred lyrics provider</string>
     <string name="lyrics_provider_priority">Lyrics provider priority</string>
     <string name="lyrics_provider_priority_desc">Drag to reorder which provider is tried first</string>
@@ -265,7 +265,7 @@
     <string name="pause_remote_listen_history">Pause share listen history with YouTube Music</string>
     <string name="not_logged_in_youtube">Not logged in to YouTube</string>
 
-    <string name="default_links">Open supported links</string>
+    <string name="default_links">Open links</string>
     <string name="open_app_settings_error">Couldn\'t open app settings</string>
 
     <string name="release_notes">Release notes</string>
@@ -372,7 +372,7 @@
     <string name="enable_scrobbling">Enable scrobbling</string>
     <string name="lastfm_now_playing">Send Now Playing</string>
     <string name="last_fm_send_likes">Send Likes/Unlikes</string>
-    <string name="last_fm_send_likes_description">Love/Unlove songs in Last.fm when they are Liked/Unliked in echomusic</string>
+    <string name="last_fm_send_likes_description">Love/Unlove songs in Last.fm when they are Liked/Unliked in OPM</string>
     <string name="logging_in">Logging in…</string>
 
     <string name="scrobbling_configuration">Scrobbling Configuration</string>
@@ -411,7 +411,6 @@
     <string name="delete_desc">Permanently remove this item</string>
     <string name="advanced_desc">Change the song\'s tempo and pitch</string>
     <string name="equalizer_desc">Adjust the audio equalizer</string>
-    <string name="enable_dynamic_icon">Enable dynamic app icon</string>
     <string name="mini_player">Mini-player</string>
     <string name="miniplayer_background_style">Mini-player background style</string>
     <string name="pure_black_mini_player">Pure black mini-player</string>
@@ -429,7 +428,7 @@
     <string name="karaoke">Karaoke</string>
     <string name="apple_music_style">Apple Music</string>
     <string name="apple_music_style_letter">Apple Music V2 (Letter by Letter)</string>
-    <string name="echomusic_1">Vivi Music (Fluid)</string>
+    <string name="OPM_1">OPM Fluid</string>
     <string name="apple_music_lyrics_blur">Apple Music Lyrics Blur</string>
     <string name="apple_music_lyrics_blur_desc">Apply blur to inactive lyrics lines for a premium focus effect</string>
     <string name="lyrics_v2_fluid">Lyrics V2 (Fluid)</string>
@@ -459,19 +458,19 @@
     <string name="wrapped_total_artists_subtitle">unique artists</string>
     <string name="wrapped_total_songs_title">You listened to</string>
     <string name="wrapped_total_songs_subtitle">unique songs</string>
-    <string name="wrapped_intro_title">echomusic</string>
+    <string name="wrapped_intro_title">OPM</string>
     <string name="wrapped_intro_subtitle">it\'s time to see what you\'ve been listening to</string>
     <string name="wrapped_intro_button">let\'s go!</string>
-    <string name="wrapped_end_thanks">Thanks for listening with echomusic!</string>
+    <string name="wrapped_end_thanks">Thanks for listening with OPM!</string>
     <string name="wrapped_end_create_playlist">Create Your Wrapped Playlist</string>
     <string name="wrapped_end_creating_playlist">Creating...</string>
     <string name="wrapped_end_playlist_saved">Playlist Saved</string>
-    <string name="wrapped_logo_content_description">echomusic Logo</string>
+    <string name="wrapped_logo_content_description">OPM logo</string>
     <string name="wrapped_year">2025</string>
     <string name="wrapped_ready_title">YOUR WRAPPED IS READY!</string>
     <string name="wrapped_ready_subtitle">Time to see what you loved this year.</string>
     <string name="wrapped_thank_you">Thank you for listening</string>
-    <string name="wrapped_special_thanks">Special thanks to echodh for creating echomusic</string>
+    <string name="wrapped_special_thanks">Designed &amp; Developed by Saurav Thakur</string>
     <string name="wrapped_close">Close wrapped</string>
     <string name="wrapped_playlist_title">Your %s Wrapped</string>
     <string name="wrapped_create_playlist">Create playlist</string>
@@ -502,15 +501,15 @@
     <string name="error_eq_apply_failed">Failed to apply EQ profile: %1$s</string>
 
     <!-- Equalizer Strings -->
-    <string name="echo_equalizer">Equalizer</string>
-    <string name="echo_equalizer_desc">Pro-grade acoustic tuning &amp; effects</string>
+    <string name="opm_equalizer">Equalizer</string>
+    <string name="opm_equalizer_desc">Pro-grade acoustic tuning &amp; effects</string>
     <string name="eq_simple">Simple</string>
     <string name="eq_advanced">Advanced</string>
     <string name="eq_label_bass">Bass</string>
     <string name="eq_label_mid">Mids</string>
     <string name="eq_label_treble">Treble</string>
     <string name="eq_preset_flat">Flat</string>
-    <string name="eq_preset_echo_signature">Signature</string>
+    <string name="eq_preset_opm_signature">Signature</string>
     <string name="eq_preset_acoustic">Acoustic</string>
     <string name="eq_preset_spatial">3D Stage</string>
     <string name="eq_preset_bass_boost">Bass Boost</string>
@@ -529,7 +528,7 @@
     <string name="eq_preset_dirac_game">Dirac Game</string>
     <string name="eq_enable_title">Equalizer</string>
     <string name="eq_enable_summary">Toggle professional audio processing</string>
-    <string name="eq_label_echo">Echo Signature</string>
+    <string name="eq_label_opm">OPM Signature</string>
     <string name="eq_label_dolby">Dolby Atmos</string>
     <string name="eq_label_dirac">Dirac Audio</string>
     <string name="eq_reset">Reset</string>
@@ -547,9 +546,9 @@
     <string name="plays">plays</string>
     <string name="casting_to">Casting to %s</string>
     <string name="progress_percent">Progress %s%%</string>
-    <string name="listening_to_echomusic">Listening to echomusic</string>
+    <string name="listening_to_OPM">Listening to OPM</string>
     <string name="listen_on_youtube_music">Listen on YouTube Music</string>
-    <string name="visit_echomusic">Visit echomusic</string>
+    <string name="visit_OPM">Visit OPM</string>
     <string name="open">Open</string>
     <string name="failed_to_create_image">Failed to create image: %s</string>
     <string name="copied_title">Copied Title</string>
@@ -566,13 +565,13 @@
     <!-- Widget strings -->
     <string name="album_art">Album art</string>
     <string name="no_song_playing">No song playing</string>
-    <string name="tap_to_open">Tap to open echomusic</string>
+    <string name="tap_to_open">Tap to open OPM</string>
     <string name="previous">Previous</string>
     <string name="play_pause">Play/Pause</string>
     <string name="next">Next</string>
     <string name="like">Like</string>
     <string name="not_playing">No song playing</string>
-    <string name="tap_to_play">Tap to open echomusic</string>
+    <string name="tap_to_play">Tap to open OPM</string>
     <string name="widget_description">Music player widget with playback controls</string>
     <string name="queue_widget_description">Music player with queue preview</string>
     <string name="turntable_widget_description">Circular music widget with play and like controls</string>
@@ -733,7 +732,7 @@
     <string name="crash_share_logs">Share Logs</string>
     <string name="copy_logs">Copy Logs</string>
     <string name="crash_share_title">Share crash report</string>
-    <string name="crash_report_subject">echomusic Crash Report</string>
+    <string name="crash_report_subject">OPM Crash Report</string>
     <string name="crash_close">Close</string>
     <string name="crash_no_log">No crash log available</string>
 
@@ -785,7 +784,7 @@
     <string name="delete_from_history">Delete from history</string>
     <string name="re_listen">Re-listen</string>
     <string name="hold_to_recognize">Hold search icon to recognize music</string>
-    <string name="play_on_app">Play on Echo Music</string>
+    <string name="play_on_app">Play on OPM</string>
     <string name="recognized_track">Recognized Track</string>
 
     <!-- CSV Import Strings -->
@@ -824,9 +823,9 @@
     <string name="discord_rpc_preview">Rich Presence Preview</string>
     <string name="discord_presence">Presence</string>
     <string name="discord_connect_description">Sign in with Discord to share what you\'re listening to</string>
-    <string name="discord_playing_echomusic">Playing echomusic</string>
-    <string name="discord_watching_echomusic">Watching echomusic</string>
-    <string name="discord_competing_echomusic">Competing in echomusic</string>
+    <string name="discord_playing_OPM">Playing OPM</string>
+    <string name="discord_watching_OPM">Watching OPM</string>
+    <string name="discord_competing_OPM">Competing in OPM</string>
     <string name="discord_activity_name">Activity name</string>
     <string name="discord_activity_name_description">Custom name for the activity (leave empty for default)</string>
     <string name="discord_advanced_mode">Advanced mode</string>
@@ -877,7 +876,7 @@
     <string name="changelog_section">Changelog</string>
     <string name="version_code">Version code</string>
     <string name="namespace">Namespace</string>
-    <string name="telegram_channel">Telegram</string>
+    <string name="telegram_channel">Developer</string>
 
     <!-- Onboarding -->
     <string name="welcome_to">Welcome to</string>
@@ -886,7 +885,7 @@
 
     <string name="perm_required">Required</string>
     <string name="perm_permissions">Permissions</string>
-    <string name="perm_intro_text">These permissions are required for echomusic to function correctly. Please grant them to proceed.</string>
+    <string name="perm_intro_text">These permissions are required for OPM to function correctly. Please grant them to proceed.</string>
 
     <string name="perm_notif_title">Notifications</string>
     <string name="perm_notif_desc">Know immediately when your music is playing and control it from the notification bar.</string>
@@ -896,7 +895,7 @@
 
     <string name="feat_discover">Discover</string>
     <string name="feat_features">Features</string>
-    <string name="feat_intro">Explore everything echomusic has to offer for your music journey.</string>
+    <string name="feat_intro">Explore everything OPM has to offer for your music journey.</string>
 
     <string name="feat_lyrics_title">Smart Lyrics</string>
     <string name="feat_lyrics_desc">Enjoy synchronized, word-by-word lyrics for millions of songs.</string>
@@ -915,12 +914,12 @@
     <string name="feat_github_title">GitHub</string>
     <string name="feat_github_desc">Open source project</string>
 
-    <string name="join_telegram">Join our Telegram channel</string>
+    <string name="join_telegram">Follow the developer</string>
     <string name="welcome_update_check">Stay</string>
     <string name="welcome_update_status">Updated</string>
     <string name="welcome_update_intro">Ensuring you have the latest features and security improvements.</string>
     <string name="welcome_checking_updates">Checking for updates…</string>
-    <string name="welcome_up_to_date">echomusic is up to date!</string>
+    <string name="welcome_up_to_date">OPM is up to date!</string>
     <string name="welcome_update_available">New version is available: %s</string>
     <string name="welcome_everything_ready">Everything is now up to date</string>
     <string name="commits_title">Commits</string>
@@ -998,6 +997,4 @@
     <string name="download_quality_title">Download Quality</string>
     <string name="enable_lossless_audio">Enable Lossless Audio</string>
     <string name="lossless_audio_warning">Lossless audio requires a fast connection. It may consume more data and battery. Continue?</string>
-    <string name="legacy_icon">Legacy Icon</string>
-    <string name="legacy_icon_desc">Revert the app icon back to the original legacy design</string>
 </resources>

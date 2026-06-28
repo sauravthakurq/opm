@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.recognition
+package sauravthakur.opm.recognition
 
 import android.Manifest
 import android.annotation.SuppressLint

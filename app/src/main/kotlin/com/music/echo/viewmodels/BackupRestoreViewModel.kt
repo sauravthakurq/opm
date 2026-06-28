@@ -1,26 +1,26 @@
 
 
-package iad1tya.echo.music.viewmodels
+package sauravthakur.opm.viewmodels
 
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
-import iad1tya.echo.music.MainActivity
-import iad1tya.echo.music.R
-import iad1tya.echo.music.db.InternalDatabase
-import iad1tya.echo.music.db.MusicDatabase
-import iad1tya.echo.music.db.entities.ArtistEntity
-import iad1tya.echo.music.db.entities.Song
-import iad1tya.echo.music.db.entities.SongEntity
-import iad1tya.echo.music.extensions.div
-import iad1tya.echo.music.extensions.tryOrNull
-import iad1tya.echo.music.extensions.zipInputStream
-import iad1tya.echo.music.extensions.zipOutputStream
-import iad1tya.echo.music.playback.MusicService
-import iad1tya.echo.music.playback.MusicService.Companion.PERSISTENT_QUEUE_FILE
-import iad1tya.echo.music.utils.reportException
+import sauravthakur.opm.MainActivity
+import sauravthakur.opm.R
+import sauravthakur.opm.db.InternalDatabase
+import sauravthakur.opm.db.MusicDatabase
+import sauravthakur.opm.db.entities.ArtistEntity
+import sauravthakur.opm.db.entities.Song
+import sauravthakur.opm.db.entities.SongEntity
+import sauravthakur.opm.extensions.div
+import sauravthakur.opm.extensions.tryOrNull
+import sauravthakur.opm.extensions.zipInputStream
+import sauravthakur.opm.extensions.zipOutputStream
+import sauravthakur.opm.playback.MusicService
+import sauravthakur.opm.playback.MusicService.Companion.PERSISTENT_QUEUE_FILE
+import sauravthakur.opm.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking

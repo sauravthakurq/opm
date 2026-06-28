@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.component
+package sauravthakur.opm.ui.component
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
@@ -13,14 +13,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavController
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.WatchEndpoint
-import iad1tya.echo.music.R
-import iad1tya.echo.music.db.entities.Album
-import iad1tya.echo.music.db.entities.Artist
-import iad1tya.echo.music.db.entities.Playlist
-import iad1tya.echo.music.ui.menu.AlbumMenu
-import iad1tya.echo.music.ui.menu.ArtistMenu
-import iad1tya.echo.music.ui.menu.PlaylistMenu
-import iad1tya.echo.music.ui.menu.YouTubePlaylistMenu
+import sauravthakur.opm.R
+import sauravthakur.opm.db.entities.Album
+import sauravthakur.opm.db.entities.Artist
+import sauravthakur.opm.db.entities.Playlist
+import sauravthakur.opm.ui.menu.AlbumMenu
+import sauravthakur.opm.ui.menu.ArtistMenu
+import sauravthakur.opm.ui.menu.PlaylistMenu
+import sauravthakur.opm.ui.menu.YouTubePlaylistMenu
 import kotlinx.coroutines.CoroutineScope
 
 @Composable

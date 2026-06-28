@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.menu
+package sauravthakur.opm.ui.menu
 
 import android.content.Intent
 import android.content.res.Configuration
@@ -63,39 +63,39 @@ import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
-import iad1tya.echo.music.LocalDatabase
-import iad1tya.echo.music.LocalDownloadUtil
-import iad1tya.echo.music.LocalListenTogetherManager
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.LocalSyncUtils
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.EnableExportAsMp3Key
-import iad1tya.echo.music.constants.ExportDirectoryUriKey
-import iad1tya.echo.music.constants.ExportedSongIdsKey
-import iad1tya.echo.music.constants.ExportingSongIdsKey
-import iad1tya.echo.music.constants.ListItemHeight
-import iad1tya.echo.music.constants.ListThumbnailSize
-import iad1tya.echo.music.db.entities.ArtistEntity
-import iad1tya.echo.music.db.entities.Event
-import iad1tya.echo.music.db.entities.SpeedDialItem
-import iad1tya.echo.music.db.entities.PlaylistSong
-import iad1tya.echo.music.db.entities.Song
-import iad1tya.echo.music.extensions.toMediaItem
-import iad1tya.echo.music.models.toMediaMetadata
-import iad1tya.echo.music.playback.ExoDownloadService
-import iad1tya.echo.music.playback.queues.YouTubeQueue
-import iad1tya.echo.music.ui.component.ListDialog
-import iad1tya.echo.music.ui.component.LocalBottomSheetPageState
-import iad1tya.echo.music.ui.component.Material3MenuGroup
-import iad1tya.echo.music.ui.component.Material3MenuItemData
-import iad1tya.echo.music.ui.component.NewAction
-import iad1tya.echo.music.ui.component.NewActionGrid
-import iad1tya.echo.music.ui.component.SongListItem
-import iad1tya.echo.music.ui.component.TextFieldDialog
-import iad1tya.echo.music.utils.listItemShape
-import iad1tya.echo.music.ui.utils.ShowMediaInfo
-import iad1tya.echo.music.utils.rememberPreference
-import iad1tya.echo.music.viewmodels.CachePlaylistViewModel
+import sauravthakur.opm.LocalDatabase
+import sauravthakur.opm.LocalDownloadUtil
+import sauravthakur.opm.LocalListenTogetherManager
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.LocalSyncUtils
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.EnableExportAsMp3Key
+import sauravthakur.opm.constants.ExportDirectoryUriKey
+import sauravthakur.opm.constants.ExportedSongIdsKey
+import sauravthakur.opm.constants.ExportingSongIdsKey
+import sauravthakur.opm.constants.ListItemHeight
+import sauravthakur.opm.constants.ListThumbnailSize
+import sauravthakur.opm.db.entities.ArtistEntity
+import sauravthakur.opm.db.entities.Event
+import sauravthakur.opm.db.entities.SpeedDialItem
+import sauravthakur.opm.db.entities.PlaylistSong
+import sauravthakur.opm.db.entities.Song
+import sauravthakur.opm.extensions.toMediaItem
+import sauravthakur.opm.models.toMediaMetadata
+import sauravthakur.opm.playback.ExoDownloadService
+import sauravthakur.opm.playback.queues.YouTubeQueue
+import sauravthakur.opm.ui.component.ListDialog
+import sauravthakur.opm.ui.component.LocalBottomSheetPageState
+import sauravthakur.opm.ui.component.Material3MenuGroup
+import sauravthakur.opm.ui.component.Material3MenuItemData
+import sauravthakur.opm.ui.component.NewAction
+import sauravthakur.opm.ui.component.NewActionGrid
+import sauravthakur.opm.ui.component.SongListItem
+import sauravthakur.opm.ui.component.TextFieldDialog
+import sauravthakur.opm.utils.listItemShape
+import sauravthakur.opm.ui.utils.ShowMediaInfo
+import sauravthakur.opm.utils.rememberPreference
+import sauravthakur.opm.viewmodels.CachePlaylistViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -264,7 +264,7 @@ fun SongMenu(
         mutableStateOf(false)
     }
 
-    val ringtoneViewModel = iad1tya.echo.music.LocalRingtoneViewModel.current
+    val ringtoneViewModel = sauravthakur.opm.LocalRingtoneViewModel.current
 
     if (showSelectArtistDialog) {
         ListDialog(
@@ -401,7 +401,7 @@ fun SongMenu(
                             val intent = Intent().apply {
                                 action = Intent.ACTION_SEND
                                 type = "text/plain"
-                                putExtra(Intent.EXTRA_TEXT, "https://share.echomusic.fun/watch?v=${song.id}")
+                                putExtra(Intent.EXTRA_TEXT, "https://music.youtube.com/watch?v=${song.id}")
                             }
                             context.startActivity(Intent.createChooser(intent, null))
                         }
@@ -425,7 +425,7 @@ fun SongMenu(
                             },
                             onClick = {
                                 val durationMs = if (song.song.duration > 0) song.song.duration.toLong() * 1000 else 180000L
-                                val trackInfo = iad1tya.echo.music.listentogether.TrackInfo(
+                                val trackInfo = sauravthakur.opm.listentogether.TrackInfo(
                                     id = song.id,
                                     title = song.song.title,
                                     artist = orderedArtists.joinToString(", ") { it.name },
@@ -760,7 +760,7 @@ fun SongMenu(
                                         onDismiss()
                                     } else {
                                         onDismiss()
-                                        iad1tya.echo.music.playback.AudioExportService.start(
+                                        sauravthakur.opm.playback.AudioExportService.start(
                                             context = context,
                                             songId = song.id,
                                             songTitle = song.song.title,

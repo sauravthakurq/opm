@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.component
+package sauravthakur.opm.ui.component
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -117,75 +117,75 @@ import coil3.ImageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import iad1tya.echo.music.LocalDatabase
-import iad1tya.echo.music.LocalListenTogetherManager
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.DarkModeKey
-import iad1tya.echo.music.constants.LyricsAnimationStyle
-import iad1tya.echo.music.constants.LyricsAnimationStyleKey
-import iad1tya.echo.music.constants.LyricsClickKey
-import iad1tya.echo.music.constants.LyricsGlowEffectKey
-import iad1tya.echo.music.constants.LyricsLineSpacingKey
-import iad1tya.echo.music.constants.LyricsRomanizeAsMainKey
-import iad1tya.echo.music.constants.LyricsRomanizeBelarusianKey
-import iad1tya.echo.music.constants.LyricsRomanizeBulgarianKey
-import iad1tya.echo.music.constants.LyricsRomanizeChineseKey
-import iad1tya.echo.music.constants.LyricsRomanizeCyrillicByLineKey
-import iad1tya.echo.music.constants.LyricsRomanizeHindiKey
-import iad1tya.echo.music.constants.LyricsRomanizePunjabiKey
-import iad1tya.echo.music.constants.LyricsRomanizeJapaneseKey
-import iad1tya.echo.music.constants.LyricsRomanizeKoreanKey
-import iad1tya.echo.music.constants.LyricsRomanizeKyrgyzKey
-import iad1tya.echo.music.constants.LyricsRomanizeMacedonianKey
-import iad1tya.echo.music.constants.LyricsRomanizeRussianKey
-import iad1tya.echo.music.constants.LyricsRomanizeSerbianKey
-import iad1tya.echo.music.constants.LyricsRomanizeUkrainianKey
-import iad1tya.echo.music.constants.LyricsStandardBlurKey
-import iad1tya.echo.music.constants.LyricsScrollKey
-import iad1tya.echo.music.constants.LyricsTextPositionKey
-import iad1tya.echo.music.constants.LyricsTextSizeKey
-import iad1tya.echo.music.constants.PlayerBackgroundStyle
-import iad1tya.echo.music.constants.OpenRouterApiKey
-import iad1tya.echo.music.constants.DeeplApiKey
-import iad1tya.echo.music.constants.AiProviderKey
-import iad1tya.echo.music.constants.OpenRouterBaseUrlKey
-import iad1tya.echo.music.constants.OpenRouterModelKey
-import iad1tya.echo.music.constants.TranslateLanguageKey
-import iad1tya.echo.music.constants.TranslateModeKey
-import iad1tya.echo.music.constants.DeeplFormalityKey
-import iad1tya.echo.music.constants.PlayerBackgroundStyleKey
-import iad1tya.echo.music.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
-import iad1tya.echo.music.lyrics.LyricsEntry
-import iad1tya.echo.music.lyrics.LyricsUtils.findCurrentLineIndex
-import iad1tya.echo.music.lyrics.LyricsUtils.isBelarusian
-import iad1tya.echo.music.lyrics.LyricsUtils.isBulgarian
-import iad1tya.echo.music.lyrics.LyricsUtils.isChinese
-import iad1tya.echo.music.lyrics.LyricsUtils.isHindi
-import iad1tya.echo.music.lyrics.LyricsUtils.isPunjabi
-import iad1tya.echo.music.lyrics.LyricsUtils.isJapanese
-import iad1tya.echo.music.lyrics.LyricsUtils.isKorean
-import iad1tya.echo.music.lyrics.LyricsUtils.isKyrgyz
-import iad1tya.echo.music.lyrics.LyricsUtils.isMacedonian
-import iad1tya.echo.music.lyrics.LyricsUtils.isRussian
-import iad1tya.echo.music.lyrics.LyricsUtils.isSerbian
-import iad1tya.echo.music.lyrics.LyricsUtils.isUkrainian
-import iad1tya.echo.music.lyrics.LyricsUtils.parseLyrics
-import iad1tya.echo.music.lyrics.LyricsUtils.romanizeChinese
-import iad1tya.echo.music.lyrics.LyricsUtils.romanizeHindi
-import iad1tya.echo.music.lyrics.LyricsUtils.romanizePunjabi
-import iad1tya.echo.music.lyrics.LyricsUtils.romanizeCyrillic
-import iad1tya.echo.music.lyrics.LyricsUtils.romanizeJapanese
-import iad1tya.echo.music.lyrics.LyricsUtils.romanizeKorean
-import iad1tya.echo.music.lyrics.LyricsTranslationHelper
-import iad1tya.echo.music.ui.component.shimmer.ShimmerHost
-import iad1tya.echo.music.ui.component.shimmer.TextPlaceholder
-import iad1tya.echo.music.ui.screens.settings.DarkMode
-import iad1tya.echo.music.ui.screens.settings.LyricsPosition
-import iad1tya.echo.music.ui.utils.fadingEdge
-import iad1tya.echo.music.utils.ComposeToImage
-import iad1tya.echo.music.utils.rememberEnumPreference
-import iad1tya.echo.music.utils.rememberPreference
+import sauravthakur.opm.LocalDatabase
+import sauravthakur.opm.LocalListenTogetherManager
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.DarkModeKey
+import sauravthakur.opm.constants.LyricsAnimationStyle
+import sauravthakur.opm.constants.LyricsAnimationStyleKey
+import sauravthakur.opm.constants.LyricsClickKey
+import sauravthakur.opm.constants.LyricsGlowEffectKey
+import sauravthakur.opm.constants.LyricsLineSpacingKey
+import sauravthakur.opm.constants.LyricsRomanizeAsMainKey
+import sauravthakur.opm.constants.LyricsRomanizeBelarusianKey
+import sauravthakur.opm.constants.LyricsRomanizeBulgarianKey
+import sauravthakur.opm.constants.LyricsRomanizeChineseKey
+import sauravthakur.opm.constants.LyricsRomanizeCyrillicByLineKey
+import sauravthakur.opm.constants.LyricsRomanizeHindiKey
+import sauravthakur.opm.constants.LyricsRomanizePunjabiKey
+import sauravthakur.opm.constants.LyricsRomanizeJapaneseKey
+import sauravthakur.opm.constants.LyricsRomanizeKoreanKey
+import sauravthakur.opm.constants.LyricsRomanizeKyrgyzKey
+import sauravthakur.opm.constants.LyricsRomanizeMacedonianKey
+import sauravthakur.opm.constants.LyricsRomanizeRussianKey
+import sauravthakur.opm.constants.LyricsRomanizeSerbianKey
+import sauravthakur.opm.constants.LyricsRomanizeUkrainianKey
+import sauravthakur.opm.constants.LyricsStandardBlurKey
+import sauravthakur.opm.constants.LyricsScrollKey
+import sauravthakur.opm.constants.LyricsTextPositionKey
+import sauravthakur.opm.constants.LyricsTextSizeKey
+import sauravthakur.opm.constants.PlayerBackgroundStyle
+import sauravthakur.opm.constants.OpenRouterApiKey
+import sauravthakur.opm.constants.DeeplApiKey
+import sauravthakur.opm.constants.AiProviderKey
+import sauravthakur.opm.constants.OpenRouterBaseUrlKey
+import sauravthakur.opm.constants.OpenRouterModelKey
+import sauravthakur.opm.constants.TranslateLanguageKey
+import sauravthakur.opm.constants.TranslateModeKey
+import sauravthakur.opm.constants.DeeplFormalityKey
+import sauravthakur.opm.constants.PlayerBackgroundStyleKey
+import sauravthakur.opm.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
+import sauravthakur.opm.lyrics.LyricsEntry
+import sauravthakur.opm.lyrics.LyricsUtils.findCurrentLineIndex
+import sauravthakur.opm.lyrics.LyricsUtils.isBelarusian
+import sauravthakur.opm.lyrics.LyricsUtils.isBulgarian
+import sauravthakur.opm.lyrics.LyricsUtils.isChinese
+import sauravthakur.opm.lyrics.LyricsUtils.isHindi
+import sauravthakur.opm.lyrics.LyricsUtils.isPunjabi
+import sauravthakur.opm.lyrics.LyricsUtils.isJapanese
+import sauravthakur.opm.lyrics.LyricsUtils.isKorean
+import sauravthakur.opm.lyrics.LyricsUtils.isKyrgyz
+import sauravthakur.opm.lyrics.LyricsUtils.isMacedonian
+import sauravthakur.opm.lyrics.LyricsUtils.isRussian
+import sauravthakur.opm.lyrics.LyricsUtils.isSerbian
+import sauravthakur.opm.lyrics.LyricsUtils.isUkrainian
+import sauravthakur.opm.lyrics.LyricsUtils.parseLyrics
+import sauravthakur.opm.lyrics.LyricsUtils.romanizeChinese
+import sauravthakur.opm.lyrics.LyricsUtils.romanizeHindi
+import sauravthakur.opm.lyrics.LyricsUtils.romanizePunjabi
+import sauravthakur.opm.lyrics.LyricsUtils.romanizeCyrillic
+import sauravthakur.opm.lyrics.LyricsUtils.romanizeJapanese
+import sauravthakur.opm.lyrics.LyricsUtils.romanizeKorean
+import sauravthakur.opm.lyrics.LyricsTranslationHelper
+import sauravthakur.opm.ui.component.shimmer.ShimmerHost
+import sauravthakur.opm.ui.component.shimmer.TextPlaceholder
+import sauravthakur.opm.ui.screens.settings.DarkMode
+import sauravthakur.opm.ui.screens.settings.LyricsPosition
+import sauravthakur.opm.ui.utils.fadingEdge
+import sauravthakur.opm.utils.ComposeToImage
+import sauravthakur.opm.utils.rememberEnumPreference
+import sauravthakur.opm.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
@@ -228,7 +228,7 @@ fun Lyrics(
     val romanizeHindiLyrics by rememberPreference(LyricsRomanizeHindiKey, true)
     val romanizePunjabiLyrics by rememberPreference(LyricsRomanizePunjabiKey, true)
     val lyricsGlowEffect by rememberPreference(LyricsGlowEffectKey, false)
-    val lyricsAnimationStyle by rememberEnumPreference(LyricsAnimationStyleKey, LyricsAnimationStyle.echomusic_1)
+    val lyricsAnimationStyle by rememberEnumPreference(LyricsAnimationStyleKey, LyricsAnimationStyle.opm_1)
     val lyricsTextSize by rememberPreference(LyricsTextSizeKey, 24f)
     val lyricsLineSpacing by rememberPreference(LyricsLineSpacingKey, 1.3f)
     val lyricsStandardBlur by rememberPreference(LyricsStandardBlurKey, false)
@@ -251,7 +251,7 @@ fun Lyrics(
 
     val playerBackground by rememberEnumPreference(
         key = PlayerBackgroundStyleKey,
-        defaultValue = PlayerBackgroundStyle.GRADIENT
+        defaultValue = PlayerBackgroundStyle.GLOW_ANIMATED
     )
 
     val darkTheme by rememberEnumPreference(DarkModeKey, defaultValue = DarkMode.AUTO)
@@ -917,7 +917,7 @@ fun Lyrics(
                     key = { index, item -> "$index-${item.time}" } 
                 ) { index, item ->
                     val isSelected = selectedIndices.contains(index)
-                    if (lyricsAnimationStyle == LyricsAnimationStyle.echomusic_1 && item.words?.isNotEmpty() == true) {
+                    if (lyricsAnimationStyle == LyricsAnimationStyle.opm_1 && item.words?.isNotEmpty() == true) {
                         val currentLineTime = if (displayedCurrentLineIndex >= 0 && displayedCurrentLineIndex < lines.size) {
                             lines[displayedCurrentLineIndex].time
                         } else -1L
@@ -925,7 +925,7 @@ fun Lyrics(
                         val isActiveByIndex = index == displayedCurrentLineIndex
                         val isActiveByTime = isLineAtSameTime && displayedCurrentLineIndex >= 0
 
-                        echomusicLyricsLine(
+                        opmLyricsLine(
                             entry = item,
                             nextEntryTime = lines.getOrNull(index + 1)?.time,
                             effectivePlaybackPosition = effectivePlaybackPosition,
@@ -1988,7 +1988,7 @@ fun Lyrics(
                                     action = Intent.ACTION_SEND
                                     type = "text/plain"
                                     val songLink =
-                                        "https://share.echomusic.fun/watch?v=${mediaMetadata?.id}"
+                                        "https://music.youtube.com/watch?v=${mediaMetadata?.id}"
                                     
                                     putExtra(
                                         Intent.EXTRA_TEXT,
@@ -2322,10 +2322,10 @@ fun Lyrics(
 }
 
 
-private const val echomusic_AUTO_SCROLL_DURATION = 1500L 
-private const val echomusic_INITIAL_SCROLL_DURATION = 1000L 
-private const val echomusic_SEEK_DURATION = 800L 
-private const val echomusic_FAST_SEEK_DURATION = 600L 
+private const val opm_AUTO_SCROLL_DURATION = 1500L 
+private const val opm_INITIAL_SCROLL_DURATION = 1000L 
+private const val opm_SEEK_DURATION = 800L 
+private const val opm_FAST_SEEK_DURATION = 600L 
 
 
 val LyricsPreviewTime = 2.seconds

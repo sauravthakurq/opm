@@ -1,4 +1,4 @@
-package iad1tya.echo.music.echomusic.updater.downloadmanager
+package sauravthakur.opm.echomusic.updater.downloadmanager
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -10,7 +10,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.graphics.toColorInt
-import iad1tya.echo.music.R
+import sauravthakur.opm.R
 
 object DownloadNotificationManager {
     private lateinit var notificationManager: NotificationManager
@@ -70,7 +70,7 @@ object DownloadNotificationManager {
     
     fun showDownloadFailed(version: String, errorMessage: String) {
         val notification = NotificationCompat.Builder(appContext, CHANNEL_ID)
-            .setSmallIcon(android.R.drawable.stat_sys_warning)
+            .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle(appContext.getString(R.string.update_failed))
             .setContentText(appContext.getString(R.string.failed_to_download_version, version))
             .setStyle(
@@ -112,7 +112,7 @@ object DownloadNotificationManager {
             .setProgress(0)
 
         val builder = Notification.Builder(appContext, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_launcher_foreground) 
+            .setSmallIcon(R.drawable.ic_notification) 
             .setContentTitle(appContext.getString(R.string.downloading_update))
             .setContentText(appContext.getString(R.string.version_file_size, version, fileSize))
             .setOngoing(true)
@@ -150,7 +150,7 @@ object DownloadNotificationManager {
             .setProgress(progress)
 
         val builder = Notification.Builder(appContext, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_launcher_foreground) 
+            .setSmallIcon(R.drawable.ic_notification) 
             .setContentTitle(appContext.getString(R.string.downloading_update))
             .setContentText(appContext.getString(R.string.version_progress, version, progress))
             .setOngoing(progress < 100)
@@ -208,7 +208,7 @@ object DownloadNotificationManager {
             .setProgress(100)
 
         val builder = Notification.Builder(appContext, CHANNEL_ID)
-            .setSmallIcon(R.drawable.updated) 
+            .setSmallIcon(R.drawable.ic_notification) 
             .setContentTitle(appContext.getString(R.string.update_ready))
             .setContentText(appContext.getString(R.string.tap_to_install_version, version))
             .setAutoCancel(true)
@@ -253,7 +253,7 @@ object DownloadNotificationManager {
 
     private fun buildDownloadStartingLegacy(version: String, fileSize: String): Notification {
         return NotificationCompat.Builder(appContext, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_launcher_foreground) 
+            .setSmallIcon(R.drawable.ic_notification) 
             .setContentTitle(appContext.getString(R.string.downloading_update))
             .setContentText(appContext.getString(R.string.version_file_size, version, fileSize))
             .setProgress(100, 0, false)
@@ -267,7 +267,7 @@ object DownloadNotificationManager {
 
     private fun buildDownloadProgressLegacy(progress: Int, version: String): Notification {
         return NotificationCompat.Builder(appContext, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_launcher) 
+            .setSmallIcon(R.drawable.ic_notification) 
             .setContentTitle(appContext.getString(R.string.downloading_update))
             .setContentText(appContext.getString(R.string.version_progress, version, progress))
             .setProgress(100, progress, false)
@@ -301,7 +301,7 @@ object DownloadNotificationManager {
         )
 
         val notification = NotificationCompat.Builder(appContext, CHANNEL_ID)
-            .setSmallIcon(R.drawable.updated) 
+            .setSmallIcon(R.drawable.ic_notification) 
             .setContentTitle(appContext.getString(R.string.update_ready))
             .setContentText(appContext.getString(R.string.tap_to_install_version, version))
             .setProgress(0, 0, false)

@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens
+package sauravthakur.opm.ui.screens
 
 import android.app.Activity
 import androidx.compose.animation.core.tween
@@ -8,60 +8,52 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.TopAppBarScrollBehavior
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.dialog
 import androidx.navigation.navArgument
-import iad1tya.echo.music.constants.DarkModeKey
-import iad1tya.echo.music.constants.PureBlackKey
-import iad1tya.echo.music.ui.screens.artist.ArtistAlbumsScreen
-import iad1tya.echo.music.ui.screens.artist.ArtistItemsScreen
-import iad1tya.echo.music.ui.screens.artist.ArtistScreen
-import iad1tya.echo.music.ui.screens.artist.ArtistSongsScreen
-import iad1tya.echo.music.ui.screens.equalizer.EqScreen
-import iad1tya.echo.music.ui.screens.library.LibraryScreen
-import iad1tya.echo.music.ui.screens.library.LocalSongScreen
-import iad1tya.echo.music.ui.screens.playlist.AutoPlaylistScreen
-import iad1tya.echo.music.ui.screens.playlist.CachePlaylistScreen
-import iad1tya.echo.music.ui.screens.playlist.LocalPlaylistScreen
-import iad1tya.echo.music.ui.screens.playlist.OnlinePlaylistScreen
-import iad1tya.echo.music.ui.screens.playlist.TopPlaylistScreen
-import iad1tya.echo.music.ui.screens.search.OnlineSearchResult
-import iad1tya.echo.music.ui.screens.search.SearchScreen
-import iad1tya.echo.music.ui.screens.settings.AboutScreen
-import iad1tya.echo.music.ui.screens.settings.AppearanceSettings
-import iad1tya.echo.music.ui.screens.settings.BackupAndRestore
-import iad1tya.echo.music.ui.screens.settings.ContentSettings
-import iad1tya.echo.music.ui.screens.settings.UptimeScreen
-import iad1tya.echo.music.ui.screens.settings.DarkMode
-import iad1tya.echo.music.ui.screens.settings.PlayerSettings
-import iad1tya.echo.music.ui.screens.settings.PrivacySettings
-import iad1tya.echo.music.ui.screens.settings.RomanizationSettings
-import iad1tya.echo.music.ui.screens.settings.SettingsScreen
-import iad1tya.echo.music.ui.screens.settings.AccountSettingsScreen
-import iad1tya.echo.music.ui.screens.settings.StorageSettings
-import iad1tya.echo.music.ui.screens.settings.ThemeScreen
-import iad1tya.echo.music.ui.screens.settings.AiSettings
-import iad1tya.echo.music.ui.screens.settings.integrations.IntegrationScreen
-import iad1tya.echo.music.ui.screens.settings.integrations.ListenTogetherSettings
-import iad1tya.echo.music.ui.screens.recognition.RecognitionScreen
-import iad1tya.echo.music.ui.screens.recognition.RecognitionHistoryScreen
-import iad1tya.echo.music.ui.screens.settings.UpdateSettings
-import iad1tya.echo.music.echomusic.updater.UpdateScreen
-import iad1tya.echo.music.utils.rememberEnumPreference
-import iad1tya.echo.music.utils.rememberPreference
-import iad1tya.echo.music.echomusic.changelog.ChangelogScreen
-import iad1tya.echo.music.echomusic.commitscreen.CommitScreen
-import iad1tya.echo.music.ui.screens.equalizer.axion.AxionEqScreen
-import iad1tya.echo.music.ui.screens.ambient.AmbientModeScreen
+import sauravthakur.opm.ui.screens.artist.ArtistAlbumsScreen
+import sauravthakur.opm.ui.screens.artist.ArtistItemsScreen
+import sauravthakur.opm.ui.screens.artist.ArtistScreen
+import sauravthakur.opm.ui.screens.artist.ArtistSongsScreen
+import sauravthakur.opm.ui.screens.equalizer.EqScreen
+import sauravthakur.opm.ui.screens.library.LibraryScreen
+import sauravthakur.opm.ui.screens.library.LocalSongScreen
+import sauravthakur.opm.ui.screens.playlist.AutoPlaylistScreen
+import sauravthakur.opm.ui.screens.playlist.CachePlaylistScreen
+import sauravthakur.opm.ui.screens.playlist.LocalPlaylistScreen
+import sauravthakur.opm.ui.screens.playlist.OnlinePlaylistScreen
+import sauravthakur.opm.ui.screens.playlist.TopPlaylistScreen
+import sauravthakur.opm.ui.screens.search.OnlineSearchResult
+import sauravthakur.opm.ui.screens.search.SearchScreen
+import sauravthakur.opm.ui.screens.settings.AboutScreen
+import sauravthakur.opm.ui.screens.settings.AppearanceSettings
+import sauravthakur.opm.ui.screens.settings.BackupAndRestore
+import sauravthakur.opm.ui.screens.settings.ContentSettings
+import sauravthakur.opm.ui.screens.settings.UptimeScreen
+import sauravthakur.opm.ui.screens.settings.PlayerSettings
+import sauravthakur.opm.ui.screens.settings.PrivacySettings
+import sauravthakur.opm.ui.screens.settings.RomanizationSettings
+import sauravthakur.opm.ui.screens.settings.SettingsScreen
+import sauravthakur.opm.ui.screens.settings.AccountSettingsScreen
+import sauravthakur.opm.ui.screens.settings.StorageSettings
+import sauravthakur.opm.ui.screens.settings.ThemeScreen
+import sauravthakur.opm.ui.screens.settings.AiSettings
+import sauravthakur.opm.ui.screens.settings.integrations.IntegrationScreen
+import sauravthakur.opm.ui.screens.settings.integrations.ListenTogetherSettings
+import sauravthakur.opm.ui.screens.recognition.RecognitionScreen
+import sauravthakur.opm.ui.screens.recognition.RecognitionHistoryScreen
+import sauravthakur.opm.ui.screens.settings.UpdateSettings
+import sauravthakur.opm.echomusic.updater.UpdateScreen
+import sauravthakur.opm.echomusic.changelog.ChangelogScreen
+import sauravthakur.opm.echomusic.commitscreen.CommitScreen
+import sauravthakur.opm.ui.screens.equalizer.axion.AxionEqScreen
+import sauravthakur.opm.ui.screens.ambient.AmbientModeScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 fun NavGraphBuilder.navigationBuilder(
@@ -75,18 +67,9 @@ fun NavGraphBuilder.navigationBuilder(
     }
 
     composable(Screens.Search.route) {
-        val pureBlackEnabled by rememberPreference(PureBlackKey, defaultValue = false)
-        val darkTheme by rememberEnumPreference(DarkModeKey, defaultValue = DarkMode.AUTO)
-        val isSystemInDarkTheme = isSystemInDarkTheme()
-        val useDarkTheme = remember(darkTheme, isSystemInDarkTheme) {
-            if (darkTheme == DarkMode.AUTO) isSystemInDarkTheme else darkTheme == DarkMode.ON
-        }
-        val pureBlack = remember(pureBlackEnabled, useDarkTheme) {
-            pureBlackEnabled && useDarkTheme
-        }
         SearchScreen(
             navController = navController,
-            pureBlack = pureBlack
+            pureBlack = true
         )
     }
 
@@ -328,10 +311,10 @@ fun NavGraphBuilder.navigationBuilder(
         route = "settings/echo_brain?highlightKey={highlightKey}",
         arguments = listOf(navArgument("highlightKey") { type = NavType.StringType; nullable = true })
     ) { backStackEntry ->
-        iad1tya.echo.music.ui.screens.settings.EchoBrainScreen(
+        sauravthakur.opm.ui.screens.settings.EchoBrainScreen(
             navController, 
-            (activity as iad1tya.echo.music.MainActivity).echoBrainEngine, 
-            (activity as iad1tya.echo.music.MainActivity).echoBrainRepository,
+            (activity as sauravthakur.opm.MainActivity).echoBrainEngine, 
+            (activity as sauravthakur.opm.MainActivity).echoBrainRepository,
             highlightKey = backStackEntry.arguments?.getString("highlightKey")
         )
     }
@@ -433,7 +416,7 @@ fun NavGraphBuilder.navigationBuilder(
     }
 
     composable("settings/discord") {
-        iad1tya.echo.music.ui.screens.settings.DiscordSettings(navController, scrollBehavior)
+        sauravthakur.opm.ui.screens.settings.DiscordSettings(navController, scrollBehavior)
     }
 
     composable("settings/discord/experimental") {

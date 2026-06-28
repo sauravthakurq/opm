@@ -1,16 +1,16 @@
 
 
-package iad1tya.echo.music.extensions
+package sauravthakur.opm.extensions
 
-import iad1tya.echo.music.models.MediaMetadata
-import iad1tya.echo.music.models.PersistQueue
-import iad1tya.echo.music.models.QueueData
-import iad1tya.echo.music.models.QueueType
-import iad1tya.echo.music.playback.queues.ListQueue
-import iad1tya.echo.music.playback.queues.LocalAlbumRadio
-import iad1tya.echo.music.playback.queues.Queue
-import iad1tya.echo.music.playback.queues.YouTubeAlbumRadio
-import iad1tya.echo.music.playback.queues.YouTubeQueue
+import sauravthakur.opm.models.MediaMetadata
+import sauravthakur.opm.models.PersistQueue
+import sauravthakur.opm.models.QueueData
+import sauravthakur.opm.models.QueueType
+import sauravthakur.opm.playback.queues.ListQueue
+import sauravthakur.opm.playback.queues.LocalAlbumRadio
+import sauravthakur.opm.playback.queues.Queue
+import sauravthakur.opm.playback.queues.YouTubeAlbumRadio
+import sauravthakur.opm.playback.queues.YouTubeQueue
 
 fun Queue.toPersistQueue(
     title: String?,

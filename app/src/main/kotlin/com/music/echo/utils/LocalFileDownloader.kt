@@ -1,5 +1,5 @@
-package iad1tya.echo.music.utils
-import iad1tya.echo.music.R
+package sauravthakur.opm.utils
+import sauravthakur.opm.R
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -65,7 +65,7 @@ object LocalFileDownloader {
             val notificationBuilder = NotificationCompat.Builder(context, channelId)
                 .setContentTitle(fileName)
                 .setContentText("Downloading...")
-                .setSmallIcon(android.R.drawable.stat_sys_download)
+                .setSmallIcon(R.drawable.ic_notification)
                 .setOngoing(true)
                 .setProgress(100, 0, true)
 
@@ -118,7 +118,7 @@ object LocalFileDownloader {
             notificationBuilder.setContentText("Download complete")
                 .setProgress(0, 0, false)
                 .setOngoing(false)
-                .setSmallIcon(android.R.drawable.stat_sys_download_done)
+                .setSmallIcon(R.drawable.ic_notification)
             notificationManager.notify(notificationId, notificationBuilder.build())
         } catch (e: Exception) {
             Timber.e(e, "Error downloading local file")

@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.search
+package sauravthakur.opm.ui.screens.search
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -55,26 +55,26 @@ import com.music.innertube.models.AlbumItem
 import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
-import iad1tya.echo.music.LocalDatabase
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.SuggestionItemHeight
-import iad1tya.echo.music.models.toMediaMetadata
-import iad1tya.echo.music.playback.queues.YouTubeQueue
-import iad1tya.echo.music.ui.component.LocalMenuState
-import iad1tya.echo.music.ui.component.YouTubeListItem
-import iad1tya.echo.music.utils.listItemShape
-import iad1tya.echo.music.utils.getGroupedShape
+import sauravthakur.opm.LocalDatabase
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.SuggestionItemHeight
+import sauravthakur.opm.models.toMediaMetadata
+import sauravthakur.opm.playback.queues.YouTubeQueue
+import sauravthakur.opm.ui.component.LocalMenuState
+import sauravthakur.opm.ui.component.YouTubeListItem
+import sauravthakur.opm.utils.listItemShape
+import sauravthakur.opm.utils.getGroupedShape
 import androidx.compose.material3.Surface
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Shape
 import com.music.innertube.utils.YouTubeUrlParser
-import iad1tya.echo.music.ui.menu.YouTubeAlbumMenu
-import iad1tya.echo.music.ui.menu.YouTubeArtistMenu
-import iad1tya.echo.music.ui.menu.YouTubePlaylistMenu
-import iad1tya.echo.music.ui.menu.YouTubeSongMenu
-import iad1tya.echo.music.viewmodels.OnlineSearchSuggestionViewModel
+import sauravthakur.opm.ui.menu.YouTubeAlbumMenu
+import sauravthakur.opm.ui.menu.YouTubeArtistMenu
+import sauravthakur.opm.ui.menu.YouTubePlaylistMenu
+import sauravthakur.opm.ui.menu.YouTubeSongMenu
+import sauravthakur.opm.viewmodels.OnlineSearchSuggestionViewModel
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.debounce
