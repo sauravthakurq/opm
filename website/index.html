@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OPM - Music, Evolved.</title>
+  <meta name="description" content="A modern Android music app with ad-free streaming, synced lyrics, offline playback, and an intuitive user experience.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <!-- Background Glow Effects -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-container">
+        <!-- Replace with actual logo if available; using a text logo for now -->
+        <h1 class="app-title">OPM</h1>
+      </div>
+      <p class="tagline">A modern Android music app with ad-free streaming, synced lyrics, and offline playback.</p>
+    </header>
+
+    <!-- Main Content Panel (Glassmorphism) -->
+    <main class="glass-panel">
+      <div class="download-section" id="download-section">
+        
+        <!-- Loading State -->
+        <div id="loading-state" class="state-container">
+          <div class="spinner"></div>
+          <p>Fetching latest release...</p>
+        </div>
+
+        <!-- Success State -->
+        <div id="success-state" class="state-container hidden">
+          <h2 class="version-title">Version <span id="app-version">v1.0.0</span></h2>
+          <div class="meta-info">
+            <span class="badge">Android 8.0+</span>
+            <span class="badge" id="apk-size">-- MB</span>
+            <span class="badge highlight" id="publish-date">Today</span>
+          </div>
+          
+          <a href="#" id="download-btn" class="download-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download APK
+          </a>
+          
+          <div class="release-notes-container">
+            <h3>What's New</h3>
+            <div id="release-notes" class="release-notes">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Error State -->
+        <div id="error-state" class="state-container hidden">
+          <svg class="error-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          <h2 class="error-title">Couldn't load release data</h2>
+          <p>We couldn't fetch the latest release automatically. You can still download it directly from GitHub.</p>
+          <a href="https://github.com/sauravthakurq/OPM/releases/latest" target="_blank" class="download-btn fallback-btn">
+            View on GitHub
+          </a>
+        </div>
+      </div>
+      
+      <!-- Installation Instructions -->
+      <section class="instructions-section">
+        <h3>How to Install</h3>
+        <ol class="steps">
+          <li>Download the <strong>.apk</strong> file using the button above.</li>
+          <li>Open the file on your Android device.</li>
+          <li>If prompted, go to <strong>Settings</strong> and enable <strong>Install Unknown Apps</strong> for your browser.</li>
+          <li>Tap <strong>Install</strong> and enjoy ad-free music!</li>
+        </ol>
+      </section>
+      
+      <div class="github-link-container">
+         <a href="https://github.com/sauravthakurq/OPM/releases" target="_blank" class="text-link">View Version History</a>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,11 +1,11 @@
 
 
-package iad1tya.echo.music
-import iad1tya.echo.music.R
-import iad1tya.echo.music.BuildConfig
-import iad1tya.echo.music.ui.screens.settings.RingtoneViewModel
-import iad1tya.echo.music.ui.component.RingtoneTrimmerDialog
-import iad1tya.echo.music.ui.component.RingtoneProgressDialog
+package sauravthakur.opm
+import sauravthakur.opm.R
+import sauravthakur.opm.BuildConfig
+import sauravthakur.opm.ui.screens.settings.RingtoneViewModel
+import sauravthakur.opm.ui.component.RingtoneTrimmerDialog
+import sauravthakur.opm.ui.component.RingtoneProgressDialog
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.CompositionLocalProvider
@@ -61,6 +61,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AlertDialogDefaults
 import androidx.compose.material3.Badge
 import androidx.compose.material3.BadgedBox
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -142,75 +144,75 @@ import coil3.toBitmap
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
-import iad1tya.echo.music.constants.AppBarHeight
-import iad1tya.echo.music.constants.AppLanguageKey
-import iad1tya.echo.music.constants.DarkModeKey
-import iad1tya.echo.music.constants.DefaultOpenTabKey
-import iad1tya.echo.music.constants.DisableScreenshotKey
-import iad1tya.echo.music.constants.DynamicThemeKey
-import iad1tya.echo.music.constants.EnableHighRefreshRateKey
-import iad1tya.echo.music.constants.FloatingToolbarBottomPadding
-import iad1tya.echo.music.constants.FloatingToolbarHorizontalPadding
-import iad1tya.echo.music.constants.ListenTogetherInTopBarKey
-import iad1tya.echo.music.constants.ListenTogetherUsernameKey
-import iad1tya.echo.music.constants.MiniPlayerBottomSpacing
-import iad1tya.echo.music.constants.MiniPlayerHeight
-import iad1tya.echo.music.constants.NavigationBarAnimationSpec
-import iad1tya.echo.music.constants.NavigationBarHeight
-import iad1tya.echo.music.echomusic.updater.checkForUpdate
-import iad1tya.echo.music.echomusic.updater.getAutoUpdateCheckSetting
-import iad1tya.echo.music.echomusic.updater.isNewerVersion
-import iad1tya.echo.music.echomusic.updater.saveUpdateAvailableState
-import iad1tya.echo.music.echomusic.updater.getUpdateNotificationsSetting
-import iad1tya.echo.music.echomusic.UpdateNotificationHelper
+import sauravthakur.opm.constants.AppBarHeight
+import sauravthakur.opm.constants.AppLanguageKey
+import sauravthakur.opm.constants.DarkModeKey
+import sauravthakur.opm.constants.DefaultOpenTabKey
+import sauravthakur.opm.constants.DisableScreenshotKey
+import sauravthakur.opm.constants.DynamicThemeKey
+import sauravthakur.opm.constants.EnableHighRefreshRateKey
+import sauravthakur.opm.constants.FloatingToolbarBottomPadding
+import sauravthakur.opm.constants.FloatingToolbarHorizontalPadding
+import sauravthakur.opm.constants.ListenTogetherInTopBarKey
+import sauravthakur.opm.constants.ListenTogetherUsernameKey
+import sauravthakur.opm.constants.MiniPlayerBottomSpacing
+import sauravthakur.opm.constants.MiniPlayerHeight
+import sauravthakur.opm.constants.NavigationBarAnimationSpec
+import sauravthakur.opm.constants.NavigationBarHeight
+import sauravthakur.opm.echomusic.updater.checkForUpdate
+import sauravthakur.opm.echomusic.updater.getAutoUpdateCheckSetting
+import sauravthakur.opm.echomusic.updater.isNewerVersion
+import sauravthakur.opm.echomusic.updater.saveUpdateAvailableState
+import sauravthakur.opm.echomusic.updater.getUpdateNotificationsSetting
+import sauravthakur.opm.echomusic.UpdateNotificationHelper
 import android.util.Log
 import androidx.compose.ui.platform.LocalContext
-import iad1tya.echo.music.constants.PauseListenHistoryKey
-import iad1tya.echo.music.constants.PauseSearchHistoryKey
-import iad1tya.echo.music.constants.PureBlackKey
-import iad1tya.echo.music.constants.SYSTEM_DEFAULT
-import iad1tya.echo.music.constants.SelectedThemeColorKey
-import iad1tya.echo.music.constants.StopMusicOnTaskClearKey
-import iad1tya.echo.music.constants.UseNewMiniPlayerDesignKey
-import iad1tya.echo.music.db.MusicDatabase
-import iad1tya.echo.music.db.entities.SearchHistory
-import iad1tya.echo.music.extensions.toEnum
-import iad1tya.echo.music.models.toMediaMetadata
-import iad1tya.echo.music.playback.DownloadUtil
-import iad1tya.echo.music.playback.MusicService
-import iad1tya.echo.music.playback.MusicService.MusicBinder
-import iad1tya.echo.music.playback.PlayerConnection
-import iad1tya.echo.music.playback.queues.YouTubeQueue
-import iad1tya.echo.music.ui.component.AppNavigationRail
-import iad1tya.echo.music.ui.component.BottomSheetMenu
-import iad1tya.echo.music.ui.component.BottomSheetPage
-import iad1tya.echo.music.ui.component.FloatingNavigationToolbar
-import iad1tya.echo.music.ui.component.LocalBottomSheetPageState
-import iad1tya.echo.music.ui.component.LocalMenuState
-import iad1tya.echo.music.ui.component.rememberBottomSheetState
-import iad1tya.echo.music.ui.component.shimmer.getShimmerTheme
-import iad1tya.echo.music.ui.menu.YouTubeSongMenu
-import iad1tya.echo.music.ui.player.BottomSheetPlayer
-import iad1tya.echo.music.ui.screens.Screens
-import iad1tya.echo.music.ui.screens.SettingDialoge
-import iad1tya.echo.music.ui.screens.WelcomeDialog
-import iad1tya.echo.music.ui.screens.navigationBuilder
-import iad1tya.echo.music.ui.screens.settings.DarkMode
-import iad1tya.echo.music.ui.screens.settings.NavigationTab
-import iad1tya.echo.music.ui.theme.ColorSaver
-import iad1tya.echo.music.ui.theme.DefaultThemeColor
-import iad1tya.echo.music.ui.theme.echomusicTheme
-import iad1tya.echo.music.ui.theme.extractThemeColor
-import iad1tya.echo.music.ui.utils.appBarScrollBehavior
-import iad1tya.echo.music.ui.utils.resetHeightOffset
-import iad1tya.echo.music.utils.SyncUtils
-import iad1tya.echo.music.utils.dataStore
-import iad1tya.echo.music.utils.get
-import iad1tya.echo.music.utils.rememberEnumPreference
-import iad1tya.echo.music.utils.rememberPreference
-import iad1tya.echo.music.utils.reportException
-import iad1tya.echo.music.utils.setAppLocale
-import iad1tya.echo.music.viewmodels.HomeViewModel
+import sauravthakur.opm.constants.PauseListenHistoryKey
+import sauravthakur.opm.constants.PauseSearchHistoryKey
+import sauravthakur.opm.constants.PureBlackKey
+import sauravthakur.opm.constants.SYSTEM_DEFAULT
+import sauravthakur.opm.constants.SelectedThemeColorKey
+import sauravthakur.opm.constants.StopMusicOnTaskClearKey
+import sauravthakur.opm.constants.UseNewMiniPlayerDesignKey
+import sauravthakur.opm.db.MusicDatabase
+import sauravthakur.opm.db.entities.SearchHistory
+import sauravthakur.opm.extensions.toEnum
+import sauravthakur.opm.models.toMediaMetadata
+import sauravthakur.opm.playback.DownloadUtil
+import sauravthakur.opm.playback.MusicService
+import sauravthakur.opm.playback.MusicService.MusicBinder
+import sauravthakur.opm.playback.PlayerConnection
+import sauravthakur.opm.playback.queues.YouTubeQueue
+import sauravthakur.opm.ui.component.AppNavigationRail
+import sauravthakur.opm.ui.component.BottomSheetMenu
+import sauravthakur.opm.ui.component.BottomSheetPage
+import sauravthakur.opm.ui.component.FloatingNavigationToolbar
+import sauravthakur.opm.ui.component.LocalBottomSheetPageState
+import sauravthakur.opm.ui.component.LocalMenuState
+import sauravthakur.opm.ui.component.rememberBottomSheetState
+import sauravthakur.opm.ui.component.shimmer.getShimmerTheme
+import sauravthakur.opm.ui.menu.YouTubeSongMenu
+import sauravthakur.opm.ui.player.BottomSheetPlayer
+import sauravthakur.opm.ui.screens.Screens
+import sauravthakur.opm.ui.screens.SettingDialoge
+import sauravthakur.opm.ui.screens.WelcomeDialog
+import sauravthakur.opm.ui.screens.navigationBuilder
+import sauravthakur.opm.ui.screens.settings.DarkMode
+import sauravthakur.opm.ui.screens.settings.NavigationTab
+import sauravthakur.opm.ui.theme.ColorSaver
+import sauravthakur.opm.ui.theme.DefaultThemeColor
+import sauravthakur.opm.ui.theme.opmTheme
+import sauravthakur.opm.ui.theme.extractThemeColor
+import sauravthakur.opm.ui.utils.appBarScrollBehavior
+import sauravthakur.opm.ui.utils.resetHeightOffset
+import sauravthakur.opm.utils.SyncUtils
+import sauravthakur.opm.utils.dataStore
+import sauravthakur.opm.utils.get
+import sauravthakur.opm.utils.rememberEnumPreference
+import sauravthakur.opm.utils.rememberPreference
+import sauravthakur.opm.utils.reportException
+import sauravthakur.opm.utils.setAppLocale
+import sauravthakur.opm.viewmodels.HomeViewModel
 import com.valentinilk.shimmer.LocalShimmerTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
@@ -230,9 +232,9 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     companion object {
-        const val ACTION_SEARCH = "iad1tya.echo.music.action.SEARCH"
-        const val ACTION_LIBRARY = "iad1tya.echo.music.action.LIBRARY"
-        const val ACTION_RECOGNITION = "iad1tya.echo.music.action.RECOGNITION"
+        const val ACTION_SEARCH = "sauravthakur.opm.action.SEARCH"
+        const val ACTION_LIBRARY = "sauravthakur.opm.action.LIBRARY"
+        const val ACTION_RECOGNITION = "sauravthakur.opm.action.RECOGNITION"
         const val EXTRA_AUTO_START_RECOGNITION = "auto_start_recognition"
     }
 
@@ -246,13 +248,13 @@ class MainActivity : ComponentActivity() {
     lateinit var syncUtils: SyncUtils
 
     @Inject
-    lateinit var listenTogetherManager: iad1tya.echo.music.listentogether.ListenTogetherManager
+    lateinit var listenTogetherManager: sauravthakur.opm.listentogether.ListenTogetherManager
 
     @Inject
-    lateinit var echoBrainEngine: iad1tya.echo.music.engine.EchoBrainEngine
+    lateinit var echoBrainEngine: sauravthakur.opm.engine.EchoBrainEngine
 
     @Inject
-    lateinit var echoBrainRepository: iad1tya.echo.music.data.EchoBrainRepository
+    lateinit var echoBrainRepository: sauravthakur.opm.data.EchoBrainRepository
 
     private lateinit var navController: NavHostController
     private var pendingIntent: Intent? = null
@@ -377,7 +379,7 @@ class MainActivity : ComponentActivity() {
 
         lifecycleScope.launch {
             dataStore.data
-                .map { it[iad1tya.echo.music.constants.EchoBrainEnabledKey] ?: false }
+                .map { it[sauravthakur.opm.constants.EchoBrainEnabledKey] ?: false }
                 .distinctUntilChanged()
                 .collectLatest { enabled ->
                     echoBrainEngine.isEnabled.value = enabled
@@ -385,7 +387,7 @@ class MainActivity : ComponentActivity() {
         }
 
         setContent {
-            echomusicApp(
+            opmApp(
                 playerConnection = playerConnection,
                 database = database,
                 downloadUtil = downloadUtil,
@@ -397,7 +399,7 @@ class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
     @Composable
-    private fun echomusicApp(
+    private fun opmApp(
         playerConnection: PlayerConnection?,
         database: MusicDatabase,
         downloadUtil: DownloadUtil,
@@ -460,20 +462,13 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        val darkTheme by rememberEnumPreference(DarkModeKey, defaultValue = DarkMode.AUTO)
-        val isSystemInDarkTheme = isSystemInDarkTheme()
-        val useDarkTheme = remember(darkTheme, isSystemInDarkTheme) {
-            if (darkTheme == DarkMode.AUTO) isSystemInDarkTheme else darkTheme == DarkMode.ON
-        }
+        val useDarkTheme = true
 
         LaunchedEffect(useDarkTheme) {
             setSystemBarAppearance(useDarkTheme)
         }
 
-        val pureBlackEnabled by rememberPreference(PureBlackKey, defaultValue = false)
-        val pureBlack = remember(pureBlackEnabled, useDarkTheme) {
-            pureBlackEnabled && useDarkTheme
-        }
+        val pureBlack = true
 
         val (selectedThemeColorInt) = rememberPreference(SelectedThemeColorKey, defaultValue = DefaultThemeColor.toArgb())
         val selectedThemeColor = Color(selectedThemeColorInt)
@@ -521,7 +516,7 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        echomusicTheme(
+        opmTheme(
             darkTheme = useDarkTheme,
             pureBlack = pureBlack,
             themeColor = themeColor,
@@ -529,7 +524,7 @@ class MainActivity : ComponentActivity() {
             BoxWithConstraints(
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(if (pureBlack) Color.Black else MaterialTheme.colorScheme.surface)
+                    .background(Color.Black)
             ) {
                 val focusManager = LocalFocusManager.current
                 val density = LocalDensity.current
@@ -776,11 +771,11 @@ class MainActivity : ComponentActivity() {
                 val snackbarHostState = remember { SnackbarHostState() }
                 var showSettingDialoge by remember { mutableStateOf(false) }
 
-                val (lastOpenedVersionCode, setLastOpenedVersionCode) = rememberPreference(iad1tya.echo.music.constants.LastOpenedVersionCodeKey, -1)
+                val (lastOpenedVersionCode, setLastOpenedVersionCode) = rememberPreference(sauravthakur.opm.constants.LastOpenedVersionCodeKey, -1)
                 var showWelcomeDialog by remember { mutableStateOf(false) }
 
                 LaunchedEffect(lastOpenedVersionCode) {
-                    if (lastOpenedVersionCode < BuildConfig.VERSION_CODE) {
+                    if (lastOpenedVersionCode < 0) {
                         showWelcomeDialog = true
                     }
                 }
@@ -816,7 +811,7 @@ class MainActivity : ComponentActivity() {
                 }
 
                 val currentTitle = when (navBackStackEntry?.destination?.route) {
-                    Screens.Home.route -> "Echo Music"
+                    Screens.Home.route -> "OPM"
                     Screens.Search.route -> stringResource(R.string.search)
                     Screens.Library.route -> stringResource(R.string.filter_library)
                     Screens.ListenTogether.route -> stringResource(R.string.together)
@@ -868,55 +863,77 @@ class MainActivity : ComponentActivity() {
                                             )
                                         },
                                         actions = {
-                                            if (showHistoryButton) {
-                                                IconButton(onClick = { navController.navigate("history") }) {
+                                            var homeActionMenuExpanded by remember { mutableStateOf(false) }
+                                            Box {
+                                                IconButton(onClick = { homeActionMenuExpanded = true }) {
                                                     Icon(
-                                                        painter = painterResource(R.drawable.music_history),
-                                                        contentDescription = stringResource(R.string.history)
+                                                        painter = painterResource(R.drawable.more_vert),
+                                                        contentDescription = stringResource(R.string.settings),
+                                                        modifier = Modifier.size(24.dp),
+                                                        tint = MaterialTheme.colorScheme.onSurfaceVariant
                                                     )
                                                 }
-                                            }
-                                            IconButton(onClick = { navController.navigate("stats") }) {
-                                                Icon(
-                                                    painter = painterResource(R.drawable.stats),
-                                                    contentDescription = stringResource(R.string.stats)
-                                                )
-                                            }
-                                            if (listenTogetherInTopBar) {
-                                                IconButton(onClick = { navController.navigate("listen_together_from_topbar") }) {
-                                                    Icon(
-                                                        painter = painterResource(R.drawable.group_outlined),
-                                                        contentDescription = stringResource(R.string.together)
-                                                    )
-                                                }
-                                            }
-                                             IconButton(onClick = { showSettingDialoge = true }) {
-                                                BadgedBox(badge = {}) {
-                                                    if (accountImageUrl != null) {
-                                                        AsyncImage(
-                                                            model = accountImageUrl,
-                                                            contentDescription = stringResource(R.string.account),
-                                                            modifier = Modifier
-                                                                .size(24.dp)
-                                                                .clip(CircleShape)
+                                                DropdownMenu(
+                                                    expanded = homeActionMenuExpanded,
+                                                    onDismissRequest = { homeActionMenuExpanded = false },
+                                                ) {
+                                                    if (showHistoryButton) {
+                                                        DropdownMenuItem(
+                                                            text = { Text(stringResource(R.string.history)) },
+                                                            leadingIcon = { Icon(painterResource(R.drawable.music_history), null) },
+                                                            onClick = {
+                                                                homeActionMenuExpanded = false
+                                                                navController.navigate("history")
+                                                            }
                                                         )
-                                                     } else {
-                                                         Icon(
-                                                             painter = painterResource(R.drawable.settings),
-                                                             contentDescription = stringResource(R.string.account),
-                                                             modifier = Modifier.size(24.dp)
-                                                         )
-                                                     }
+                                                    }
+                                                    DropdownMenuItem(
+                                                        text = { Text(stringResource(R.string.stats)) },
+                                                        leadingIcon = { Icon(painterResource(R.drawable.stats), null) },
+                                                        onClick = {
+                                                            homeActionMenuExpanded = false
+                                                            navController.navigate("stats")
+                                                        }
+                                                    )
+                                                    if (listenTogetherInTopBar) {
+                                                        DropdownMenuItem(
+                                                            text = { Text(stringResource(R.string.together)) },
+                                                            leadingIcon = { Icon(painterResource(R.drawable.group_outlined), null) },
+                                                            onClick = {
+                                                                homeActionMenuExpanded = false
+                                                                navController.navigate("listen_together_from_topbar")
+                                                            }
+                                                        )
+                                                    }
+
+                                                    DropdownMenuItem(
+                                                        text = { Text(stringResource(R.string.settings)) },
+                                                        leadingIcon = {
+                                                            if (accountImageUrl != null) {
+                                                                AsyncImage(
+                                                                    model = accountImageUrl,
+                                                                    contentDescription = null,
+                                                                    modifier = Modifier.size(22.dp).clip(CircleShape)
+                                                                )
+                                                            } else {
+                                                                Icon(painterResource(R.drawable.settings), null)
+                                                            }
+                                                        },
+                                                        onClick = {
+                                                            homeActionMenuExpanded = false
+                                                            showSettingDialoge = true
+                                                        }
+                                                    )
                                                 }
                                             }
                                         },
                                         scrollBehavior = topAppBarScrollBehavior,
                                         colors = TopAppBarDefaults.topAppBarColors(
-                                            containerColor = if (pureBlack) Color.Black else MaterialTheme.colorScheme.surfaceContainer,
-                                            scrolledContainerColor = if (pureBlack) Color.Black else MaterialTheme.colorScheme.surfaceContainer,
-                                            titleContentColor = MaterialTheme.colorScheme.onSurface,
-                                            actionIconContentColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                                            navigationIconContentColor = MaterialTheme.colorScheme.onSurfaceVariant
+                                            containerColor = if (currentRoute == Screens.Home.route) Color.Transparent else if (pureBlack) Color.Black else MaterialTheme.colorScheme.surfaceContainer,
+                                            scrolledContainerColor = if (currentRoute == Screens.Home.route) Color.Transparent else if (pureBlack) Color.Black else MaterialTheme.colorScheme.surfaceContainer,
+                                            titleContentColor = if (currentRoute == Screens.Home.route) Color.White else MaterialTheme.colorScheme.onSurface,
+                                            actionIconContentColor = if (currentRoute == Screens.Home.route) Color.White else MaterialTheme.colorScheme.onSurfaceVariant,
+                                            navigationIconContentColor = if (currentRoute == Screens.Home.route) Color.White else MaterialTheme.colorScheme.onSurfaceVariant
                                         ),
                                         windowInsets = WindowInsets.systemBars.only(WindowInsetsSides.Top),
                                         modifier = Modifier
@@ -985,18 +1002,6 @@ class MainActivity : ComponentActivity() {
                                         FloatingNavigationToolbar(
                                             items = navigationItems,
                                             pureBlack = pureBlack,
-                                            onShuffleClick = onShuffleClick,
-                                            shuffleIconRes = R.drawable.shuffle,
-                                            shuffleContentDescription = stringResource(R.string.shuffle),
-                                            onMusicRecognitionClick = onMusicRecognitionClick,
-                                            musicRecognitionContentDescription = stringResource(R.string.recognition),
-                                            onSettingsClick = { 
-                                                navController.navigate("settings") {
-                                                    launchSingleTop = true
-                                                }
-                                            },
-                                            settingsIconRes = R.drawable.settings,
-                                            settingsContentDescription = stringResource(R.string.settings),
                                             isSelected = { screen ->
                                                 currentRoute == screen.route || currentRoute?.startsWith("${screen.route}/") == true
                                             },
@@ -1243,7 +1248,7 @@ class MainActivity : ComponentActivity() {
                         )
                     }
 
-                    if (showWelcomeDialog) {
+                    if (showWelcomeDialog && lastOpenedVersionCode < 0) {
                         WelcomeDialog(
                             onDismissRequest = {
                                 showWelcomeDialog = false
@@ -1393,5 +1398,5 @@ val LocalPlayerConnection = staticCompositionLocalOf<PlayerConnection?> { error(
 val LocalPlayerAwareWindowInsets = compositionLocalOf<WindowInsets> { error("No WindowInsets provided") }
 val LocalDownloadUtil = staticCompositionLocalOf<DownloadUtil> { error("No DownloadUtil provided") }
 val LocalSyncUtils = staticCompositionLocalOf<SyncUtils> { error("No SyncUtils provided") }
-val LocalListenTogetherManager = staticCompositionLocalOf<iad1tya.echo.music.listentogether.ListenTogetherManager?> { null }
+val LocalListenTogetherManager = staticCompositionLocalOf<sauravthakur.opm.listentogether.ListenTogetherManager?> { null }
 val LocalIsPlayerExpanded = compositionLocalOf { false }

@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class, ExperimentalLayoutApi::class, ExperimentalMaterial3Api::class)
 
-package iad1tya.echo.music.ui.screens.settings
+package sauravthakur.opm.ui.screens.settings
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateDpAsState
@@ -68,16 +68,16 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.materialkolor.PaletteStyle
 import com.materialkolor.rememberDynamicColorScheme
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.DarkModeKey
-import iad1tya.echo.music.constants.DynamicThemeKey
-import iad1tya.echo.music.constants.PureBlackKey
-import iad1tya.echo.music.constants.PureBlackMiniPlayerKey
-import iad1tya.echo.music.constants.SelectedThemeColorKey
-import iad1tya.echo.music.ui.theme.DefaultThemeColor
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.utils.rememberEnumPreference
-import iad1tya.echo.music.utils.rememberPreference
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.DarkModeKey
+import sauravthakur.opm.constants.DynamicThemeKey
+import sauravthakur.opm.constants.PureBlackKey
+import sauravthakur.opm.constants.PureBlackMiniPlayerKey
+import sauravthakur.opm.constants.SelectedThemeColorKey
+import sauravthakur.opm.ui.theme.DefaultThemeColor
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.utils.rememberEnumPreference
+import sauravthakur.opm.utils.rememberPreference
 
 data class ThemePalette(
     val nameRes: Int,
@@ -176,98 +176,24 @@ highlightKey: String? = null) {
                     modifier = Modifier.padding(bottom = 12.dp, start = 4.dp)
                 )
                 
-                Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(16.dp)
-                    ) {
-                        ThemeModeCard(
-                            modifier = Modifier.weight(1f),
-                            title = stringResource(R.string.dark_theme_follow_system),
-                            icon = Icons.Rounded.BrightnessAuto,
-                            isSelected = darkMode == DarkMode.AUTO,
-                            onClick = { onDarkModeChange(DarkMode.AUTO); onPureBlackChange(false) }
-                        )
-                        ThemeModeCard(
-                            modifier = Modifier.weight(1f),
-                            title = "Light",
-                            icon = Icons.Rounded.LightMode,
-                            isSelected = darkMode == DarkMode.OFF,
-                            onClick = { onDarkModeChange(DarkMode.OFF); onPureBlackChange(false) }
-                        )
-                    }
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(16.dp)
-                    ) {
-                        ThemeModeCard(
-                            modifier = Modifier.weight(1f),
-                            title = "Dark",
-                            icon = Icons.Rounded.DarkMode,
-                            isSelected = darkMode == DarkMode.ON && !pureBlack,
-                            onClick = { onDarkModeChange(DarkMode.ON); onPureBlackChange(false) }
-                        )
-                        ThemeModeCard(
-                            modifier = Modifier.weight(1f),
-                            title = "AMOLED",
-                            icon = Icons.Rounded.Contrast,
-                            isSelected = pureBlack,
-                            onClick = { onDarkModeChange(DarkMode.ON); onPureBlackChange(true) }
-                        )
-                    }
-                }
-            }
-
-            item {
-                HorizontalDivider(
-                    modifier = Modifier.padding(vertical = 12.dp, horizontal = 16.dp),
-                    color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.3f)
-                )
-            }
-
-            item {
-                Text(
-                    text = stringResource(R.string.color_palette),
-                    style = MaterialTheme.typography.titleMedium,
-                    color = MaterialTheme.colorScheme.primary,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.padding(bottom = 16.dp, start = 4.dp)
-                )
-                
-                Card(
+                Row(
                     modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(32.dp),
-                    colors = CardDefaults.cardColors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerLow.copy(alpha = 0.6f)
-                    ),
-                    elevation = CardDefaults.cardElevation(0.dp),
-                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.2f))
+                    horizontalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
-                    FlowRow(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(24.dp),
-                        horizontalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterHorizontally),
-                        verticalArrangement = Arrangement.spacedBy(20.dp)
-                    ) {
-                        PaletteColors.forEach { palette ->
-                            val isDynamicPalette = palette.seedColor == Color.Transparent
-                            val isSelected = if (isDynamicPalette) {
-                                selectedThemeColor == DefaultThemeColor
-                            } else {
-                                selectedThemeColor == palette.seedColor
-                            }
-                            
-                            PaletteItem(
-                                palette = palette,
-                                isSelected = isSelected,
-                                onClick = { 
-                                    val colorToSave = if (isDynamicPalette) DefaultThemeColor else palette.seedColor
-                                    handleColorSelection(colorToSave)
-                                }
-                            )
-                        }
-                    }
+                    ThemeModeCard(
+                        modifier = Modifier.weight(1f),
+                        title = "Day",
+                        icon = Icons.Rounded.LightMode,
+                        isSelected = darkMode == DarkMode.OFF,
+                        onClick = { onDarkModeChange(DarkMode.OFF); onPureBlackChange(false) }
+                    )
+                    ThemeModeCard(
+                        modifier = Modifier.weight(1f),
+                        title = "Night",
+                        icon = Icons.Rounded.DarkMode,
+                        isSelected = darkMode == DarkMode.ON,
+                        onClick = { onDarkModeChange(DarkMode.ON); onPureBlackChange(false) }
+                    )
                 }
             }
         }

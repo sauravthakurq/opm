@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens
+package sauravthakur.opm.ui.screens
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.BorderStroke
@@ -90,7 +90,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.foundation.layout.offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import iad1tya.echo.music.constants.AppBarHeight
+import sauravthakur.opm.constants.AppBarHeight
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.util.fastForEachIndexed
@@ -99,35 +99,35 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.media3.exoplayer.offline.Download
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import iad1tya.echo.music.LocalDatabase
-import iad1tya.echo.music.LocalDownloadUtil
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.HideExplicitKey
-import iad1tya.echo.music.constants.HideVideoSongsKey
-import iad1tya.echo.music.constants.AlbumCanvasEnabledKey
-import iad1tya.echo.music.db.entities.Album
-import iad1tya.echo.music.playback.ExoDownloadService
-import iad1tya.echo.music.playback.queues.LocalAlbumRadio
-import iad1tya.echo.music.ui.component.AlbumGradient
-import iad1tya.echo.music.ui.component.ExpandableText
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.LinkSegment
-import iad1tya.echo.music.ui.component.LocalMenuState
-import iad1tya.echo.music.ui.component.NavigationTitle
-import iad1tya.echo.music.ui.component.SongListItem
-import iad1tya.echo.music.ui.component.YouTubeGridItem
-import iad1tya.echo.music.ui.menu.AlbumMenu
-import iad1tya.echo.music.ui.menu.SelectionSongMenu
-import iad1tya.echo.music.ui.menu.SongMenu
-import iad1tya.echo.music.ui.menu.YouTubeAlbumMenu
-import iad1tya.echo.music.ui.utils.backToMain
-import iad1tya.echo.music.ui.utils.fadingEdge
-import iad1tya.echo.music.ui.player.CanvasArtworkPlayer
-import iad1tya.echo.music.utils.listItemShape
-import iad1tya.echo.music.utils.rememberPreference
-import iad1tya.echo.music.viewmodels.AlbumViewModel
+import sauravthakur.opm.LocalDatabase
+import sauravthakur.opm.LocalDownloadUtil
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.HideExplicitKey
+import sauravthakur.opm.constants.HideVideoSongsKey
+import sauravthakur.opm.constants.AlbumCanvasEnabledKey
+import sauravthakur.opm.db.entities.Album
+import sauravthakur.opm.playback.ExoDownloadService
+import sauravthakur.opm.playback.queues.LocalAlbumRadio
+import sauravthakur.opm.ui.component.AlbumGradient
+import sauravthakur.opm.ui.component.ExpandableText
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.LinkSegment
+import sauravthakur.opm.ui.component.LocalMenuState
+import sauravthakur.opm.ui.component.NavigationTitle
+import sauravthakur.opm.ui.component.SongListItem
+import sauravthakur.opm.ui.component.YouTubeGridItem
+import sauravthakur.opm.ui.menu.AlbumMenu
+import sauravthakur.opm.ui.menu.SelectionSongMenu
+import sauravthakur.opm.ui.menu.SongMenu
+import sauravthakur.opm.ui.menu.YouTubeAlbumMenu
+import sauravthakur.opm.ui.utils.backToMain
+import sauravthakur.opm.ui.utils.fadingEdge
+import sauravthakur.opm.ui.player.CanvasArtworkPlayer
+import sauravthakur.opm.utils.listItemShape
+import sauravthakur.opm.utils.rememberPreference
+import sauravthakur.opm.viewmodels.AlbumViewModel
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
@@ -935,7 +935,7 @@ fun AlbumScreen(
                                     type = "text/plain"
                                     putExtra(
                                         android.content.Intent.EXTRA_TEXT,
-                                        "https://share.echomusic.fun/playlist?list=${albumWithSongs.album.playlistId}"
+                                        "https://music.youtube.com/playlist?list=${albumWithSongs.album.playlistId}"
                                     )
                                 }
                                 context.startActivity(

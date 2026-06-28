@@ -1,4 +1,4 @@
-package iad1tya.echo.music.ui.screens
+package sauravthakur.opm.ui.screens
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.horizontalScroll
 
@@ -7,6 +7,7 @@ import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.focusGroup
 import androidx.compose.foundation.focusable
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -45,10 +46,10 @@ import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.draw.blur
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.carousel.HorizontalMultiBrowseCarousel
 import androidx.compose.material3.carousel.HorizontalCenteredHeroCarousel
 import androidx.compose.material3.carousel.rememberCarouselState
 import androidx.compose.material3.ContainedLoadingIndicator
@@ -61,6 +62,7 @@ import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults
 import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Surface
 import androidx.compose.material3.surfaceColorAtElevation
 import androidx.compose.material3.Text
 import androidx.compose.runtime.collectAsState
@@ -78,6 +80,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.Modifier
@@ -92,6 +95,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.compose.ui.zIndex
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.NavController
@@ -108,70 +113,71 @@ import com.music.innertube.models.YTItem
 import com.music.innertube.utils.completed
 import com.music.innertube.utils.parseCookieString
 import com.music.innertube.YouTube
-import iad1tya.echo.music.constants.GridItemSize
-import iad1tya.echo.music.constants.GridItemsSizeKey
-import iad1tya.echo.music.constants.GridThumbnailHeight
-import iad1tya.echo.music.constants.InnerTubeCookieKey
-import iad1tya.echo.music.constants.ListItemHeight
-import iad1tya.echo.music.constants.ListThumbnailSize
-import iad1tya.echo.music.constants.RandomizeHomeOrderKey
-import iad1tya.echo.music.constants.ShowSpeedDialKey
-import iad1tya.echo.music.constants.SmallGridThumbnailHeight
-import iad1tya.echo.music.constants.ThumbnailCornerRadius
-import iad1tya.echo.music.db.entities.Album
-import iad1tya.echo.music.db.entities.Artist
-import iad1tya.echo.music.db.entities.LocalItem
-import iad1tya.echo.music.db.entities.Playlist
-import iad1tya.echo.music.db.entities.PlaylistEntity
-import iad1tya.echo.music.db.entities.PlaylistSongMap
-import iad1tya.echo.music.db.entities.Song
-import iad1tya.echo.music.extensions.toMediaItem
-import iad1tya.echo.music.LocalDatabase
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.models.toMediaMetadata
-import iad1tya.echo.music.playback.queues.ListQueue
-import iad1tya.echo.music.playback.queues.LocalAlbumRadio
-import iad1tya.echo.music.playback.queues.YouTubeAlbumRadio
-import iad1tya.echo.music.playback.queues.YouTubeQueue
-import iad1tya.echo.music.R
-import iad1tya.echo.music.ui.component.AlbumGridItem
-import iad1tya.echo.music.ui.component.ArtistGridItem
-import iad1tya.echo.music.ui.component.ChipsRow
-import iad1tya.echo.music.ui.component.HideOnScrollFAB
-import iad1tya.echo.music.ui.component.LocalBottomSheetPageState
-import iad1tya.echo.music.ui.component.LocalMenuState
-import iad1tya.echo.music.ui.component.NavigationTitle
-import iad1tya.echo.music.ui.component.RandomizeGridItem
-import iad1tya.echo.music.ui.component.shimmer.GridItemPlaceHolder
-import iad1tya.echo.music.ui.component.shimmer.ShimmerHost
-import iad1tya.echo.music.ui.component.shimmer.TextPlaceholder
-import iad1tya.echo.music.ui.component.SongGridItem
-import iad1tya.echo.music.ui.component.SongListItem
-import iad1tya.echo.music.ui.component.SpeedDialGridItem
-import iad1tya.echo.music.ui.component.YouTubeGridItem
-import iad1tya.echo.music.ui.component.YouTubeListItem
-import iad1tya.echo.music.ui.menu.AlbumMenu
-import iad1tya.echo.music.ui.menu.ArtistMenu
-import iad1tya.echo.music.ui.menu.SongMenu
-import iad1tya.echo.music.ui.menu.YouTubeAlbumMenu
-import iad1tya.echo.music.ui.menu.YouTubeArtistMenu
-import iad1tya.echo.music.ui.menu.YouTubePlaylistMenu
-import iad1tya.echo.music.ui.menu.YouTubeSongMenu
-import iad1tya.echo.music.ui.utils.SnapLayoutInfoProvider
-import iad1tya.echo.music.ui.utils.resize
-import iad1tya.echo.music.utils.listItemShape
-import iad1tya.echo.music.utils.rememberEnumPreference
-import iad1tya.echo.music.utils.rememberPreference
-import iad1tya.echo.music.viewmodels.CommunityPlaylistItem
-import iad1tya.echo.music.viewmodels.HomeViewModel
+import sauravthakur.opm.constants.GridItemSize
+import sauravthakur.opm.constants.GridItemsSizeKey
+import sauravthakur.opm.constants.GridThumbnailHeight
+import sauravthakur.opm.constants.InnerTubeCookieKey
+import sauravthakur.opm.constants.ListItemHeight
+import sauravthakur.opm.constants.ListThumbnailSize
+import sauravthakur.opm.constants.RandomizeHomeOrderKey
+import sauravthakur.opm.constants.ShowSpeedDialKey
+import sauravthakur.opm.constants.SmallGridThumbnailHeight
+import sauravthakur.opm.constants.ThumbnailCornerRadius
+import sauravthakur.opm.db.entities.Album
+import sauravthakur.opm.db.entities.Artist
+import sauravthakur.opm.db.entities.LocalItem
+import sauravthakur.opm.db.entities.Playlist
+import sauravthakur.opm.db.entities.PlaylistEntity
+import sauravthakur.opm.db.entities.PlaylistSongMap
+import sauravthakur.opm.db.entities.Song
+import sauravthakur.opm.extensions.toMediaItem
+import sauravthakur.opm.LocalDatabase
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.models.toMediaMetadata
+import sauravthakur.opm.playback.queues.ListQueue
+import sauravthakur.opm.playback.queues.LocalAlbumRadio
+import sauravthakur.opm.playback.queues.YouTubeAlbumRadio
+import sauravthakur.opm.playback.queues.YouTubeQueue
+import sauravthakur.opm.R
+import sauravthakur.opm.ui.component.AlbumGridItem
+import sauravthakur.opm.ui.component.ArtistGridItem
+import sauravthakur.opm.ui.component.ChipsRow
+import sauravthakur.opm.ui.component.HideOnScrollFAB
+import sauravthakur.opm.ui.component.LocalBottomSheetPageState
+import sauravthakur.opm.ui.component.LocalMenuState
+import sauravthakur.opm.ui.component.NavigationTitle
+import sauravthakur.opm.ui.component.RandomizeGridItem
+import sauravthakur.opm.ui.component.shimmer.GridItemPlaceHolder
+import sauravthakur.opm.ui.component.shimmer.ShimmerHost
+import sauravthakur.opm.ui.component.shimmer.TextPlaceholder
+import sauravthakur.opm.ui.component.SongGridItem
+import sauravthakur.opm.ui.component.SongListItem
+import sauravthakur.opm.ui.component.SpeedDialGridItem
+import sauravthakur.opm.ui.component.YouTubeGridItem
+import sauravthakur.opm.ui.component.YouTubeListItem
+import sauravthakur.opm.ui.menu.AlbumMenu
+import sauravthakur.opm.ui.menu.ArtistMenu
+import sauravthakur.opm.ui.menu.SongMenu
+import sauravthakur.opm.ui.menu.YouTubeAlbumMenu
+import sauravthakur.opm.ui.menu.YouTubeArtistMenu
+import sauravthakur.opm.ui.menu.YouTubePlaylistMenu
+import sauravthakur.opm.ui.menu.YouTubeSongMenu
+import sauravthakur.opm.ui.utils.SnapLayoutInfoProvider
+import sauravthakur.opm.ui.utils.resize
+import sauravthakur.opm.utils.listItemShape
+import sauravthakur.opm.utils.rememberEnumPreference
+import sauravthakur.opm.utils.rememberPreference
+import sauravthakur.opm.viewmodels.CommunityPlaylistItem
+import sauravthakur.opm.viewmodels.HomeViewModel
 import kotlin.math.min
+import kotlin.math.absoluteValue
 import kotlin.random.Random
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import iad1tya.echo.music.viewmodels.DailyDiscoverItem
+import sauravthakur.opm.viewmodels.DailyDiscoverItem
 
 
 sealed class HomeSection(val id: String, val baseWeight: Int) {
@@ -281,7 +287,7 @@ fun CommunityPlaylistCard(
                     Text(
                         text = item.playlist.title,
                         style = MaterialTheme.typography.titleMedium,
-                        maxLines = 2,
+                        maxLines = 1,
                         overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis
                     )
                     Spacer(modifier = Modifier.height(4.dp))
@@ -438,7 +444,7 @@ fun CommunityPlaylistCard(
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun DailyDiscoverCard(
-    dailyDiscover: iad1tya.echo.music.viewmodels.DailyDiscoverItem,
+    dailyDiscover: sauravthakur.opm.viewmodels.DailyDiscoverItem,
     onClick: () -> Unit,
     navController: NavController,
     modifier: Modifier = Modifier
@@ -549,6 +555,277 @@ fun DailyDiscoverCard(
                 }
             }
         }
+    }
+}
+
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+private fun OpmImmersiveHeroPager(
+    heroItems: List<Triple<String, String, String?>>, // title, artist, artworkUrl
+    isPlaying: Boolean,
+    onItemClick: (Int) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    if (heroItems.isEmpty()) {
+        // Fallback static hero
+        Box(
+            modifier = modifier
+                .fillMaxWidth()
+                .height(420.dp)
+                .background(Color.Black),
+            contentAlignment = Alignment.BottomStart,
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.weeknd),
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.fillMaxSize()
+            )
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(
+                        Brush.verticalGradient(
+                            colors = listOf(
+                                Color.Black.copy(alpha = 0.1f),
+                                Color.Black.copy(alpha = 0.85f),
+                                Color.Black,
+                            ),
+                            startY = 0f,
+                        )
+                    )
+            )
+            Column(
+                modifier = Modifier
+                    .padding(horizontal = 24.dp, vertical = 32.dp)
+            ) {
+                Surface(
+                    color = Color.White.copy(alpha = 0.12f),
+                    shape = RoundedCornerShape(100.dp),
+                ) {
+                    Text(
+                        text = "OPM",
+                        style = MaterialTheme.typography.labelSmall,
+                        color = Color.White,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 5.dp),
+                    )
+                }
+                Spacer(modifier = Modifier.height(14.dp))
+                Text(
+                    text = "Premium Music",
+                    style = MaterialTheme.typography.displaySmall.copy(
+                        fontWeight = FontWeight.Black,
+                        fontSize = 36.sp,
+                        lineHeight = 40.sp,
+                    ),
+                    color = Color.White,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
+                Spacer(modifier = Modifier.height(6.dp))
+                Text(
+                    text = "Tuned for the moment",
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = Color.White.copy(alpha = 0.65f),
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            }
+        }
+        return
+    }
+
+    val pagerState = rememberPagerState(pageCount = { heroItems.size })
+
+    // Auto-advance every 5 seconds
+    LaunchedEffect(pagerState, heroItems.size) {
+        if (heroItems.size > 1) {
+            while (true) {
+                kotlinx.coroutines.delay(5000)
+                val next = (pagerState.currentPage + 1) % heroItems.size
+                pagerState.animateScrollToPage(next)
+            }
+        }
+    }
+
+    Box(
+        modifier = modifier
+            .fillMaxWidth()
+            .height(420.dp),
+    ) {
+        HorizontalPager(
+            state = pagerState,
+            modifier = Modifier.fillMaxSize(),
+        ) { page ->
+            val (title, artist, artworkUrl) = heroItems[page]
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .combinedClickable(
+                        onClick = { onItemClick(page) }
+                    ),
+            ) {
+                // Background image
+                if (artworkUrl != null) {
+                    AsyncImage(
+                        model = ImageRequest.Builder(LocalContext.current)
+                            .data(artworkUrl)
+                            .crossfade(true)
+                            .build(),
+                        contentDescription = null,
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier.fillMaxSize(),
+                        placeholder = painterResource(id = R.drawable.weeknd),
+                        error = painterResource(id = R.drawable.weeknd)
+                    )
+                } else {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(Color(0xFF1A1A1A))
+                    )
+                }
+
+                // Gradient scrim — smooth cinematic bottom fade
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(
+                            Brush.verticalGradient(
+                                colorStops = arrayOf(
+                                    0.0f to Color.Black.copy(alpha = 0.05f),
+                                    0.3f to Color.Black.copy(alpha = 0.08f),
+                                    0.55f to Color.Black.copy(alpha = 0.35f),
+                                    0.75f to Color.Black.copy(alpha = 0.72f),
+                                    0.9f to Color.Black.copy(alpha = 0.92f),
+                                    1.0f to Color.Black,
+                                ),
+                            )
+                        )
+                )
+
+                // Content overlay
+                Column(
+                    modifier = Modifier
+                        .align(Alignment.BottomStart)
+                        .padding(horizontal = 24.dp, vertical = 32.dp),
+                ) {
+                    // OPM badge
+                    Surface(
+                        color = Color.White.copy(alpha = 0.14f),
+                        shape = RoundedCornerShape(100.dp),
+                    ) {
+                        Text(
+                            text = if (isPlaying && page == pagerState.currentPage) "LIVE ON OPM" else "OPM",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = Color.White,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 5.dp),
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(14.dp))
+                    // Title — large, single line
+                    Text(
+                        text = title,
+                        style = MaterialTheme.typography.displaySmall.copy(
+                            fontWeight = FontWeight.Black,
+                            fontSize = 36.sp,
+                            lineHeight = 40.sp,
+                        ),
+                        color = Color.White,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis,
+                    )
+                    Spacer(modifier = Modifier.height(6.dp))
+                    // Artist — single line
+                    Text(
+                        text = artist,
+                        style = MaterialTheme.typography.bodyLarge,
+                        color = Color.White.copy(alpha = 0.65f),
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis,
+                    )
+                }
+            }
+        }
+
+        // Page indicator dots
+        if (heroItems.size > 1) {
+            Row(
+                modifier = Modifier
+                    .align(Alignment.BottomCenter)
+                    .padding(bottom = 12.dp),
+                horizontalArrangement = Arrangement.Center,
+            ) {
+                repeat(heroItems.size) { i ->
+                    val isSelected = pagerState.currentPage == i
+                    Box(
+                        modifier = Modifier
+                            .padding(horizontal = 3.dp)
+                            .size(if (isSelected) 8.dp else 6.dp)
+                            .clip(CircleShape)
+                            .background(
+                                if (isSelected) Color.White
+                                else Color.White.copy(alpha = 0.35f)
+                            )
+                    )
+                }
+            }
+        }
+    }
+}
+
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+private fun OpmDailyDiscoverDeck(
+    items: List<DailyDiscoverItem>,
+    navController: NavController,
+    onClick: (DailyDiscoverItem) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    if (items.isEmpty()) return
+
+    val initialPage = remember(items.size) {
+        val center = Int.MAX_VALUE / 2
+        center - (center % items.size)
+    }
+    val pagerState = rememberPagerState(initialPage = initialPage, pageCount = { Int.MAX_VALUE })
+
+    HorizontalPager(
+        state = pagerState,
+        contentPadding = PaddingValues(horizontal = 28.dp),
+        pageSpacing = (-76).dp,
+        beyondViewportPageCount = 3,
+        modifier = modifier
+            .fillMaxWidth()
+            .height(356.dp),
+    ) { page ->
+        val actualIndex = page % items.size
+        val signedOffset = ((page - pagerState.currentPage) - pagerState.currentPageOffsetFraction)
+            .coerceIn(-2.4f, 2.4f)
+        val pageOffset = signedOffset.absoluteValue
+        val scale = 1f - (pageOffset * 0.065f)
+        val alpha = 1f - (pageOffset * 0.16f)
+
+        DailyDiscoverCard(
+            dailyDiscover = items[actualIndex],
+            onClick = { onClick(items[actualIndex]) },
+            navController = navController,
+            modifier = Modifier
+                .zIndex(10f - pageOffset)
+                .graphicsLayer {
+                    scaleX = scale
+                    scaleY = scale
+                    translationX = if (signedOffset > 0f) (-pageOffset * 20.dp.toPx()) else 0f
+                    translationY = pageOffset * 20.dp.toPx()
+                    rotationZ = signedOffset * 1.8f
+                    this.alpha = alpha.coerceAtLeast(0.58f)
+                    shadowElevation = (24f - pageOffset * 7f).coerceAtLeast(5f)
+                }
+                .then(if (pageOffset > 0.08f) Modifier.blur((pageOffset * 1.2f).dp) else Modifier)
+                .clip(RoundedCornerShape(34.dp))
+        )
     }
 }
 
@@ -818,7 +1095,8 @@ fun HomeScreen(
         if (communityPlaylists?.isNotEmpty() == true) list.add(HomeSection.FromTheCommunity)
         if (dailyDiscover?.isNotEmpty() == true) list.add(HomeSection.DailyDiscover)
         if (keepListening?.isNotEmpty() == true) list.add(HomeSection.KeepListening)
-        if (accountPlaylists?.isNotEmpty() == true) list.add(HomeSection.AccountPlaylists)
+        // Account section hidden from UI per user request
+        // if (accountPlaylists?.isNotEmpty() == true) list.add(HomeSection.AccountPlaylists)
         if (forgottenFavorites?.isNotEmpty() == true) list.add(HomeSection.ForgottenFavorites)
 
         similarRecommendations?.indices?.forEach { i ->
@@ -942,39 +1220,107 @@ fun HomeScreen(
 
             LazyColumn(
                 state = lazylistState,
-                contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues()
+                contentPadding = LocalPlayerAwareWindowInsets.current.only(WindowInsetsSides.Horizontal + WindowInsetsSides.Bottom).asPaddingValues()
             ) {
-                item {
-                    ChipsRow(
-                        chips = homePage?.chips?.filter { 
-                            !it.title.equals("Podcasts", ignoreCase = true) && 
-                            !it.title.equals("Uploaded", ignoreCase = true)
-                        }?.map { it to it.title } ?: emptyList(),
-                        currentValue = selectedChip,
-                        onValueUpdate = {
-                            viewModel.toggleChip(it)
-                        }
-                    )
-                }
+                item(key = "opm_hero") {
+                    Box(modifier = Modifier.fillMaxWidth()) {
+                        // Build hero items from trending sources
+                        val heroItems = remember(quickPicks, dailyDiscover, homePage?.sections) {
+                            val items = mutableListOf<Triple<String, String, String?>>()
 
-                if (isLoading && homePage?.chips.isNullOrEmpty()) {
-                    item(key = "chips_shimmer") {
-                        ShimmerHost {
-                            Row(
-                                modifier = Modifier
-                                    .padding(horizontal = 16.dp, vertical = 8.dp)
-                                    .horizontalScroll(rememberScrollState()),
-                                horizontalArrangement = Arrangement.spacedBy(8.dp)
-                            ) {
-                                repeat(5) {
-                                    TextPlaceholder(
-                                        height = 30.dp,
-                                        shape = RoundedCornerShape(16.dp),
-                                        modifier = Modifier.width(72.dp)
+                            // From quick picks (top songs)
+                            quickPicks?.take(3)?.forEach { song ->
+                                items.add(
+                                    Triple(
+                                        song.title,
+                                        song.artists.joinToString(", ") { it.name },
+                                        song.thumbnailUrl
+                                    )
+                                )
+                            }
+
+                            // From daily discover
+                            dailyDiscover?.take(2)?.forEach { dd ->
+                                val song = dd.recommendation as? SongItem
+                                if (song != null && items.none { it.first == song.title }) {
+                                    items.add(
+                                        Triple(
+                                            song.title,
+                                            song.artists.joinToString(", ") { it.name },
+                                            song.thumbnail
+                                        )
                                     )
                                 }
                             }
+
+                            // From homepage sections
+                            homePage?.sections?.flatMap { it.items }
+                                ?.filterIsInstance<SongItem>()
+                                ?.take(3)
+                                ?.forEach { song ->
+                                    if (items.none { it.first == song.title }) {
+                                        items.add(
+                                            Triple(
+                                                song.title,
+                                                song.artists.joinToString(", ") { it.name },
+                                                song.thumbnail
+                                            )
+                                        )
+                                    }
+                                }
+
+                            items.take(6) // Max 6 hero items
                         }
+
+                        // Source song items for click handling
+                        val heroSongItems = remember(quickPicks, dailyDiscover, homePage?.sections) {
+                            val songs = mutableListOf<SongItem?>()
+
+                            quickPicks?.take(3)?.forEach { song ->
+                                songs.add(SongItem(
+                                    id = song.id,
+                                    title = song.title,
+                                    artists = song.artists.map { com.music.innertube.models.Artist(name = it.name, id = it.id) },
+                                    thumbnail = song.thumbnailUrl ?: "",
+                                    explicit = false
+                                ))
+                            }
+
+                            dailyDiscover?.take(2)?.forEach { dd ->
+                                val song = dd.recommendation as? SongItem
+                                if (song != null && songs.none { it?.id == song.id }) {
+                                    songs.add(song)
+                                }
+                            }
+
+                            homePage?.sections?.flatMap { it.items }
+                                ?.filterIsInstance<SongItem>()
+                                ?.take(3)
+                                ?.forEach { song ->
+                                    if (songs.none { it?.id == song.id }) {
+                                        songs.add(song)
+                                    }
+                                }
+
+                            songs.take(6)
+                        }
+
+                        OpmImmersiveHeroPager(
+                            heroItems = heroItems,
+                            isPlaying = isPlaying,
+                            onItemClick = { index ->
+                                heroSongItems.getOrNull(index)?.let { song ->
+                                    playerConnection.playQueue(
+                                        YouTubeQueue(
+                                            song.endpoint ?: WatchEndpoint(videoId = song.id),
+                                            song.toMediaMetadata()
+                                        )
+                                    )
+                                }
+                            }
+                        )
+                        
+
                     }
                 }
 
@@ -1280,7 +1626,7 @@ fun HomeScreen(
                             echoBrainPlaylists?.takeIf { it.isNotEmpty() }?.let { playlists ->
                                 item(key = "echo_brain_playlists_title") {
                                     NavigationTitle(
-                                        title = "Echo Brain Recommends",
+                                        title = "OPM Brain Recommends",
                                         modifier = Modifier.animateItem()
                                     )
                                 }
@@ -1374,7 +1720,7 @@ fun HomeScreen(
                             dailyDiscover?.takeIf { it.isNotEmpty() }?.let { discoverList ->
                                 
                                 item(key = "daily_discover_title") {
-                                    val title = stringResource(R.string.your_daily_discover)
+                                    val title = "Trending Now"
                                     NavigationTitle(
                                         title = title,
                                         onPlayAllClick = {
@@ -1394,42 +1740,23 @@ fun HomeScreen(
                                     )
                                 }
                                 item(key = "daily_discover_content") {
-                                    Box(
-                                        modifier = Modifier
-                                            .fillMaxWidth()
-                                            .height(340.dp)
-                                            .padding(horizontal = 16.dp),
-                                        contentAlignment = Alignment.Center
-                                    ) {
-                                        val carouselState = rememberCarouselState { discoverList.size }
-                                        HorizontalMultiBrowseCarousel(
-                                            state = carouselState,
-                                            preferredItemWidth = 320.dp,
-                                            itemSpacing = 16.dp,
-                                            modifier = Modifier
-                                                .fillMaxWidth()
-                                                .height(320.dp)
-                                        ) { i ->
-                                            val item = discoverList[i]
-                                            DailyDiscoverCard(
-                                                dailyDiscover = item,
-                                                onClick = {
-                                                    val song = item.recommendation as? SongItem
-                                                    val mediaMetadata = song?.toMediaMetadata()
-                                                    if (mediaMetadata != null) {
-                                                        playerConnection.playQueue(
-                                                            YouTubeQueue(
-                                                                song.endpoint ?: WatchEndpoint(videoId = song.id),
-                                                                mediaMetadata
-                                                            )
-                                                        )
-                                                    }
-                                                },
-                                                navController = navController,
-                                                modifier = Modifier.maskClip(MaterialTheme.shapes.extraLarge)
-                                            )
-                                        }
-                                    }
+                                    OpmDailyDiscoverDeck(
+                                        items = discoverList,
+                                        navController = navController,
+                                        onClick = { item ->
+                                            val song = item.recommendation as? SongItem
+                                            val mediaMetadata = song?.toMediaMetadata()
+                                            if (mediaMetadata != null) {
+                                                playerConnection.playQueue(
+                                                    YouTubeQueue(
+                                                        song.endpoint ?: WatchEndpoint(videoId = song.id),
+                                                        mediaMetadata
+                                                    )
+                                                )
+                                            }
+                                        },
+                                        modifier = Modifier.animateItem(),
+                                    )
                                 }
                             }
                         }
@@ -1818,23 +2145,119 @@ fun HomeScreen(
                                     )
                                 }
                                 item(key = "mood_and_genres_list") {
-                                    LazyHorizontalGrid(
-                                        rows = GridCells.Fixed(4),
-                                        contentPadding = PaddingValues(6.dp),
+                                    LazyRow(
+                                        contentPadding = PaddingValues(horizontal = 16.dp),
+                                        horizontalArrangement = Arrangement.spacedBy(12.dp),
                                         modifier = Modifier
-                                            .height((MoodAndGenresButtonHeight + 12.dp) * 4 + 12.dp)
+                                            .fillMaxWidth()
                                             .animateItem()
                                     ) {
-                                        items(moodAndGenres.distinctBy { it.title }, key = { it.title }) {
-                                            MoodAndGenresButton(
-                                                title = it.title,
+                                        items(moodAndGenres.distinctBy { it.title }, key = { it.title }) { genre ->
+                                            // Premium glass genre card
+                                            val isDark = isSystemInDarkTheme()
+                                            val cardBg = if (isDark) {
+                                                Color.White.copy(alpha = 0.08f)
+                                            } else {
+                                                MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.6f)
+                                            }
+                                            val borderColor = if (isDark) {
+                                                Color.White.copy(alpha = 0.12f)
+                                            } else {
+                                                MaterialTheme.colorScheme.outline.copy(alpha = 0.15f)
+                                            }
+                                            Surface(
                                                 onClick = {
-                                                    navController.navigate("youtube_browse/${it.endpoint.browseId}?params=${it.endpoint.params}")
+                                                    navController.navigate("youtube_browse/${genre.endpoint.browseId}?params=${genre.endpoint.params}")
                                                 },
+                                                shape = RoundedCornerShape(20.dp),
+                                                color = cardBg,
+                                                border = BorderStroke(1.dp, borderColor),
                                                 modifier = Modifier
-                                                    .padding(6.dp)
-                                                    .width(180.dp)
-                                            )
+                                                    .width(160.dp)
+                                                    .height(80.dp)
+                                            ) {
+                                                Box(
+                                                    modifier = Modifier
+                                                        .fillMaxSize()
+                                                        .padding(16.dp),
+                                                    contentAlignment = Alignment.CenterStart
+                                                ) {
+                                                    Text(
+                                                        text = genre.title,
+                                                        style = MaterialTheme.typography.titleSmall,
+                                                        fontWeight = FontWeight.SemiBold,
+                                                        maxLines = 2,
+                                                        overflow = TextOverflow.Ellipsis,
+                                                    )
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // Popular Artists section
+                                val popularArtists = homePage?.sections?.flatMap { it.items }
+                                        ?.filterIsInstance<ArtistItem>()
+                                        ?.distinctBy { it.id }
+                                        ?.take(12)
+                                        ?: emptyList()
+
+                                if (popularArtists.isNotEmpty()) {
+                                    item(key = "popular_artists_title") {
+                                        NavigationTitle(
+                                            title = "Popular Artists",
+                                            modifier = Modifier.animateItem()
+                                        )
+                                    }
+                                    item(key = "popular_artists_list") {
+                                        LazyRow(
+                                            contentPadding = PaddingValues(horizontal = 16.dp),
+                                            horizontalArrangement = Arrangement.spacedBy(16.dp),
+                                            modifier = Modifier.animateItem()
+                                        ) {
+                                            items(popularArtists, key = { it.id }) { artist ->
+                                                Column(
+                                                    horizontalAlignment = Alignment.CenterHorizontally,
+                                                    modifier = Modifier
+                                                        .width(90.dp)
+                                                        .combinedClickable(
+                                                            onClick = {
+                                                                navController.navigate("artist/${artist.id}")
+                                                            },
+                                                            onLongClick = {
+                                                                haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+                                                                menuState.show {
+                                                                    YouTubeArtistMenu(
+                                                                        artist = artist,
+                                                                        onDismiss = menuState::dismiss
+                                                                    )
+                                                                }
+                                                            }
+                                                        )
+                                                ) {
+                                                    AsyncImage(
+                                                        model = ImageRequest.Builder(LocalContext.current)
+                                                            .data(artist.thumbnail?.resize(256, 256))
+                                                            .crossfade(true)
+                                                            .build(),
+                                                        contentDescription = artist.title,
+                                                        contentScale = ContentScale.Crop,
+                                                        modifier = Modifier
+                                                            .size(80.dp)
+                                                            .clip(CircleShape)
+                                                    )
+                                                    Spacer(modifier = Modifier.height(8.dp))
+                                                    Text(
+                                                        text = artist.title,
+                                                        style = MaterialTheme.typography.bodySmall,
+                                                        fontWeight = FontWeight.Medium,
+                                                        maxLines = 1,
+                                                        overflow = TextOverflow.Ellipsis,
+                                                        textAlign = TextAlign.Center,
+                                                        modifier = Modifier.fillMaxWidth()
+                                                    )
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -1849,31 +2272,49 @@ fun HomeScreen(
                         ShimmerHost(
                             modifier = Modifier.animateItem()
                         ) {
-                            // 1. Quick Picks Skeleton
+                            // 1. Hero Banner Skeleton — matches 420.dp hero
+                            Spacer(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(420.dp)
+                                    .background(MaterialTheme.colorScheme.onSurface)
+                            )
+
+                            // 2. Section Title Skeleton
+                            TextPlaceholder(
+                                height = 28.dp,
+                                modifier = Modifier
+                                    .padding(horizontal = 16.dp, vertical = 12.dp)
+                                    .width(180.dp),
+                            )
+
+                            // 3. Quick Picks Carousel Skeleton — matches 290dp height cards
                             Row(
                                 modifier = Modifier
                                     .horizontalScroll(rememberScrollState())
-                                    .padding(WindowInsets.systemBars.only(WindowInsetsSides.Horizontal).asPaddingValues())
+                                    .padding(horizontal = 16.dp),
+                                horizontalArrangement = Arrangement.spacedBy(8.dp)
                             ) {
                                 repeat(3) {
                                     Spacer(
                                         modifier = Modifier
-                                            .padding(horizontal = 8.dp, vertical = 12.dp)
                                             .width(250.dp)
                                             .height(290.dp)
-                                            .clip(MaterialTheme.shapes.extraLarge)
+                                            .clip(RoundedCornerShape(34.dp))
                                             .background(MaterialTheme.colorScheme.onSurface)
                                     )
                                 }
                             }
 
-                            // 2. Speed Dial Skeleton
+                            // 4. Section Title Skeleton
                             TextPlaceholder(
-                                height = 36.dp,
+                                height = 28.dp,
                                 modifier = Modifier
-                                    .padding(12.dp)
-                                    .width(200.dp),
+                                    .padding(horizontal = 16.dp, vertical = 12.dp)
+                                    .width(220.dp),
                             )
+
+                            // 5. Grid Items Skeleton — matches speed dial / album grid
                             Column(
                                 modifier = Modifier
                                     .fillMaxWidth()
@@ -1891,20 +2332,60 @@ fun HomeScreen(
                                 }
                             }
 
-                            // 3. Generic Row Skeleton
+                            // 6. Mood & Genres Skeleton — matches 80dp glass cards
                             TextPlaceholder(
-                                height = 36.dp,
+                                height = 28.dp,
                                 modifier = Modifier
-                                    .padding(12.dp)
-                                    .width(250.dp),
+                                    .padding(horizontal = 16.dp, vertical = 12.dp)
+                                    .width(160.dp),
                             )
                             Row(
                                 modifier = Modifier
                                     .horizontalScroll(rememberScrollState())
-                                    .padding(WindowInsets.systemBars.only(WindowInsetsSides.Horizontal).asPaddingValues())
+                                    .padding(horizontal = 16.dp),
+                                horizontalArrangement = Arrangement.spacedBy(12.dp)
                             ) {
                                 repeat(4) {
-                                    GridItemPlaceHolder()
+                                    Spacer(
+                                        modifier = Modifier
+                                            .width(160.dp)
+                                            .height(80.dp)
+                                            .clip(RoundedCornerShape(20.dp))
+                                            .background(MaterialTheme.colorScheme.onSurface)
+                                    )
+                                }
+                            }
+
+                            // 7. Popular Artists Skeleton — matches 80dp circles
+                            TextPlaceholder(
+                                height = 28.dp,
+                                modifier = Modifier
+                                    .padding(horizontal = 16.dp, vertical = 12.dp)
+                                    .width(140.dp),
+                            )
+                            Row(
+                                modifier = Modifier
+                                    .horizontalScroll(rememberScrollState())
+                                    .padding(horizontal = 16.dp),
+                                horizontalArrangement = Arrangement.spacedBy(16.dp)
+                            ) {
+                                repeat(5) {
+                                    Column(
+                                        horizontalAlignment = Alignment.CenterHorizontally,
+                                        modifier = Modifier.width(90.dp)
+                                    ) {
+                                        Spacer(
+                                            modifier = Modifier
+                                                .size(80.dp)
+                                                .clip(CircleShape)
+                                                .background(MaterialTheme.colorScheme.onSurface)
+                                        )
+                                        Spacer(modifier = Modifier.height(8.dp))
+                                        TextPlaceholder(
+                                            height = 14.dp,
+                                            modifier = Modifier.width(60.dp)
+                                        )
+                                    }
                                 }
                             }
                         }

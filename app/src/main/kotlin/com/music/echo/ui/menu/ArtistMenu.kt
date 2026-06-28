@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.menu
+package sauravthakur.opm.ui.menu
 
 import android.content.Intent
 import android.content.res.Configuration
@@ -26,20 +26,20 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import iad1tya.echo.music.LocalDatabase
-import iad1tya.echo.music.LocalListenTogetherManager
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.ArtistSongSortType
-import iad1tya.echo.music.db.entities.SpeedDialItem
-import iad1tya.echo.music.db.entities.Artist
-import iad1tya.echo.music.extensions.toMediaItem
-import iad1tya.echo.music.playback.queues.ListQueue
-import iad1tya.echo.music.ui.component.ArtistListItem
-import iad1tya.echo.music.ui.component.Material3MenuGroup
-import iad1tya.echo.music.ui.component.Material3MenuItemData
-import iad1tya.echo.music.ui.component.NewAction
-import iad1tya.echo.music.ui.component.NewActionGrid
+import sauravthakur.opm.LocalDatabase
+import sauravthakur.opm.LocalListenTogetherManager
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.ArtistSongSortType
+import sauravthakur.opm.db.entities.SpeedDialItem
+import sauravthakur.opm.db.entities.Artist
+import sauravthakur.opm.extensions.toMediaItem
+import sauravthakur.opm.playback.queues.ListQueue
+import sauravthakur.opm.ui.component.ArtistListItem
+import sauravthakur.opm.ui.component.Material3MenuGroup
+import sauravthakur.opm.ui.component.Material3MenuItemData
+import sauravthakur.opm.ui.component.NewAction
+import sauravthakur.opm.ui.component.NewActionGrid
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
@@ -205,7 +205,7 @@ fun ArtistMenu(
                                         type = "text/plain"
                                         putExtra(
                                             Intent.EXTRA_TEXT,
-                                            "https://share.echomusic.fun/channel/${artist.id}"
+                                            "https://music.youtube.com/channel/${artist.id}"
                                         )
                                     }
                                     context.startActivity(Intent.createChooser(intent, null))

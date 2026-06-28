@@ -1,18 +1,18 @@
 
 
-package iad1tya.echo.music.lyrics
+package sauravthakur.opm.lyrics
 
 import android.content.Context
 import android.util.LruCache
-import iad1tya.echo.music.constants.LyricsProviderOrderKey
-import iad1tya.echo.music.constants.PreferredLyricsProvider
-import iad1tya.echo.music.constants.PreferredLyricsProviderKey
-import iad1tya.echo.music.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
-import iad1tya.echo.music.extensions.toEnum
-import iad1tya.echo.music.models.MediaMetadata
-import iad1tya.echo.music.utils.NetworkConnectivityObserver
-import iad1tya.echo.music.utils.dataStore
-import iad1tya.echo.music.utils.reportException
+import sauravthakur.opm.constants.LyricsProviderOrderKey
+import sauravthakur.opm.constants.PreferredLyricsProvider
+import sauravthakur.opm.constants.PreferredLyricsProviderKey
+import sauravthakur.opm.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
+import sauravthakur.opm.extensions.toEnum
+import sauravthakur.opm.models.MediaMetadata
+import sauravthakur.opm.utils.NetworkConnectivityObserver
+import sauravthakur.opm.utils.dataStore
+import sauravthakur.opm.utils.reportException
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job

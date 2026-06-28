@@ -1,6 +1,6 @@
-package iad1tya.echo.music.echomusiccanvas
+package sauravthakur.opm.echomusiccanvas
 
-import iad1tya.echo.music.canvas.CanvasArtwork
+import sauravthakur.opm.canvas.CanvasArtwork
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.okhttp.OkHttp

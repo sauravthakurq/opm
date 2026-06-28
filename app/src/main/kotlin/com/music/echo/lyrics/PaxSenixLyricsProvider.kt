@@ -1,12 +1,12 @@
 
 
-package iad1tya.echo.music.lyrics
+package sauravthakur.opm.lyrics
 
 import android.content.Context
 import com.music.paxsenix.Paxsenix
-import iad1tya.echo.music.constants.EnablePaxsenixKey
-import iad1tya.echo.music.utils.dataStore
-import iad1tya.echo.music.utils.get
+import sauravthakur.opm.constants.EnablePaxsenixKey
+import sauravthakur.opm.utils.dataStore
+import sauravthakur.opm.utils.get
 import timber.log.Timber
 
 object PaxSenixLyricsProvider : LyricsProvider {

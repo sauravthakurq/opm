@@ -1,4 +1,4 @@
-package iad1tya.echo.music.utils.cipher
+package sauravthakur.opm.utils.cipher
 
 import android.content.Context
 import android.webkit.ConsoleMessage
@@ -298,7 +298,7 @@ function discoverAndInit() {
     }
 
     companion object {
-        private const val TAG = "echomusic_CipherWebView"
+        private const val TAG = "opm_CipherWebView"
         private const val JS_INTERFACE = "CipherBridge"
 
         suspend fun create(

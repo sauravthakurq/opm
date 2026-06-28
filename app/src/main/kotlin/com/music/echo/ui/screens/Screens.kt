@@ -1,11 +1,11 @@
 
 
-package iad1tya.echo.music.ui.screens
+package sauravthakur.opm.ui.screens
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Immutable
-import iad1tya.echo.music.R
+import sauravthakur.opm.R
 
 @Immutable
 sealed class Screens(

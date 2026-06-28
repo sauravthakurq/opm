@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.artist
+package sauravthakur.opm.ui.screens.artist
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
@@ -34,27 +34,27 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.ArtistSongSortDescendingKey
-import iad1tya.echo.music.constants.ArtistSongSortType
-import iad1tya.echo.music.constants.ArtistSongSortTypeKey
-import iad1tya.echo.music.constants.CONTENT_TYPE_HEADER
-import iad1tya.echo.music.constants.HideExplicitKey
-import iad1tya.echo.music.extensions.toMediaItem
-import iad1tya.echo.music.playback.queues.ListQueue
-import iad1tya.echo.music.ui.component.HideOnScrollFAB
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.LocalMenuState
-import iad1tya.echo.music.ui.component.SongListItem
-import iad1tya.echo.music.ui.component.SortHeader
-import iad1tya.echo.music.ui.menu.SongMenu
-import iad1tya.echo.music.ui.utils.backToMain
-import iad1tya.echo.music.utils.listItemShape
-import iad1tya.echo.music.utils.rememberEnumPreference
-import iad1tya.echo.music.utils.rememberPreference
-import iad1tya.echo.music.viewmodels.ArtistSongsViewModel
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.ArtistSongSortDescendingKey
+import sauravthakur.opm.constants.ArtistSongSortType
+import sauravthakur.opm.constants.ArtistSongSortTypeKey
+import sauravthakur.opm.constants.CONTENT_TYPE_HEADER
+import sauravthakur.opm.constants.HideExplicitKey
+import sauravthakur.opm.extensions.toMediaItem
+import sauravthakur.opm.playback.queues.ListQueue
+import sauravthakur.opm.ui.component.HideOnScrollFAB
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.LocalMenuState
+import sauravthakur.opm.ui.component.SongListItem
+import sauravthakur.opm.ui.component.SortHeader
+import sauravthakur.opm.ui.menu.SongMenu
+import sauravthakur.opm.ui.utils.backToMain
+import sauravthakur.opm.utils.listItemShape
+import sauravthakur.opm.utils.rememberEnumPreference
+import sauravthakur.opm.utils.rememberPreference
+import sauravthakur.opm.viewmodels.ArtistSongsViewModel
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable

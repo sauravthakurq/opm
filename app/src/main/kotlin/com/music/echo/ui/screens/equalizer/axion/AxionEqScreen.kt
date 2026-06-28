@@ -1,4 +1,4 @@
-package iad1tya.echo.music.ui.screens.equalizer.axion
+package sauravthakur.opm.ui.screens.equalizer.axion
 
 import androidx.compose.animation.*
 import androidx.compose.foundation.background
@@ -29,11 +29,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import iad1tya.echo.music.R
-import iad1tya.echo.music.eq.data.SavedEQProfile
-import iad1tya.echo.music.ui.component.Material3SettingsGroup
-import iad1tya.echo.music.ui.component.Material3SettingsItem
-import iad1tya.echo.music.ui.utils.backToMain
+import sauravthakur.opm.R
+import sauravthakur.opm.eq.data.SavedEQProfile
+import sauravthakur.opm.ui.component.Material3SettingsGroup
+import sauravthakur.opm.ui.component.Material3SettingsItem
+import sauravthakur.opm.ui.utils.backToMain
 import kotlin.math.abs
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 
@@ -50,9 +50,9 @@ fun AxionEqScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(stringResource(R.string.echo_equalizer)) },
+                title = { Text(stringResource(R.string.opm_equalizer)) },
                 navigationIcon = {
-                    iad1tya.echo.music.ui.component.IconButton(
+                    sauravthakur.opm.ui.component.IconButton(
                         onClick = onBackClick,
                         onLongClick = {}
                     ) {
@@ -214,7 +214,7 @@ private fun SimpleEqMode(
 
     val echoPresets = listOf(
         R.string.eq_preset_flat to floatArrayOf(0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f),
-        R.string.eq_preset_echo_signature to floatArrayOf(150f, 100f, 50f, 0f, -20f, 0f, 80f, 150f, 200f, 150f),
+        R.string.eq_preset_opm_signature to floatArrayOf(150f, 100f, 50f, 0f, -20f, 0f, 80f, 150f, 200f, 150f),
         R.string.eq_preset_acoustic to floatArrayOf(150f, 150f, 50f, 75f, 100f, 75f, 125f, 175f, 150f, 75f),
 
         R.string.eq_preset_bass_boost to floatArrayOf(500f, 400f, 250f, 100f, 0f, -50f, 0f, 100f, 200f, 300f),
@@ -308,7 +308,7 @@ private fun SimpleEqMode(
 
         echoPresets.chunked(4).forEach { chunk ->
             PresetSection(
-                title = if (echoPresets.first() in chunk) stringResource(R.string.eq_label_echo) else "",
+                title = if (echoPresets.first() in chunk) stringResource(R.string.eq_label_opm) else "",
                 presets = chunk,
                 enabled = enabled,
                 viewModel = viewModel,

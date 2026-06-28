@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.search
+package sauravthakur.opm.ui.screens.search
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -42,28 +42,28 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.CONTENT_TYPE_LIST
-import iad1tya.echo.music.constants.ListItemHeight
-import iad1tya.echo.music.db.entities.Album
-import iad1tya.echo.music.db.entities.Artist
-import iad1tya.echo.music.db.entities.Playlist
-import iad1tya.echo.music.db.entities.Song
-import iad1tya.echo.music.extensions.toMediaItem
-import iad1tya.echo.music.playback.queues.ListQueue
-import iad1tya.echo.music.ui.component.AlbumListItem
-import iad1tya.echo.music.ui.component.ArtistListItem
-import iad1tya.echo.music.ui.component.ChipsRow
-import iad1tya.echo.music.ui.component.EmptyPlaceholder
-import iad1tya.echo.music.ui.component.LocalMenuState
-import iad1tya.echo.music.ui.component.PlaylistListItem
-import iad1tya.echo.music.ui.component.SongListItem
-import iad1tya.echo.music.ui.menu.SongMenu
-import iad1tya.echo.music.utils.listItemShape
-import iad1tya.echo.music.viewmodels.LocalFilter
-import iad1tya.echo.music.viewmodels.LocalSearchViewModel
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.CONTENT_TYPE_LIST
+import sauravthakur.opm.constants.ListItemHeight
+import sauravthakur.opm.db.entities.Album
+import sauravthakur.opm.db.entities.Artist
+import sauravthakur.opm.db.entities.Playlist
+import sauravthakur.opm.db.entities.Song
+import sauravthakur.opm.extensions.toMediaItem
+import sauravthakur.opm.playback.queues.ListQueue
+import sauravthakur.opm.ui.component.AlbumListItem
+import sauravthakur.opm.ui.component.ArtistListItem
+import sauravthakur.opm.ui.component.ChipsRow
+import sauravthakur.opm.ui.component.EmptyPlaceholder
+import sauravthakur.opm.ui.component.LocalMenuState
+import sauravthakur.opm.ui.component.PlaylistListItem
+import sauravthakur.opm.ui.component.SongListItem
+import sauravthakur.opm.ui.menu.SongMenu
+import sauravthakur.opm.utils.listItemShape
+import sauravthakur.opm.viewmodels.LocalFilter
+import sauravthakur.opm.viewmodels.LocalSearchViewModel
 import kotlinx.coroutines.flow.drop
 
 @OptIn(ExperimentalFoundationApi::class)

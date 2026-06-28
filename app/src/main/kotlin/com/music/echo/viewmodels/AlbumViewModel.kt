@@ -1,14 +1,14 @@
 
 
-package iad1tya.echo.music.viewmodels
+package sauravthakur.opm.viewmodels
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.music.innertube.YouTube
 import com.music.innertube.models.AlbumItem
-import iad1tya.echo.music.db.MusicDatabase
-import iad1tya.echo.music.utils.reportException
+import sauravthakur.opm.db.MusicDatabase
+import sauravthakur.opm.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -16,8 +16,8 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.Dispatchers
-import iad1tya.echo.music.utils.Wikipedia
-import iad1tya.echo.music.utils.AppleMusicAboutAlbum
+import sauravthakur.opm.utils.Wikipedia
+import sauravthakur.opm.utils.AppleMusicAboutAlbum
 import javax.inject.Inject
 
 @HiltViewModel

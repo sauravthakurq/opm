@@ -1,4 +1,4 @@
-package iad1tya.echo.music.ui.screens.settings
+package sauravthakur.opm.ui.screens.settings
 
 import android.net.Uri
 import android.widget.Toast
@@ -17,7 +17,7 @@ import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.datastore.preferences.core.edit
-import iad1tya.echo.music.utils.dataStore
+import sauravthakur.opm.utils.dataStore
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
@@ -25,13 +25,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import iad1tya.echo.music.R
-import iad1tya.echo.music.data.EchoBrainRepository
-import iad1tya.echo.music.engine.EchoBrainEngine
-import iad1tya.echo.music.engine.brain.*
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.Material3SettingsItem
-import iad1tya.echo.music.ui.component.Material3SettingsGroup
+import sauravthakur.opm.R
+import sauravthakur.opm.data.EchoBrainRepository
+import sauravthakur.opm.engine.EchoBrainEngine
+import sauravthakur.opm.engine.brain.*
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.Material3SettingsItem
+import sauravthakur.opm.ui.component.Material3SettingsGroup
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
@@ -63,7 +63,7 @@ fun EchoBrainScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(stringResource(R.string.echo_brain_beta)) },
+                title = { Text(stringResource(R.string.opm_brain_beta)) },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(Icons.AutoMirrored.Rounded.ArrowBack, "Back")
@@ -106,9 +106,9 @@ fun EchoBrainScreen(
                     Material3SettingsGroup(scrollState = scrollState, 
                         items = listOf(
                             Material3SettingsItem(
-    isHighlighted = (highlightKey == stringResource(R.string.echo_brain_enable)),
-                                title = { Text(stringResource(R.string.echo_brain_enable)) },
-                                description = { Text(stringResource(R.string.echo_brain_enable_desc)) },
+    isHighlighted = (highlightKey == stringResource(R.string.opm_brain_enable)),
+                                title = { Text(stringResource(R.string.opm_brain_enable)) },
+                                description = { Text(stringResource(R.string.opm_brain_enable_desc)) },
                                 icon = rememberVectorPainter(Icons.Outlined.AutoAwesome),
                                 trailingContent = {
                                     val coroutineScope = rememberCoroutineScope()
@@ -118,7 +118,7 @@ fun EchoBrainScreen(
                                             engine.isEnabled.value = isChecked
                                             coroutineScope.launch {
                                                 context.dataStore.edit { prefs ->
-                                                    prefs[iad1tya.echo.music.constants.EchoBrainEnabledKey] = isChecked
+                                                    prefs[sauravthakur.opm.constants.EchoBrainEnabledKey] = isChecked
                                                 }
                                             }
                                         }
@@ -128,7 +128,7 @@ fun EchoBrainScreen(
                                     engine.isEnabled.value = !isEnabled 
                                     scope.launch {
                                         context.dataStore.edit { prefs ->
-                                            prefs[iad1tya.echo.music.constants.EchoBrainEnabledKey] = !isEnabled
+                                            prefs[sauravthakur.opm.constants.EchoBrainEnabledKey] = !isEnabled
                                         }
                                     }
                                 }
@@ -137,37 +137,37 @@ fun EchoBrainScreen(
                     )
                     
                     Text(
-                        text = stringResource(R.string.echo_brain_profile_statistics),
+                        text = stringResource(R.string.opm_brain_profile_statistics),
                         style = MaterialTheme.typography.titleMedium,
                         color = MaterialTheme.colorScheme.primary,
                         modifier = Modifier.padding(top = 8.dp, bottom = 4.dp)
                     )
                     
-                    val initiateText = stringResource(R.string.echo_brain_initiate)
+                    val initiateText = stringResource(R.string.opm_brain_initiate)
                     Material3SettingsGroup(scrollState = scrollState, 
                         items = listOf(
                             Material3SettingsItem(
-    isHighlighted = (highlightKey == stringResource(R.string.echo_brain_learning_level)),
-                                title = { Text(stringResource(R.string.echo_brain_learning_level)) },
+    isHighlighted = (highlightKey == stringResource(R.string.opm_brain_learning_level)),
+                                title = { Text(stringResource(R.string.opm_brain_learning_level)) },
                                 description = { Text(persona?.title ?: initiateText) },
                                 icon = rememberVectorPainter(Icons.Outlined.Psychology)
                             ),
                             Material3SettingsItem(
-    isHighlighted = (highlightKey == stringResource(R.string.echo_brain_total_interactions)),
-                                title = { Text(stringResource(R.string.echo_brain_total_interactions)) },
-                                description = { Text(stringResource(R.string.echo_brain_interactions_tracked, brain.totalInteractions)) },
+    isHighlighted = (highlightKey == stringResource(R.string.opm_brain_total_interactions)),
+                                title = { Text(stringResource(R.string.opm_brain_total_interactions)) },
+                                description = { Text(stringResource(R.string.opm_brain_interactions_tracked, brain.totalInteractions)) },
                                 icon = rememberVectorPainter(Icons.Outlined.Analytics)
                             ),
                             Material3SettingsItem(
-    isHighlighted = (highlightKey == stringResource(R.string.echo_brain_discovered_genres)),
-                                title = { Text(stringResource(R.string.echo_brain_discovered_genres)) },
-                                description = { Text(stringResource(R.string.echo_brain_distinct_genres_identified, brain.topicAffinities.size)) },
+    isHighlighted = (highlightKey == stringResource(R.string.opm_brain_discovered_genres)),
+                                title = { Text(stringResource(R.string.opm_brain_discovered_genres)) },
+                                description = { Text(stringResource(R.string.opm_brain_distinct_genres_identified, brain.topicAffinities.size)) },
                                 icon = rememberVectorPainter(Icons.Outlined.LibraryMusic)
                             ),
                             Material3SettingsItem(
-    isHighlighted = (highlightKey == stringResource(R.string.echo_brain_analyzed_artists)),
-                                title = { Text(stringResource(R.string.echo_brain_analyzed_artists)) },
-                                description = { Text(stringResource(R.string.echo_brain_artists_mapped, brain.artistScores.size)) },
+    isHighlighted = (highlightKey == stringResource(R.string.opm_brain_analyzed_artists)),
+                                title = { Text(stringResource(R.string.opm_brain_analyzed_artists)) },
+                                description = { Text(stringResource(R.string.opm_brain_artists_mapped, brain.artistScores.size)) },
                                 icon = rememberVectorPainter(Icons.Outlined.Person)
                             )
                         )

@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.player
+package sauravthakur.opm.ui.player
 
 import android.content.res.Configuration
 import android.os.Build
@@ -101,35 +101,35 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import iad1tya.echo.music.LocalDatabase
-import iad1tya.echo.music.LocalListenTogetherManager
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.CropAlbumArtKey
-import iad1tya.echo.music.constants.DarkModeKey
-import iad1tya.echo.music.constants.MiniPlayerBackgroundStyleKey
-import iad1tya.echo.music.constants.MiniPlayerHeight
-import iad1tya.echo.music.constants.PlayerBackgroundStyle
-import iad1tya.echo.music.constants.PureBlackMiniPlayerKey
-import iad1tya.echo.music.constants.SwipeSensitivityKey
-import iad1tya.echo.music.constants.SwipeThumbnailKey
-import iad1tya.echo.music.constants.ThumbnailCornerRadius
-import iad1tya.echo.music.constants.UseNewMiniPlayerDesignKey
-import iad1tya.echo.music.db.entities.ArtistEntity
-import iad1tya.echo.music.listentogether.ListenTogetherManager
-import iad1tya.echo.music.models.MediaMetadata
-import iad1tya.echo.music.playback.CastConnectionHandler
-import iad1tya.echo.music.playback.PlayerConnection
-import iad1tya.echo.music.ui.screens.settings.DarkMode
-import iad1tya.echo.music.ui.theme.PlayerColorExtractor
-import iad1tya.echo.music.utils.rememberEnumPreference
-import iad1tya.echo.music.utils.rememberPreference
-import iad1tya.echo.music.echomusic.AudioDeviceBottomSheet
+import sauravthakur.opm.LocalDatabase
+import sauravthakur.opm.LocalListenTogetherManager
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.CropAlbumArtKey
+import sauravthakur.opm.constants.DarkModeKey
+import sauravthakur.opm.constants.MiniPlayerBackgroundStyleKey
+import sauravthakur.opm.constants.MiniPlayerHeight
+import sauravthakur.opm.constants.PlayerBackgroundStyle
+import sauravthakur.opm.constants.PureBlackMiniPlayerKey
+import sauravthakur.opm.constants.SwipeSensitivityKey
+import sauravthakur.opm.constants.SwipeThumbnailKey
+import sauravthakur.opm.constants.ThumbnailCornerRadius
+import sauravthakur.opm.constants.UseNewMiniPlayerDesignKey
+import sauravthakur.opm.db.entities.ArtistEntity
+import sauravthakur.opm.listentogether.ListenTogetherManager
+import sauravthakur.opm.models.MediaMetadata
+import sauravthakur.opm.playback.CastConnectionHandler
+import sauravthakur.opm.playback.PlayerConnection
+import sauravthakur.opm.ui.screens.settings.DarkMode
+import sauravthakur.opm.ui.theme.PlayerColorExtractor
+import sauravthakur.opm.utils.rememberEnumPreference
+import sauravthakur.opm.utils.rememberPreference
+import sauravthakur.opm.echomusic.AudioDeviceBottomSheet
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.math.roundToInt
-import iad1tya.echo.music.echomusic.isBluetoothHeadphoneConnected
+import sauravthakur.opm.echomusic.isBluetoothHeadphoneConnected
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Headphones
 import androidx.compose.material.icons.filled.Speaker
@@ -142,7 +142,7 @@ import androidx.compose.ui.res.stringResource
 import kotlinx.coroutines.launch
 import kotlin.math.absoluteValue
 import kotlin.math.roundToInt
-import iad1tya.echo.music.ui.component.Icon as MIcon
+import sauravthakur.opm.ui.component.Icon as MIcon
 
 import androidx.compose.ui.graphics.Outline
 import androidx.compose.ui.graphics.Path
@@ -238,7 +238,7 @@ private fun NewMiniPlayer(
         if (darkTheme == DarkMode.AUTO) isSystemInDarkTheme else darkTheme == DarkMode.ON
     }
     
-    val miniPlayerBackground by rememberEnumPreference(MiniPlayerBackgroundStyleKey, defaultValue = PlayerBackgroundStyle.DEFAULT)
+    val miniPlayerBackground by rememberEnumPreference(MiniPlayerBackgroundStyleKey, defaultValue = PlayerBackgroundStyle.GLOW_ANIMATED)
     
     
     val playbackState by playerConnection.playbackState.collectAsState()
@@ -301,11 +301,10 @@ private fun NewMiniPlayer(
     
     
     val isDynamicBackground = miniPlayerBackground != PlayerBackgroundStyle.DEFAULT
-    val backgroundColor = if (pureBlack && useDarkTheme) Color.Black else MaterialTheme.colorScheme.surfaceContainer
+    val backgroundColor = if (pureBlack && useDarkTheme) Color.Black.copy(alpha = 0.9f) else Color.White.copy(alpha = 0.06f)
     
     val primaryColor = if (isDynamicBackground) Color.White else MaterialTheme.colorScheme.primary
-    val onPrimaryColor = if (isDynamicBackground) Color.Black else MaterialTheme.colorScheme.onPrimary
-    val outlineColor = if (isDynamicBackground) Color.White.copy(alpha = 0.5f) else MaterialTheme.colorScheme.outline
+    val outlineColor = if (isDynamicBackground) Color.White.copy(alpha = 0.5f) else Color.White.copy(alpha = 0.18f)
     val onSurfaceColor = if (isDynamicBackground) Color.White else MaterialTheme.colorScheme.onSurface
     val errorColor = MaterialTheme.colorScheme.error
 
@@ -316,7 +315,7 @@ private fun NewMiniPlayer(
             .widthIn(max = 340.dp)
             .height(MiniPlayerHeight)
             .windowInsetsPadding(WindowInsets.systemBars.only(WindowInsetsSides.Horizontal))
-            .padding(horizontal = 12.dp)
+            .padding(horizontal = 24.dp)
             .let { baseModifier ->
                 if (swipeThumbnail) {
                     baseModifier.pointerInput(Unit) {
@@ -382,9 +381,14 @@ private fun NewMiniPlayer(
                 .then(if (isTabletLandscape) Modifier.width(480.dp).align(Alignment.Center) else Modifier.fillMaxWidth())
                 .height(MiniPlayerHeight)
                 .offset { IntOffset(offsetXAnimatable.value.roundToInt(), 0) }
-                .clip(RoundedCornerShape(32.dp))
+                .graphicsLayer {
+                    shadowElevation = 22.dp.toPx()
+                    shape = RoundedCornerShape(30.dp)
+                    clip = false
+                }
+                .clip(RoundedCornerShape(30.dp))
                 .background(color = backgroundColor)
-                .border(1.dp, outlineColor.copy(alpha = 0.3f), RoundedCornerShape(32.dp))
+                .border(1.dp, Color.White.copy(alpha = 0.15f), RoundedCornerShape(30.dp))
         ) {
             
             MiniPlayerBackgroundLayer(
@@ -393,9 +397,15 @@ private fun NewMiniPlayer(
                 gradientColors = gradientColors
             )
 
+            Box(
+                modifier = Modifier
+                    .matchParentSize()
+                    .background(Color.Black.copy(alpha = 0.5f))
+            )
+
             Row(
                 verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.fillMaxSize().padding(horizontal = 8.dp, vertical = 8.dp),
+                modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp, vertical = 8.dp),
             ) {
                 
                 NewMiniPlayerThumbnail(
@@ -405,7 +415,7 @@ private fun NewMiniPlayer(
                     outlineColor = outlineColor,
                 )
 
-                Spacer(modifier = Modifier.width(16.dp))
+                Spacer(modifier = Modifier.width(14.dp))
 
                 
                 NewMiniPlayerSongInfo(
@@ -429,16 +439,15 @@ private fun NewMiniPlayer(
                 }
 
                 MiniPlayerControls(
+                    mediaMetadata = mediaMetadata,
                     playerConnection = playerConnection,
                     playbackState = playbackState,
                     isCasting = isCasting,
                     castHandler = castHandler,
                     listenTogetherManager = listenTogetherManager,
-                    canSkipPrevious = canSkipPrevious,
-                    canSkipNext = canSkipNext,
                     onSurfaceColor = onSurfaceColor,
-                    primaryColor = primaryColor,
-                    onPrimaryColor = onPrimaryColor
+                    errorColor = errorColor,
+                    outlineColor = outlineColor
                 )
             }
         }
@@ -500,9 +509,9 @@ private fun NewMiniPlayerThumbnail(
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
-                .size(40.dp)
+                .size(42.dp)
                 .clip(CircleShape)
-                .border(1.dp, outlineColor.copy(alpha = 0.3f), CircleShape)
+                .border(1.dp, outlineColor.copy(alpha = 0.34f), CircleShape)
         ) {
             mediaMetadata?.let { metadata ->
                 AsyncImage(
@@ -536,8 +545,8 @@ private fun NewMiniPlayerSongInfo(
             Text(
                 text = metadata.title,
                 color = onSurfaceColor,
-                fontSize = 14.sp,
-                fontWeight = FontWeight.Medium,
+                fontSize = 17.sp,
+                fontWeight = FontWeight.Bold,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 modifier = Modifier.basicMarquee(iterations = 1, initialDelayMillis = 3000, velocity = 30.dp),
@@ -550,8 +559,8 @@ private fun NewMiniPlayerSongInfo(
                 if (metadata.artists.any { it.name.isNotBlank() }) {
                     Text(
                         text = metadata.artists.joinToString { it.name },
-                        color = onSurfaceColor.copy(alpha = 0.7f),
-                        fontSize = 12.sp,
+                        color = onSurfaceColor.copy(alpha = 0.76f),
+                        fontSize = 14.sp,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
                         modifier = Modifier.basicMarquee(iterations = 1, initialDelayMillis = 3000, velocity = 30.dp),
@@ -633,7 +642,7 @@ private fun LegacyMiniPlayer(
         modifier = modifier
             .fillMaxWidth()
             .wrapContentWidth(Alignment.CenterHorizontally)
-            .widthIn(max = 340.dp)
+            .widthIn(max = 220.dp)
             .height(MiniPlayerHeight)
             .windowInsetsPadding(WindowInsets.systemBars.only(WindowInsetsSides.Horizontal))
             .clip(RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp))
@@ -919,11 +928,11 @@ private fun FavoriteButton(
             .clip(CircleShape)
             .border(
                 width = 1.dp,
-                color = if (isLiked) errorColor.copy(alpha = 0.5f) else outlineColor.copy(alpha = 0.3f),
+                color = if (isLiked) Color.Red.copy(alpha = 0.5f) else outlineColor.copy(alpha = 0.3f),
                 shape = CircleShape
             )
             .background(
-                color = if (isLiked) errorColor.copy(alpha = 0.1f) else Color.Transparent,
+                color = if (isLiked) Color.Red.copy(alpha = 0.15f) else Color.Transparent,
                 shape = CircleShape
             )
             .clickable { playerConnection.service.toggleLike() }
@@ -931,7 +940,7 @@ private fun FavoriteButton(
         Icon(
             painter = painterResource(if (isLiked) R.drawable.favorite else R.drawable.favorite_border),
             contentDescription = null,
-            tint = if (isLiked) errorColor else onSurfaceColor.copy(alpha = 0.7f),
+            tint = if (isLiked) Color.Red else onSurfaceColor.copy(alpha = 0.7f),
             modifier = Modifier.size(20.dp)
         )
     }
@@ -1138,16 +1147,15 @@ private fun MiniPlayerBackgroundLayer(
 
 @Composable
 private fun MiniPlayerControls(
+    mediaMetadata: MediaMetadata?,
     playerConnection: PlayerConnection,
     playbackState: Int,
     isCasting: Boolean,
     castHandler: CastConnectionHandler?,
     listenTogetherManager: ListenTogetherManager?,
-    canSkipPrevious: Boolean,
-    canSkipNext: Boolean,
     onSurfaceColor: Color,
-    primaryColor: Color,
-    onPrimaryColor: Color
+    errorColor: Color,
+    outlineColor: Color
 ) {
     val isListenTogetherGuest = listenTogetherManager?.let { it.isInRoom && !it.isHost } ?: false
     val isPlaying by playerConnection.isPlaying.collectAsState()
@@ -1156,37 +1164,21 @@ private fun MiniPlayerControls(
     val isMuted by playerConnection.isMuted.collectAsState()
 
     Row(verticalAlignment = Alignment.CenterVertically) {
-        IconButton(
-            enabled = canSkipPrevious && !isListenTogetherGuest,
-            onClick = if (isListenTogetherGuest) ({}) else ({ playerConnection.player.seekToPreviousMediaItem() }),
-            modifier = Modifier.size(32.dp)
-        ) {
-            Icon(painter = painterResource(R.drawable.skip_previous), contentDescription = null, tint = onSurfaceColor, modifier = Modifier.size(20.dp))
+        mediaMetadata?.id?.takeIf { it.isNotBlank() }?.let { songId ->
+            FavoriteButton(
+                songId = songId,
+                onSurfaceColor = onSurfaceColor,
+                errorColor = errorColor,
+                outlineColor = outlineColor
+            )
         }
 
         Spacer(modifier = Modifier.width(12.dp))
 
-        val cookieIndent by androidx.compose.animation.core.animateFloatAsState(
-            targetValue = if (effectiveIsPlaying) 0.08f else 0f,
-            animationSpec = androidx.compose.animation.core.tween(durationMillis = 300, easing = androidx.compose.animation.core.LinearEasing),
-            label = "cookieIndent",
-        )
-
-        val infiniteTransition = androidx.compose.animation.core.rememberInfiniteTransition(label = "rotation")
-        val rotation by infiniteTransition.animateFloat(
-            initialValue = 0f,
-            targetValue = 360f,
-            animationSpec = androidx.compose.animation.core.infiniteRepeatable(
-                animation = androidx.compose.animation.core.tween(8000, easing = androidx.compose.animation.core.LinearEasing),
-                repeatMode = androidx.compose.animation.core.RepeatMode.Restart
-            ),
-            label = "rotation"
-        )
-
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
-                .size(48.dp)
+                .size(56.dp)
                 .clip(CircleShape)
                 .clickable {
                     if (isListenTogetherGuest) {
@@ -1206,12 +1198,8 @@ private fun MiniPlayerControls(
             Box(
                 modifier = Modifier
                     .matchParentSize()
-                    .graphicsLayer {
-                        rotationZ = rotation
-                        clip = true
-                        shape = PolygonCookieShape(sides = 9, indent = cookieIndent)
-                    }
-                    .background(primaryColor)
+                    .clip(CircleShape)
+                    .background(Color.White)
             )
 
             Icon(
@@ -1224,19 +1212,9 @@ private fun MiniPlayerControls(
                     }
                 ),
                 contentDescription = null,
-                tint = onPrimaryColor,
-                modifier = Modifier.size(24.dp)
+                tint = Color.Black,
+                modifier = Modifier.size(25.dp)
             )
-        }
-
-        Spacer(modifier = Modifier.width(12.dp))
-
-        IconButton(
-            enabled = canSkipNext && !isListenTogetherGuest,
-            onClick = if (isListenTogetherGuest) ({}) else ({ playerConnection.player.seekToNext() }),
-            modifier = Modifier.size(32.dp)
-        ) {
-            Icon(painter = painterResource(R.drawable.skip_next), contentDescription = null, tint = onSurfaceColor, modifier = Modifier.size(20.dp))
         }
     }
 }

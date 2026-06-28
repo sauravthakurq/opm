@@ -1,4 +1,4 @@
-package iad1tya.echo.music.echomusic.updater.downloadmanager
+package sauravthakur.opm.echomusic.updater.downloadmanager
 
 import android.app.Notification
 import android.content.Context
@@ -13,7 +13,7 @@ import androidx.media3.session.DefaultMediaNotificationProvider
 import androidx.media3.session.MediaNotification
 import androidx.media3.session.MediaSession
 import com.google.common.collect.ImmutableList
-import iad1tya.echo.music.R
+import sauravthakur.opm.R
 import java.util.Locale
 
 
@@ -85,7 +85,7 @@ class EchoNotificationProvider(
             builder.setColorized(false)
 
             
-            builder.setSmallIcon(R.drawable.icon)
+            builder.setSmallIcon(R.drawable.ic_notification)
 
             
             setRequestPromotedOngoingSafely(builder, true)

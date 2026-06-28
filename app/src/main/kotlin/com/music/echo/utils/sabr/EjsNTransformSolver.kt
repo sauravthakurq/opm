@@ -1,4 +1,4 @@
-package iad1tya.echo.music.utils.sabr
+package sauravthakur.opm.utils.sabr
 
 import android.content.Context
 import android.net.Uri
@@ -6,8 +6,8 @@ import android.webkit.ConsoleMessage
 import android.webkit.JavascriptInterface
 import android.webkit.WebChromeClient
 import android.webkit.WebView
-import iad1tya.echo.music.utils.cipher.CipherDeobfuscator
-import iad1tya.echo.music.utils.cipher.PlayerJsFetcher
+import sauravthakur.opm.utils.cipher.CipherDeobfuscator
+import sauravthakur.opm.utils.cipher.PlayerJsFetcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.suspendCancellableCoroutine
@@ -20,7 +20,7 @@ import kotlin.coroutines.resumeWithException
 
 
 object EjsNTransformSolver {
-    private const val TAG = "echomusic_EjsNSolver"
+    private const val TAG = "opm_EjsNSolver"
 
     private var solverWebView: SolverWebView? = null
 

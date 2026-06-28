@@ -1,11 +1,11 @@
-package iad1tya.echo.music.echomusic.updater.downloadmanager
+package sauravthakur.opm.echomusic.updater.downloadmanager
 
 import android.content.Context
 import android.os.Environment
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
-import iad1tya.echo.music.R
+import sauravthakur.opm.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
@@ -73,7 +73,7 @@ class UpdateDownloadWorker(private val context: Context, workerParams: WorkerPar
             }
 
             val isZip = apkUrl.contains("nightly.link") || apkUrl.endsWith(".zip")
-            val downloadFile = if (isZip) File(downloadDir, "echo_temp.zip") else File(downloadDir, "echomusic.apk")
+            val downloadFile = if (isZip) File(downloadDir, "opm_temp.zip") else File(downloadDir, "opm.apk")
             val outputStream = FileOutputStream(downloadFile)
 
             val buffer = ByteArray(8192)
@@ -119,7 +119,7 @@ class UpdateDownloadWorker(private val context: Context, workerParams: WorkerPar
             connection.disconnect()
 
             val finalFile = if (isZip) {
-                val targetApkFile = File(downloadDir, "echomusic.apk")
+                val targetApkFile = File(downloadDir, "opm.apk")
                 var extracted = false
                 try {
                     ZipInputStream(downloadFile.inputStream()).use { zis ->

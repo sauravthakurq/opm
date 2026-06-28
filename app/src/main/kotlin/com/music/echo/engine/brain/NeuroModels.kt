@@ -1,9 +1,9 @@
 /*
 
 Copyright (C) 2025-2026 Flow | A-EDev
-Copyright (C) 2025-2026 iad1tya - EchoTube modifications
-This file is part of EchoTube, a fork of Flow (https://github.com/A-EDev/Flow).
-EchoTube is free software: you can redistribute it and/or modify
+Copyright (C) 2025-2026 Saurav Thakur - OPM modifications
+This file is part of OPM, a fork of Flow (https://github.com/A-EDev/Flow).
+OPM is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, version 3 of the License.
 This recommendation algorithm (FlowNeuroEngine) is the intellectual property
@@ -11,7 +11,7 @@ of the Flow project. Any use of this code in other projects must
 explicitly credit "Flow Android Client" and link back to the original repository.
 */
 
-package iad1tya.echo.music.engine.brain
+package sauravthakur.opm.engine.brain
 
 import java.util.Calendar
 
@@ -127,7 +127,7 @@ enum class EchoBrainPersona(
     val icon: String
 ) {
     INITIATE("The Initiate", "Just getting started. Your profile is still forming.", "🌱"),
-    AUDIOPHILE("The Audiophile", "You use EchoTube mostly for Music. The vibe is everything.", "🎧"),
+    AUDIOPHILE("The Audiophile", "You use OPM mostly for Music. The vibe is everything.", "🎧"),
     LIVEWIRE("The Livewire", "You love the raw energy of Livestreams and premieres.", "🔴"),
     NIGHT_OWL("The Night Owl", "You thrive in the dark. Most watching happens after midnight.", "🦉"),
     BINGER("The Binger", "Once you start, you can't stop. Massive content waves.", "🍿"),
@@ -168,7 +168,7 @@ enum class QueryStrategy {
 // ── Internal Tracking Structures ──
 
 internal data class ScoredMediaMetadata(
-    val track: iad1tya.echo.music.models.MediaMetadata,
+    val track: sauravthakur.opm.models.MediaMetadata,
     var score: Double,
     val vector: ContentVector
 )

@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.component
+package sauravthakur.opm.ui.component
 
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
@@ -91,33 +91,33 @@ import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.YTItem
-import iad1tya.echo.music.LocalDatabase
-import iad1tya.echo.music.LocalDownloadUtil
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.CropAlbumArtKey
-import iad1tya.echo.music.constants.GridItemSize
-import iad1tya.echo.music.constants.GridItemsSizeKey
-import iad1tya.echo.music.constants.GridThumbnailHeight
-import iad1tya.echo.music.constants.ListItemHeight
-import iad1tya.echo.music.constants.ListThumbnailSize
-import iad1tya.echo.music.constants.SmallGridThumbnailHeight
-import iad1tya.echo.music.constants.SwipeToSongKey
-import iad1tya.echo.music.constants.ThumbnailCornerRadius
-import iad1tya.echo.music.db.entities.Album
-import iad1tya.echo.music.db.entities.Artist
-import iad1tya.echo.music.db.entities.Playlist
-import iad1tya.echo.music.db.entities.Song
-import iad1tya.echo.music.extensions.toMediaItem
-import iad1tya.echo.music.models.MediaMetadata
-import iad1tya.echo.music.playback.queues.LocalAlbumRadio
-import iad1tya.echo.music.ui.utils.resize
-import iad1tya.echo.music.utils.isLocalMediaId
-import iad1tya.echo.music.utils.joinByBullet
-import iad1tya.echo.music.utils.makeTimeString
-import iad1tya.echo.music.utils.rememberEnumPreference
-import iad1tya.echo.music.utils.rememberPreference
-import iad1tya.echo.music.utils.reportException
+import sauravthakur.opm.LocalDatabase
+import sauravthakur.opm.LocalDownloadUtil
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.CropAlbumArtKey
+import sauravthakur.opm.constants.GridItemSize
+import sauravthakur.opm.constants.GridItemsSizeKey
+import sauravthakur.opm.constants.GridThumbnailHeight
+import sauravthakur.opm.constants.ListItemHeight
+import sauravthakur.opm.constants.ListThumbnailSize
+import sauravthakur.opm.constants.SmallGridThumbnailHeight
+import sauravthakur.opm.constants.SwipeToSongKey
+import sauravthakur.opm.constants.ThumbnailCornerRadius
+import sauravthakur.opm.db.entities.Album
+import sauravthakur.opm.db.entities.Artist
+import sauravthakur.opm.db.entities.Playlist
+import sauravthakur.opm.db.entities.Song
+import sauravthakur.opm.extensions.toMediaItem
+import sauravthakur.opm.models.MediaMetadata
+import sauravthakur.opm.playback.queues.LocalAlbumRadio
+import sauravthakur.opm.ui.utils.resize
+import sauravthakur.opm.utils.isLocalMediaId
+import sauravthakur.opm.utils.joinByBullet
+import sauravthakur.opm.utils.makeTimeString
+import sauravthakur.opm.utils.rememberEnumPreference
+import sauravthakur.opm.utils.rememberPreference
+import sauravthakur.opm.utils.reportException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
@@ -535,8 +535,9 @@ fun SongGridItem(
             ),
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.secondary,
-            maxLines = 2,
+            maxLines = 1,
             overflow = TextOverflow.Ellipsis,
+            modifier = Modifier.basicMarquee().fillMaxWidth()
         )
     },
     badges = badges,
@@ -760,8 +761,9 @@ fun AlbumGridItem(
             text = album.artists.joinToString { it.name },
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.secondary,
-            maxLines = 2,
-            overflow = TextOverflow.Ellipsis
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+            modifier = Modifier.basicMarquee().fillMaxWidth()
         )
     },
     badges = badges,
@@ -870,7 +872,7 @@ fun PlaylistListItem(
                     stringResource(R.string.cached_playlist) -> R.drawable.cached
                     
                     stringResource(R.string.uploaded_playlist) -> R.drawable.backup
-                    else -> if (autoPlaylist) R.drawable.trending_up else R.drawable.ic_launcher_nobg
+                    else -> if (autoPlaylist) R.drawable.trending_up else R.drawable.ic_notification
                 }
                 Icon(
                     painter = painterResource(painter),
@@ -963,8 +965,9 @@ fun PlaylistGridItem(
             text = subtitle,
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.secondary,
-            maxLines = 2,
-            overflow = TextOverflow.Ellipsis
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+            modifier = Modifier.basicMarquee().fillMaxWidth()
         )
     },
     badges = badges,
@@ -980,7 +983,7 @@ fun PlaylistGridItem(
                     stringResource(R.string.cached_playlist) -> R.drawable.cached
                     
                     stringResource(R.string.uploaded_playlist) -> R.drawable.backup
-                    else -> if (autoPlaylist) R.drawable.trending_up else R.drawable.ic_launcher_nobg
+                    else -> if (autoPlaylist) R.drawable.trending_up else R.drawable.ic_notification
                 }
                 Box(
                     contentAlignment = Alignment.Center,
@@ -1033,7 +1036,7 @@ fun MediaMetadataListItem(
             )
         },
         badges = {
-            if (mediaMetadata.source == iad1tya.echo.music.models.QueueItemSource.ECHO_BRAIN) {
+            if (mediaMetadata.source == sauravthakur.opm.models.QueueItemSource.ECHO_BRAIN) {
                 Icon.EchoBrain()
             }
             if (mediaMetadata.explicit) Icon.Explicit()
@@ -1192,8 +1195,9 @@ fun YouTubeGridItem(
                 text = subtitle,
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.secondary,
-                maxLines = 2,
+                maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
+                modifier = Modifier.basicMarquee().fillMaxWidth()
             )
         }
     },
@@ -1549,8 +1553,8 @@ fun PlaylistThumbnail(
                 .build(),
             contentDescription = null,
             contentScale = if (cropAlbumArt) ContentScale.Crop else ContentScale.Fit,
-            placeholder = painterResource(R.drawable.ic_launcher_nobg),
-            error = painterResource(R.drawable.ic_launcher_nobg),
+            placeholder = painterResource(R.drawable.ic_notification),
+            error = painterResource(R.drawable.ic_notification),
             modifier = Modifier
                 .size(size)
                 .clip(shape)
@@ -1576,8 +1580,8 @@ fun PlaylistThumbnail(
                         .build(),
                     contentDescription = null,
                     contentScale = if (cropAlbumArt) ContentScale.Crop else ContentScale.Fit,
-                    placeholder = painterResource(R.drawable.ic_launcher_nobg),
-                    error = painterResource(R.drawable.ic_launcher_nobg),
+                    placeholder = painterResource(R.drawable.ic_notification),
+                    error = painterResource(R.drawable.ic_notification),
                     modifier = Modifier
                         .align(alignment)
                         .size(size / 2)
@@ -1728,7 +1732,7 @@ fun SwipeToSongBox(
                     Alignment.CenterStart
                 ) else
                 Quadruple(
-                    R.drawable.ic_launcher_nobg,
+                    R.drawable.ic_notification,
                     MaterialTheme.colorScheme.primary,
                     MaterialTheme.colorScheme.onPrimary,
                     Alignment.CenterEnd
@@ -1857,7 +1861,7 @@ fun rememberQobuzMatch(
     artist: String,
     title: String,
     durationMs: Long?,
-    audioQuality: iad1tya.echo.music.constants.AudioQuality,
+    audioQuality: sauravthakur.opm.constants.AudioQuality,
     cachedFlac: Boolean
 ): androidx.compose.runtime.State<Boolean?> {
     return androidx.compose.runtime.produceState<Boolean?>(initialValue = if (cachedFlac) true else null, id) {
@@ -1866,13 +1870,13 @@ fun rememberQobuzMatch(
             return@produceState
         }
         kotlinx.coroutines.delay(300) // Debounce fast scrolling
-        val qobuzClient = iad1tya.echo.music.utils.qobuz.QobuzApiClient()
+        val qobuzClient = sauravthakur.opm.utils.qobuz.QobuzApiClient()
         var found = false
-        for (term in iad1tya.echo.music.utils.qobuzSearchTerms(artist, title)) {
+        for (term in sauravthakur.opm.utils.qobuzSearchTerms(artist, title)) {
             val searchResult = runCatching { qobuzClient.search(term) }.getOrNull() ?: continue
             val candidates = searchResult.tracks?.items.orEmpty()
             if (candidates.isEmpty()) continue
-            val scored = candidates.map { it to iad1tya.echo.music.utils.confidence(artist, title, durationMs, it) }
+            val scored = candidates.map { it to sauravthakur.opm.utils.confidence(artist, title, durationMs, it) }
             val match = scored.filter { it.second >= 0.5f }.maxByOrNull { it.second }
             if (match != null) {
                 found = true

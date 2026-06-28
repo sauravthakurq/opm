@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.component.shimmer
+package sauravthakur.opm.ui.component.shimmer
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -18,12 +18,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
-import iad1tya.echo.music.constants.GridItemSize
-import iad1tya.echo.music.constants.GridItemsSizeKey
-import iad1tya.echo.music.constants.GridThumbnailHeight
-import iad1tya.echo.music.constants.SmallGridThumbnailHeight
-import iad1tya.echo.music.constants.ThumbnailCornerRadius
-import iad1tya.echo.music.utils.rememberEnumPreference
+import sauravthakur.opm.constants.GridItemSize
+import sauravthakur.opm.constants.GridItemsSizeKey
+import sauravthakur.opm.constants.GridThumbnailHeight
+import sauravthakur.opm.constants.SmallGridThumbnailHeight
+import sauravthakur.opm.constants.ThumbnailCornerRadius
+import sauravthakur.opm.utils.rememberEnumPreference
 
 @Composable
 fun GridItemPlaceHolder(

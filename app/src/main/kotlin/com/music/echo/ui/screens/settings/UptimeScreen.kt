@@ -1,4 +1,4 @@
-package iad1tya.echo.music.ui.screens.settings
+package sauravthakur.opm.ui.screens.settings
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.tween
@@ -19,8 +19,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import iad1tya.echo.music.R
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.R
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
 import androidx.compose.material3.TopAppBar
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -68,7 +68,7 @@ highlightKey: String? = null) {
 
     val canvasServices = remember {
         mutableStateListOf(
-            ServiceStatus("Echo Canvas", { "https://canvas.echomusic.fun" }),
+            ServiceStatus("OPM Canvas", { "https://canvas.echomusic.fun" }),
             ServiceStatus("Tidal Canvas", { "https://api.tidal.com/v1/" })
         )
     }
@@ -99,7 +99,7 @@ highlightKey: String? = null) {
     val otherServices = remember {
         mutableStateListOf(
             ServiceStatus("Apple Music API", { "https://amp-api.music.apple.com" }),
-            ServiceStatus("Echo Find (Shazam)", { "https://amp.shazam.com" })
+            ServiceStatus("OPM Find (Shazam)", { "https://amp.shazam.com" })
         )
     }
 

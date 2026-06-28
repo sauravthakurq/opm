@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.settings.integrations
+package sauravthakur.opm.ui.screens.settings.integrations
 
 import android.widget.Toast
 import androidx.compose.foundation.background
@@ -62,26 +62,26 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.ListenTogetherAutoApprovalKey
-import iad1tya.echo.music.constants.ListenTogetherServerUrlKey
-import iad1tya.echo.music.constants.ListenTogetherSmartResyncKey
-import iad1tya.echo.music.constants.ListenTogetherSyncVolumeKey
-import iad1tya.echo.music.constants.ListenTogetherUsernameKey
-import iad1tya.echo.music.listentogether.ListenTogetherEvent
-import iad1tya.echo.music.listentogether.ListenTogetherServer
-import iad1tya.echo.music.listentogether.ListenTogetherServers
-import iad1tya.echo.music.listentogether.LogEntry
-import iad1tya.echo.music.listentogether.LogLevel
-import iad1tya.echo.music.listentogether.RoomRole
-import iad1tya.echo.music.ui.component.DefaultDialog
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.IntegrationCard
-import iad1tya.echo.music.ui.component.IntegrationCardItem
-import iad1tya.echo.music.ui.utils.backToMain
-import iad1tya.echo.music.utils.rememberPreference
-import iad1tya.echo.music.viewmodels.ListenTogetherViewModel
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.ListenTogetherAutoApprovalKey
+import sauravthakur.opm.constants.ListenTogetherServerUrlKey
+import sauravthakur.opm.constants.ListenTogetherSmartResyncKey
+import sauravthakur.opm.constants.ListenTogetherSyncVolumeKey
+import sauravthakur.opm.constants.ListenTogetherUsernameKey
+import sauravthakur.opm.listentogether.ListenTogetherEvent
+import sauravthakur.opm.listentogether.ListenTogetherServer
+import sauravthakur.opm.listentogether.ListenTogetherServers
+import sauravthakur.opm.listentogether.LogEntry
+import sauravthakur.opm.listentogether.LogLevel
+import sauravthakur.opm.listentogether.RoomRole
+import sauravthakur.opm.ui.component.DefaultDialog
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.IntegrationCard
+import sauravthakur.opm.ui.component.IntegrationCardItem
+import sauravthakur.opm.ui.utils.backToMain
+import sauravthakur.opm.utils.rememberPreference
+import sauravthakur.opm.viewmodels.ListenTogetherViewModel
 import kotlinx.coroutines.flow.collectLatest
 
 @OptIn(ExperimentalMaterial3Api::class)

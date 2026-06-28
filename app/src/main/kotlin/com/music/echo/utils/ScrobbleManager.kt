@@ -1,6 +1,6 @@
-package iad1tya.echo.music.utils
+package sauravthakur.opm.utils
 
-import iad1tya.echo.music.models.MediaMetadata
+import sauravthakur.opm.models.MediaMetadata
 import kotlinx.coroutines.CoroutineScope
 
 class ScrobbleManager(

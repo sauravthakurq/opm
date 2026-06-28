@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.listentogether
+package sauravthakur.opm.listentogether
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

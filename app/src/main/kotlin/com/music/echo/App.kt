@@ -1,8 +1,8 @@
 
 
-package iad1tya.echo.music
-import iad1tya.echo.music.R
-import iad1tya.echo.music.BuildConfig
+package sauravthakur.opm
+import sauravthakur.opm.R
+import sauravthakur.opm.BuildConfig
 
 import android.app.Application
 import android.app.NotificationChannel
@@ -24,14 +24,14 @@ import com.music.innertube.YouTube
 import com.music.innertube.models.IpVersion
 import com.music.innertube.models.YouTubeLocale
 import com.music.kugou.KuGou
-import iad1tya.echo.music.constants.*
-import iad1tya.echo.music.di.ApplicationScope
-import iad1tya.echo.music.extensions.toEnum
-import iad1tya.echo.music.extensions.toInetSocketAddress
-import iad1tya.echo.music.utils.CrashHandler
-import iad1tya.echo.music.utils.cipher.CipherDeobfuscator
-import iad1tya.echo.music.utils.dataStore
-import iad1tya.echo.music.utils.reportException
+import sauravthakur.opm.constants.*
+import sauravthakur.opm.di.ApplicationScope
+import sauravthakur.opm.extensions.toEnum
+import sauravthakur.opm.extensions.toInetSocketAddress
+import sauravthakur.opm.utils.CrashHandler
+import sauravthakur.opm.utils.cipher.CipherDeobfuscator
+import sauravthakur.opm.utils.dataStore
+import sauravthakur.opm.utils.reportException
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

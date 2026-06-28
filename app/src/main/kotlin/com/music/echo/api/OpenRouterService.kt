@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.api
+package sauravthakur.opm.api
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -141,8 +141,8 @@ Output MUST be a JSON array with EXACTLY $lineCount strings."""
                         }
                     }
                     .addHeader("Content-Type", "application/json")
-                    .addHeader("HTTP-Referer", "https://github.com/EchoMusicApp/Echo-Music")
-                    .addHeader("X-Title", "echomusic")
+                    .addHeader("HTTP-Referer", "https://github.com/OPMApp/OPM")
+                    .addHeader("X-Title", "opm")
                     .post(jsonBody.toString().toRequestBody(JSON))
                     .build()
 

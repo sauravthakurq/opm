@@ -1,6 +1,5 @@
-package iad1tya.echo.music.ui.screens
+package sauravthakur.opm.ui.screens
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
@@ -12,7 +11,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
-import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -22,16 +20,16 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import coil3.compose.AsyncImage
 import com.music.innertube.utils.parseCookieString
-import iad1tya.echo.music.BuildConfig
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.AccountEmailKey
-import iad1tya.echo.music.constants.InnerTubeCookieKey
-import iad1tya.echo.music.constants.UseLoginForBrowse
-import iad1tya.echo.music.constants.YtmSyncKey
-import iad1tya.echo.music.ui.component.Material3SettingsGroup
-import iad1tya.echo.music.ui.component.Material3SettingsItem
-import iad1tya.echo.music.utils.rememberPreference
-import iad1tya.echo.music.viewmodels.HomeViewModel
+import sauravthakur.opm.BuildConfig
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.AccountEmailKey
+import sauravthakur.opm.constants.InnerTubeCookieKey
+import sauravthakur.opm.constants.UseLoginForBrowse
+import sauravthakur.opm.constants.YtmSyncKey
+import sauravthakur.opm.ui.component.Material3SettingsGroup
+import sauravthakur.opm.ui.component.Material3SettingsItem
+import sauravthakur.opm.utils.rememberPreference
+import sauravthakur.opm.viewmodels.HomeViewModel
 import androidx.compose.ui.layout.ContentScale
 
 @Composable
@@ -40,7 +38,6 @@ fun SettingDialoge(
     onNavigate: (String) -> Unit,
     homeViewModel: HomeViewModel
 ) {
-    val uriHandler = LocalUriHandler.current
     val (innerTubeCookie, _) = rememberPreference(InnerTubeCookieKey, "")
     val isLoggedIn = remember(innerTubeCookie) {
         innerTubeCookie.isNotEmpty() && "SAPISID" in parseCookieString(innerTubeCookie)
@@ -58,8 +55,6 @@ fun SettingDialoge(
         properties = DialogProperties(usePlatformDefaultWidth = false)
     ) {
         val primaryColor = MaterialTheme.colorScheme.onSurface
-        val onSecondaryColor = MaterialTheme.colorScheme.onSurfaceVariant
-
         Card(
             modifier = Modifier
                 .padding(24.dp)
@@ -86,10 +81,10 @@ fun SettingDialoge(
                     Spacer(modifier = Modifier.size(24.dp))
                     
                     Text(
-                        text = "Echo Music",
+                        text = "OPM",
                         style = MaterialTheme.typography.titleLarge.copy(
                             fontWeight = FontWeight.Bold,
-                            letterSpacing = 1.sp
+                            letterSpacing = 0.sp
                         ),
                         color = primaryColor,
                         textAlign = TextAlign.Center
@@ -108,71 +103,7 @@ fun SettingDialoge(
                     }
                 }
 
-                // Account Group
-                Material3SettingsGroup(
-                    title = "Account",
-                    compact = true,
-                    items = listOf(
-                        Material3SettingsItem(
-                            title = { Text(if (isLoggedIn) accountName else "Anonymous") },
-                            description = { Text(if (isLoggedIn) accountEmail.ifEmpty { "Logged In" } else "Not Logged In") },
-                            icon = painterResource(R.drawable.account),
-                            trailingContent = if (isLoggedIn && !accountImageUrl.isNullOrBlank()) {
-                                {
-                                    AsyncImage(
-                                        model = accountImageUrl,
-                                        contentDescription = "Profile Photo",
-                                        contentScale = ContentScale.Crop,
-                                        modifier = Modifier
-                                            .size(40.dp)
-                                            .clip(CircleShape)
-                                    )
-                                }
-                            } else null,
-                            onClick = { if (isLoggedIn) onNavigate("settings/account") else onNavigate("login") }
-                        )
-                    )
-                )
 
-                if (isLoggedIn) {
-                    Material3SettingsGroup(
-                        title = "Preferences",
-                        compact = true,
-                        items = listOf(
-                            Material3SettingsItem(
-                                title = { Text("Use Account for Browsing") },
-                                icon = painterResource(R.drawable.add_circle),
-                                trailingContent = {
-                                    Switch(
-                                        checked = useLoginForBrowse,
-                                        onCheckedChange = {
-                                            com.music.innertube.YouTube.useLoginForBrowse = it
-                                            onUseLoginForBrowseChange(it)
-                                        },
-                                        modifier = Modifier.scale(0.8f)
-                                    )
-                                },
-                                onClick = {
-                                    val newVal = !useLoginForBrowse
-                                    com.music.innertube.YouTube.useLoginForBrowse = newVal
-                                    onUseLoginForBrowseChange(newVal)
-                                }
-                            ),
-                            Material3SettingsItem(
-                                title = { Text("YouTube Music Sync") },
-                                icon = painterResource(R.drawable.cached),
-                                trailingContent = {
-                                    Switch(
-                                        checked = ytmSync,
-                                        onCheckedChange = onYtmSyncChange,
-                                        modifier = Modifier.scale(0.8f)
-                                    )
-                                },
-                                onClick = { onYtmSyncChange(!ytmSync) }
-                            )
-                        )
-                    )
-                }
 
                 Material3SettingsGroup(
                     title = "App",
@@ -192,26 +123,6 @@ fun SettingDialoge(
                     )
                 )
 
-                // Footer Links
-                Row(
-                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
-                ) {
-                    Text(
-                        text = "Privacy Policy",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = onSecondaryColor,
-                        modifier = Modifier.clickable { uriHandler.openUri("https://echomusic.fun/p/privacy-policy") }.padding(4.dp)
-                    )
-                    Text(text = " • ", color = onSecondaryColor, style = MaterialTheme.typography.bodySmall)
-                    Text(
-                        text = "Terms of Service",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = onSecondaryColor,
-                        modifier = Modifier.clickable { uriHandler.openUri("https://echomusic.fun/p/toc") }.padding(4.dp)
-                    )
-                }
             }
         }
     }
