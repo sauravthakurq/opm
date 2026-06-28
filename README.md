@@ -1,19 +1,36 @@
 <div align="center">
-  <img src="assets/appiconorg.png" alt="OPM Logo" width="140"/>
+  <img src="assets/appiconorg.png" alt="OPM Logo" width="160"/>
 
   <h1>OPM</h1>
 
   <p><strong>A modern open-source Android music player with ad-free streaming, synced lyrics, beautiful UI, offline playback, and a premium listening experience.</strong></p>
 
-  [![GitHub Release](https://img.shields.io/github/v/release/sauravthakurq/opm?style=for-the-badge&color=6f42c1)](https://github.com/sauravthakurq/opm/releases)
-  [![GitHub Stars](https://img.shields.io/github/stars/sauravthakurq/opm?style=for-the-badge&color=e3b341)](https://github.com/sauravthakurq/opm/stargazers)
-  [![License](https://img.shields.io/github/license/sauravthakurq/opm?style=for-the-badge&color=28a745)](LICENSE)
+  <p align="center">
+    <a href="https://github.com/sauravthakurq/opm/releases">
+      <img src="https://img.shields.io/github/v/release/sauravthakurq/opm?style=for-the-badge&color=E53935" alt="GitHub Release"/>
+    </a>
+  </p>
+  <p align="center">
+    <a href="https://github.com/sauravthakurq/opm/stargazers">
+      <img src="https://img.shields.io/github/stars/sauravthakurq/opm?style=for-the-badge&color=e3b341" alt="GitHub Stars"/>
+    </a>
+  </p>
+  <p align="center">
+    <a href="LICENSE">
+      <img src="https://img.shields.io/github/license/sauravthakurq/opm?style=for-the-badge&color=28a745" alt="License"/>
+    </a>
+  </p>
 
   <br>
 
   <a href="https://github.com/sauravthakurq/opm/releases/latest/download/opm.apk">
-    <img src="https://img.shields.io/badge/Download-APK-4CAF50?style=for-the-badge&logo=android&logoColor=white" alt="Download APK"/>
+    <img src="assets/download.png" alt="Download APK" width="220"/>
   </a>
+  <p><em>Latest Release • Android 8.0+ • GPL-3.0 • 100% Open Source</em></p>
+
+  <br>
+
+  <p>⭐ 23,000+ Downloads &nbsp;•&nbsp; 🎵 Ad-Free &nbsp;•&nbsp; 🔓 Open Source &nbsp;•&nbsp; 🚀 Material You &nbsp;•&nbsp; 📱 Android 8+ &nbsp;•&nbsp; ❤️ GPL-3.0</p>
 </div>
 
 ---
@@ -34,7 +51,6 @@ OPM is a premium, open-source Android music player designed for users who want c
   - [Personalization](#personalization)
   - [Performance](#performance)
   - [Open Source](#open-source)
-- [Download](#download)
 - [Installation](#installation)
 - [Privacy](#privacy)
 - [Contributing](#contributing)
@@ -56,29 +72,29 @@ OPM was created to provide a pristine, uninterrupted listening environment. Whet
     <tr>
       <td align="center" style="padding: 10px; border: none;">
         <strong>Home Screen</strong><br><br>
-        <img src="IMAGE 2026-06-27 23/46/27.jpg" alt="Home Screen" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+        <img src="Screenshots/home.jpg" alt="Home Screen" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
       </td>
       <td align="center" style="padding: 10px; border: none;">
         <strong>Music Player</strong><br><br>
-        <img src="IMAGE 2026-06-27 21/14/59.jpg" alt="Music Player" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+        <img src="Screenshots/player.jpg" alt="Music Player" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
       </td>
       <td align="center" style="padding: 10px; border: none;">
         <strong>Synchronized Lyrics</strong><br><br>
-        <img src="Screenshots/sc_3.png" alt="Synchronized Lyrics" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+        <img src="Screenshots/lyrics.png" alt="Synchronized Lyrics" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
       </td>
     </tr>
     <tr>
       <td align="center" style="padding: 10px; border: none;">
         <strong>Search & Explore</strong><br><br>
-        <img src="Screenshots/sc_4.png" alt="Search & Explore" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+        <img src="Screenshots/search.png" alt="Search & Explore" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
       </td>
       <td align="center" style="padding: 10px; border: none;">
         <strong>Music Library</strong><br><br>
-        <img src="Screenshots/sc_5.png" alt="Music Library" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+        <img src="Screenshots/library.png" alt="Music Library" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
       </td>
       <td align="center" style="padding: 10px; border: none;">
         <strong>OPM Find</strong><br><br>
-        <img src="Screenshots/sc_6.png" alt="OPM Find" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+        <img src="Screenshots/recognizer.png" alt="OPM Find" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
       </td>
     </tr>
   </table>
@@ -115,16 +131,6 @@ OPM was created to provide a pristine, uninterrupted listening environment. Whet
 - **GPL-3.0:** Truly free and open software.
 - **Community Driven:** Evolving continuously based on user feedback and community pull requests.
 - **Transparent Development:** No hidden analytics, telemetry, or shady background processes.
-
----
-
-## Download
-
-Get the latest version of OPM directly from our official release channels.
-
-- **[Latest Release](https://github.com/sauravthakurq/opm/releases/latest)**
-- **[APK Download](https://github.com/sauravthakurq/opm/releases/latest/download/opm.apk)**
-- **[All GitHub Releases](https://github.com/sauravthakurq/opm/releases)**
 
 ---
 
