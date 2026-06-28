@@ -1,4 +1,4 @@
-package iad1tya.echo.music.cast
+package sauravthakur.opm.cast
 
 import android.content.Context
 import androidx.media3.cast.CastPlayer

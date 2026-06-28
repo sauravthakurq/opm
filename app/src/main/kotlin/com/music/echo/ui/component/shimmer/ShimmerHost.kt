@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.component.shimmer
+package sauravthakur.opm.ui.component.shimmer
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode

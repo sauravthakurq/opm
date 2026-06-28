@@ -1,8 +1,8 @@
-package iad1tya.echo.music.echomusic.updater.downloadmanager
+package sauravthakur.opm.echomusic.updater.downloadmanager
 
 import android.content.Context
 import android.os.Environment
-import iad1tya.echo.music.R
+import sauravthakur.opm.R
 import kotlinx.coroutines.*
 import java.io.File
 import java.io.FileOutputStream
@@ -51,7 +51,7 @@ class CustomDownloadManager {
                     downloadDir.mkdirs()
                 }
 
-                val outputFile = File(downloadDir, "echomusic.apk")
+                val outputFile = File(downloadDir, "opm.apk")
                 val outputStream = FileOutputStream(outputFile)
 
                 val buffer = ByteArray(8192)

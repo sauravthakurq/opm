@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.playback
+package sauravthakur.opm.playback
 
 import android.content.Context
 import androidx.media3.common.MediaItem
@@ -13,15 +13,15 @@ import androidx.media3.common.Player.REPEAT_MODE_OFF
 import androidx.media3.common.Player.STATE_ENDED
 import androidx.media3.common.Timeline
 import androidx.media3.exoplayer.ExoPlayer
-import iad1tya.echo.music.db.MusicDatabase
-import iad1tya.echo.music.extensions.currentMetadata
-import iad1tya.echo.music.extensions.getCurrentQueueIndex
-import iad1tya.echo.music.extensions.getQueueWindows
-import iad1tya.echo.music.extensions.metadata
-import iad1tya.echo.music.extensions.togglePlayPause
-import iad1tya.echo.music.playback.MusicService.MusicBinder
-import iad1tya.echo.music.playback.queues.Queue
-import iad1tya.echo.music.utils.reportException
+import sauravthakur.opm.db.MusicDatabase
+import sauravthakur.opm.extensions.currentMetadata
+import sauravthakur.opm.extensions.getCurrentQueueIndex
+import sauravthakur.opm.extensions.getQueueWindows
+import sauravthakur.opm.extensions.metadata
+import sauravthakur.opm.extensions.togglePlayPause
+import sauravthakur.opm.playback.MusicService.MusicBinder
+import sauravthakur.opm.playback.queues.Queue
+import sauravthakur.opm.utils.reportException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow

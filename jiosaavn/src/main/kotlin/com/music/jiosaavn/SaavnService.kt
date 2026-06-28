@@ -109,7 +109,7 @@ object SaavnService {
             }
             defaultRequest {
                 headers.append(HttpHeaders.Accept, "application/json")
-                headers.append(HttpHeaders.UserAgent, "EchoMusic/1.0")
+                headers.append(HttpHeaders.UserAgent, "OPM/1.0")
             }
             expectSuccess = false
         }

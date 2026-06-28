@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.menu
+package sauravthakur.opm.ui.menu
 
 import android.content.Intent
 import android.content.res.Configuration
@@ -42,8 +42,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.ui.Alignment
-import iad1tya.echo.music.constants.InnerTubeCookieKey
-import iad1tya.echo.music.utils.rememberPreference
+import sauravthakur.opm.constants.InnerTubeCookieKey
+import sauravthakur.opm.utils.rememberPreference
 import com.music.innertube.utils.parseCookieString
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
@@ -51,26 +51,26 @@ import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import com.music.innertube.YouTube
-import iad1tya.echo.music.LocalDatabase
-import iad1tya.echo.music.LocalDownloadUtil
-import iad1tya.echo.music.LocalListenTogetherManager
-import iad1tya.echo.music.LocalPlayerConnection
-import iad1tya.echo.music.R
-import iad1tya.echo.music.db.entities.Playlist
-import iad1tya.echo.music.db.entities.SpeedDialItem
-import iad1tya.echo.music.db.entities.PlaylistSong
-import iad1tya.echo.music.db.entities.Song
-import iad1tya.echo.music.extensions.toMediaItem
-import iad1tya.echo.music.playback.ExoDownloadService
-import iad1tya.echo.music.playback.queues.ListQueue
-import iad1tya.echo.music.playback.queues.YouTubeQueue
-import iad1tya.echo.music.ui.component.DefaultDialog
-import iad1tya.echo.music.ui.component.Material3MenuGroup
-import iad1tya.echo.music.ui.component.Material3MenuItemData
-import iad1tya.echo.music.ui.component.NewAction
-import iad1tya.echo.music.ui.component.NewActionGrid
-import iad1tya.echo.music.ui.component.PlaylistListItem
-import iad1tya.echo.music.ui.component.TextFieldDialog
+import sauravthakur.opm.LocalDatabase
+import sauravthakur.opm.LocalDownloadUtil
+import sauravthakur.opm.LocalListenTogetherManager
+import sauravthakur.opm.LocalPlayerConnection
+import sauravthakur.opm.R
+import sauravthakur.opm.db.entities.Playlist
+import sauravthakur.opm.db.entities.SpeedDialItem
+import sauravthakur.opm.db.entities.PlaylistSong
+import sauravthakur.opm.db.entities.Song
+import sauravthakur.opm.extensions.toMediaItem
+import sauravthakur.opm.playback.ExoDownloadService
+import sauravthakur.opm.playback.queues.ListQueue
+import sauravthakur.opm.playback.queues.YouTubeQueue
+import sauravthakur.opm.ui.component.DefaultDialog
+import sauravthakur.opm.ui.component.Material3MenuGroup
+import sauravthakur.opm.ui.component.Material3MenuItemData
+import sauravthakur.opm.ui.component.NewAction
+import sauravthakur.opm.ui.component.NewActionGrid
+import sauravthakur.opm.ui.component.PlaylistListItem
+import sauravthakur.opm.ui.component.TextFieldDialog
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -370,7 +370,7 @@ fun PlaylistMenu(
                             val intent = Intent().apply {
                                 action = Intent.ACTION_SEND
                                 type = "text/plain"
-                                putExtra(Intent.EXTRA_TEXT, "https://share.echomusic.fun/playlist?list=${dbPlaylist?.playlist?.browseId}")
+                                putExtra(Intent.EXTRA_TEXT, "https://music.youtube.com/playlist?list=${dbPlaylist?.playlist?.browseId}")
                             }
                             context.startActivity(Intent.createChooser(intent, null))
                         }

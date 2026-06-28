@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.constants
+package sauravthakur.opm.constants
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring

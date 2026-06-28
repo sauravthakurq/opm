@@ -1,4 +1,4 @@
-package iad1tya.echo.music.ui.component
+package sauravthakur.opm.ui.component
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -20,7 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
-import iad1tya.echo.music.constants.ThumbnailCornerRadius
+import sauravthakur.opm.constants.ThumbnailCornerRadius
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable

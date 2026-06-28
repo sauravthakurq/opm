@@ -1,13 +1,13 @@
-package iad1tya.echo.music.data
+package sauravthakur.opm.data
 
-import iad1tya.echo.music.BuildConfig
-import iad1tya.echo.music.api.FlowNeuroengineApi
-import iad1tya.echo.music.api.NeuroengineRequest
-import iad1tya.echo.music.api.NeuroengineResponse
-import iad1tya.echo.music.db.daos.EchoBrainDao
-import iad1tya.echo.music.db.entities.BrainActivityLogEntity
-import iad1tya.echo.music.db.entities.PlayEventEntity
-import iad1tya.echo.music.db.entities.TasteProfileEntity
+import sauravthakur.opm.BuildConfig
+import sauravthakur.opm.api.FlowNeuroengineApi
+import sauravthakur.opm.api.NeuroengineRequest
+import sauravthakur.opm.api.NeuroengineResponse
+import sauravthakur.opm.db.daos.EchoBrainDao
+import sauravthakur.opm.db.entities.BrainActivityLogEntity
+import sauravthakur.opm.db.entities.PlayEventEntity
+import sauravthakur.opm.db.entities.TasteProfileEntity
 import kotlinx.coroutines.flow.Flow
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient

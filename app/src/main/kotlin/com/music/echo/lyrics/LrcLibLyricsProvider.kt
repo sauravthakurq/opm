@@ -1,12 +1,12 @@
 
 
-package iad1tya.echo.music.lyrics
+package sauravthakur.opm.lyrics
 
 import android.content.Context
 import com.music.lrclib.LrcLib
-import iad1tya.echo.music.constants.EnableLrcLibKey
-import iad1tya.echo.music.utils.dataStore
-import iad1tya.echo.music.utils.get
+import sauravthakur.opm.constants.EnableLrcLibKey
+import sauravthakur.opm.utils.dataStore
+import sauravthakur.opm.utils.get
 
 object LrcLibLyricsProvider : LyricsProvider {
     override val name = "LrcLib"

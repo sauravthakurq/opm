@@ -1,9 +1,9 @@
 
 
-package iad1tya.echo.music.ui.utils
+package sauravthakur.opm.ui.utils
 
 import androidx.navigation.NavController
-import iad1tya.echo.music.ui.screens.Screens
+import sauravthakur.opm.ui.screens.Screens
 
 fun NavController.backToMain() {
     val mainRoutes = Screens.MainScreens.map { it.route }

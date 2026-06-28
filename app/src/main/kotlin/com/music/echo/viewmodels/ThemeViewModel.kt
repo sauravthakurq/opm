@@ -1,10 +1,10 @@
 
 
-package iad1tya.echo.music.viewmodels
+package sauravthakur.opm.viewmodels
 
 import androidx.lifecycle.ViewModel
-import iad1tya.echo.music.ui.screens.settings.DarkMode
-import iad1tya.echo.music.ui.theme.DefaultThemeColor
+import sauravthakur.opm.ui.screens.settings.DarkMode
+import sauravthakur.opm.ui.theme.DefaultThemeColor
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

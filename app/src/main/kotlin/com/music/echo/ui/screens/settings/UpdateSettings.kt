@@ -1,4 +1,4 @@
-package iad1tya.echo.music.ui.screens.settings
+package sauravthakur.opm.ui.screens.settings
 
 import androidx.compose.foundation.layout.Column
 
@@ -32,28 +32,28 @@ import androidx.compose.ui.unit.dp
 import android.content.Intent
 import android.net.Uri
 import androidx.navigation.NavController
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.R
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.Material3SettingsGroup
-import iad1tya.echo.music.ui.component.Material3SettingsItem
-import iad1tya.echo.music.echomusic.component.UpdateInfoDialog
-import iad1tya.echo.music.ui.utils.backToMain
-import iad1tya.echo.music.echomusic.updater.getAutoUpdateCheckSetting
-import iad1tya.echo.music.echomusic.updater.saveAutoUpdateCheckSetting
-import iad1tya.echo.music.echomusic.updater.getUpdateAvailableState
-import iad1tya.echo.music.echomusic.updater.saveUpdateAvailableState
-import iad1tya.echo.music.echomusic.updater.getUpdateNotificationsSetting
-import iad1tya.echo.music.echomusic.updater.saveUpdateNotificationsSetting
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.R
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.Material3SettingsGroup
+import sauravthakur.opm.ui.component.Material3SettingsItem
+import sauravthakur.opm.echomusic.component.UpdateInfoDialog
+import sauravthakur.opm.ui.utils.backToMain
+import sauravthakur.opm.echomusic.updater.getAutoUpdateCheckSetting
+import sauravthakur.opm.echomusic.updater.saveAutoUpdateCheckSetting
+import sauravthakur.opm.echomusic.updater.getUpdateAvailableState
+import sauravthakur.opm.echomusic.updater.saveUpdateAvailableState
+import sauravthakur.opm.echomusic.updater.getUpdateNotificationsSetting
+import sauravthakur.opm.echomusic.updater.saveUpdateNotificationsSetting
 import android.widget.Toast
 import androidx.compose.ui.res.pluralStringResource
-import iad1tya.echo.music.echomusic.updater.getDownloadedApkCount
-import iad1tya.echo.music.echomusic.updater.clearDownloadedApks
-import iad1tya.echo.music.echomusic.updater.getBetaUpdatesSetting
-import iad1tya.echo.music.echomusic.updater.saveBetaUpdatesSetting
-import iad1tya.echo.music.echomusic.updater.autoClearOldApks
+import sauravthakur.opm.echomusic.updater.getDownloadedApkCount
+import sauravthakur.opm.echomusic.updater.clearDownloadedApks
+import sauravthakur.opm.echomusic.updater.getBetaUpdatesSetting
+import sauravthakur.opm.echomusic.updater.saveBetaUpdatesSetting
+import sauravthakur.opm.echomusic.updater.autoClearOldApks
 import androidx.compose.material3.MaterialTheme
-import iad1tya.echo.music.BuildConfig
+import sauravthakur.opm.BuildConfig
 
 
 
@@ -113,7 +113,7 @@ fun UpdateSettings(
                     onClick = {
                         val isFoss = !BuildConfig.CAST_AVAILABLE
                         if (isFoss) {
-                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/EchoMusicApp/Echo-Music"))
+                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/sauravthakurq"))
                             context.startActivity(intent)
                         } else {
                             navController.navigate("update")

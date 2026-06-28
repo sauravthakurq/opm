@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.listentogether
+package sauravthakur.opm.listentogether
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -21,15 +21,15 @@ data class ListenTogetherServer(
 )
 
 object ListenTogetherServers {
-    private const val SERVER_JSON_URL = "https://raw.githubusercontent.com/EchoMusicApp/Echo-Music/refs/heads/main/app/server.json"
+    private const val SERVER_JSON_URL = "https://raw.githubusercontent.com/sauravthakurq/OPM/refs/heads/main/app/server.json"
 
     private val _servers = MutableStateFlow(
         listOf(
             ListenTogetherServer(
-                name = "Echo Music Server",
+                name = "OPM Server",
                 url = "wss://iad1tya-echomusic.hf.space/ws",
                 location = "Global",
-                operator = "ECHO"
+                operator = "OPM"
             )
         )
     )

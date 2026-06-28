@@ -1,4 +1,4 @@
-package iad1tya.echo.music.utils.cipher
+package sauravthakur.opm.utils.cipher
 
 import android.content.Context
 import android.net.Uri
@@ -7,7 +7,7 @@ import kotlinx.coroutines.withContext
 import timber.log.Timber
 
 object CipherDeobfuscator {
-    private const val TAG = "echomusic_CipherDeobfusc"
+    private const val TAG = "opm_CipherDeobfusc"
 
     lateinit var appContext: Context
         private set

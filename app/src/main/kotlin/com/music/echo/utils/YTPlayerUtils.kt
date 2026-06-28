@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.utils
+package sauravthakur.opm.utils
 
 import android.net.ConnectivityManager
 import android.util.Log
@@ -9,7 +9,7 @@ import com.music.innertube.NewPipeExtractor
 import com.music.innertube.YouTube
 import com.music.innertube.models.YouTubeClient
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_CREATOR
-import iad1tya.echo.music.utils.BotDetectionMitigator
+import sauravthakur.opm.utils.BotDetectionMitigator
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_43_32
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_61_48
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_VR_NO_AUTH
@@ -22,16 +22,16 @@ import com.music.innertube.models.YouTubeClient.Companion.WEB
 import com.music.innertube.models.YouTubeClient.Companion.WEB_CREATOR
 import com.music.innertube.models.YouTubeClient.Companion.WEB_REMIX
 import com.music.innertube.models.response.PlayerResponse
-import iad1tya.echo.music.constants.AudioQuality
-import iad1tya.echo.music.utils.cipher.CipherDeobfuscator
-import iad1tya.echo.music.utils.YTPlayerUtils.MAIN_CLIENT
-import iad1tya.echo.music.utils.YTPlayerUtils.STREAM_FALLBACK_CLIENTS
-import iad1tya.echo.music.utils.YTPlayerUtils.validateStatus
-import iad1tya.echo.music.utils.potoken.PoTokenGenerator
-import iad1tya.echo.music.utils.potoken.PoTokenResult
-import iad1tya.echo.music.utils.sabr.EjsNTransformSolver
-import iad1tya.echo.music.utils.PlaybackLogLevel
-import iad1tya.echo.music.utils.PlaybackLogManager
+import sauravthakur.opm.constants.AudioQuality
+import sauravthakur.opm.utils.cipher.CipherDeobfuscator
+import sauravthakur.opm.utils.YTPlayerUtils.MAIN_CLIENT
+import sauravthakur.opm.utils.YTPlayerUtils.STREAM_FALLBACK_CLIENTS
+import sauravthakur.opm.utils.YTPlayerUtils.validateStatus
+import sauravthakur.opm.utils.potoken.PoTokenGenerator
+import sauravthakur.opm.utils.potoken.PoTokenResult
+import sauravthakur.opm.utils.sabr.EjsNTransformSolver
+import sauravthakur.opm.utils.PlaybackLogLevel
+import sauravthakur.opm.utils.PlaybackLogManager
 import com.music.innertube.models.IpVersion
 import okhttp3.Dns
 import okhttp3.OkHttpClient
@@ -121,7 +121,7 @@ object YTPlayerUtils {
         isDownload: Boolean = false
     ): Result<PlaybackData> {
         val showFallbackToast = context?.let { 
-            it.dataStore.data.first()[iad1tya.echo.music.constants.ShowAudioFallbackToastKey] 
+            it.dataStore.data.first()[sauravthakur.opm.constants.ShowAudioFallbackToastKey] 
         } ?: true
 
         var hasShownLosslessToast = false
@@ -292,7 +292,7 @@ object YTPlayerUtils {
                         val title = knownTitle ?: metadata?.videoDetails?.title
                         val author = knownArtist ?: metadata?.videoDetails?.author?.replace(" - Topic", "")
                         if (title != null && author != null) {
-                            val qobuzClient = iad1tya.echo.music.utils.qobuz.QobuzApiClient()
+                            val qobuzClient = sauravthakur.opm.utils.qobuz.QobuzApiClient()
                             val queryArtist = author
                             val queryTitle = title
                             val durationSeconds = metadata?.videoDetails?.lengthSeconds?.toLongOrNull()
@@ -1027,7 +1027,7 @@ private fun artistSimilarity(a: String, b: String): Float {
     return maxOf(jaccardScore, coverageScore)
 }
 
-fun confidence(queryArtist: String, queryTitle: String, queryDuration: Long?, candidate: iad1tya.echo.music.utils.qobuz.QobuzTrack): Float {
+fun confidence(queryArtist: String, queryTitle: String, queryDuration: Long?, candidate: sauravthakur.opm.utils.qobuz.QobuzTrack): Float {
     if (!candidate.streamable) return 0f
 
     val titleSim = jaccard(normalize(queryTitle), normalize(candidate.title))

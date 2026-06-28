@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.theme
+package sauravthakur.opm.ui.theme
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb

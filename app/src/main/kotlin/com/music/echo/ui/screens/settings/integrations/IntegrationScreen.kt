@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.settings.integrations
+package sauravthakur.opm.ui.screens.settings.integrations
 
 import androidx.compose.foundation.layout.Column
 
@@ -23,12 +23,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.R
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.IntegrationCard
-import iad1tya.echo.music.ui.component.IntegrationCardItem
-import iad1tya.echo.music.ui.utils.backToMain
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.R
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.IntegrationCard
+import sauravthakur.opm.ui.component.IntegrationCardItem
+import sauravthakur.opm.ui.utils.backToMain
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -38,8 +38,8 @@ fun IntegrationScreen(
 highlightKey: String? = null) {
     val context = androidx.compose.ui.platform.LocalContext.current
 
-    val (listenBrainzEnabled, onListenBrainzEnabledChange) = iad1tya.echo.music.utils.rememberPreference(iad1tya.echo.music.constants.ListenBrainzEnabledKey, false)
-    val (listenBrainzToken, onListenBrainzTokenChange) = iad1tya.echo.music.utils.rememberPreference(iad1tya.echo.music.constants.ListenBrainzTokenKey, "")
+    val (listenBrainzEnabled, onListenBrainzEnabledChange) = sauravthakur.opm.utils.rememberPreference(sauravthakur.opm.constants.ListenBrainzEnabledKey, false)
+    val (listenBrainzToken, onListenBrainzTokenChange) = sauravthakur.opm.utils.rememberPreference(sauravthakur.opm.constants.ListenBrainzTokenKey, "")
 
     var showListenBrainzTokenEditor = androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
 
@@ -52,7 +52,7 @@ highlightKey: String? = null) {
         Spacer(Modifier.windowInsetsPadding(LocalPlayerAwareWindowInsets.current.only(WindowInsetsSides.Top)))
         Spacer(modifier = Modifier.padding(top = 16.dp))
 
-        iad1tya.echo.music.ui.component.SwitchPreference(
+        sauravthakur.opm.ui.component.SwitchPreference(
             title = { Text(stringResource(R.string.listenbrainz_scrobbling)) },
             description = stringResource(R.string.listenbrainz_scrobbling_description),
             icon = { Icon(painterResource(R.drawable.token), null) },
@@ -60,7 +60,7 @@ highlightKey: String? = null) {
             onCheckedChange = onListenBrainzEnabledChange,
         )
 
-        iad1tya.echo.music.ui.component.PreferenceEntry(
+        sauravthakur.opm.ui.component.PreferenceEntry(
             title = {
                 Text(
                     if (listenBrainzToken.isBlank()) {
@@ -93,7 +93,7 @@ highlightKey: String? = null) {
     )
 
     if (showListenBrainzTokenEditor.value) {
-        iad1tya.echo.music.ui.component.TextFieldDialog(
+        sauravthakur.opm.ui.component.TextFieldDialog(
             initialTextFieldValue =
                 androidx.compose.ui.text.input
                     .TextFieldValue(listenBrainzToken),
@@ -108,7 +108,7 @@ highlightKey: String? = null) {
                 it.isNotEmpty()
             },
             extraContent = {
-                iad1tya.echo.music.ui.component.InfoLabel(text = stringResource(R.string.listenbrainz_scrobbling_description))
+                sauravthakur.opm.ui.component.InfoLabel(text = stringResource(R.string.listenbrainz_scrobbling_description))
             },
         )
     }

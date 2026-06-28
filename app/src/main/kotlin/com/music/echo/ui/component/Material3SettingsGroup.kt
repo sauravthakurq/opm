@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.component
+package sauravthakur.opm.ui.component
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.Image
@@ -30,12 +30,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 
 
-import iad1tya.echo.music.ui.utils.scrollToOnHighlight
+import sauravthakur.opm.ui.utils.scrollToOnHighlight
 import androidx.compose.foundation.ScrollState
 
 @Composable
@@ -54,7 +55,7 @@ fun Material3SettingsGroup(
             Text(
                 text = it,
                 style = MaterialTheme.typography.labelLarge,
-                color = MaterialTheme.colorScheme.primary,
+                color = Color.White,
                 modifier = Modifier.padding(bottom = if (compact) 4.dp else 8.dp, top = if (compact) 4.dp else 8.dp)
             )
         }
@@ -78,7 +79,7 @@ fun Material3SettingsGroup(
                         .animateContentSize(),
                     shape = shape,
                     colors = CardDefaults.cardColors(
-                        containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.3f)
+                        containerColor = Color.White.copy(alpha = if (item.isHighlighted) 0.14f else 0.07f)
                     ),
                     elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
                 ) {
@@ -118,7 +119,7 @@ private fun Material3SettingsItemRow(
                     .clip(item.iconShape ?: RoundedCornerShape(12.dp))
                     .background(
                         if (item.tintIcon) {
-                            MaterialTheme.colorScheme.primary.copy(
+                            Color.White.copy(
                                 alpha = if (item.isHighlighted) 0.15f else 0.1f
                             )
                         } else {
@@ -142,9 +143,9 @@ private fun Material3SettingsItemRow(
                                 tint = if (!item.enabled)
                                     MaterialTheme.colorScheme.onSurface.copy(alpha = 0.38f)
                                 else if (item.isHighlighted)
-                                    MaterialTheme.colorScheme.primary
+                                    Color.White
                                 else
-                                    MaterialTheme.colorScheme.primary.copy(alpha = 0.9f),
+                                    Color.White.copy(alpha = 0.86f),
                                 modifier = Modifier.size(if (compact) 20.dp else 24.dp)
                             )
                         } else {
@@ -164,9 +165,9 @@ private fun Material3SettingsItemRow(
                             tint = if (!item.enabled)
                                 MaterialTheme.colorScheme.onSurface.copy(alpha = 0.38f)
                             else if (item.isHighlighted)
-                                MaterialTheme.colorScheme.primary
+                                Color.White
                             else
-                                MaterialTheme.colorScheme.primary.copy(alpha = 0.9f),
+                                Color.White.copy(alpha = 0.86f),
                             modifier = Modifier.size(if (compact) 20.dp else 24.dp)
                         )
                     } else {
@@ -193,7 +194,7 @@ private fun Material3SettingsItemRow(
                     color = if (!item.enabled) 
                         MaterialTheme.colorScheme.onSurface.copy(alpha = 0.38f)
                     else
-                        MaterialTheme.colorScheme.onSurface
+                        Color.White
                 )
             ) {
                 item.title()
@@ -207,7 +208,7 @@ private fun Material3SettingsItemRow(
                         color = if (!item.enabled)
                             MaterialTheme.colorScheme.onSurface.copy(alpha = 0.38f)
                         else
-                            MaterialTheme.colorScheme.onSurfaceVariant
+                            Color.White.copy(alpha = 0.62f)
                     )
                 ) {
                     desc()

@@ -1,8 +1,8 @@
 
 
-package iad1tya.echo.music.constants
+package sauravthakur.opm.constants
 
-import iad1tya.echo.music.ui.screens.OptionStats
+import sauravthakur.opm.ui.screens.OptionStats
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 

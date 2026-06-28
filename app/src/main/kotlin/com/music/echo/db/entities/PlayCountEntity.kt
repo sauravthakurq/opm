@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.db.entities
+package sauravthakur.opm.db.entities
 
 import androidx.compose.runtime.Immutable
 import androidx.room.Entity

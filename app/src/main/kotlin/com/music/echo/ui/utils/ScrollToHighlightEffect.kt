@@ -1,4 +1,4 @@
-package iad1tya.echo.music.ui.utils
+package sauravthakur.opm.ui.utils
 
 import androidx.compose.foundation.ScrollState
 import androidx.compose.runtime.Composable

@@ -1,12 +1,12 @@
-package iad1tya.echo.music.db.daos
+package sauravthakur.opm.db.daos
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import iad1tya.echo.music.db.entities.BrainActivityLogEntity
-import iad1tya.echo.music.db.entities.PlayEventEntity
-import iad1tya.echo.music.db.entities.TasteProfileEntity
+import sauravthakur.opm.db.entities.BrainActivityLogEntity
+import sauravthakur.opm.db.entities.PlayEventEntity
+import sauravthakur.opm.db.entities.TasteProfileEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao

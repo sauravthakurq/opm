@@ -1,8 +1,8 @@
 /*
 Copyright (C) 2025-2026 Flow | A-EDev
-Copyright (C) 2025-2026 iad1tya - EchoTube modifications
-This file is part of EchoTube, a fork of Flow (https://github.com/A-EDev/Flow).
-EchoTube is free software: you can redistribute it and/or modify
+Copyright (C) 2025-2026 Saurav Thakur - OPM modifications
+This file is part of OPM, a fork of Flow (https://github.com/A-EDev/Flow).
+OPM is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, version 3 of the License.
 This recommendation algorithm (FlowNeuroEngine) is the intellectual property
@@ -10,14 +10,14 @@ of the Flow project. Any use of this code in other projects must
 explicitly credit "Flow Android Client" and link back to the original repository.
 */
 
-package iad1tya.echo.music.engine.brain
+package sauravthakur.opm.engine.brain
 
 import android.content.Context
 import javax.inject.Inject
 import javax.inject.Singleton
 import dagger.hilt.android.qualifiers.ApplicationContext
 import android.util.Log
-import iad1tya.echo.music.models.MediaMetadata
+import sauravthakur.opm.models.MediaMetadata
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -34,7 +34,7 @@ import kotlin.math.ln
 import kotlin.math.log10
 
 /**
- * EchoTube Neuro Engine (V10.0 — Artist Intelligence + ShortTracks Vector + Anti-Rec + Momentum)
+ * OPM Neuro Engine (V10.0 — Artist Intelligence + ShortTracks Vector + Anti-Rec + Momentum)
  *
  * Client-side hybrid recommendation: Vector Space Model + Heuristic Rules.
  *

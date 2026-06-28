@@ -1,8 +1,8 @@
 
 
-package iad1tya.echo.music.lyrics
+package sauravthakur.opm.lyrics
 
-import iad1tya.echo.music.constants.PreferredLyricsProvider
+import sauravthakur.opm.constants.PreferredLyricsProvider
 
 
 object LyricsProviderRegistry {

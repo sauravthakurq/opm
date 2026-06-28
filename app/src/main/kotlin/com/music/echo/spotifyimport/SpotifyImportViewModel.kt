@@ -1,11 +1,11 @@
 /*
- * EchoMusic (2026)
+ * OPM (2026)
  * © Chartreux Westia — github.com/koiverse
  * GPL-3.0 License | Contributors: see git history
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package iad1tya.echo.music.spotifyimport
+package sauravthakur.opm.spotifyimport
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -18,7 +18,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import iad1tya.echo.music.utils.reportException
+import sauravthakur.opm.utils.reportException
 import javax.inject.Inject
 
 @HiltViewModel

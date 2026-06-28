@@ -1,4 +1,4 @@
-package iad1tya.echo.music.ui.screens
+package sauravthakur.opm.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -46,7 +46,7 @@ import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
 import com.music.innertube.models.comment.CommentRenderer
 import com.music.innertube.models.comment.CommentThreadRenderer
-import iad1tya.echo.music.R
+import sauravthakur.opm.R
 import kotlinx.coroutines.launch
 
 import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi

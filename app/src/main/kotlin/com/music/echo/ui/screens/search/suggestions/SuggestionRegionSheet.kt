@@ -1,4 +1,4 @@
-package iad1tya.echo.music.ui.screens.search.suggestions
+package sauravthakur.opm.ui.screens.search.suggestions
 
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.clickable
@@ -21,7 +21,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import iad1tya.echo.music.constants.SuggestionRegionSlugToName
+import sauravthakur.opm.constants.SuggestionRegionSlugToName
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)

@@ -19,19 +19,19 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.DiscordActivityButton1CustomUrlKey
-import iad1tya.echo.music.constants.DiscordActivityButton1EnabledKey
-import iad1tya.echo.music.constants.DiscordActivityButton1LabelKey
-import iad1tya.echo.music.constants.DiscordActivityButton1UrlSourceKey
-import iad1tya.echo.music.constants.DiscordActivityButton2CustomUrlKey
-import iad1tya.echo.music.constants.DiscordActivityButton2EnabledKey
-import iad1tya.echo.music.constants.DiscordActivityButton2LabelKey
-import iad1tya.echo.music.constants.DiscordActivityButton2UrlSourceKey
-import iad1tya.echo.music.ui.component.EditTextPreference
-import iad1tya.echo.music.ui.component.ListPreference
-import iad1tya.echo.music.ui.component.SwitchPreference
-import iad1tya.echo.music.utils.rememberPreference
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.DiscordActivityButton1CustomUrlKey
+import sauravthakur.opm.constants.DiscordActivityButton1EnabledKey
+import sauravthakur.opm.constants.DiscordActivityButton1LabelKey
+import sauravthakur.opm.constants.DiscordActivityButton1UrlSourceKey
+import sauravthakur.opm.constants.DiscordActivityButton2CustomUrlKey
+import sauravthakur.opm.constants.DiscordActivityButton2EnabledKey
+import sauravthakur.opm.constants.DiscordActivityButton2LabelKey
+import sauravthakur.opm.constants.DiscordActivityButton2UrlSourceKey
+import sauravthakur.opm.ui.component.EditTextPreference
+import sauravthakur.opm.ui.component.ListPreference
+import sauravthakur.opm.ui.component.SwitchPreference
+import sauravthakur.opm.utils.rememberPreference
 
 private val DiscordExperimentalButtonUrlOptions =
     listOf("songurl", "artisturl", "albumurl", "custom")
@@ -54,7 +54,7 @@ fun DiscordExperimental(navController: NavController) {
     val (button2Label, onButton2LabelChange) =
         rememberPreference(
             key = DiscordActivityButton2LabelKey,
-            defaultValue = "Go to Echo Music",
+            defaultValue = "Go to OPM",
         )
     val (button2Enabled, onButton2EnabledChange) =
         rememberPreference(
@@ -80,7 +80,7 @@ fun DiscordExperimental(navController: NavController) {
     val (button2CustomUrl, onButton2CustomUrlChange) =
         rememberPreference(
             key = DiscordActivityButton2CustomUrlKey,
-            defaultValue = "https://github.com/1aditya7/Echo-Music",
+            defaultValue = "https://sauravthakurx.vercel.app",
         )
 
     Scaffold { inner ->

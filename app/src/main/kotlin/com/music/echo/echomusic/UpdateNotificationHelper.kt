@@ -1,4 +1,4 @@
-package iad1tya.echo.music.echomusic
+package sauravthakur.opm.echomusic
 
 import android.Manifest
 import android.app.NotificationChannel
@@ -12,7 +12,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
-import iad1tya.echo.music.R
+import sauravthakur.opm.R
 
 object UpdateNotificationHelper {
     private const val CHANNEL_ID = "updates"
@@ -32,9 +32,9 @@ object UpdateNotificationHelper {
 
         
         val apkUrl = if (versionName.contains("nightly", ignoreCase = true)) {
-            "https://nightly.link/EchoMusicApp/workflows/nightly.yml/main/echomusic-gms-nightly.zip"
+            "https://nightly.link/OPMApp/workflows/nightly.yml/main/echomusic-gms-nightly.zip"
         } else {
-            "https://github.com/EchoMusicApp/Echo-Music/releases/download/$versionName/echomusic.apk"
+            "https://github.com/OPMApp/OPM/releases/download/$versionName/opm.apk"
         }
         val intent = Intent(Intent.ACTION_VIEW, apkUrl.toUri())
 
@@ -42,7 +42,7 @@ object UpdateNotificationHelper {
         val pending = PendingIntent.getActivity(context, NOTIFICATION_ID, intent, flags)
 
         val notif = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_launcher_nobg)
+            .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle(context.getString(R.string.update_available_title))
             .setContentText(versionName)
             .setContentIntent(pending)

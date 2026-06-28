@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.viewmodels
+package sauravthakur.opm.viewmodels
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
@@ -21,24 +21,24 @@ import com.music.innertube.models.filterYoutubeShorts
 import com.music.innertube.pages.ExplorePage
 import com.music.innertube.pages.HomePage
 import com.music.innertube.utils.completed
-import iad1tya.echo.music.constants.HideExplicitKey
-import iad1tya.echo.music.constants.HideVideoSongsKey
-import iad1tya.echo.music.constants.HideYoutubeShortsKey
-import iad1tya.echo.music.constants.InnerTubeCookieKey
-import iad1tya.echo.music.constants.QuickPicks
-import iad1tya.echo.music.constants.QuickPicksKey
-import iad1tya.echo.music.db.MusicDatabase
-import iad1tya.echo.music.db.entities.Album
-import iad1tya.echo.music.db.entities.LocalItem
-import iad1tya.echo.music.db.entities.Song
-import iad1tya.echo.music.db.entities.SpeedDialItem
-import iad1tya.echo.music.extensions.filterVideoSongs
-import iad1tya.echo.music.extensions.toEnum
-import iad1tya.echo.music.models.SimilarRecommendation
-import iad1tya.echo.music.utils.SyncUtils
-import iad1tya.echo.music.utils.dataStore
-import iad1tya.echo.music.utils.get
-import iad1tya.echo.music.utils.reportException
+import sauravthakur.opm.constants.HideExplicitKey
+import sauravthakur.opm.constants.HideVideoSongsKey
+import sauravthakur.opm.constants.HideYoutubeShortsKey
+import sauravthakur.opm.constants.InnerTubeCookieKey
+import sauravthakur.opm.constants.QuickPicks
+import sauravthakur.opm.constants.QuickPicksKey
+import sauravthakur.opm.db.MusicDatabase
+import sauravthakur.opm.db.entities.Album
+import sauravthakur.opm.db.entities.LocalItem
+import sauravthakur.opm.db.entities.Song
+import sauravthakur.opm.db.entities.SpeedDialItem
+import sauravthakur.opm.extensions.filterVideoSongs
+import sauravthakur.opm.extensions.toEnum
+import sauravthakur.opm.models.SimilarRecommendation
+import sauravthakur.opm.utils.SyncUtils
+import sauravthakur.opm.utils.dataStore
+import sauravthakur.opm.utils.get
+import sauravthakur.opm.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
@@ -73,7 +73,7 @@ class HomeViewModel @Inject constructor(
     @ApplicationContext val context: Context,
     val database: MusicDatabase,
     val syncUtils: SyncUtils,
-    val echoBrainEngine: iad1tya.echo.music.engine.EchoBrainEngine
+    val echoBrainEngine: sauravthakur.opm.engine.EchoBrainEngine
 ) : ViewModel() {
     val isRefreshing = MutableStateFlow(false)
     val isLoading = MutableStateFlow(false)
@@ -284,7 +284,7 @@ class HomeViewModel @Inject constructor(
         }
 
         
-        dailyDiscover.value = items.toList().distinctBy { it.recommendation.id }.shuffled()
+        dailyDiscover.value = items.toList().distinctBy { it.recommendation.thumbnail }.shuffled()
     }
 
     private suspend fun getQuickPicks() {
@@ -423,7 +423,7 @@ class HomeViewModel @Inject constructor(
             val playlistItem = PlaylistItem(
                 id = "echo_brain_mix_local",
                 title = "Made for You",
-                author = Artist(name = "Echo Brain", id = null),
+                author = Artist(name = "OPM Brain", id = null),
                 songCountText = "${songs.size} songs",
                 thumbnail = songs.firstOrNull()?.thumbnail ?: "",
                 playEndpoint = WatchEndpoint(videoId = songs.firstOrNull()?.id ?: "", playlistId = "echo_brain_mix_local"),

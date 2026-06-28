@@ -1,8 +1,8 @@
-package iad1tya.echo.music.ui.screens.settings
+package sauravthakur.opm.ui.screens.settings
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import iad1tya.echo.music.R
+import sauravthakur.opm.R
 
 @Composable
 fun getAllSearchableSettings(): List<Triple<String, String, String>> {
@@ -115,16 +115,16 @@ fun getAllSearchableSettings(): List<Triple<String, String, String>> {
             Triple(stringResource(R.string.display_density), "Appearance", "settings/appearance"),
             Triple(stringResource(R.string.download_quality_title), "Player and audio", "settings/player"),
             Triple(stringResource(R.string.downloaded_songs), "Storage", "settings/storage"),
-            Triple("Echo Brain", "Echo Brain (Beta)", "settings/echo_brain"),
-            Triple("Learning Level", "Echo Brain (Beta)", "settings/echo_brain"),
-            Triple("Analyzed Artists", "Echo Brain (Beta)", "settings/echo_brain"),
-            Triple("Discovered Genres", "Echo Brain (Beta)", "settings/echo_brain"),
-            Triple("Total Interactions", "Echo Brain (Beta)", "settings/echo_brain"),
-            Triple(stringResource(R.string.echo_equalizer), "Player and audio", "settings/player"),
-            Triple(stringResource(R.string.echo_equalizer_desc), "Player and audio", "settings/player"),
-            Triple(stringResource(R.string.echomusic_1), "Appearance", "settings/appearance"),
-            Triple(stringResource(R.string.echomusic_canvas), "Appearance", "settings/appearance"),
-            Triple(stringResource(R.string.echomusic_canvas_desc), "Appearance", "settings/appearance"),
+            Triple("OPM Brain", "OPM Brain (Beta)", "settings/echo_brain"),
+            Triple("Learning Level", "OPM Brain (Beta)", "settings/echo_brain"),
+            Triple("Analyzed Artists", "OPM Brain (Beta)", "settings/echo_brain"),
+            Triple("Discovered Genres", "OPM Brain (Beta)", "settings/echo_brain"),
+            Triple("Total Interactions", "OPM Brain (Beta)", "settings/echo_brain"),
+            Triple(stringResource(R.string.opm_equalizer), "Player and audio", "settings/player"),
+            Triple(stringResource(R.string.opm_equalizer_desc), "Player and audio", "settings/player"),
+            Triple(stringResource(R.string.OPM_1), "Appearance", "settings/appearance"),
+            Triple(stringResource(R.string.OPM_canvas), "Appearance", "settings/appearance"),
+            Triple(stringResource(R.string.OPM_canvas_desc), "Appearance", "settings/appearance"),
             Triple(stringResource(R.string.enable), "Player and audio", "settings/player"),
             Triple(stringResource(R.string.enable_authentication), "Content", "settings/content"),
             Triple(stringResource(R.string.enable_better_lyrics), "Content", "settings/content"),
@@ -171,8 +171,6 @@ fun getAllSearchableSettings(): List<Triple<String, String, String>> {
             Triple(stringResource(R.string.keep_screen_on_when_player_is_expanded), "Player and audio", "settings/player"),
             Triple(stringResource(R.string.last_song_listened), "Content", "settings/content"),
             Triple(stringResource(R.string.left), "Appearance", "settings/appearance"),
-            Triple(stringResource(R.string.legacy_icon), "Appearance", "settings/appearance"),
-            Triple(stringResource(R.string.legacy_icon_desc), "Appearance", "settings/appearance"),
             Triple(stringResource(R.string.line_by_line_dialog_desc), "Romanization", "settings/appearance"),
             Triple(stringResource(R.string.line_by_line_dialog_title), "Romanization", "settings/appearance"),
             Triple(stringResource(R.string.line_by_line_option_desc), "Romanization", "settings/appearance"),

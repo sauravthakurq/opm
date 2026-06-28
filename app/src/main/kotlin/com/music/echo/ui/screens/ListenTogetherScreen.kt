@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens
+package sauravthakur.opm.ui.screens
 
 import android.content.Context
 import android.widget.Toast
@@ -40,7 +40,7 @@ import androidx.compose.foundation.relocation.bringIntoViewRequester
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import iad1tya.echo.music.ui.component.DefaultDialog
+import sauravthakur.opm.ui.component.DefaultDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -82,24 +82,24 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import iad1tya.echo.music.LocalListenTogetherManager
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.AppBarHeight
-import iad1tya.echo.music.constants.ListenTogetherInTopBarKey
-import iad1tya.echo.music.constants.ListenTogetherUsernameKey
-import iad1tya.echo.music.listentogether.ConnectionState
-import iad1tya.echo.music.listentogether.JoinRequestPayload
-import iad1tya.echo.music.listentogether.ListenTogetherEvent
-import iad1tya.echo.music.listentogether.SuggestionReceivedPayload
-import iad1tya.echo.music.listentogether.UserInfo
-import iad1tya.echo.music.ui.component.ListDialog
-import iad1tya.echo.music.ui.component.Material3SettingsGroup
-import iad1tya.echo.music.ui.component.Material3SettingsItem
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.utils.backToMain
-import iad1tya.echo.music.utils.rememberPreference
+import sauravthakur.opm.LocalListenTogetherManager
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.AppBarHeight
+import sauravthakur.opm.constants.ListenTogetherInTopBarKey
+import sauravthakur.opm.constants.ListenTogetherUsernameKey
+import sauravthakur.opm.listentogether.ConnectionState
+import sauravthakur.opm.listentogether.JoinRequestPayload
+import sauravthakur.opm.listentogether.ListenTogetherEvent
+import sauravthakur.opm.listentogether.SuggestionReceivedPayload
+import sauravthakur.opm.listentogether.UserInfo
+import sauravthakur.opm.ui.component.ListDialog
+import sauravthakur.opm.ui.component.Material3SettingsGroup
+import sauravthakur.opm.ui.component.Material3SettingsItem
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.utils.backToMain
+import sauravthakur.opm.utils.rememberPreference
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
@@ -698,7 +698,7 @@ private fun RoomStatusCard(
             if (isHost) {
                 Spacer(modifier = Modifier.height(16.dp))
                 val inviteLink = remember(roomCode) {
-                    "https://echomusic-listen-together.onrender.com/listen?code=$roomCode"
+                    "opm://listen?code=$roomCode"
                 }
                 Row(
                     verticalAlignment = Alignment.CenterVertically,

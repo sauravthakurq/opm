@@ -1,7 +1,7 @@
 import os
 import re
 
-SETTINGS_DIR = "/Users/aditya/Development/Echo-Music/app/src/main/kotlin/com/music/echo/ui/screens/settings"
+SETTINGS_DIR = "/Users/sauravthakur/Desktop/untitled folder 5/Echo/app/src/main/kotlin/com/music/echo/ui/screens/settings"
 
 def process_file(filepath):
     with open(filepath, "r") as f:

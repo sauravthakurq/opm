@@ -1,6 +1,6 @@
-package iad1tya.echo.music.betterlyrics
+package sauravthakur.opm.betterlyrics
 
-import iad1tya.echo.music.betterlyrics.models.TTMLResponse
+import sauravthakur.opm.betterlyrics.models.TTMLResponse
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.cio.CIO

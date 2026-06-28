@@ -1,4 +1,4 @@
-package iad1tya.echo.music.echomusic.changelog
+package sauravthakur.opm.echomusic.changelog
 
 
 
@@ -80,11 +80,11 @@ import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import iad1tya.echo.music.BuildConfig
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.R
-import iad1tya.echo.music.echomusic.updater.extractUrls
-import iad1tya.echo.music.ui.component.parseMarkdown
+import sauravthakur.opm.BuildConfig
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.R
+import sauravthakur.opm.echomusic.updater.extractUrls
+import sauravthakur.opm.ui.component.parseMarkdown
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -144,9 +144,9 @@ fun ChangelogScreen(
                         showingCached = true
                     }
                 } else {
-                    val changelogUrl = URL("https://github.com/EchoMusicApp/Echo-Music/releases/download/$tag/changelog.json")
+                    val changelogUrl = URL("https://github.com/OPMApp/OPM/releases/download/$tag/changelog.json")
                     val connection = changelogUrl.openConnection() as HttpURLConnection
-                    connection.setRequestProperty("User-Agent", "echomusic-Changelog-App")
+                    connection.setRequestProperty("User-Agent", "OPM-Changelog-App")
                     connection.setRequestProperty("Accept", "application/json")
                     
                     if (connection.responseCode == 200) {
@@ -217,9 +217,9 @@ fun ChangelogScreen(
         isFetchingOldReleases = true
         coroutineScope.launch(Dispatchers.IO) {
             try {
-                val releasesUrl = URL("https://api.github.com/repos/EchoMusicApp/Echo-Music/releases")
+                val releasesUrl = URL("https://api.github.com/repos/OPMApp/OPM/releases")
                 val connection = releasesUrl.openConnection() as HttpURLConnection
-                connection.setRequestProperty("User-Agent", "echomusic-Changelog-App")
+                connection.setRequestProperty("User-Agent", "OPM-Changelog-App")
                 connection.setRequestProperty("Accept", "application/vnd.github+json")
                 
                 if (connection.responseCode == 200) {

@@ -1,11 +1,11 @@
 
 
-package iad1tya.echo.music.lyrics
+package sauravthakur.opm.lyrics
 
 import android.content.Context
-import iad1tya.echo.music.constants.EnableSimpMusicKey
-import iad1tya.echo.music.utils.dataStore
-import iad1tya.echo.music.utils.get
+import sauravthakur.opm.constants.EnableSimpMusicKey
+import sauravthakur.opm.utils.dataStore
+import sauravthakur.opm.utils.get
 import com.music.simpmusic.SimpMusicLyrics
 
 object SimpMusicLyricsProvider : LyricsProvider {

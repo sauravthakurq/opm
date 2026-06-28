@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.menu
+package sauravthakur.opm.ui.menu
 
 import android.content.Context
 import android.content.Intent
@@ -14,12 +14,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.media3.exoplayer.offline.Download
-import iad1tya.echo.music.LocalListenTogetherManager
-import iad1tya.echo.music.R
-import iad1tya.echo.music.db.entities.Playlist
-import iad1tya.echo.music.db.entities.PlaylistSong
-import iad1tya.echo.music.ui.component.Material3MenuGroup
-import iad1tya.echo.music.ui.component.Material3MenuItemData
+import sauravthakur.opm.LocalListenTogetherManager
+import sauravthakur.opm.R
+import sauravthakur.opm.db.entities.Playlist
+import sauravthakur.opm.db.entities.PlaylistSong
+import sauravthakur.opm.ui.component.Material3MenuGroup
+import sauravthakur.opm.ui.component.Material3MenuItemData
 
 
 @Composable
@@ -174,7 +174,7 @@ fun LocalPlaylistMenu(
                 },
                 onClick = {
                     val shareText = if (isYouTubePlaylist) {
-                        "https://share.echomusic.fun/playlist?list=${playlist.playlist.browseId}"
+                        "https://music.youtube.com/playlist?list=${playlist.playlist.browseId}"
                     } else {
                         songs.joinToString("\n") { it.song.song.title }
                     }

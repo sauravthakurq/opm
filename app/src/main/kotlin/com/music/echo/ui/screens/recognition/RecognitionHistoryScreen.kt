@@ -1,6 +1,6 @@
 
 
-package iad1tya.echo.music.ui.screens.recognition
+package sauravthakur.opm.ui.screens.recognition
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -56,16 +56,16 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import iad1tya.echo.music.LocalDatabase
-import iad1tya.echo.music.LocalPlayerAwareWindowInsets
-import iad1tya.echo.music.R
-import iad1tya.echo.music.constants.ThumbnailCornerRadius
-import iad1tya.echo.music.db.entities.RecognitionHistory
-import iad1tya.echo.music.ui.component.DefaultDialog
-import iad1tya.echo.music.ui.component.IconButton
-import iad1tya.echo.music.ui.component.LocalMenuState
-import iad1tya.echo.music.ui.component.NavigationTitle
-import iad1tya.echo.music.ui.utils.backToMain
+import sauravthakur.opm.LocalDatabase
+import sauravthakur.opm.LocalPlayerAwareWindowInsets
+import sauravthakur.opm.R
+import sauravthakur.opm.constants.ThumbnailCornerRadius
+import sauravthakur.opm.db.entities.RecognitionHistory
+import sauravthakur.opm.ui.component.DefaultDialog
+import sauravthakur.opm.ui.component.IconButton
+import sauravthakur.opm.ui.component.LocalMenuState
+import sauravthakur.opm.ui.component.NavigationTitle
+import sauravthakur.opm.ui.utils.backToMain
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.time.LocalDate
