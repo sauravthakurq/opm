@@ -22,16 +22,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-        - language: actions
-          build-mode: none
-        - language: c-cpp
-          build-mode: manual
         - language: java-kotlin
           build-mode: manual
-        - language: javascript-typescript
-          build-mode: none
-        - language: python
-          build-mode: none
 
     steps:
     - name: Checkout repository
