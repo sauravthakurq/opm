@@ -30,7 +30,7 @@
 
   <br>
 
-  <p>⭐ 23,000+ Downloads &nbsp;•&nbsp; 🎵 Ad-Free &nbsp;•&nbsp; 🔓 Open Source &nbsp;•&nbsp; 🚀 Material You &nbsp;•&nbsp; 📱 Android 8+ &nbsp;•&nbsp; ❤️ GPL-3.0</p>
+  <p>🎵 Ad-Free &nbsp;•&nbsp; 🔓 Open Source &nbsp;•&nbsp; 🚀 Material You &nbsp;•&nbsp; 📱 Android 8+ &nbsp;•&nbsp; ❤️ GPL-3.0</p>
 </div>
 
 ---
