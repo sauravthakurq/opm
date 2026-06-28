@@ -55,6 +55,13 @@ jobs:
           mkdir -p app/keystore
           echo "$RELEASE_KEYSTORE_BASE64" | base64 --decode > app/keystore/release.keystore
 
+      - name: Generate Debug Keystore
+        run: |
+          mkdir -p ~/.android
+          if [ ! -f ~/.android/debug.keystore ]; then
+            keytool -genkeypair -v -keystore ~/.android/debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+          fi
+
       - name: Build and Sign Release APK (Push to main / Dispatch / Tag)
         env:
           STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
