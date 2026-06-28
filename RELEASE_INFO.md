@@ -1,5 +1,8 @@
-# OPM v5.2.22
+# Release Notes (OPM)
 
-- Fixed proxy settings dialog freezing the app on save.
-- Fixed overlapping play and library buttons on the artist page when a song is liked.
-- Aligned play and library button sizes on the artist page.
+## v5.2.22
+
+* **Bug Fixes:**
+  * Fixed an issue where the proxy settings dialog would freeze the application upon saving.
+  * Resolved overlapping UI elements (Play and Library buttons) on the Artist page when a track is marked as liked.
+  * Refined alignment and scaling for the Play and Library buttons on the Artist page to ensure consistent UI density.
