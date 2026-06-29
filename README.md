@@ -4,7 +4,7 @@
 
 <h1>OPM</h1>
 
-<h2>The Modern Music Player for Android</h2>
+<h2>The Modern Music Player for Android Your Music. No Ads. No Limits.</h2>
 
 <p>
 A modern open-source Android music player with ad-free streaming,
@@ -20,10 +20,7 @@ synced lyrics, offline playback, Material You, and a premium listening experienc
 <img src="https://img.shields.io/badge/License-GPL--3.0-22C55E?style=for-the-badge" alt="GPL-3.0">
 </a>
 
-<a href="https://opm.traxs.tech">
-<img src="https://img.shields.io/badge/Official%20Website-opm.traxs.tech-2563EB?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website">
-</a>
-</p>
+ 
 
 <p>
 <img src="https://img.shields.io/badge/Ad--Free-111827?style=flat-square" />
@@ -43,10 +40,17 @@ synced lyrics, offline playback, Material You, and a premium listening experienc
 
 </div>
 
-  </a> 
-  <p><em>Latest Release • Android 8.0+ • GPL-3.0 • 100% Open Source</em></p>
-
-  <br>
+<p align="center">
+  <sub>
+    <strong>Latest Release</strong>
+    &nbsp;•&nbsp;
+    <strong>Android 8.0+</strong>
+    &nbsp;•&nbsp;
+    <strong>GPL-3.0 Licensed</strong>
+    &nbsp;•&nbsp;
+    <strong>100% Open Source</strong>
+  </sub>
+</p>
 
  <p align="center">
 
@@ -63,7 +67,7 @@ synced lyrics, offline playback, Material You, and a premium listening experienc
 OPM is a premium, open-source Android music player designed for users who want complete control over their music experience. Built with a focus on privacy, aesthetics, and performance, OPM delivers high-quality streaming, immersive real-time lyrics, and total personalization—all without advertisements or hidden fees.
 
 <div align="center">
-  <img src="Screenshots/mobile-screensho-Photoroom2.jpg" alt="OPM Preview" width="420"/>
+  <img src="Screenshots/mobile-screensho-Photoroom2.jpg" alt="OPM Preview" width="290"/>
 
   <br><br>
 
@@ -101,40 +105,60 @@ OPM is a premium, open-source Android music player designed for users who want c
 OPM was created to provide a pristine, uninterrupted listening environment. Whether you are caching tracks for offline commutes, admiring perfectly synced word-by-word lyrics, or customizing your player's glow, OPM offers a flagship-tier experience built entirely on absolute trust and transparency.
 
 ---
-
 ## Screenshots
 
 <div align="center">
-  <table style="margin: 0 auto; border-collapse: collapse;">
-    <tr>
-      <td align="center" style="padding: 10px; border: none;">
-        <strong>Home Screen</strong><br><br>
-        <img src="Screenshots/home.jpg" alt="Home Screen" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
-      </td>
-      <td align="center" style="padding: 10px; border: none;">
-        <strong>Music Player</strong><br><br>
-        <img src="Screenshots/player.jpg" alt="Music Player" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
-      </td>
-      <td align="center" style="padding: 10px; border: none;">
-        <strong>Synchronized Lyrics</strong><br><br>
-        <img src="Screenshots/lyrics.png" alt="Synchronized Lyrics" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" style="padding: 10px; border: none;">
-        <strong>Search & Explore</strong><br><br>
-        <img src="Screenshots/search.png" alt="Search & Explore" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
-      </td>
-      <td align="center" style="padding: 10px; border: none;">
-        <strong>Music Library</strong><br><br>
-        <img src="Screenshots/library.png" alt="Music Library" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
-      </td>
-      <td align="center" style="padding: 10px; border: none;">
-        <strong>OPM Find</strong><br><br>
-        <img src="Screenshots/recognizer.png" alt="OPM Find" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
-      </td>
-    </tr>
-  </table>
+
+<table>
+<tr>
+<td align="center">
+<b>Home</b><br><br>
+<a href="Screenshots/home.jpg">
+<img src="Screenshots/home.jpg" width="220" alt="Home"/>
+</a>
+</td>
+
+<td align="center">
+<b>Player</b><br><br>
+<a href="Screenshots/player.jpg">
+<img src="Screenshots/player.jpg" width="220" alt="Player"/>
+</a>
+</td>
+
+<td align="center">
+<b>Lyrics</b><br><br>
+<a href="Screenshots/lyrics.png">
+<img src="Screenshots/lyrics.png" width="220" alt="Lyrics"/>
+</a>
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<b>Search</b><br><br>
+<a href="Screenshots/search.png">
+<img src="Screenshots/search.png" width="220" alt="Search"/>
+</a>
+</td>
+
+<td align="center">
+<b>Library</b><br><br>
+<a href="Screenshots/library.png">
+<img src="Screenshots/library.png" width="220" alt="Library"/>
+</a>
+</td>
+
+<td align="center">
+<b>OPM Find</b><br><br>
+<a href="Screenshots/recognizer.png">
+<img src="Screenshots/recognizer.png" width="220" alt="OPM Find"/>
+</a>
+</td>
+</tr>
+</table>
+
+<sub>Click any screenshot to view it in full resolution.</sub>
+
 </div>
 
 ---
