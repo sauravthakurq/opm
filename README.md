@@ -40,6 +40,21 @@
 OPM is a premium, open-source Android music player designed for users who want complete control over their music experience. Built with a focus on privacy, aesthetics, and performance, OPM delivers high-quality streaming, immersive real-time lyrics, and total personalization—all without advertisements or hidden fees.
 
 ---
+<div align="center">
+  <img src="Screenshots/mobile-screensho-Photoroom.png" alt="OPM Preview" width="900"/>
+
+  <br><br>
+
+  <a href="https://github.com/sauravthakurq/opm/releases/latest/download/opm.apk">
+    <img src="assets/download.png" alt="Download APK" width="220"/>
+  </a>
+
+  <p><strong>Tap the button above to download the latest OPM APK instantly.</strong></p>
+</div>
+
+---
+
+OPM is a premium, open-source Android music player designed for users who want complete control over their music experience. Built with a focus on privacy, aesthetics, and performance, OPM delivers high-quality streaming, immersive real-time lyrics, and total personalization—all without advertisements or hidden fees.
 
 ## Table of Contents
 
