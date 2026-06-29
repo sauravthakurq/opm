@@ -1,39 +1,62 @@
 <div align="center">
-  <img src="assets/appiconorg.png" alt="OPM Logo" width="160"/>
 
-  <h1>OPM</h1>
+<img src="assets/appiconorg.png" alt="OPM Logo" width="150">
 
-  <p><strong>A modern open-source Android music player with ad-free streaming, synced lyrics, beautiful UI, offline playback, and a premium listening experience.</strong></p>
+<h1>OPM</h1>
 
-  <p align="center">
-    <a href="https://github.com/sauravthakurq/opm/releases">
-      <img src="https://img.shields.io/github/v/release/sauravthakurq/opm?style=for-the-badge&color=E53935" alt="GitHub Release"/>
-    </a>
-  </p>
-  <p align="center">
-    <a href="https://github.com/sauravthakurq/opm/stargazers">
-      <img src="https://img.shields.io/github/stars/sauravthakurq/opm?style=for-the-badge&color=e3b341" alt="GitHub Stars"/>
-    </a>
-  </p>
-  <p align="center">
-    <a href="LICENSE">
-      <img src="https://img.shields.io/github/license/sauravthakurq/opm?style=for-the-badge&color=28a745" alt="License"/>
-    </a>
-  </p>
+<h2>The Modern Music Player for Android</h2>
 
-  <br>
+<p>
+A modern open-source Android music player with ad-free streaming,
+synced lyrics, offline playback, Material You, and a premium listening experience.
+</p>
 
-  <a href="https://github.com/sauravthakurq/opm/releases/latest/download/opm.apk">
-    <img src="assets/download.png" alt="Download APK" width="220"/>
-  </a>
+<p>
+<a href="https://github.com/sauravthakurq/opm/releases">
+<img src="https://img.shields.io/github/v/release/sauravthakurq/opm?style=for-the-badge&logo=github&label=Latest%20Release&color=111827" alt="Latest Release">
+</a>
+
+<a href="LICENSE">
+<img src="https://img.shields.io/badge/License-GPL--3.0-22C55E?style=for-the-badge" alt="GPL-3.0">
+</a>
+
+<a href="https://opm.traxs.tech">
+<img src="https://img.shields.io/badge/Official%20Website-opm.traxs.tech-2563EB?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website">
+</a>
+</p>
+
+<p>
+<img src="https://img.shields.io/badge/Ad--Free-111827?style=flat-square" />
+<img src="https://img.shields.io/badge/Synced%20Lyrics-111827?style=flat-square" />
+<img src="https://img.shields.io/badge/Material%20You-111827?style=flat-square" />
+<img src="https://img.shields.io/badge/Offline-111827?style=flat-square" />
+<img src="https://img.shields.io/badge/Open%20Source-22C55E?style=flat-square" />
+</p>
+<a href="https://opm.traxs.tech">
+  <img src="https://img.shields.io/badge/Visit%20OPM-111827?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=111827" alt="Visit OPM">
+</a>
+<p>
+<a href="https://github.com/sauravthakurq/opm/releases/latest/download/opm.apk">
+<img src="assets/download.png" alt="Download APK" width="220">
+</a>
+</p>
+
+</div>
+
+  </a> 
   <p><em>Latest Release • Android 8.0+ • GPL-3.0 • 100% Open Source</em></p>
 
   <br>
 
-  <p>🎵 Ad-Free &nbsp;•&nbsp; 🔓 Open Source &nbsp;•&nbsp; 🚀 Material You &nbsp;•&nbsp; 📱 Android 8+ &nbsp;•&nbsp; ❤️ GPL-3.0</p>
-</div>
+ <p align="center">
 
----
+<img src="https://img.shields.io/badge/Ad--Free-111827?style=flat-square" />
+<img src="https://img.shields.io/badge/Synced%20Lyrics-111827?style=flat-square" />
+<img src="https://img.shields.io/badge/Material%20You-111827?style=flat-square" />
+<img src="https://img.shields.io/badge/Offline-111827?style=flat-square" />
+<img src="https://img.shields.io/badge/Open%20Source-22C55E?style=flat-square" />
+
+</p>
 
 ## Overview
 
