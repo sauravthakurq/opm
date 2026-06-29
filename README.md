@@ -37,7 +37,6 @@ synced lyrics, offline playback, Material You, and a premium listening experienc
 <img src="assets/download.png" alt="Download APK" width="220">
 </a>
 </p>
-
 </div>
 
 <p align="center">
